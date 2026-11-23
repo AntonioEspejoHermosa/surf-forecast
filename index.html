@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="color-scheme" content="light">
 <title>Skopet· Surf forecast</title>
 <style>
@@ -12,6 +12,7 @@
     --rows:42px 54px 68px 26px 0px 26px 0px 36px 28px 36px 36px 0px 0px 96px 32px;
   }
   * { box-sizing:border-box; }
+  html { -webkit-text-size-adjust:100%; text-size-adjust:100%; }
   [hidden] { display:none!important; }
   body { margin:0; background:#f2f3ee; color:var(--ink); font:13px/1.4 "Segoe UI",Arial,sans-serif; -webkit-font-smoothing:antialiased; }
   button, summary { -webkit-tap-highlight-color:transparent; }
@@ -83,7 +84,7 @@
   .col.twilight>div { background:#f7f8f2; }
   .col.new-day { border-left:1px solid #bbcbb4; }
   .col:first-child { border-left:0; }
-  .col:hover>div { background-color:#e8efe5; }
+  @media(hover:hover) and (pointer:fine) { .col:hover>div { background-color:#e8efe5; } }
   .col:focus-visible { outline:2px solid #63917d; }
   .day { color:#697d66; font-size:10px; font-weight:600; }
   .day>span { position:absolute; top:6px; left:8px; width:145px; white-space:nowrap; z-index:2; }
@@ -158,11 +159,6 @@
   .forecast-notes[open] summary::before { content:"−"; }
   .forecast-notes p { max-width:1000px; margin:0 0 13px; line-height:1.65; }
   .page-foot { display:flex; justify-content:space-between; flex-wrap:wrap; gap:5px 20px; margin:10px 2px 0; color:#9ba58f; font-size:9px; }
-  .tooltip { position:fixed; display:none; z-index:30; pointer-events:none; max-width:calc(100vw - 20px); min-width:270px; max-height:calc(100vh - 24px); overflow:hidden; padding:13px 15px; border:1px solid #435a48; border-radius:9px; background:#2b4338; color:#edf2e5; box-shadow:0 8px 30px #26392c25; font-size:10px; line-height:1.7; }
-  .tooltip strong { display:block; margin-bottom:6px; color:#f4f7ee; font-size:11px; font-weight:550; }
-  .tooltip .item { display:flex; justify-content:space-between; gap:20px; }
-  .tooltip .item span:first-child { color:#b3c2a9; }
-  .tooltip .item span:last-child { text-align:right; font-variant-numeric:tabular-nums; }
   @media(min-width:1600px) { .shell { margin-top:32px; } }
   @media(max-width:900px) { .toolbar { flex-wrap:wrap; gap:9px; } .forecast-range { font-size:11px; } .toolbar-controls { margin-left:auto; } }
   @media(max-width:620px) {
@@ -182,7 +178,6 @@
     .bars { padding:0 15px; } .surf-quality { font-size:9px; padding:3px 4px; } .surf-size { font-size:9px; }
     .panel-foot { align-items:flex-start; padding:9px 10px; font-size:8px; } .quality-legend { gap:7px; }
     .explore-hint { max-width:100px; text-align:right; } .page-foot { font-size:8px; }
-    .tooltip { min-width:0; width:calc(100vw - 24px); font-size:9px; } .tooltip .item { gap:10px; }
   }
   @media(prefers-reduced-motion:reduce) { *,*::before,*::after { scroll-behavior:auto!important; transition:none!important; } }
   /* Period-band view, matching the approved compact design. */
@@ -225,18 +220,64 @@
   .quality-legend .period-key { margin-left:8px; }
   .quality-legend .period-key i { width:20px; height:5px; border-radius:2px; background:linear-gradient(90deg,#efddbb,#529a76); }
   .spectral-status { color:#8d805d; }
-  .tooltip { pointer-events:auto; overflow-y:auto; overscroll-behavior:contain; max-width:min(440px,calc(100vw - 20px)); }
-  .tooltip .spectrum-detail-heading { padding-top:6px; margin-top:6px; border-top:1px solid #52694f; font-size:10px; font-weight:600; color:#dce7d1; }
-  .tooltip .spectrum-note { display:block; max-width:310px; color:#a5b89b; font-size:9px; line-height:1.45; margin-top:5px; }
   @media(max-width:620px) {
     :root { --cell:66px; }
     .quality-legend { gap:7px; }
     .quality-legend .period-key { margin-left:0; }
     .panel-foot { gap:10px; }
-    .tooltip { width:calc(100vw - 24px); }
     .surf-size,.surf-quality { font-size:9px; }
   }
 
+  /* Leave scrolling and pinch zoom to the browser, including diagonal swipes. */
+  .scroll { touch-action:pan-x pan-y pinch-zoom; overscroll-behavior-x:contain; -webkit-overflow-scrolling:touch; -webkit-tap-highlight-color:transparent; }
+  .shell { padding-left:max(10px,env(safe-area-inset-left)); padding-right:max(10px,env(safe-area-inset-right)); }
+  @media(min-width:621px) { .shell { padding-left:max(24px,env(safe-area-inset-left)); padding-right:max(24px,env(safe-area-inset-right)); } }
+  @media(pointer:coarse) {
+    .header-actions button { min-height:40px; }
+    .seg button,.details-btn,.icon-btn { min-height:36px; }
+    .icon-btn { width:36px; }
+    .forecast-notes summary { min-height:40px; }
+  }
+  /* Short landscape screens: compact chrome and rows, with readable values. */
+  @media(orientation:landscape) and (max-height:600px) and (max-width:1100px) {
+    :root { --cell:68px; --rows:32px 44px 44px 24px 0px 28px 48px 0px 30px 26px 30px 30px 0px 0px 76px 26px; }
+    .timeline.show-details { --rows:32px 44px 44px 24px 24px 28px 48px 24px 30px 26px 30px 30px 24px 24px 76px 26px; }
+    .shell { margin:6px auto; padding-left:max(8px,env(safe-area-inset-left)); padding-right:max(8px,env(safe-area-inset-right)); }
+    .header { align-items:center; gap:12px; margin-bottom:6px; }
+    .identity { gap:8px; }
+    .brand-mark { width:30px; height:30px; padding:6px; border-radius:9px; }
+    .eyebrow { display:none; }
+    h1 { font-size:19px; letter-spacing:-.5px; }
+    .subtitle { max-width:none; margin-top:2px; font-size:9px; }
+    .header-actions { flex-direction:row; gap:6px; align-items:center; }
+    .header-actions button,.header-actions .quiet { min-height:36px; padding:5px 9px; font-size:10px; }
+    .toolbar { min-height:44px; padding:4px 9px; gap:8px; flex-wrap:nowrap; }
+    .forecast-range { flex:1; min-width:0; width:auto; font-size:10px; }
+    .toolbar-controls { width:auto; margin:0; flex-wrap:nowrap; gap:6px; }
+    .seg button { min-height:32px; padding:3px 8px; font-size:10px; }
+    .details-btn { min-height:36px; padding:4px 8px; font-size:10px; }
+    .navigation { padding-left:4px; }
+    .icon-btn { width:34px; min-height:36px; }
+    .context { min-height:32px; padding:0 9px 16px; gap:4px 10px; font-size:9px; }
+    .labels { flex-basis:100px; width:100px; }
+    .labels>div { padding:0 7px; font-size:9px; }
+    .labels small { font-size:8px; }
+    .wave-axis>span:first-child { max-width:64px; }
+    .wave-axis .axis-label:nth-of-type(3),.wave-axis .axis-label:nth-of-type(5),.wave-axis .axis-label:nth-of-type(6) { display:none; }
+    .day>span { top:3px; left:5px; }
+    .day .solar-day { top:18px; left:5px; font-size:7px; }
+    .surf-conditions { padding:3px; gap:3px; }
+    .surf-quality { padding:2px 4px; }
+    .bars { padding:0 17px; }
+    .spectrum-cell { padding:2px 3px; }
+    .spectrum-icon { height:39px; }
+    .spectrum-label>span { gap:3px; }
+    svg.arrow { width:16px; height:12px; }
+    .bearing { font-size:8px; }
+    .panel-foot { padding:7px 9px; gap:8px; }
+    .explore-hint { max-width:none; font-size:9px; }
+    .forecast-notes { padding:0 9px; }
+  }
 </style>
 </head>
 <body>
@@ -287,12 +328,11 @@
       </div>
       <div class="scroll" id="scroller" tabindex="0" role="region" aria-label="Forecast timeline. Scroll horizontally for later forecasts."><div class="series" id="series"></div></div>
     </div>
-    <div class="panel-foot"><div class="quality-legend"><span><i></i>Good surf</span><span><i class="texture-dot"></i>Medium</span><span><i class="rough-dot"></i>Rough</span><span class="period-key"><i></i>Longer periods = deeper green</span></div><span class="explore-hint">Night hours shaded · Hover or tap for details</span></div>
-    <details class="forecast-notes"><summary>About this forecast</summary><p>Beach surf is a preliminary breaking-height estimate; bars use a fixed 0–5 m scale. Quality follows beach-relative wind conditions. Period remains an input to the wave model. Spectrum icons show relative energy in the six available 10–30 s period bands, integrated over all directions. Each icon uses its own scale: its height describes the shape, not the total swell energy. The intervals have different widths; this is energy per band, not continuous spectral density. Missing bands are gaps; a dash means no spectral data. Band heights and energy values are available in the forecast details. Wave energy is an offshore per-wave proxy in kJ/m. Weather summarizes cloud and rain; intense rain does not confirm lightning. Water temperature is a sea-surface skin proxy. TPXO9 tide levels are model-relative, exclude storm surge, and use no chart datum.</p></details>
+    <div class="panel-foot"><div class="quality-legend"><span><i></i>Good surf</span><span><i class="texture-dot"></i>Medium</span><span><i class="rough-dot"></i>Rough</span><span class="period-key"><i></i>Longer periods = deeper green</span></div><span class="explore-hint">Night hours shaded · Swipe sideways for later forecasts</span></div>
+    <details class="forecast-notes"><summary>About this forecast</summary><p>Beach surf is a preliminary breaking-height estimate; bars use a fixed 0–5 m scale. Quality follows beach-relative wind conditions. Period remains an input to the wave model. Spectrum icons show relative energy in the six available 10–30 s period bands, integrated over all directions. Each icon uses its own scale: its height describes the shape, not the total swell energy. The intervals have different widths; this is energy per band, not continuous spectral density. Missing bands are gaps; a dash means no spectral data. Wave energy is an offshore per-wave proxy in kJ/m. Weather summarizes cloud and rain; intense rain does not confirm lightning. Water temperature is a sea-surface skin proxy. TPXO9 tide levels are model-relative, exclude storm surge, and use no chart datum.</p></details>
   </section>
   <div class="page-foot"><span>ECMWF IFS · TPXO9 tides · Spectra: relative shape, 10–30 s bands</span><span>Bearings are FROM · Arrows follow the flow</span></div>
 </main>
-<div class="tooltip" id="tooltip" role="tooltip"></div>
 <script>
 (() => {
   'use strict';
@@ -373,16 +413,7 @@
     const gaps=m.bands.filter(b=>b.energy===null).map(b=>`<rect class="spectrum-gap" x="${(xOf(b.min)+.7).toFixed(2)}" y="6" width="${Math.max(1,xOf(b.max)-xOf(b.min)-1.4).toFixed(2)}" height="28" rx="1" fill="none" stroke="#a9b3a1" stroke-width=".65" stroke-dasharray="2 2"/><text x="${xOf(b.mid).toFixed(2)}" y="23" text-anchor="middle">?</text>`).join('');
     const peaks=m.peakIndices.map(i=>`<circle class="spectrum-peak" cx="${xOf(m.bands[i].mid).toFixed(2)}" cy="${yOf(m.bands[i]).toFixed(2)}" r="2" fill="${ink}"/>`).join('');
     const description=m.state==='partial'?`Partial spectrum: ${m.available} of 6 bands available; overall strongest band unknown.`:m.state==='zero'?'All six bands are zero; no strongest band.':`Strongest band${m.peakIndices.length>1?'s':''}: ${m.peakIndices.map(i=>m.bands[i].label+' s').join(', ')}.`;
-    return `<svg class="spectrum-icon spectrum-${m.state}" viewBox="0 0 78 49" role="img" aria-label="${cleanText('Normalized relative band energy, 10–30 seconds. '+description)}"><title>${cleanText(description)}</title>${curves}${gaps}<path d="M1 ${baseline}H77" stroke="#cbd6c3" stroke-width=".6"/>${peaks}<text x="2" y="46" text-anchor="start">10s</text><text x="76" y="46" text-anchor="end">30s</text></svg>`;
-  };
-  const formatBandHs = n => n===0?'0':n>=.0001?n.toFixed(4):n.toExponential(1);
-  const formatBandEnergy = n => n===0?'0':n>=.01?n.toFixed(4):n.toExponential(1);
-  const spectrumDetails = r => {
-    const m=spectrumModel(r);
-    if(m.state==='missing')return '<div class="spectrum-note">Spectrum unavailable: this forecast has no valid 10–30 s band heights.</div>';
-    const status=m.state==='partial'?`${m.available}/6 bands available; overall strongest band cannot be determined.`:m.state==='zero'?'All six bands are zero; no strongest band.':`Strongest 10–30 s band${m.peakIndices.length>1?'s':''}: ${m.peakIndices.map(i=>m.bands[i].label+' s').join(', ')}.`;
-    const values=m.bands.map(b=>`<div class="item spectrum-detail"><span>${b.label} s · Hs</span><span>${b.hs===null?'Unavailable':formatBandHs(b.hs)+' m'}${b.reportedEnergy===null?'':' · '+formatBandEnergy(b.reportedEnergy)+' kJ/m²'}</span></div>`).join('');
-    return `<div class="spectrum-detail-heading">Spectrum · 10–30 s</div><div class="spectrum-note">${cleanText(status)}</div>${values}<div class="spectrum-note">Icon height follows Hs², proportional to integrated band energy; each icon is normalized separately. The curve approximates six integrated bands, not spectral density. Shorter-period energy is outside this view.</div>`;
+    return `<svg class="spectrum-icon spectrum-${m.state}" viewBox="0 0 78 49" role="img" aria-label="${cleanText('Normalized relative band energy, 10–30 seconds. '+description)}">${curves}${gaps}<path d="M1 ${baseline}H77" stroke="#cbd6c3" stroke-width=".6"/>${peaks}<text x="2" y="46" text-anchor="start">10s</text><text x="76" y="46" text-anchor="end">30s</text></svg>`;
   };
   function windColor(ms){
    if(ms===null)return '#f5f7f4';const kt=ms*1.94384449;
@@ -724,7 +755,6 @@
   }
   function render() {
     if (!data) return;
-    el('tooltip').style.display='none';
     el('timeline').hidden=false; el('empty').hidden=true;
     const p=data.requested_point || {};
     const coord = Number.isFinite(Number(p.latitude)) && Number.isFinite(Number(p.longitude))
@@ -765,7 +795,7 @@
       const wx=weatherFromRow(r,light==='night');
       const cls=['col',light==='night'?'night':light==='twilight'?'twilight':'',newDay?'new-day':'',i===records.length-1?'end-of-series':''].join(' ');
       const solarCaption = newDay ? `<small class="solar-day">Dawn ${solarText(solarToday,'dawn')} · Dusk ${solarText(solarToday,'dusk')}</small>` : ''; 
-      return `<div class="${cls}" data-solar="${light}" tabindex="0" data-index="${i}" aria-label="Forecast ${t.long}">
+      return `<div class="${cls}" data-solar="${light}" role="group" aria-label="Forecast ${t.long}">
         <div class="day">${newDay?`<span>${t.day}</span>`:''}${solarCaption}</div>
         <div class="surf-conditions ${conditionClass(r)}" style="--size-accent:${color}"><span class="surf-size">${cleanText(r.size)}</span><span class="surf-quality">${cleanText(displayQuality)}</span></div>
         <div class="bars">${bar}</div>
@@ -777,9 +807,9 @@
         <div class="arrow-cell">${arrow(r.waveFrom,'wave')}</div>
         <div class="number wind-speed" style="background:${windColor(r.wind)}">${windSpeed}</div>
         <div class="arrow-cell">${arrow(r.windFrom,'wind')}</div>
-        <div class="weather-cell ${r.cloud===null&&r.rain===null?'empty-weather':''}" title="${cleanText(wx.text)}"><span class="weather-icon">${wx.icon}</span><span class="weather-detail ${wx.rain?'rain':''}">${wx.text}</span></div>
+        <div class="weather-cell ${r.cloud===null&&r.rain===null?'empty-weather':''}" aria-label="${cleanText(wx.text)}"><span class="weather-icon">${wx.icon}</span><span class="weather-detail ${wx.rain?'rain':''}">${wx.text}</span></div>
         <div class="air-temp advanced-row">${r.airTemp===null?'–':pretty(r.airTemp,1)+'°'}</div>
-        <div class="water-temp advanced-row" title="Sea-surface skin temperature (SST proxy), only at confirmed sea grid points">${r.waterTemp===null?'–':pretty(r.waterTemp,1)+'°'}</div>
+        <div class="water-temp advanced-row" aria-label="Sea-surface skin temperature (SST proxy), only at confirmed sea grid points">${r.waterTemp===null?'–':pretty(r.waterTemp,1)+'°'}</div>
         <div class="tide-slot"></div>
         <div class="time"><span>${t.time}</span><small>${r.lead === null ? '' : '+'+r.lead+'h'}</small></div>
       </div>`;
@@ -788,46 +818,7 @@
     renderTideChart();
     renderNowMarker();
   }
-  const tooltipHTML = (r) => {
-    const t=dateParts(r.date), unit=windUnitName();
-    const level=tideAt(r.date.getTime());
-    return `<strong>${t.long} ${timezone==='utc'?'UTC':'(local)'}</strong>
-      <div class="item"><span>Wave Height at the beach (estimate)</span><span>${pretty(r.breakHs,2)} m</span></div>
-      <div class="item"><span>Offshore significant Hs</span><span>${pretty(r.hs,2)} m</span></div>
-      <div class="item"><span>Peak Wave Period</span><span>${pretty(r.tp,1)} s</span></div>
-      <div class="item"><span>Wave energy proxy (offshore)</span><span>${r.energy===null?'–':Math.round(r.energy).toLocaleString('en-GB')+' kJ/m'}</span></div>
-      <div class="item"><span>Wave direction (from)</span><span>${pretty(r.waveFrom,0)}°</span></div>
-      <div class="item"><span>Surfing Conditions</span><span>${cleanText(r.size)} · ${cleanText(displayedSurfQuality(r))}</span></div>
-      <div class="item"><span>Wind quality</span><span>${cleanText(deriveWindQuality(r.wind, r.windFrom))}</span></div>
-      <div class="item"><span>10 m wind speed</span><span>${pretty(r.wind===null?null:r.wind*unitFactor(),1)} ${unit}</span></div>
-      <div class="item"><span>Wind direction (from)</span><span>${pretty(r.windFrom,0)}°</span></div>
-      <div class="item"><span>Cloud cover</span><span>${r.cloud===null?'–':pretty(r.cloud,0)+'%'}</span></div>
-      <div class="item"><span>Rain intensity</span><span>${r.rain===null?'–':pretty(r.rain,2)+' mm/h'}</span></div>
-      <div class="item"><span>Air temperature at 2 m</span><span>${r.airTemp===null?'–':pretty(r.airTemp,1)+' °C'}</span></div>
-      <div class="item"><span>Water temp (skin proxy)</span><span>${r.waterTemp===null?'–':pretty(r.waterTemp,1)+' °C'}</span></div>
-      <div class="item"><span>Rain this interval</span><span>${r.rainAmount===null?'–':pretty(r.rainAmount,1)+' mm'}</span></div>
-      ${spectrumDetails(r)}
-      <div class="item"><span>TPXO tide level</span><span>${level===null?'–':pretty(level,2)+' m'}</span></div>
-      ${tideData ? tideData.extrema.filter(e=>Math.abs(e.time-r.date.getTime())<2*3600000).map(e=>`<div class="item"><span>${e.type==='high'?'High tide':'Low tide'}</span><span>${dateParts(new Date(e.time)).time} · ${pretty(e.level,2)} m</span></div>`).join('') : ''}`;
-  };
-  function placeTip(x,y) {
-    const tip=el('tooltip'), rect=tip.getBoundingClientRect();
-    tip.style.left=`${Math.max(8,Math.min(x+14,window.innerWidth-rect.width-10))}px`;
-    tip.style.top=`${Math.max(8,Math.min(y+14,window.innerHeight-rect.height-10))}px`;
-  }
-  function showTip(cell,x,y) {
-    const index=Number(cell.dataset.index), r=records[index]; if(!r) return;
-    el('tooltip').innerHTML=tooltipHTML(r); el('tooltip').style.display='block'; placeTip(x,y);
-  }
-  const within = (container,node) => !!node && container.contains(node);
-  el('series').addEventListener('pointermove',e=>{const cell=e.target.closest('.col'); if(cell) showTip(cell,e.clientX,e.clientY);});
-  el('series').addEventListener('pointerleave',e=>{if(e.pointerType!=='touch' && !within(el('tooltip'),e.relatedTarget))el('tooltip').style.display='none';});
-  el('tooltip').addEventListener('pointerleave',e=>{if(e.pointerType!=='touch' && !within(el('series'),e.relatedTarget))el('tooltip').style.display='none';});
-  el('series').addEventListener('focusin',e=>{const cell=e.target.closest('.col'); if(cell) {const r=cell.getBoundingClientRect(); showTip(cell,r.left+18,r.top+20);}});
-  el('series').addEventListener('focusout',e=>{if(!within(el('tooltip'),e.relatedTarget))el('tooltip').style.display='none';});
-  el('series').addEventListener('click',e=>{const cell=e.target.closest('.col'); if(cell) showTip(cell,e.clientX||50,e.clientY||50);});
-  document.addEventListener('pointerdown',e=>{if(!within(el('series'),e.target) && !within(el('tooltip'),e.target))el('tooltip').style.display='none';});
-  el('scroller').addEventListener('scroll',()=>{el('tooltip').style.display='none';positionNowCap();});
+  el('scroller').addEventListener('scroll',positionNowCap);
   async function loadFile(file) {
     if(!file) return;
     try { const obj=JSON.parse((await file.text()).replace(/^\uFEFF/,'')); const rows=parse(obj); data=obj; records=rows; tideData=tideOverride || normalizeTide(obj.tide); note(''); render(); el('scroller').scrollLeft=0;positionNowCap(); }
@@ -861,16 +852,14 @@
     const expanded=el('timeline').classList.toggle('show-details');
     el('detailsBtn').setAttribute('aria-pressed',String(expanded));
     el('detailsBtn').textContent=expanded?'Less details':'More details';
-    el('tooltip').style.display='none';
     renderTideChart();
     renderNowMarker();
   });
   let resizeFrame=0;
   window.addEventListener('resize',()=>{
     cancelAnimationFrame(resizeFrame);
-    resizeFrame=requestAnimationFrame(()=>{renderTideChart();renderNowMarker();el('tooltip').style.display='none';});
+    resizeFrame=requestAnimationFrame(()=>{renderTideChart();renderNowMarker();});
   });
-  document.addEventListener('keydown',e=>{if(e.key==='Escape')el('tooltip').style.display='none';});
   document.addEventListener('visibilitychange',()=>{if(!document.hidden)renderNowMarker();});
   // The marker follows the actual clock; timezone controls only change its label.
   setInterval(renderNowMarker,60000);
