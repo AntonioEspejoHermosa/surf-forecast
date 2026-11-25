@@ -3,334 +3,163 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="color-scheme" content="light">
+<meta name="color-scheme" content="light dark">
 <title>Skopet · Surf forecast</title>
-<style>
-:root{--ink:#223c52;--muted:#526a7c;--line:#dae4e9;--paper:#fffefa;--sea:#008e99;--coral:#e16a50;--navy:#203d69;--night:#e6edf6;--dusk:#f9eee6;--cell:94px;--profile-height:136px;--rows:48px 50px 148px 32px 32px 38px 0px 66px 38px 66px 100px 166px}
-*{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
-[hidden]{display:none!important}
-body{margin:0;background:#edf2f6;color:var(--ink);font:13px/1.4 'Segoe UI',Arial,sans-serif;-webkit-font-smoothing:antialiased}
-button,summary{-webkit-tap-highlight-color:transparent}
-button{font:inherit;display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:36px;padding:6px 10px;border:1px solid var(--line);border-radius:7px;background:var(--paper);color:var(--ink);cursor:pointer;white-space:nowrap;font-size:11px}
-button:hover{background:#edf4f8}
-button:focus-visible,summary:focus-visible,.scroll:focus-visible{outline:2px solid #3986cf;outline-offset:2px}
-button svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
-.shell{max-width:1456px;margin:18px auto;padding-left:max(16px,env(safe-area-inset-left));padding-right:max(16px,env(safe-area-inset-right))}
-.header{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:15px 18px;background:var(--navy);color:#fff8ee;border:1px solid var(--navy);border-bottom:4px solid var(--coral);border-radius:17px 17px 0 0}
-.identity{display:flex;align-items:center;gap:11px;min-width:0}
-.brand-mark{flex:none;width:36px;height:36px;color:#ffb59e}
-.eyebrow{color:#cbdde9;font-size:9px;letter-spacing:1.4px}
-h1{margin:0;font-size:23px;font-weight:600;letter-spacing:-.6px;line-height:1.2}
-.subtitle{margin-top:4px;color:#cbdde9;font-size:11px}
-.header-actions{display:flex;align-items:center;gap:7px}
-.header-actions button{border-color:#647b9b;color:#fff8ee;background:#2b4b79}
-.header-actions button:hover{background:#365a8c}
-.header-actions .primary{background:#f7b39f;border-color:#f7b39f;color:#203d69;font-weight:600}
-.header-actions .primary:hover{background:#ffc6b6}
-.header-actions .quiet{background:transparent;border-color:transparent}
-.card{overflow:hidden;border:1px solid var(--line);border-top:0;border-radius:0 0 17px 17px;background:var(--paper);box-shadow:0 12px 32px #244c6610}
-.toolbar{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:9px 14px;min-height:48px}
-.forecast-range{font-size:12px;font-weight:600}
-.toolbar-controls{display:flex;align-items:center;gap:7px;flex-wrap:wrap}
-.seg{display:flex;gap:2px;padding:2px;border-radius:7px;background:#edf3f6}
-.seg button{min-height:30px;padding:3px 9px;border:0;background:transparent;color:var(--muted)}
-.seg button.selected{background:var(--paper);color:var(--navy);box-shadow:0 1px 3px #244c6614;font-weight:600}
-.details-btn{min-height:34px;padding:5px 9px}
-.details-btn[aria-pressed=true]{background:#e6f1f7;border-color:#9fbed3}
-.navigation{display:flex;gap:3px;border-left:1px solid var(--line);padding-left:7px}
-.icon-btn{width:32px;min-height:34px;padding:0;border:0;background:transparent;font-size:22px}
-.context{display:flex;align-items:center;flex-wrap:wrap;gap:5px 12px;min-height:35px;padding:0 14px 17px;color:var(--muted);font-size:10px}
-.chip{display:inline-flex;align-items:center;gap:6px}
-.chip+.chip:before{content:'';width:3px;height:3px;border-radius:50%;background:#8ba1b2}
-.spectral-status{color:#8e6025}
-#error{display:none;margin:0 14px 12px;padding:10px;border-radius:7px;background:#fff0e8;color:#924131;font-size:12px}
-.empty{margin:0 14px 14px;padding:45px 18px;border:1px dashed #adc4d2;border-radius:9px;background:#f1f7fa;text-align:center;color:var(--muted)}
-.empty strong{display:block;margin-bottom:6px;font-size:17px;font-weight:600;color:var(--ink)}
-.empty.drag{background:#e0f3f2;border-color:var(--sea)}
-.timeline{position:relative;display:flex;width:100%;border-top:1px solid var(--line)}
-.labels,.col{display:grid;grid-template-rows:var(--rows)}
-.labels{flex:0 0 112px;width:112px;background:var(--paper);border-right:1px solid var(--line);z-index:4}
-.labels>div,.col>div{position:relative;min-width:0;display:flex;align-items:center;justify-content:center;border-bottom:1px solid var(--line)}
-.labels>div{justify-content:flex-start;gap:5px;padding:0 10px;font-size:11px;color:var(--muted)}
-.labels small{font-size:10px;color:var(--muted)}
-.labels .main-label{font-weight:500}
-.labels .day-label,.labels .weather-label{flex-direction:column;align-items:flex-start;justify-content:center;gap:2px}
-.scroll{min-width:0;flex:1;width:100%;overflow-x:auto;overflow-y:hidden;scrollbar-width:thin;scrollbar-color:#a8bdcb #edf3f6;scroll-behavior:smooth;touch-action:pan-x pan-y pinch-zoom;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch;-webkit-tap-highlight-color:transparent}
-.scroll::-webkit-scrollbar{height:7px}
-.scroll::-webkit-scrollbar-track{background:#edf3f6}
-.scroll::-webkit-scrollbar-thumb{border-radius:8px;background:#a8bdcb}
-.series{position:relative;display:flex;width:max-content;min-width:100%}
-.col{flex:0 0 var(--cell);width:var(--cell);border-right:1px solid #e9eef1}
-.col.night>div{background-color:var(--night)}
-.col.twilight>div{background-color:var(--dusk)}
-.col.new-day{border-left:1px solid #9fb4c5}
-.col:first-child{border-left:0}
-.day{flex-direction:column;gap:3px;padding:4px;font-variant-numeric:tabular-nums}
-.column-day{min-height:14px;color:var(--muted);font-size:10px;font-weight:500;white-space:nowrap}
-.column-time{font-size:12px;font-weight:600}
-.surf-conditions{padding:4px;line-height:1.25;text-align:center;font-size:11px;font-weight:600}
-.col .surf-conditions.glassy,.col .surf-conditions.offshore{background:#dff2e7}
-.col .surf-conditions.texture,.col .surf-conditions.choppy{background:#fff0c9}
-.col .surf-conditions.messy,.col .surf-conditions.blown{background:#ffe0d5}
-.col .surf-conditions.flat,.col .surf-conditions.unknown{background:#eef1f4}
-.night .surf-conditions:after,.night .heat-cell:after{content:'';position:absolute;inset:0;background:#19345112;pointer-events:none}
-.surf-quality{position:relative;max-width:100%}
-.spectrum-cell{padding:4px 3px;flex-direction:column;gap:3px}
-.spectrum-icon{display:block;width:100%;height:136px;overflow:visible}
-.spectrum-icon text{fill:var(--muted);font:11px 'Segoe UI',Arial,sans-serif}
-.spectrum-area{fill:var(--sea);fill-opacity:.2}
-.spectrum-curve{stroke:var(--sea);stroke-width:1.8;stroke-linejoin:round;stroke-linecap:round;fill:none}
-.spectrum-grid{stroke:var(--line);stroke-width:.7}
-.spectrum-gap{fill:none;stroke:#8ea5b4;stroke-width:.8;stroke-dasharray:2 3}
-.spectrum-peak{fill:var(--sea)}
-.spectrum-empty{padding:4px;color:var(--muted);font-size:11px;text-align:center}
-.spectrum-partial{position:absolute;top:4px;left:4px;font-size:10px;color:#8e6025}
-.labels .wave-axis{position:relative;align-items:flex-start;padding-top:20px;white-space:normal}
-.wave-axis>span:first-child{max-width:72px;font-weight:500;line-height:1.4}
-.wave-axis small{display:block;margin-top:4px;font-weight:400}
-.axis-label{position:absolute;right:5px;font-size:10px;color:var(--muted);font-variant-numeric:tabular-nums;line-height:1;transform:translateY(-50%)}
-.number{font-size:13px;font-weight:500;font-variant-numeric:tabular-nums}
-.number.wave-number,.number.offshore-wave{font-size:12px;font-weight:600}
-.number.energy{color:var(--muted);font-size:11px}
-.col>div.heat-cell{background:var(--heat-bg,var(--paper));color:var(--heat-ink,var(--ink));font-weight:600}
-.arrow-cell{flex-direction:row;flex-wrap:wrap;gap:3px;padding:4px 3px}
-svg.arrow{width:34px;height:34px;flex-shrink:0;overflow:visible}
-.arrow path{stroke:currentColor;stroke-width:3;stroke-linecap:round;fill:none}
-.arrow polygon{fill:currentColor}
-.wind-arr{color:var(--coral)}
-.wave-arr{color:#3264bb}
-.bearing{font-size:11px;line-height:1.35;color:var(--muted);font-variant-numeric:tabular-nums;text-align:center}
-.weather-cell{flex-direction:column;gap:3px;padding:6px 2px}
-.weather-icon{display:block;font-size:25px;line-height:1.3;margin-bottom:3px}
-.weather-temp{color:var(--ink);font-size:11px;font-variant-numeric:tabular-nums;white-space:nowrap}
-.weather-temp.water{color:var(--muted)}
-.tide-slot{background:var(--paper)}
-.tide-layer{position:absolute;left:0;z-index:2;pointer-events:none;overflow:hidden}
-.tide-curve{fill:none;stroke:var(--sea);stroke-width:2.2}
-.tide-area{fill:var(--sea);opacity:.12}
-.tide-guide{stroke:var(--line);stroke-width:.8}
-.tide-dot{fill:var(--sea)}
-.tide-label{fill:var(--ink);font:600 11px 'Segoe UI',Arial,sans-serif;text-anchor:middle;paint-order:stroke;stroke:var(--paper);stroke-width:2px;stroke-linejoin:round}
-.tide-label.level{fill:var(--muted);font-weight:400}
-.tide-placeholder{display:flex;align-items:center;justify-content:flex-start;padding-left:15px;color:var(--muted);font-size:12px}
-.labels .tide-axis{align-items:flex-start;padding-top:14px}
-.tide-axis>span:first-child{max-width:70px}
-.tide-axis small{display:block;margin-top:7px}
-.now-marker{position:absolute;top:0;bottom:0;z-index:3;width:1px;background:#286d80;opacity:.4;pointer-events:none}
-.now-cap{position:absolute;top:-23px;transform:translateX(-50%);z-index:8;padding:2px 7px;border-radius:4px;background:var(--navy);color:#fff8ee;font-size:9px;font-weight:600;white-space:nowrap;pointer-events:none}
-.now-cap:after{content:'';position:absolute;bottom:-4px;left:var(--now-pointer-left,calc(50% - 4px));border-left:4px solid transparent;border-right:4px solid transparent;border-top:4px solid var(--navy)}
-.advanced-row{display:none!important}
-.timeline.show-details{--rows:48px 50px 148px 32px 32px 38px 30px 66px 38px 66px 100px 166px}
-.timeline.show-details .advanced-row{display:flex!important}
-.panel-foot{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:7px 14px;padding:11px 14px;color:var(--muted);font-size:11px}
-.quality-legend{display:flex;align-items:center;flex-wrap:wrap;gap:7px 16px}
-.quality-legend span{display:flex;align-items:center;gap:6px}
-.profile-key{display:inline-block;width:15px;height:9px;border-top:2px solid var(--sea);background:#cce8e9}
-.colour-scales{display:grid;grid-template-columns:1fr 1fr;gap:14px 20px;padding:12px 14px;border-top:1px solid var(--line)}
-.colour-scale{min-width:0}
-.scale-title{margin-bottom:6px;font-size:11px;color:var(--muted)}
-.scale-gradient{height:8px;border-radius:3px}
-.wind-gradient{background:linear-gradient(90deg,#fff,#b6dfff 20%,#84d499 40%,#f5df68 60%,#ee984b 80%,#8e1425)}
-.period-gradient{background:linear-gradient(90deg,#fff,#fff0bd 20%,#ffd16d 40%,#f8a064 60%,#e45c4c 80%,#ab2735)}
-.scale-ticks{display:flex;justify-content:space-between;gap:4px;margin-top:4px;font-size:11px;color:var(--muted);font-variant-numeric:tabular-nums}
-.forecast-notes{border-top:1px solid var(--line);padding:0 14px;color:var(--muted);font-size:11px}
-.forecast-notes summary{display:inline-flex;align-items:center;gap:6px;min-height:38px;padding:8px 0;cursor:pointer;list-style:none}
-.forecast-notes summary::-webkit-details-marker{display:none}
-.forecast-notes summary:before{content:'+';color:var(--coral);font-size:14px}
-.forecast-notes[open] summary:before{content:'−'}
-.forecast-notes p{max-width:1100px;margin:0 0 12px;line-height:1.7}
-.page-foot{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:6px 14px;margin:10px 2px;color:var(--muted);font-size:10px}
-@media(pointer:coarse){.header-actions button{min-height:40px}.seg button,.details-btn,.icon-btn{min-height:36px}.icon-btn{width:36px}.forecast-notes summary{min-height:44px}}
-@media(max-width:900px){.toolbar{flex-wrap:wrap}.toolbar-controls{margin-left:auto}}
-@media(max-width:620px){:root{--cell:86px}.shell{margin:10px auto;padding-left:max(8px,env(safe-area-inset-left));padding-right:max(8px,env(safe-area-inset-right))}.header{padding:12px 10px;gap:8px}.identity{gap:6px}.brand-mark{width:28px;height:28px}.eyebrow{font-size:8px;letter-spacing:1px}h1{font-size:20px}.subtitle{font-size:10px}.header-actions{flex-direction:column;align-items:flex-end;gap:2px}.header-actions button{padding:5px 8px;font-size:10px}.header-actions .quiet{min-height:30px}.toolbar{padding:9px 10px}.forecast-range{width:100%;font-size:11px}.toolbar-controls{width:100%;margin:0;justify-content:space-between;gap:4px}.seg button{padding:3px 7px}.details-btn{padding:4px 7px;font-size:10px}.navigation{padding-left:4px;gap:2px}.context{padding-left:10px;padding-right:10px;font-size:10px}.labels{flex-basis:100px;width:100px}.labels>div{padding-left:8px;font-size:11px}.wave-axis>span:first-child{max-width:64px}.colour-scales{grid-template-columns:1fr}.panel-foot{align-items:flex-start}.explore-hint{font-size:10px}.arrow-cell{gap:1px}}
-@media(max-width:360px){.brand-mark{display:none}.toolbar-controls{gap:2px}.seg button{padding:3px 6px}.icon-btn{width:29px}.details-btn{font-size:10px}}
-@media(orientation:landscape) and (max-height:600px) and (max-width:1100px){:root{--cell:86px;--profile-height:124px;--rows:40px 44px 136px 28px 28px 34px 0px 58px 34px 58px 94px 166px}.timeline.show-details{--rows:40px 44px 136px 28px 28px 34px 28px 58px 34px 58px 94px 166px}.shell{margin:6px auto;padding-left:max(8px,env(safe-area-inset-left));padding-right:max(8px,env(safe-area-inset-right))}.header{padding:8px 10px;gap:12px}.identity{gap:8px}.brand-mark{display:block;width:28px;height:28px}.eyebrow{display:none}h1{font-size:19px}.subtitle{margin-top:2px;font-size:10px}.header-actions{flex-direction:row;gap:6px;align-items:center}.header-actions button,.header-actions .quiet{min-height:36px;font-size:10px}.toolbar{min-height:44px;padding:4px 9px;gap:8px;flex-wrap:nowrap}.forecast-range{flex:1;min-width:0;width:auto;font-size:10px}.toolbar-controls{width:auto;margin:0;flex-wrap:nowrap;gap:5px}.seg button{min-height:32px;padding:3px 8px;font-size:10px}.details-btn{min-height:36px;font-size:10px}.icon-btn{width:32px;min-height:36px}.context{min-height:31px;padding:0 9px 16px;font-size:10px}.labels{flex-basis:106px;width:106px}.day{gap:1px}.spectrum-icon{height:124px}.weather-cell{gap:2px}.weather-icon{font-size:23px}.colour-scales{grid-template-columns:1fr 1fr}}
-@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important}}
-
-:is(.labels,.col)>div:nth-child(1){grid-row:1}
-:is(.labels,.col)>div:nth-child(2){grid-row:2}
-:is(.labels,.col)>div:nth-child(3){grid-row:3}
-:is(.labels,.col)>div:nth-child(4){grid-row:4}
-:is(.labels,.col)>div:nth-child(5){grid-row:5}
-:is(.labels,.col)>div:nth-child(6){grid-row:6}
-:is(.labels,.col)>div:nth-child(7){grid-row:7}
-:is(.labels,.col)>div:nth-child(8){grid-row:8}
-:is(.labels,.col)>div:nth-child(9){grid-row:9}
-:is(.labels,.col)>div:nth-child(10){grid-row:10}
-:is(.labels,.col)>div:nth-child(11){grid-row:11}
-:is(.labels,.col)>div:nth-child(12){grid-row:12}
-</style>
 </head>
 <body>
-<main class="shell">
-  <header class="header">
-    <div class="identity"><svg class="brand-mark" aria-hidden="true" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M3 16c4 0 5-8 10-8 4 0 6 3 5 6-1-2-3-2-4-1-3 2 0 6 5 6h6M3 21h22"/></svg><div><div class="eyebrow">SKOPET · ECMWF</div><h1>Surf forecast</h1><div class="subtitle" id="subtitle">Your coast. One clear view.</div></div></div>
-    <div class="header-actions"><input id="file" type="file" accept=".json,application/json" hidden><input id="tideFile" type="file" accept=".json,application/json" hidden><button id="load" class="primary"><svg aria-hidden="true" viewBox="0 0 20 20"><path d="M10 13V3m-4 4 4-4 4 4M4 12v4a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1v-4"/></svg>Open forecast</button><button id="loadTide" class="quiet">Add tide file</button></div>
-  </header>
-  <section class="card" aria-label="Surf forecast panel">
-    <div class="toolbar"><div class="forecast-range" id="summaryRange">The coast, at a glance</div><div class="toolbar-controls"><div class="seg" role="group" aria-label="Time zone"><button id="localBtn" class="selected" aria-pressed="true">Local</button><button id="utcBtn" aria-pressed="false">UTC</button></div><div class="seg" role="group" aria-label="Wind speed units"><button id="ktBtn" class="selected" aria-pressed="true">knots</button><button id="msBtn" aria-pressed="false">m/s</button></div><button id="detailsBtn" class="details-btn" aria-pressed="false" aria-controls="timeline">More details</button><div class="navigation"><button id="left" class="icon-btn" aria-label="Earlier forecast">‹</button><button id="right" class="icon-btn" aria-label="Later forecast">›</button></div></div></div>
-    <div class="context" id="context">Local time · Waiting for your forecast</div>
-    <div id="error" role="alert"></div>
-    <div class="empty" id="empty"><strong>Open a forecast to get started</strong>Drop your forecast JSON here, or choose “Open forecast”.</div>
-    <div id="timeline" class="timeline" hidden>
-      <div class="labels" aria-hidden="true">
-        <div class="day-label">Local time<small id="forecastStatus">3–6 hourly</small></div>
-        <div class="main-label">Conditions</div>
-        <div class="main-label wave-axis"><span>Beach surf<br>spectrum<small>metres</small></span><span class="axis-label" id="waveMax"></span><span class="axis-label" id="waveMid"></span><span class="axis-label" id="waveZero">0</span></div>
-        <div class="main-label">Beach surf<small>m</small></div>
-        <div>Offshore Hs<small>m</small></div>
-        <div>Period<small>s</small></div>
-        <div class="advanced-row">Wave energy<small>kJ/m</small></div>
-        <div>Swell from</div>
-        <div class="main-label" id="spdLabel">Wind (kn)</div>
-        <div>Wind from</div>
-        <div class="weather-label">Weather<small>Air / Water · °C</small></div>
-        <div class="main-label tide-axis"><span>Tide · m<small>Fixed scale</small></span><span class="axis-label" style="top:20px">+2</span><span class="axis-label" style="top:83px">0</span><span class="axis-label" style="top:146px">−2</span></div>
-      </div>
-      <div class="scroll" id="scroller" tabindex="0" role="region" aria-label="Forecast timeline. Swipe sideways for later forecasts."><div class="series" id="series"></div></div>
-    </div>
-    <div class="panel-foot"><div class="quality-legend"><span><i class="profile-key"></i>Spectral profile · peak = estimated beach Hs</span><span>Water ≈ sea-surface temperature</span></div><span class="explore-hint">Swipe sideways for later forecasts</span></div>
-    <div class="colour-scales"><div class="colour-scale"><div class="scale-title" id="windScaleTitle">Wind speed · knots</div><div class="scale-gradient wind-gradient"></div><div class="scale-ticks" id="windScaleTicks"><span>0</span><span>5</span><span>10</span><span>15</span><span>20</span><span>25+</span></div></div><div class="colour-scale"><div class="scale-title">Peak wave period · seconds</div><div class="scale-gradient period-gradient"></div><div class="scale-ticks"><span>≤8</span><span>10</span><span>12</span><span>14</span><span>16</span><span>18+</span></div></div></div>
-    <details class="forecast-notes"><summary>About this forecast</summary><p>Beach surf is a preliminary breaking-height estimate. The profiles show the shape of offshore energy across six integrated 10–30 s period bands, with the strongest available band scaled to the estimated beach Hs. All profiles share one height axis. This display scaling is not a calculation of the nearshore spectrum. Missing bands remain gaps; partial and zero spectra are identified. Offshore Hs is shown separately. Quality follows beach-relative wind conditions. Wind colours use fixed thresholds in knots, including when speeds are displayed in m/s. Wave energy is an offshore per-wave proxy in kJ/m. Weather icons summarize cloud and rain. Water temperature is a sea-surface skin proxy. TPXO9 tide heights are model-relative, use no chart datum and exclude storm surge. Tides use a fixed −2 to +2 m axis; event labels show the actual supplied heights.</p></details>
-  </section>
-  <div class="page-foot"><span>ECMWF IFS · TPXO9 tides · 10–30 s spectral profiles</span><span>Bearings FROM · arrows follow flow</span></div>
-</main>
+<style>
+  #sunset-daily-phone { display:flex; justify-content:center; color-scheme:light dark; }
+  #sunset-daily-phone .pv-app { --pv-paper:light-dark(#fffefa,#152b3c);--pv-ink:light-dark(#223c52,#e6f0fa);--pv-muted:light-dark(#536b7e,#b5cad8);--pv-line:light-dark(#dce5ec,#365064);--pv-night:light-dark(#e6edf6,#0e2035);--pv-dusk:light-dark(#f9eee6,#302c37);--pv-coral:light-dark(#e16a50,#ff967d);--pv-sea:light-dark(#008e99,#55d1d8);--pv-navy:light-dark(#203d69,#122845);--pv-label:84px; width:100%;max-width:420px;min-width:0;overflow:hidden;border:1px solid var(--pv-line);border-radius:17px;background:var(--pv-paper);color:var(--pv-ink);font:13px/1.35 'Segoe UI',Arial,sans-serif; }
+  #sunset-daily-phone .pv-header { display:flex;align-items:center;justify-content:space-between;gap:8px;padding:8px 10px;background:var(--pv-navy);color:light-dark(#fff8ee,#f5f6fc);border-bottom:3px solid var(--pv-coral); }
+  #sunset-daily-phone .pv-brand h2 { margin:0;font-size:21px;font-weight:600;letter-spacing:-.5px; }
+  #sunset-daily-phone .pv-brand small { display:block;font-size:11px;color:light-dark(#cbdde9,#c1d6e7);margin-top:1px; }
+  #sunset-daily-phone .pv-nav { display:flex;gap:2px; }
+  #sunset-daily-phone .pv-nav button { display:flex;align-items:center;justify-content:center;width:40px;height:40px;padding:0;border:0;border-radius:7px;background:transparent;color:inherit;font:26px 'Segoe UI',Arial,sans-serif; }
+  #sunset-daily-phone .pv-nav button:disabled { opacity:.3; }
+  #sunset-daily-phone .pv-pages { display:flex;width:100%;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;scrollbar-width:none;touch-action:pan-x pan-y pinch-zoom;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch; }
+  #sunset-daily-phone .pv-pages::-webkit-scrollbar { display:none; }
+  #sunset-daily-phone .pv-day { flex:0 0 100%;min-width:0;scroll-snap-align:start;scroll-snap-stop:always; }
+  #sunset-daily-phone .pv-date { display:flex;align-items:center;justify-content:space-between;gap:8px;padding:10px;border-bottom:1px solid var(--pv-line);min-height:43px; }
+  #sunset-daily-phone .pv-date strong { font-size:15px;font-weight:600; }
+  #sunset-daily-phone .pv-date small { color:var(--pv-muted);font-size:11px;white-space:nowrap; }
+  #sunset-daily-phone .pv-table { position:relative;isolation:isolate;display:grid;grid-template-columns:var(--pv-label) repeat(var(--pv-columns,8),minmax(0,1fr)); }
+  #sunset-daily-phone .pv-cell { position:relative;min-width:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:1px;padding:3px 1px;border-right:1px solid color-mix(in srgb,var(--pv-line) 50%,transparent);border-bottom:1px solid var(--pv-line);text-align:center; }
+  #sunset-daily-phone .pv-label { align-items:flex-start;text-align:left;padding-left:8px;padding-right:4px;font-size:12px;color:var(--pv-muted); }
+  #sunset-daily-phone .pv-label small { font-size:11px; }
+  #sunset-daily-phone .pv-time { height:31px;font-size:14px;font-weight:600;font-variant-numeric:tabular-nums; }
+  #sunset-daily-phone .pv-quality { height:33px;font-size:11px;font-weight:500;line-height:1.2; }
+  #sunset-daily-phone .pv-quality.good { background:light-dark(#dff2e7,#1d4439); }
+  #sunset-daily-phone .pv-quality.fair { background:light-dark(#fff0c9,#504224); }
+  #sunset-daily-phone .pv-quality.rough { background:light-dark(#ffe0d5,#583b34); }
+  #sunset-daily-phone .pv-spectrum { height:72px;padding:0 1px; }
+  #sunset-daily-phone .pv-spectrum svg { display:block;width:100%;height:68px;overflow:visible; }
+  #sunset-daily-phone .pv-spectrum-label { align-items:flex-start;justify-content:flex-start;padding-top:12px; }
+  #sunset-daily-phone .pv-spectrum-label .pv-axis { position:absolute;right:3px;transform:translateY(-50%);font-size:11px; }
+  #sunset-daily-phone .pv-axis.max { top:38px; }
+  #sunset-daily-phone .pv-axis.zero { top:74px; }
+  #sunset-daily-phone .pv-spectrum-fill { fill:var(--pv-sea);fill-opacity:.35; }
+  #sunset-daily-phone .pv-spectrum-line { fill:none;stroke:var(--pv-sea);stroke-width:1.6;stroke-linejoin:round; }
+  #sunset-daily-phone .pv-spectrum-value { fill:var(--pv-ink);font:11px 'Segoe UI',Arial,sans-serif;text-anchor:middle; }
+  #sunset-daily-phone .pv-spectrum-tick { fill:var(--pv-muted);font:11px 'Segoe UI',Arial,sans-serif; }
+  #sunset-daily-phone .pv-spectrum-leader { stroke:var(--pv-line);stroke-width:.8; }
+  #sunset-daily-phone .pv-spectrum-grid { stroke:var(--pv-line);stroke-width:.7; }
+  #sunset-daily-phone .pv-numeric { height:31px;font-size:14px;font-weight:500;font-variant-numeric:tabular-nums; }
+  #sunset-daily-phone .pv-cell.pv-heat { background:var(--heat);color:var(--heat-ink); }
+  #sunset-daily-phone .pv-direction { height:43px;flex-direction:row;gap:2px; }
+  #sunset-daily-phone .pv-arrow { width:25px;height:25px;flex-shrink:0; }
+  #sunset-daily-phone .pv-arrow path { stroke:currentColor;stroke-width:3;stroke-linecap:round;fill:none; }
+  #sunset-daily-phone .pv-arrow polygon { fill:currentColor; }
+  #sunset-daily-phone .pv-direction.wave { color:light-dark(#3264bb,#9bbdff); }
+  #sunset-daily-phone .pv-direction.wind { color:var(--pv-coral); }
+  #sunset-daily-phone .pv-bearing { font-size:11px;color:var(--pv-muted);font-variant-numeric:tabular-nums; }
+  #sunset-daily-phone .pv-weather { height:72px;gap:1px; }
+  #sunset-daily-phone .pv-weather-icon { font-size:21px;line-height:1.2; }
+  #sunset-daily-phone .pv-temperature { font-size:12px;color:var(--pv-ink);font-variant-numeric:tabular-nums; }
+  #sunset-daily-phone .pv-temperature.water { color:var(--pv-muted); }
+  #sunset-daily-phone .pv-tide-label { position:relative;align-items:flex-start;justify-content:flex-start;padding-top:13px;height:132px; }
+  #sunset-daily-phone .pv-tide-label span[style] { position:absolute;right:4px;transform:translateY(-50%);font-size:11px; }
+  #sunset-daily-phone .pv-tide { grid-column:2 / -1;height:132px;min-width:0;border-bottom:1px solid var(--pv-line); }
+  #sunset-daily-phone .pv-tide svg { width:100%;height:132px;display:block; }
+  #sunset-daily-phone .pv-tide-line { fill:none;stroke:var(--pv-sea);stroke-width:1.8; }
+  #sunset-daily-phone .pv-tide-fill { fill:var(--pv-sea);fill-opacity:.12; }
+  #sunset-daily-phone .pv-tide-grid { stroke:var(--pv-line);stroke-width:.7; }
+  #sunset-daily-phone .pv-tide-event { fill:var(--pv-ink);font:500 11px 'Segoe UI',Arial,sans-serif;text-anchor:middle; }
+  #sunset-daily-phone .pv-tide-level { fill:var(--pv-muted);font:11px 'Segoe UI',Arial,sans-serif;text-anchor:middle; }
+  #sunset-daily-phone .pv-tide-hour { fill:var(--pv-muted);font:11px 'Segoe UI',Arial,sans-serif;text-anchor:middle; }
+  #sunset-daily-phone .pv-footer { display:flex;flex-direction:column;gap:3px;padding:7px 9px;color:var(--pv-muted);font-size:11px; }
+  #sunset-daily-phone .pv-footer-top { display:flex;align-items:center;justify-content:space-between;gap:8px; }
+  #sunset-daily-phone .pv-page-status { font-variant-numeric:tabular-nums; }
+  @media(max-width:350px) {
+    #sunset-daily-phone .pv-app { --pv-label:66px; }
+    #sunset-daily-phone .pv-label { padding-left:6px;font-size:11px; }
+    #sunset-daily-phone .pv-direction { gap:0; }
+    #sunset-daily-phone .pv-arrow { width:23px;height:23px; }
+    #sunset-daily-phone .pv-brand small { font-size:11px; }
+  }
+  @media(pointer:coarse) { #sunset-daily-phone .pv-nav button { width:44px;height:44px; } }
+  @media(prefers-reduced-motion:reduce) { #sunset-daily-phone .pv-pages { scroll-behavior:auto; } }
+  #sunset-daily-phone .pv-app { --pv-label:72px;--pv-shadow:light-dark(#1c3b62,#020c1a); }
+  #sunset-daily-phone .pv-label { font-size:11px;padding-left:6px; }
+  #sunset-daily-phone .pv-time { font-size:13px; }
+  #sunset-daily-phone .pv-direction { flex-direction:column;gap:0; }
+  #sunset-daily-phone .pv-arrow { width:22px;height:22px; }
+  #sunset-daily-phone .pv-bearing { line-height:1.1; }
+  #sunset-daily-phone .pv-weather-icon { font-size:20px; }
+  #sunset-daily-phone .pv-temperature { font-size:11px;white-space:nowrap; }
+  #sunset-daily-phone .pv-lighting { position:absolute;left:var(--pv-label);right:0;top:0;bottom:132px;z-index:2;pointer-events:none; }
+  #sunset-daily-phone .pv-lighting svg { display:block;width:100%;height:100%;pointer-events:none; }
+  #sunset-daily-phone .pv-spectrum-tick { display:none; }
+  @media(max-width:350px) {
+    #sunset-daily-phone .pv-app { --pv-label:64px; }
+    #sunset-daily-phone .pv-arrow { width:20px;height:20px; }
+  }
+
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}body{margin:0;background:#edf2f6}*{box-sizing:border-box}[hidden]{display:none!important}
+#sunset-daily-phone{padding:8px 0;align-items:flex-start;font-family:'Segoe UI',Arial,sans-serif}
+#sunset-daily-phone .pv-app{max-width:840px}
+#sunset-daily-phone .pv-brand{min-width:0}
+#sunset-daily-phone .pv-brand small{white-space:normal}
+#sunset-daily-phone .pv-header .pv-nav{flex-shrink:0}
+#sunset-daily-phone button,#sunset-daily-phone summary{cursor:pointer;-webkit-tap-highlight-color:transparent}
+#sunset-daily-phone button:focus-visible,#sunset-daily-phone summary:focus-visible,#sunset-daily-phone .pv-pages:focus-visible{outline:2px solid #3986cf;outline-offset:2px}
+#sunset-daily-phone .pv-date{display:flex;flex-direction:column;align-items:stretch;gap:4px;padding:8px 10px}
+#sunset-daily-phone .pv-date-line{display:flex;justify-content:space-between;align-items:center;gap:8px}
+#sunset-daily-phone .pv-solar{display:flex;align-items:center;justify-content:space-between;gap:8px;color:var(--pv-muted);font-size:12px}
+#sunset-daily-phone .pv-solar b{color:var(--pv-ink);font-weight:500;font-variant-numeric:tabular-nums}
+#sunset-daily-phone .pv-error{padding:10px;background:#fff0e8;color:#924131;font-size:12px}
+#sunset-daily-phone .pv-empty{padding:32px 12px;display:flex;flex-direction:column;align-items:center;gap:12px}
+#sunset-daily-phone .pv-empty button,#sunset-daily-phone .pv-option-controls button{min-height:34px;border:1px solid var(--pv-line);border-radius:6px;background:var(--pv-paper);color:var(--pv-ink);font:12px 'Segoe UI',Arial,sans-serif;padding:5px 9px}
+#sunset-daily-phone .pv-option-controls [aria-pressed=true]{background:#e6f1f7;color:#203d69}
+#sunset-daily-phone .pv-options{border-top:1px solid var(--pv-line);padding:0 9px;color:var(--pv-muted);font-size:11px}
+#sunset-daily-phone .pv-options summary{padding:6px 0;min-height:28px}
+#sunset-daily-phone .pv-options p{margin:8px 0;line-height:1.6}
+#sunset-daily-phone .pv-option-controls{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+#sunset-daily-phone .pv-option-controls [role=group]{display:flex;gap:3px}
+#sunset-daily-phone .pv-tide-empty{display:flex;align-items:center;height:100%;padding:8px;color:var(--pv-muted);font-size:12px}
+#sunset-daily-phone .pv-unavailable{font-size:12px;color:var(--pv-muted)}
+#sunset-daily-phone .pv-spectrum-gap{fill:none;stroke:var(--pv-muted);stroke-width:.7;stroke-dasharray:2 2}
+@media(min-width:600px){#sunset-daily-phone{padding:14px}#sunset-daily-phone .pv-label{font-size:12px}#sunset-daily-phone .pv-temperature{font-size:12px}#sunset-daily-phone .pv-spectrum{height:90px}#sunset-daily-phone .pv-spectrum svg{height:86px}}
+@media(pointer:coarse){#sunset-daily-phone .pv-options summary{min-height:36px}#sunset-daily-phone .pv-option-controls button,#sunset-daily-phone .pv-empty button{min-height:40px}}
+</style>
+<div id="sunset-daily-phone">
+  <article class="pv-app" aria-label="Portrait phone forecast, one day per swipe">
+    <header class="pv-header"><div class="pv-brand"><h2>Surf forecast</h2><small class="pv-point">Your coast. One clear view.</small></div><nav class="pv-nav" aria-label="Forecast controls"><button type="button" class="pv-open" aria-label="Open forecast"><svg width="19" height="19" viewBox="0 0 20 20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13V3m-4 4 4-4 4 4M4 12v4a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1v-4"/></svg></button><button type="button" class="cursor-interaction pv-previous" aria-label="Previous forecast day">‹</button><button type="button" class="cursor-interaction pv-next" aria-label="Next forecast day">›</button></nav></header>
+    <input id="forecast-file" type="file" accept=".json,application/json" hidden><input id="tide-file" type="file" accept=".json,application/json" hidden><div class="pv-error" role="alert" hidden></div><div class="pv-empty"><strong>Open a forecast</strong><button class="pv-open-empty" type="button">Choose forecast JSON</button></div>
+    <div hidden class="pv-pages" aria-label="Daily forecast pages. Swipe sideways to advance."></div>
+    <footer class="pv-footer"><div class="pv-footer-top"><span>← Swipe for another day →</span><span class="pv-page-status" aria-live="polite"></span></div></footer>
+    <details class="pv-options"><summary>Forecast options</summary><div class="pv-option-controls"><div role="group" aria-label="Time zone"><button type="button" data-timezone="local" aria-pressed="true">Local</button><button type="button" data-timezone="utc" aria-pressed="false">UTC</button></div><div role="group" aria-label="Wind units"><button type="button" data-wind-unit="kt" aria-pressed="true">knots</button><button type="button" data-wind-unit="ms" aria-pressed="false">m/s</button></div><button type="button" class="pv-add-tide">Add tide file</button></div><p class="pv-cycle"></p><p>Sunrise uses the standard solar horizon; dusk is the end of civil twilight. Shading follows these solar transitions, independently of forecast steps. Spectra show offshore Hs per original integrated period band on a shared scale; the view ends at 22 s. Beach Hs is an estimate. Water temperature is a surface-skin proxy. Tides are model-relative, exclude storm surge and use a fixed −2 to +2 m axis.</p></details>
+  </article>
+</div>
 <script>
+
 (() => {
   'use strict';
-  const el = (id) => document.getElementById(id);
-  let data = null, records = [], tideData = null, tideOverride = null, timezone = 'local', windUnit = 'kt';
-  const SITE_TZ = 'Europe/Madrid'; // IANA zone handles CET/CEST automatically
-  const unitFactor = () => windUnit === 'kt' ? 1.94384449 : 1;
-  const windUnitName = () => windUnit === 'kt' ? 'kn' : 'm/s';
-  const val = (x) => x === undefined || x === null || x === '' || !Number.isFinite(Number(x)) ? null : Number(x);
-  const pretty = (x, digits=1) => x === null ? '–' : Number(x).toFixed(digits);
-  const cleanText = (s) => String(s ?? '–').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-  const qualityClass = q => ({'Glassy':'glassy','Offshore breeze':'offshore','With texture':'texture','Choppy':'choppy','Quite messy':'messy','Blown out':'blown'}[q] || 'unknown');
-
-  let waveScaleMax = 3;
-  const displayedSurfQuality = r => deriveWindQuality(r.wind,r.windFrom);
-  const conditionClass = r => (r.breakHs!==null && r.breakHs>=0 && r.breakHs<.25) || r.size==='Flat' ? 'flat' : qualityClass(displayedSurfQuality(r));
-  const WIND_COLOURS = [[0,[255,255,255]],[5,[182,223,255]],[10,[132,212,153]],[15,[245,223,104]],[20,[238,152,75]],[25,[142,20,37]]];
-  const PERIOD_COLOURS = [[8,[255,255,255]],[10,[255,240,189]],[12,[255,209,109]],[14,[248,160,100]],[16,[228,92,76]],[18,[171,39,53]]];
-  const luminance = rgb => rgb.map(v=>{const c=v/255;return c<=.04045?c/12.92:((c+.055)/1.055)**2.4;}).reduce((s,v,i)=>s+v*[.2126,.7152,.0722][i],0);
-  function heatStyle(value, stops) {
-    if(value===null || !Number.isFinite(value))return '--heat-bg:transparent;--heat-ink:var(--muted)';
-    const bounded=Math.max(stops[0][0],Math.min(stops[stops.length-1][0],value));
-    let i=1;while(stops[i][0]<bounded)i++;
-    const [lo,a]=stops[i-1],[hi,b]=stops[i],t=(bounded-lo)/(hi-lo);
-    const rgb=a.map((v,j)=>Math.round(v+(b[j]-v)*t));
-    const light=luminance(rgb), inkL=luminance([34,60,82]);
-    const ink=(1.05/(light+.05))>((light+.05)/(inkL+.05))?'#ffffff':'#223c52';
-    return `--heat-bg:rgb(${rgb.join(',')});--heat-ink:${ink}`;
+  const root=document.getElementById('sunset-daily-phone');
+  const pager=root.querySelector('.pv-pages'),previous=root.querySelector('.pv-previous'),next=root.querySelector('.pv-next');
+  const alertNode=root.querySelector('.pv-error'),emptyNode=root.querySelector('.pv-empty');
+  const SITE_TZ='Europe/Madrid';
+  let payload=null,rawForecast=null,tideOverride=null,days=[],active=0,timezone='local',windUnit='kt';
+  const zone=()=>timezone==='utc'?'UTC':SITE_TZ;
+  const val=x=>x===null||x===undefined||x===''||!Number.isFinite(Number(x))?null:Number(x);
+  const nonnegative=x=>{const v=val(x);return v!==null&&v>=0?v:null;};
+  const shown=(v,places=1)=>v===null?'–':v.toFixed(places);
+  const escape=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const keyOf=t=>new Intl.DateTimeFormat('en-CA',{timeZone:zone(),year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date(t));
+  const timeOf=t=>new Intl.DateTimeFormat('en-GB',{timeZone:zone(),hour:'2-digit',minute:'2-digit',hour12:false}).format(new Date(t));
+  const dateTitle=k=>new Intl.DateTimeFormat('en-GB',{timeZone:'UTC',weekday:'long',day:'numeric',month:'short'}).format(new Date(k+'T12:00:00Z'));
+  function wallTime(key,hour=0){
+    const target=Date.parse(key+'T00:00:00Z')+hour*3600000;
+    if(timezone==='utc')return target;
+    let guess=target;
+    const fmt=new Intl.DateTimeFormat('en-GB',{timeZone:SITE_TZ,year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',second:'2-digit',hourCycle:'h23'});
+    for(let i=0;i<3;i++){
+      const p=Object.fromEntries(fmt.formatToParts(new Date(guess)).filter(p=>p.type!=='literal').map(p=>[p.type,Number(p.value)]));
+      const local=Date.UTC(p.year,p.month-1,p.day,p.hour,p.minute,p.second);
+      guess=target-(local-guess);
+    }
+    return guess;
   }
-  const periodStyle = value => heatStyle(value,PERIOD_COLOURS);
-  const windStyle = value => heatStyle(value===null?null:value*1.94384449,WIND_COLOURS);
-
-  const SPECTRAL_BANDS = [
-    {key:'h1012',min:10,max:12,mid:11,label:'10–12'},
-    {key:'h1214',min:12,max:14,mid:13,label:'12–14'},
-    {key:'h1417',min:14,max:17,mid:15.5,label:'14–17'},
-    {key:'h1721',min:17,max:21,mid:19,label:'17–21'},
-    {key:'h2125',min:21,max:25,mid:23,label:'21–25'},
-    {key:'h2530',min:25,max:30,mid:27.5,label:'25–30'}
-  ];
-  const normalizeSpectrum = input => {
-    const source=input && typeof input==='object' && !Array.isArray(input) ? input : {};
-    return Object.fromEntries(SPECTRAL_BANDS.map(({key})=>{
-      const raw=source[key];
-      const n=(typeof raw==='number' || (typeof raw==='string' && raw.trim()!=='')) ? Number(raw) : NaN;
-      return [key,Number.isFinite(n) && n>=0 ? n : null];
-    }));
-  };
-  const spectrumModel = r => {
-    const hs=normalizeSpectrum(r.spectrum), reported=normalizeSpectrum(r.spectrumEnergy);
-    // Band energy is proportional to Hs squared. These are integrated bands,
-    // not equally wide samples of spectral density, and no bin is fabricated.
-    const bands=SPECTRAL_BANDS.map(b=>({...b,hs:hs[b.key],energy:hs[b.key]===null?null:hs[b.key]*hs[b.key],reportedEnergy:reported[b.key]}));
-    const available=bands.filter(b=>b.hs!==null).length, complete=available===bands.length;
-    const maxHs=Math.max(0,...bands.filter(b=>b.hs!==null).map(b=>b.hs));
-    const max=Math.max(0,...bands.filter(b=>b.energy!==null).map(b=>b.energy));
-    const state=available===0?'missing':!complete?'partial':maxHs===0?'zero':'complete';
-    const peakIndices=complete && maxHs>0 ? bands.flatMap((b,i)=>b.hs===maxHs?[i]:[]) : [];
-    // The ratio is squared after division to avoid overflow for invalidly large
-    // but finite input values; normal forecasts still follow the exact Hs² ratio.
-    bands.forEach(b=>{b.relative=b.hs===null?null:maxHs>0?(b.hs/maxHs)**2:0;});
-    return {bands,available,complete,state,max,peakIndices};
-  };
-
-  function spectrumIcon(r) {
-    const m=spectrumModel(r);
-    if(m.state==='missing')return '<span class="spectrum-empty">Spectrum unavailable</span>';
-    if(r.breakHs===null || r.breakHs<0)return '<span class="spectrum-empty">Beach height unavailable</span>';
-    const css=getComputedStyle(document.documentElement);
-    const width=Math.max(54,parseFloat(css.getPropertyValue('--cell'))-7);
-    const height=parseFloat(css.getPropertyValue('--profile-height'))||136;
-    const baseline=height-28, top=18;
-    const xOf=t=>3+(t-10)/20*(width-6);
-    // Scale the offshore band-energy SHAPE, not the original band heights.
-    // A complete positive spectrum peaks at beach Hs on a shared metre axis.
-    const yOf=b=>baseline-(r.breakHs/waveScaleMax)*b.relative*(baseline-top);
-    const runs=[];let run=[];
-    const close=()=>{if(run.length)runs.push(run);run=[];};
-    m.bands.forEach(b=>{if(b.hs===null)close();else run.push(b);});close();
-    const curves=runs.map(points=>{
-      const first=points[0],last=points[points.length-1];
-      let path=`M${xOf(first.min).toFixed(2)} ${yOf(first).toFixed(2)} L${xOf(first.mid).toFixed(2)} ${yOf(first).toFixed(2)}`;
-      for(let i=1;i<points.length;i++){
-        const a=points[i-1],b=points[i],mid=(xOf(a.mid)+xOf(b.mid))/2;
-        path+=` C${mid.toFixed(2)} ${yOf(a).toFixed(2)},${mid.toFixed(2)} ${yOf(b).toFixed(2)},${xOf(b.mid).toFixed(2)} ${yOf(b).toFixed(2)}`;
-      }
-      path+=` L${xOf(last.max).toFixed(2)} ${yOf(last).toFixed(2)}`;
-      return `<path class="spectrum-area" d="${path} L${xOf(last.max).toFixed(2)} ${baseline} L${xOf(first.min).toFixed(2)} ${baseline}Z"/><path class="spectrum-curve" d="${path}"/>`;
-    }).join('');
-    const grid=[0,waveScaleMax/2,waveScaleMax].map(v=>{const y=baseline-v/waveScaleMax*(baseline-top);return `<line class="spectrum-grid" x1="0" x2="${width}" y1="${y}" y2="${y}"/>`;}).join('');
-    const gaps=m.bands.filter(b=>b.hs===null).map(b=>`<rect class="spectrum-gap" x="${xOf(b.min)+.5}" y="${top}" width="${Math.max(1,xOf(b.max)-xOf(b.min)-1)}" height="${baseline-top}"/><text x="${xOf(b.mid)}" y="${top+14}" text-anchor="middle">?</text>`).join('');
-    const peaks=m.peakIndices.map(i=>`<circle class="spectrum-peak" cx="${xOf(m.bands[i].mid)}" cy="${yOf(m.bands[i])}" r="2"/>`).join('');
-    const stateText=m.state==='partial'?`Partial spectrum: ${m.available}/6 bands; largest available band scaled to beach Hs.`:m.state==='zero'?'All six 10–30 s bands have zero energy.':`Spectral energy shape scaled to estimated beach Hs ${pretty(r.breakHs,2)} metres.`;
-    const badge=m.state==='partial'?`<span class="spectrum-partial">Partial · ${m.available}/6</span>`:m.state==='zero'?'<span class="spectrum-partial">0 in 10–30 s</span>':'';
-    return `${badge}<svg class="spectrum-icon spectrum-${m.state}" data-beach-hs="${r.breakHs}" data-scale-max="${waveScaleMax}" viewBox="0 0 ${width} ${height}" role="img" aria-label="${cleanText(stateText)}">${grid}${curves}${gaps}${peaks}<text x="3" y="${height-8}">10s</text><text x="${width-3}" y="${height-8}" text-anchor="end">30s</text></svg>`;
-  }
-  function renderSpectra() {
-    el('series').querySelectorAll('.spectrum-cell').forEach((cell,i)=>{cell.innerHTML=spectrumIcon(records[i]);});
-    const h=parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--profile-height'))||136;
-    const axis=el('waveMax').parentElement,offset=(axis.getBoundingClientRect().height-h)/2,baseline=h-28;
-    [['waveMax',waveScaleMax,18],['waveMid',waveScaleMax/2,(18+baseline)/2],['waveZero',0,baseline]].forEach(([id,value,y])=>{
-      el(id).textContent=String(value);el(id).style.top=`${offset+y}px`;
-    });
-  }
-
-  const dateParts = (date) => {
-    const opt = {timeZone: timezone === 'utc' ? 'UTC' : SITE_TZ};
-    return {
-      day: new Intl.DateTimeFormat('en-GB', {...opt, weekday:'short', day:'numeric', month:'short'}).format(date),
-      dateKey: new Intl.DateTimeFormat('en-CA', {...opt, year:'numeric', month:'2-digit', day:'2-digit'}).format(date),
-      time: new Intl.DateTimeFormat('en-GB', {...opt, hour:'2-digit', minute:'2-digit', hour12:false}).format(date),
-      long: new Intl.DateTimeFormat('en-GB', {...opt, weekday:'short', day:'numeric', month:'short', year:'numeric', hour:'2-digit', minute:'2-digit', hour12:false}).format(date),
-      hour: Number(new Intl.DateTimeFormat('en-GB', {...opt,hour:'2-digit',hourCycle:'h23'}).format(date))
-    };
-  };
-  // Sun position based on the standard solar-geometry equations (unobstructed horizon).
-  // Civil dawn/dusk: solar centre at -6 degrees; sunrise/sunset: -0.833 degrees.
-  // Accurate for planning, but terrain, weather and refraction affect observed light.
-  const RAD = Math.PI / 180;
-  const SOLAR_DAY = 86400000;
-  const sunAltitude = (date, lat, lon) => {
-    const d = date.getTime()/SOLAR_DAY - 0.5 + 2440588 - 2451545;
-    const M = RAD*(357.5291+0.98560028*d);
-    const L = M + RAD*(1.9148*Math.sin(M)+0.02*Math.sin(2*M)+0.0003*Math.sin(3*M)+102.9372)+Math.PI;
-    const eps = RAD*23.4397;
-    const dec = Math.asin(Math.sin(eps)*Math.sin(L));
-    const ra = Math.atan2(Math.sin(L)*Math.cos(eps), Math.cos(L));
-    const h = RAD*(280.16+360.9856235*d) + RAD*lon - ra;
-    const phi = RAD*lat;
-    return Math.asin(Math.sin(phi)*Math.sin(dec)+Math.cos(phi)*Math.cos(dec)*Math.cos(h))/RAD;
-  };
-
-  // Optional top-level tide object. A TPXO extractor is NOT run by this widget.
-  // {tide:{datum:"TPXO model mean",series:[{time_utc:"...",level_m:0.5},...],
-  //        extrema:[{time_utc:"...",type:"high",level_m:0.8},...]}}
+  function note(text){alertNode.textContent=text;alertNode.hidden=!text;}
   const normalizeTide = (obj) => {
     if(!obj || !Array.isArray(obj.series)) return null;
     const series=obj.series.map(r=>({
@@ -379,285 +208,223 @@ svg.arrow{width:34px;height:34px;flex-shrink:0;overflow:visible}
     return {series,extrema,datum:String(obj.datum||'TPXO model level')};
   };
 
-  // Consistent per-wave energy proxy: integrate deepwater spectral energy density
-  // over one wavelength, per metre of wave crest (kJ/m). Uses peak period Tp
-  // as an approximation for wavelength. This is NOT a proprietary surf-site index.
-  const energyPerWave = (hs,tp) => (hs===null || tp===null || hs<0 || tp<=0) ? null :
-    (1025 * 9.81 * 9.81 / (32 * Math.PI * 1000)) * hs * hs * tp * tp;
-
-  function timeToX(t, width) {
-    const n=records.length;
-    if(!n) return null;
-    if(n===1) return width/2;
-    const start=records[0].date.getTime(), end=records[n-1].date.getTime();
-    if(t<start || t>end) return null;
-    let lo=0,hi=n-1;
-    while(hi-lo>1) {const mid=(hi+lo)>>1; if(records[mid].date.getTime()<=t)lo=mid;else hi=mid;}
-    const t0=records[lo].date.getTime(),t1=records[hi].date.getTime();
-    const f=t1===t0?0:(t-t0)/(t1-t0);
-    return (lo+0.5+f)*width;
+  const palettes={hs:[[0,[255,255,255]],[1,[220,234,250]],[2,[179,208,238]],[3,[122,168,213]],[4,[63,115,168]],[5,[22,63,114]]],wind:[[0,[255,255,255]],[5,[182,223,255]],[10,[132,212,153]],[15,[245,223,104]],[20,[238,152,75]],[25,[142,20,37]]],period:[[8,[255,255,255]],[10,[255,240,189]],[12,[255,209,109]],[14,[248,160,100]],[16,[228,92,76]],[18,[171,39,53]]]};
+  function heat(value,kind){
+    if(value===null||!Number.isFinite(value))return '--heat:transparent;--heat-ink:var(--pv-muted)';
+    const stops=palettes[kind],v=Math.max(stops[0][0],Math.min(stops.at(-1)[0],value));let j=1;while(stops[j][0]<v)j++;
+    const [a,c]=stops[j-1],[b,d]=stops[j],t=(v-a)/(b-a),rgb=c.map((x,i)=>Math.round(x+(d[i]-x)*t));
+    return `--heat:rgb(${rgb.join(',')});--heat-ink:${(.2126*rgb[0]+.7152*rgb[1]+.0722*rgb[2])<130?'#fff9ef':'#223c52'}`;
   }
-  function positionNowCap() {
-    const timeline=el('timeline'),series=el('series'),scroller=el('scroller');
-    const cap=timeline.querySelector('.now-cap'),marker=series.querySelector('.now-marker');
-    if(!cap)return;
-    if(!marker || timeline.hidden || !records.length){cap.hidden=true;return;}
-    const x=parseFloat(marker.style.left),seriesRect=series.getBoundingClientRect();
-    const scrollRect=scroller.getBoundingClientRect(),timelineRect=timeline.getBoundingClientRect();
-    const visualX=seriesRect.left+x,visibleLeft=Math.max(scrollRect.left,timelineRect.left),visibleRight=Math.min(scrollRect.right,timelineRect.right);
-    if(!Number.isFinite(visualX) || visualX<visibleLeft || visualX>visibleRight || visibleRight<=visibleLeft){cap.hidden=true;return;}
-    cap.hidden=false;
-    const half=cap.getBoundingClientRect().width/2;
-    const center=visibleRight-visibleLeft<2*half ? (visibleLeft+visibleRight)/2 : Math.min(visibleRight-half,Math.max(visibleLeft+half,visualX));
-    cap.style.left=`${center-timelineRect.left}px`;
-    // Keep the pointer on the actual time when the label is clamped at an edge.
-    cap.style.setProperty('--now-pointer-left',`${visualX-(center-half)-4}px`);
+  const RAD=Math.PI/180;
+  function solarAltitude(t){
+    if(payload.lat===null||payload.lon===null)return null;
+    const d=t/86400000-.5+2440588-2451545,M=RAD*(357.5291+.98560028*d),L=M+RAD*(1.9148*Math.sin(M)+.02*Math.sin(2*M)+.0003*Math.sin(3*M)+102.9372)+Math.PI,eps=RAD*23.4397;
+    const dec=Math.asin(Math.sin(eps)*Math.sin(L)),ra=Math.atan2(Math.sin(L)*Math.cos(eps),Math.cos(L)),h=RAD*(280.16+360.9856235*d)+RAD*payload.lon-ra,phi=RAD*payload.lat;
+    return Math.asin(Math.sin(phi)*Math.sin(dec)+Math.cos(phi)*Math.cos(dec)*Math.cos(h))/RAD;
   }
-  function renderNowMarker() {
-    const series=el('series'),timeline=el('timeline');
-    series.querySelectorAll('.now-marker').forEach(n=>n.remove());
-    timeline.querySelectorAll('.now-cap').forEach(n=>n.remove());
-    if(!data || !records.length || timeline.hidden)return;
-    const now=Date.now(),first=records[0].date.getTime(),last=records[records.length-1].date.getTime();
-    if(now<first || now>last)return;
-    const column=series.querySelector('.col');
-    if(!column)return;
-    const width=parseFloat(getComputedStyle(column).width),x=timeToX(now,width);
-    if(x===null || !Number.isFinite(x))return;
-    const marker=document.createElement('div');marker.className='now-marker';
-    marker.style.left=`${x}px`;marker.style.top='0px';marker.style.bottom='0px';
-    marker.setAttribute('aria-hidden','true');series.appendChild(marker);
-    const cap=document.createElement('div');cap.className='now-cap';
-    cap.textContent=`NOW · ${dateParts(new Date(now)).time}`;
-    cap.setAttribute('aria-hidden','true');timeline.appendChild(cap);
-    positionNowCap();
-  }
-
-  const TIDE_LIMITS = {min:-2,max:2}; // Fixed model-relative metres, shared by all forecasts.
-  function renderTideChart() {
-    const series=el('series');
-    series.querySelectorAll('.tide-layer').forEach(n=>n.remove());
-    if(!records.length)return;
-    const column=series.querySelector('.col'),slot=series.querySelector('.tide-slot');
-    const cw=column.getBoundingClientRect().width,total=cw*records.length;
-    const height=slot.getBoundingClientRect().height;
-    const layer=document.createElement('div');layer.className='tide-layer';
-    Object.assign(layer.style,{width:`${total}px`,height:`${height}px`,top:`${slot.getBoundingClientRect().top-series.getBoundingClientRect().top}px`});
-    const showEmpty=text=>{layer.classList.add('tide-placeholder');layer.textContent=text;series.appendChild(layer);};
-    if(!tideData){showEmpty('No tide data in this forecast');return;}
-    const start=records[0].date.getTime(),end=records[records.length-1].date.getTime();
-    const samples=tideData.series.filter(r=>r.time>=start&&r.time<=end);
-    if(samples.length<2){showEmpty('No tide predictions for this forecast period');return;}
-    const top=20,bottom=height-20;
-    const yOf=z=>top+(TIDE_LIMITS.max-z)/(TIDE_LIMITS.max-TIDE_LIMITS.min)*(bottom-top);
-    const parts=[];let points=[];
-    const close=()=>{if(points.length>1)parts.push(points);points=[];};
-    for(const s of samples){
-      const x=timeToX(s.time,cw);if(x===null)continue;
-      if(points.length&&s.time-points[points.length-1][2]>90*60000)close();
-      points.push([x,yOf(s.level),s.time]);
-    }
-    close();
-    const paths=parts.map(p=>{
-      const path=p.map((a,i)=>`${i?'L':'M'}${a[0].toFixed(2)} ${a[1].toFixed(2)}`).join(' ');
-      return `<path class="tide-area" d="${path} L${p[p.length-1][0]} ${yOf(0)} L${p[0][0]} ${yOf(0)}Z"/><path class="tide-curve" d="${path}"/>`;
-    }).join('');
-    const guides=[-2,0,2].map(z=>`<line class="tide-guide" x1="0" x2="${total}" y1="${yOf(z)}" y2="${yOf(z)}"/>`).join('');
-    const marks=tideData.extrema.filter(e=>e.time>=start&&e.time<=end).map(e=>{
-      const x=timeToX(e.time,cw);if(x===null)return '';
-      const high=e.type==='high',y=Math.max(4,Math.min(height-4,yOf(e.level)));
-      const labelY=high?Math.max(13,y-25):Math.min(height-20,y+21);
-      return `<g class="tide-event" data-time="${e.time}" data-level="${e.level}" data-kind="${e.type}"><circle class="tide-dot" cx="${x}" cy="${y}" r="3"/><text class="tide-label" x="${x}" y="${labelY}">${high?'▲':'▼'} ${dateParts(new Date(e.time)).time}</text><text class="tide-label level" x="${x}" y="${labelY+14}">${e.level>0?'+':''}${pretty(e.level,2)} m</text></g>`;
-    }).join('');
-    layer.innerHTML=`<svg xmlns="http://www.w3.org/2000/svg" width="${total}" height="${height}" viewBox="0 0 ${total} ${height}" data-y-min="-2" data-y-max="2" role="img" aria-label="Tide curve, high and low times and actual heights; fixed minus two to plus two metre axis">${guides}${paths}${marks}</svg>`;
-    series.appendChild(layer);
-  }
-
-  const DEFAULT_COAST_FACING_FROM = 315;
-  const WIND_ANCHOR_ANGLES = [0,90,135,180];
-  const WIND_ANCHORS = [[3,5,12,25],[5,7,16,28],[7,20,30,40],[7,20,30,40]];
-  const OFFSHORE_BREEZE_ANGLE_DEG = 105;
-  const wrap360 = d => ((d % 360) + 360) % 360;
-  const angleDiff = (a,b) => Math.abs((((a-b+540)%360)+360)%360-180);
-  const coastFacingFrom = () => {
-    const v = val(data && data.surf_model ? data.surf_model.coast_facing_from_deg : null);
-    return v!==null ? wrap360(v) : DEFAULT_COAST_FACING_FROM;
-  };
-  const windThresholds = deviation => {
-    const d=Math.max(0,Math.min(180,deviation));
-    for(let i=1;i<WIND_ANCHOR_ANGLES.length;i++){
-      if(d<=WIND_ANCHOR_ANGLES[i]){
-        const a=WIND_ANCHORS[i-1],b=WIND_ANCHORS[i];
-        const f=(d-WIND_ANCHOR_ANGLES[i-1])/(WIND_ANCHOR_ANGLES[i]-WIND_ANCHOR_ANGLES[i-1]);
-        return a.map((v,j)=>v+(b[j]-v)*f);
+  const light=t=>{const altitude=solarAltitude(t);return altitude===null?'':altitude<-6?'night':altitude<-.833?'twilight':'';};
+  function solarSegments(start,end){
+    const segments=[];let from=start,phase=light(start),previousTime=start;
+    const step=5*60000;
+    for(let t=Math.min(start+step,end);t<=end;t=Math.min(t+step,end)){
+      const now=light(t);
+      if(now!==phase){
+        let lo=previousTime,hi=t;
+        // Find the astronomical boundary independently of the forecast samples.
+        for(let i=0;i<20;i++){const mid=(lo+hi)/2;if(light(mid)===phase)lo=mid;else hi=mid;}
+        const boundary=(lo+hi)/2;segments.push({start:from,end:boundary,phase});from=boundary;phase=now;
       }
+      previousTime=t;if(t===end)break;
     }
-    return WIND_ANCHORS[WIND_ANCHORS.length-1].slice();
-  };
-  const deriveWindQuality = (windMs,windFrom) => {
-    if(windMs===null || !Number.isFinite(windMs) || windMs<0) return 'Unknown';
-    const knots=windMs*1.94384449;
-    if(windFrom===null || !Number.isFinite(windFrom)) return knots<WIND_ANCHORS[0][0]?'Glassy':'Unknown';
-    const d=angleDiff(windFrom,coastFacingFrom());
-    const [glassy,texture,choppy,blown]=windThresholds(d);
-    if(knots<glassy) return 'Glassy';
-    if(knots<texture) return d>=OFFSHORE_BREEZE_ANGLE_DEG?'Offshore breeze':'With texture';
-    if(knots<choppy) return d>=OFFSHORE_BREEZE_ANGLE_DEG?'With texture':'Choppy';
-    if(knots<blown) return 'Quite messy';
-    return 'Blown out';
-  };
-  const weatherFromRow = (r,night) => {
-    const c=r.cloud, rain=r.rain;
-    if(rain!==null && rain>=6) return {icon:'🌧️',text:'Intense rain',rain:true};
-    if(rain!==null && rain>=1) return {icon:'🌧️',text:'Rain',rain:true};
-    if(rain!==null && rain>=.1) return {icon:'🌦️',text:'Light rain',rain:true};
-    if(c===null) return {icon:'—',text:'No weather data',rain:false};
-    if(c<=25) return {icon:night?'🌙':'☀️',text:`${Math.round(c)}% cloud`,rain:false};
-    if(c<=70) return {icon:night?'☁️':'🌤️',text:`${Math.round(c)}% cloud`,rain:false};
-    return {icon:'☁️',text:`${Math.round(c)}% cloud`,rain:false};
-  };
-
-
-  const cardinal = bearing => ['N','NE','E','SE','S','SW','W','NW'][Math.round(bearing/45)%8];
-  const arrow = (bearing,type) => {
-    if(bearing===null)return '<span class="bearing">–</span>';
-    // The base needle points north; FROM + 180 is the direction of flow.
-    const rotation=(bearing+180)%360;
-    return `<svg class="arrow ${type==='wind'?'wind-arr':'wave-arr'}" viewBox="0 0 48 48" role="img" aria-label="${type==='wind'?'Wind':'Swell'} from ${pretty(bearing,0)} degrees, flowing toward ${pretty(rotation,0)} degrees"><g transform="rotate(${rotation} 24 24)"><path d="M24 40V23"/><polygon points="24,5 34,30 24,25 14,30"/></g></svg><small class="bearing">${cardinal(bearing)}<br>${Math.round(bearing)}°</small>`;
-  };
-
-  const note = (text) => { const n=el('error'); n.textContent=text; n.style.display=text?'block':'none'; };
-  function parse(input) {
-    if (!input || !Array.isArray(input.forecast) || !input.forecast.length) throw new Error('Expected a JSON object with a non-empty "forecast" array.');
-    // Only the specifically known old downloader marker signals a erroneous 180deg rotation.
-    const oldRotation=input.wave_direction_conversion==='ECMWF GRIB2 mwd TO -> nautical FROM (+180 degrees)';
-    const rows = input.forecast.map((r,i) => {
-      const date=new Date(r.time_utc);
-      if (!Number.isFinite(date.getTime())) throw new Error(`Invalid time_utc in forecast row ${i + 1}`);
-      let waveFrom=val(r.wave_direction_from_deg);
-      if(waveFrom===null) waveFrom=val(r.wave_direction_to_deg); // Older misleading key carried native FROM.
-      else if(oldRotation) waveFrom=(waveFrom+180)%360; // Undo known old rotation for display.
-      return {
-        date, lead:val(r.lead_hours), hs:val(r.hs_m), tp:val(r.tp_s),
-        waveFrom,
-        wind:val(r.wind_speed_ms), windFrom:val(r.wind_direction_from_deg),
-        cloud:val(r.cloud_cover_pct), rain:val(r.rain_rate_mm_h),
-        rainAmount:val(r.rain_mm_interval),
-        airTemp:val(r.air_temperature_c),
-        waterTemp:val(r.water_temperature_c ?? r.sea_surface_skin_temperature_c),
-        breakHs:oldRotation?null:val(r.breaking_hs_m), size:oldRotation?'Recalculate':(r.surf_height_class ?? '–'),
-        spectrum:normalizeSpectrum(r.spectral_band_hs_m),
-        spectrumEnergy:normalizeSpectrum(r.spectral_band_energy_kj_m2),
-        quality:r.wind_quality ?? null, sector:r.wind_sector ?? null,
-        energy:val(r.wave_energy_kj_m) ?? energyPerWave(val(r.hs_m),val(r.tp_s)),
-        suitable:r.surf_suitable, windLimit:val(r.wind_limit_kt)
-      };
-    }).sort((a,b)=>a.date-b.date);
-    const hasValues = rows.some(r => r.hs !== null || r.wind !== null);
-    if (!hasValues) throw new Error('No wave-height or wind-speed values were found in the forecast array.');
-    return rows;
+    segments.push({start:from,end,phase});return segments;
   }
-
-  function render() {
-    if(!data)return;
-    el('timeline').hidden=false;el('empty').hidden=true;
-    const p=data.requested_point||{},lat=val(p.latitude),lon=val(p.longitude);
-    el('subtitle').textContent=lat!==null&&lon!==null?`${Math.abs(lat).toFixed(4)}° ${lat>=0?'N':'S'} · ${Math.abs(lon).toFixed(4)}° ${lon>=0?'E':'W'}`:'Selected grid point';
-    el('spdLabel').textContent=`Wind (${windUnitName()})`;
-    el('windScaleTitle').textContent=`Wind speed · ${windUnit==='kt'?'knots':'m/s'}`;
-    el('windScaleTicks').innerHTML=[0,5,10,15,20,25].map((v,i)=>`<span>${windUnit==='kt'?v:(v/1.94384449).toFixed(1)}${i===5?'+':''}</span>`).join('');
-    el('context').replaceChildren();
-    const chip=text=>{const item=document.createElement('span');item.className='chip';item.textContent=text;el('context').appendChild(item);return item;};
-    chip(timezone==='utc'?'UTC time':'Spain local time');
-    if(data.cycle_utc)chip(`Forecast cycle ${data.cycle_utc.replace('T',' ').replace(':00:00Z',' UTC')}`);
-    const counts=records.map(r=>spectrumModel(r).available);
-    if(counts.some(n=>n<6)){
-      const notice=chip(counts.every(n=>n===0)?'Spectrum unavailable':'Spectrum partly available');notice.id='spectralStatus';notice.classList.add('spectral-status');
-    }
-    if(tideData&&tideData.series.some(r=>r.level<TIDE_LIMITS.min||r.level>TIDE_LIMITS.max))chip('Tide curve exceeds fixed scale; event heights shown');
-    el('summaryRange').textContent=`${dateParts(records[0].date).day} — ${dateParts(records[records.length-1].date).day}`;
-    el('forecastStatus').textContent=`${records.length} steps`;
-    // One shared height scale across every column, never a separate per-icon scale.
-    waveScaleMax=Math.max(3,Math.ceil(Math.max(0,...records.map(r=>r.breakHs===null?0:r.breakHs))));
-    let lastDay='';
-    el('series').innerHTML=records.map((r,i)=>{
-      const t=dateParts(r.date),newDay=t.dateKey!==lastDay;lastDay=t.dateKey;
-      const altitude=lat!==null&&lon!==null?sunAltitude(r.date,lat,lon):null;
-      const light=altitude===null?'unknown':altitude < -6?'night':altitude < -.833?'twilight':'daylight';
-      const cls=['col',light==='night'?'night':light==='twilight'?'twilight':'',newDay?'new-day':'',i===records.length-1?'end-of-series':''].join(' ');
-      const wx=weatherFromRow(r,light==='night');
-      const condition=conditionClass(r)==='flat'?'Flat':displayedSurfQuality(r);
-      const speed=r.wind===null?'–':pretty(r.wind*unitFactor());
-      return `<div class="${cls}" data-solar="${light}" role="group" aria-label="Forecast ${t.long}">
-        <div class="day"><span class="column-day">${newDay?cleanText(t.day):''}</span><span class="column-time">${t.time}</span></div>
-        <div class="surf-conditions ${conditionClass(r)}"><span class="surf-quality">${cleanText(condition)}</span></div>
-        <div class="spectrum-cell"></div>
-        <div class="number wave-number" aria-label="Estimated beach Hs in metres">${pretty(r.breakHs,1)}</div>
-        <div class="number offshore-wave">${pretty(r.hs,1)}</div>
-        <div class="number period heat-cell" style="${periodStyle(r.tp)}">${pretty(r.tp,1)}</div>
-        <div class="number energy advanced-row">${r.energy===null?'–':Math.round(r.energy).toLocaleString('en-GB')}</div>
-        <div class="arrow-cell">${arrow(r.waveFrom,'wave')}</div>
-        <div class="number wind-speed heat-cell" style="${windStyle(r.wind)}">${speed}</div>
-        <div class="arrow-cell">${arrow(r.windFrom,'wind')}</div>
-        <div class="weather-cell"><span class="weather-icon" role="img" aria-label="${cleanText(wx.text)}">${wx.icon}</span><span class="weather-temp air" aria-label="Air temperature in degrees Celsius">Air ${r.airTemp===null?'–':pretty(r.airTemp,1)+'°'}</span><span class="weather-temp water" aria-label="Water skin temperature proxy in degrees Celsius">Water ≈${r.waterTemp===null?'–':pretty(r.waterTemp,1)+'°'}</span></div>
-        <div class="tide-slot"></div>
-      </div>`;
+  function solarShading(start,end,width,height,id){
+    const x=t=>(t-start)/(end-start)*width;
+    const opacity=t=>.16*Math.max(0,Math.min(1,(-.833-solarAltitude(t))/(6-.833)));
+    return solarSegments(start,end).map((s,i)=>{
+      if(!s.phase)return '';
+      const attrs=`data-phase="${s.phase}" data-start="${s.start}" data-end="${s.end}" x="${x(s.start)}" width="${x(s.end)-x(s.start)}" y="0" height="${height}"`;
+      if(s.phase==='night')return `<rect ${attrs} fill="var(--pv-shadow)" fill-opacity=".16"/>`;
+      const gradient=`pv-sun-${id}-${i}`;
+      return `<defs><linearGradient id="${gradient}"><stop offset="0" stop-color="var(--pv-shadow)" stop-opacity="${opacity(s.start)}"/><stop offset="1" stop-color="var(--pv-shadow)" stop-opacity="${opacity(s.end)}"/></linearGradient></defs><rect ${attrs} fill="url(#${gradient})"/>`;
     }).join('');
-    renderSpectra();renderTideChart();renderNowMarker();
+  }
+  const cardinal=b=>['N','NE','E','SE','S','SW','W','NW'][Math.round(b/45)%8];
+  function arrow(b,kind){if(b===null)return '<span class="pv-bearing">–</span>';return `<svg class="pv-arrow" viewBox="0 0 48 48" role="img" aria-label="${kind} from ${Math.round(b)} degrees ${cardinal(b)}"><g transform="rotate(${(b+180)%360} 24 24)"><path d="M24 40V23"/><polygon points="24,5 34,30 24,25 14,30"/></g></svg><span class="pv-bearing">${Math.round(b)}°</span>`;}
+
+  function wx(r){
+    if(r.rain!==null&&r.rain>=1)return ['🌧️','Rain'];
+    if(r.rain!==null&&r.rain>=.1)return [light(r.t)==='night'?'🌧️':'🌦️','Light rain'];
+    if(r.cloud===null)return ['—','Weather unavailable'];
+    if(r.cloud<=25)return [light(r.t)==='night'?'🌙':'☀️','Clear'];
+    if(r.cloud<=70)return [light(r.t)==='night'?'☁️':'🌤️','Partly cloudy'];
+    return ['☁️','Cloudy'];
   }
 
-  el('scroller').addEventListener('scroll',positionNowCap);
-  async function loadFile(file) {
-    if(!file) return;
-    try { const obj=JSON.parse((await file.text()).replace(/^\uFEFF/,'')); const rows=parse(obj); data=obj; records=rows; tideData=tideOverride || normalizeTide(obj.tide); note(''); render(); el('scroller').scrollLeft=0;positionNowCap(); }
-    catch(err) {note(`Could not load ${file.name}: ${err.message}`);}
+  const solarCache=new Map();
+  function solarTimes(day){
+    const cacheKey=[day.key,zone(),payload.lat,payload.lon].join('|');
+    if(solarCache.has(cacheKey))return solarCache.get(cacheKey);
+    const events={sunrise:null,dusk:null};
+    if(payload.lat===null||payload.lon===null)return events;
+    const start=wallTime(day.key),end=wallTime(day.key,24),step=5*60000;
+    const rules=[{name:'sunrise',level:-.833,rising:true},{name:'dusk',level:-6,rising:false}];
+    let previous=start,altitude=solarAltitude(start);
+    for(let t=Math.min(start+step,end);t<=end;t=Math.min(t+step,end)){
+      const current=solarAltitude(t);
+      for(const rule of rules){
+        if(events[rule.name]!==null)continue;
+        const crosses=rule.rising?altitude<rule.level&&current>=rule.level:altitude>rule.level&&current<=rule.level;
+        if(!crosses)continue;
+        let lo=previous,hi=t;
+        for(let i=0;i<20;i++){const mid=(lo+hi)/2;if((solarAltitude(mid)<rule.level)===rule.rising)lo=mid;else hi=mid;}
+        events[rule.name]=(lo+hi)/2;
+      }
+      previous=t;altitude=current;if(t===end)break;
+    }
+    solarCache.set(cacheKey,events);return events;
   }
-  async function loadTideFile(file) {
-    if(!file)return;
-    try {
-      const obj=JSON.parse((await file.text()).replace(/^\uFEFF/,''));
-      const td=normalizeTide(obj.tide || obj);
-      if(!td)throw new Error('Expected a tide object with at least two {time_utc,level_m} samples');
-      tideOverride=td; tideData=td; note(''); if(data)render();
-    } catch(err) { note(`Could not load tide JSON: ${err.message}`); }
+  function normalizeForecast(input){
+    if(!input||!Array.isArray(input.forecast)||!input.forecast.length)throw new Error('The file has no forecast records.');
+    const legacy=input.wave_direction_conversion==='ECMWF GRIB2 mwd TO -> nautical FROM (+180 degrees)';
+    const bandKeys=['h1012','h1214','h1417','h1721','h2125','h2530'];
+    const rows=input.forecast.map((r,i)=>{
+      const t=Date.parse(r.time_utc);if(!Number.isFinite(t))throw new Error(`Invalid forecast time in row ${i+1}.`);
+      let swell=val(r.wave_direction_from_deg??r.wave_direction_to_deg);
+      if(legacy&&swell!==null)swell=(swell+180)%360;
+      return {t,beach:legacy?null:nonnegative(r.breaking_hs_m),hs:nonnegative(r.hs_m),period:nonnegative(r.tp_s),wind:nonnegative(r.wind_speed_ms)===null?null:Number(r.wind_speed_ms)*1.94384449,swell,from:val(r.wind_direction_from_deg),air:val(r.air_temperature_c),water:val(r.water_temperature_c??r.sea_surface_skin_temperature_c),cloud:val(r.cloud_cover_pct),rain:nonnegative(r.rain_rate_mm_h),quality:String(r.wind_quality??r.surf_quality??'Unknown'),bands:bandKeys.map(k=>nonnegative(r.spectral_band_hs_m?.[k]))};
+    }).sort((a,b)=>a.t-b.t);
+    if(!rows.some(r=>r.hs!==null||r.wind!==null))throw new Error('The file contains no wave or wind values.');
+    const p=input.requested_point||{},lat=val(p.latitude),lon=val(p.longitude),tide=tideOverride||normalizeTide(input.tide);
+    return {lat:lat!==null&&Math.abs(lat)<=90?lat:null,lon:lon!==null&&Math.abs(lon)<=180?lon:null,forecast:rows,tide:tide?tide.series.map(p=>[p.time,p.level]):[],events:tide?tide.extrema.map(e=>[e.time,e.type,e.level]):[]};
   }
-  el('loadTide').addEventListener('click',()=>el('tideFile').click());
-  el('tideFile').addEventListener('change',e=>{loadTideFile(e.target.files[0]);e.target.value='';});
-  el('load').addEventListener('click',()=>el('file').click());
-  el('file').addEventListener('change',e=>{loadFile(e.target.files[0]); e.target.value='';});
-  const empty=el('empty');
-  empty.addEventListener('dragover',e=>{e.preventDefault();empty.classList.add('drag');});
-  empty.addEventListener('dragleave',()=>empty.classList.remove('drag'));
-  empty.addEventListener('drop',e=>{e.preventDefault();empty.classList.remove('drag');loadFile(e.dataTransfer.files[0]);});
-  const setChoice = (a,b,which)=>{el(a).classList.toggle('selected',which===a);el(b).classList.toggle('selected',which===b);el(a).setAttribute('aria-pressed',String(which===a));el(b).setAttribute('aria-pressed',String(which===b));};
-  el('localBtn').addEventListener('click',()=>{timezone='local';setChoice('localBtn','utcBtn','localBtn');render();});
-  el('utcBtn').addEventListener('click',()=>{timezone='utc';setChoice('localBtn','utcBtn','utcBtn');render();});
-  el('msBtn').addEventListener('click',()=>{windUnit='ms';setChoice('msBtn','ktBtn','msBtn');render();});
-  el('ktBtn').addEventListener('click',()=>{windUnit='kt';setChoice('msBtn','ktBtn','ktBtn');render();});
-  el('left').addEventListener('click',()=>el('scroller').scrollBy({left:-560,behavior:'smooth'}));
-  el('right').addEventListener('click',()=>el('scroller').scrollBy({left:560,behavior:'smooth'}));
-  if(el('detailsBtn'))el('detailsBtn').addEventListener('click',()=>{
-    const expanded=el('timeline').classList.toggle('show-details');
-    el('detailsBtn').setAttribute('aria-pressed',String(expanded));
-    el('detailsBtn').textContent=expanded?'Less details':'More details';
-    renderTideChart();
-    renderNowMarker();
+  function acceptForecast(input){
+    const candidate=normalizeForecast(input);
+    const oldKey=days[active]?.key;
+    rawForecast=input;payload=candidate;solarCache.clear();
+    const groups=new Map();payload.forecast.forEach(r=>{const key=keyOf(r.t);if(!groups.has(key))groups.set(key,[]);groups.get(key).push(r);});
+    days=[...groups].map(([key,rows])=>({key,rows}));
+    const chosen=oldKey||keyOf(Date.now());active=Math.max(0,days.findIndex(day=>day.key===chosen));
+    const point=root.querySelector('.pv-point');
+    point.textContent=payload.lat!==null&&payload.lon!==null?`${Math.abs(payload.lat).toFixed(2)}° ${payload.lat>=0?'N':'S'} · ${Math.abs(payload.lon).toFixed(2)}° ${payload.lon>=0?'E':'W'}`:'Selected forecast location';
+    root.querySelector('.pv-cycle').textContent=input.cycle_utc?`Forecast cycle ${input.cycle_utc.replace('T',' ').replace(':00:00Z',' UTC')}`:'ECMWF forecast';
+    emptyNode.hidden=true;pager.hidden=false;note('');renderDays();draw();positionPage();update();
+  }
+  function renderDays(){
+    pager.replaceChildren();
+    days.forEach(day=>{
+    const page=document.createElement('section');page.className='pv-day';page.setAttribute('aria-label',dateTitle(day.key));page.dataset.day=day.key;
+    const cell=(body,cls='',i=-1,style='')=>`<div class="pv-cell ${cls}"${style?` style="${style}"`:''}>${body}</div>`;
+    const row=(label,body,cls='')=>cell(label,'pv-label')+day.rows.map((r,i)=>cell(body(r,i),cls,i)).join('');
+    const heatRow=(label,key,kind)=>cell(label,'pv-label')+day.rows.map((r,i)=>cell(shown(key==='wind'&&windUnit==='ms'&&r[key]!==null?r[key]/1.94384449:r[key]),'pv-numeric pv-heat',i,heat(r[key],kind))).join('');
+    const stepHours=day.rows.length>1?Math.round((day.rows[1].t-day.rows[0].t)/3600000):6;
+    const sun=solarTimes(day);
+    const shortQuality={'Offshore breeze':'Off','Glassy':'Glass','With texture':'Tex','Choppy':'Chop','Quite messy':'Mess','Blown out':'Blow','Flat':'Flat'};
+    page.style.setProperty('--pv-columns',day.rows.length);
+    page.innerHTML=`<div class="pv-date"><div class="pv-date-line"><strong>${dateTitle(day.key)}</strong><small>${timezone==='utc'?'UTC':'Local'} · ${stepHours}-hourly</small></div><div class="pv-solar"><span class="pv-sunrise" data-time="${sun.sunrise??''}">Sunrise <b>${sun.sunrise===null?'–':timeOf(sun.sunrise)}</b></span><span class="pv-dusk" data-time="${sun.dusk??''}" aria-label="End of civil twilight">Dusk <b>${sun.dusk===null?'–':timeOf(sun.dusk)}</b></span></div></div><div class="pv-table">`
+      +row(timezone==='utc'?'UTC time':'Local time',r=>`<span aria-label="${timeOf(r.t)}">${timeOf(r.t).slice(0,2)}</span>`,'pv-time')
+      +cell('Conditions','pv-label')+day.rows.map((r,i)=>cell(`<span aria-label="${escape(r.quality)}">${escape(r.beach!==null&&r.beach<.25?'Flat':shortQuality[r.quality]||r.quality)}</span>`,`pv-quality ${['Glassy','Offshore breeze'].includes(r.quality)?'good':['With texture','Choppy'].includes(r.quality)?'fair':'rough'}`,i)).join('')
+      +cell('<span>Spectrum</span><small>10–22 s</small>','pv-label pv-spectrum-label')+day.rows.map((r,i)=>cell('','pv-spectrum',i)).join('')
+      +heatRow('Beach Hs · m','beach','hs')+heatRow('Offshore · m','hs','hs')+heatRow('Period · s','period','period')
+      +row('Swell from',r=>arrow(r.swell,'Swell'),'pv-direction wave')+heatRow(windUnit==='kt'?'Wind · kn':'Wind · m/s','wind','wind')+row('Wind from',r=>arrow(r.from,'Wind'),'pv-direction wind')
+      +row('Weather<br><small>Air / Water<br>°C</small>',r=>{const [icon,label]=wx(r);return `<span class="pv-weather-icon" role="img" aria-label="${label}">${icon}</span><span class="pv-temperature">${shown(r.air)}${r.air===null?'':'°'}</span><span class="pv-temperature water">${shown(r.water)}${r.water===null?'':'°'}</span>`},'pv-weather')
+      +cell('<span>Tide · m</span><small>Fixed ±2</small><span style="top:30px">+2</span><span style="top:60px">0</span><span style="top:90px">−2</span>','pv-label pv-tide-label')+'<div class="pv-tide"></div><div class="pv-lighting" aria-hidden="true"></div></div>';
+    pager.appendChild(page);
   });
-  let resizeFrame=0;
-  window.addEventListener('resize',()=>{
-    cancelAnimationFrame(resizeFrame);
-    resizeFrame=requestAnimationFrame(()=>{if(records.length){renderSpectra();renderTideChart();renderNowMarker();}});
+  }
+
+  function drawSpectra(page,day){
+    page.querySelectorAll('.pv-spectrum').forEach((node,i)=>{
+      const r=day.rows[i],w=node.clientWidth-2,y=v=>50-v/.4*38,x=t=>2+(t-10)/12*(w-4);
+      const edges=[10,12,14,17,21,25],values=r.bands.slice(0,5);
+      if(values.every(v=>v===null)){node.innerHTML='<span class="pv-unavailable" aria-label="Spectrum unavailable">—</span>';return;}
+      const runs=[];let run=[];
+      const close=()=>{if(run.length)runs.push(run);run=[];};
+      values.forEach((v,j)=>{if(v===null){close();return;}run.push({value:v,lo:edges[j],hi:Math.min(22,edges[j+1])});});close();
+      const curves=runs.map(run=>{
+        let path=`M${x(run[0].lo)} ${y(run[0].value)}`;
+        run.forEach((b,j)=>{if(j)path+=` L${x(b.lo)} ${y(b.value)}`;path+=` L${x(b.hi)} ${y(b.value)}`;});
+        return `<path class="pv-spectrum-fill" d="${path} L${x(run.at(-1).hi)} 50 L${x(run[0].lo)} 50Z"/><path class="pv-spectrum-line" d="${path}"/>`;
+      }).join('');
+      const gaps=values.map((v,j)=>v===null?`<rect class="pv-spectrum-gap" x="${x(edges[j])}" y="12" width="${Math.max(1,x(Math.min(22,edges[j+1]))-x(edges[j]))}" height="38"/>`:'').join('');
+      node.innerHTML=`<svg viewBox="0 0 ${w} 68" role="img" aria-label="10 to 22 second view of offshore period-band Hs in metres: ${values.map(v=>v===null?'unavailable':v).join(', ')}; final segment belongs to the full 21–25 second band. No nearshore scaling."><line class="pv-spectrum-grid" x1="0" x2="${w}" y1="12" y2="12"/><line class="pv-spectrum-grid" x1="0" x2="${w}" y1="50" y2="50"/>${curves}${gaps}</svg>`;
+    });
+  }
+  function drawTide(page,day){
+    const node=page.querySelector('.pv-tide'),w=node.clientWidth;
+    const start=wallTime(day.key),end=wallTime(day.key,24),x=t=>(t-start)/(end-start)*w,y=v=>60-v*15;
+    const samples=payload.tide.filter(p=>p[0]>=start&&p[0]<=end);
+    if(samples.length<2){node.innerHTML='<span class="pv-tide-empty">No tide data</span>';return;}
+    const line=samples.map((p,i)=>`${i?'L':'M'}${x(p[0])} ${y(p[1])}`).join(' ');
+    const shade=solarShading(start,end,w,132,'tide-'+day.key);
+    const guides=[2,0,-2].map(v=>`<line class="pv-tide-grid" x1="0" x2="${w}" y1="${y(v)}" y2="${y(v)}"/>`).join('');
+    const events=payload.events.filter(e=>e[0]>=start&&e[0]<end).map(e=>{
+      const px=x(e[0]),py=y(e[2]),high=e[1]==='high',tx=Math.max(23,Math.min(w-23,px)),ty=high?py-23:py+15;
+      return `<circle cx="${px}" cy="${py}" r="2.5" fill="var(--pv-sea)"/><text class="pv-tide-event" x="${tx}" y="${ty}">${high?'▲':'▼'}${timeOf(e[0])}</text><text class="pv-tide-level" x="${tx}" y="${ty+12}">${e[2]>0?'+':''}${e[2].toFixed(2)}m</text>`;
+    }).join('');
+    const hours=[0,6,12,18,24].map(h=>`<text class="pv-tide-hour" x="${Math.max(9,Math.min(w-9,x(wallTime(day.key,h))))}" y="125">${String(h).padStart(2,'0')}</text>`).join('');
+    node.innerHTML=`<svg viewBox="0 0 ${w} 132" role="img" aria-label="Full calendar-day tide curve, high and low times, fixed minus two to plus two metre scale">${shade}${guides}<path class="pv-tide-fill" d="${line} L${x(samples.at(-1)[0])} 60 L${x(samples[0][0])} 60Z"/><path class="pv-tide-line" d="${line}"/>${events}${hours}</svg>`;
+  }
+  function drawWaveLighting(page,day){
+    const node=page.querySelector('.pv-lighting'),w=node.clientWidth,h=node.clientHeight;
+    const step=day.rows.length>1?day.rows[1].t-day.rows[0].t:6*3600000,start=day.rows[0].t-step/2,end=day.rows.at(-1).t+step/2;
+    node.innerHTML=`<svg width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" data-start="${start}" data-end="${end}">${solarShading(start,end,w,h,'wave-'+day.key)}</svg>`;
+  }
+  function draw(){if(!payload||!days.length)return;pager.querySelectorAll('.pv-day').forEach((page,i)=>{drawSpectra(page,days[i]);drawTide(page,days[i]);drawWaveLighting(page,days[i]);});}
+
+  function update(){
+    previous.disabled=!days.length||active===0;next.disabled=!days.length||active===days.length-1;
+    root.querySelector('.pv-page-status').textContent=days.length?`${active+1} / ${days.length}`:'';
+    pager.querySelectorAll('.pv-day').forEach((page,i)=>page.setAttribute('aria-current',i===active?'date':'false'));
+  }
+  let timer,positionVersion=0,repositioning=false;
+  function positionPage(){
+    clearTimeout(timer);repositioning=true;const version=++positionVersion;
+    pager.style.scrollSnapType='none';
+    pager.scrollTo({left:active*pager.clientWidth,behavior:'instant'});
+    requestAnimationFrame(()=>{
+      if(version!==positionVersion)return;
+      pager.scrollTo({left:active*pager.clientWidth,behavior:'instant'});pager.style.scrollSnapType='x mandatory';
+      requestAnimationFrame(()=>{if(version!==positionVersion)return;pager.scrollTo({left:active*pager.clientWidth,behavior:'instant'});clearTimeout(timer);repositioning=false;});
+    });
+  }
+  const go=index=>{if(!days.length)return;clearTimeout(timer);active=Math.max(0,Math.min(days.length-1,index));pager.scrollTo({left:active*pager.clientWidth,behavior:matchMedia('(prefers-reduced-motion:reduce)').matches?'instant':'smooth'});update();};
+  previous.addEventListener('click',()=>go(active-1));next.addEventListener('click',()=>go(active+1));
+  pager.addEventListener('scroll',()=>{clearTimeout(timer);if(repositioning)return;timer=setTimeout(()=>{if(!days.length||repositioning)return;active=Math.max(0,Math.min(days.length-1,Math.round(pager.scrollLeft/pager.clientWidth)));update();},160);});
+  new ResizeObserver(()=>{if(!payload)return;draw();positionPage();}).observe(pager);
+  const fileInput=root.querySelector('#forecast-file'),tideInput=root.querySelector('#tide-file');
+  root.querySelector('.pv-open').addEventListener('click',()=>fileInput.click());
+  root.querySelector('.pv-open-empty').addEventListener('click',()=>fileInput.click());
+  root.querySelector('.pv-add-tide').addEventListener('click',()=>tideInput.click());
+  fileInput.addEventListener('change',async()=>{
+    const file=fileInput.files[0];if(!file)return;
+    const oldOverride=tideOverride;
+    try{const input=JSON.parse((await file.text()).replace(/^\uFEFF/,''));tideOverride=null;acceptForecast(input);}catch(error){tideOverride=oldOverride;note(`Could not open forecast: ${error.message}`);}finally{fileInput.value='';}
   });
-  document.addEventListener('visibilitychange',()=>{if(!document.hidden)renderNowMarker();});
-  // The marker follows the actual clock; timezone controls only change its label.
-  setInterval(renderNowMarker,60000);
-  // Convenient auto-loading when HTML and JSON are served together from a web server.
-  if (location.protocol==='http:' || location.protocol==='https:') {
-    fetch('ecmwf_surf_forecast.json',{cache:'no-store'}).then(r=>{if(!r.ok) throw new Error('No surf file');return r.json();})
-      .then(obj=>{records=parse(obj);data=obj;tideData=tideOverride||normalizeTide(obj.tide);note('');render();}).catch(err=>note(`Could not load the forecast automatically: ${err.message}. Use “Open forecast” to select your forecast JSON.`));
+  tideInput.addEventListener('change',async()=>{
+    const file=tideInput.files[0];if(!file)return;
+    try{
+      if(!rawForecast)throw new Error('Open a forecast first.');
+      const input=JSON.parse((await file.text()).replace(/^\uFEFF/,'')),tide=normalizeTide(input.tide||input);
+      if(!tide)throw new Error('No valid tide series was found.');
+      tideOverride=tide;acceptForecast(rawForecast);
+    }catch(error){note(`Could not open tide file: ${error.message}`);}finally{tideInput.value='';}
+  });
+  root.querySelectorAll('[data-timezone]').forEach(button=>button.addEventListener('click',()=>{
+    timezone=button.dataset.timezone;
+    root.querySelectorAll('[data-timezone]').forEach(b=>b.setAttribute('aria-pressed',String(b===button)));
+    if(rawForecast)acceptForecast(rawForecast);
+  }));
+  root.querySelectorAll('[data-wind-unit]').forEach(button=>button.addEventListener('click',()=>{
+    windUnit=button.dataset.windUnit;
+    root.querySelectorAll('[data-wind-unit]').forEach(b=>b.setAttribute('aria-pressed',String(b===button)));
+    if(rawForecast)acceptForecast(rawForecast);
+  }));
+  update();
+  if(location.protocol==='https:'||location.protocol==='http:'){
+    fetch('ecmwf_surf_forecast.json',{cache:'no-store'}).then(response=>{if(!response.ok)throw new Error(`Forecast file not found (${response.status}).`);return response.json();}).then(acceptForecast).catch(error=>note(`${error.message} Use “Open forecast” to select the JSON file.`));
   }
 })();
-
 </script>
 </body>
 </html>
