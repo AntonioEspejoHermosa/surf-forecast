@@ -3,98 +3,112 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="color-scheme" content="light dark">
+<meta name="color-scheme" content="light">
 <title>Skopet · Surf forecast</title>
 </head>
 <body>
 <style>
-:root{color-scheme:light dark}
+:root{color-scheme:light}
 *{box-sizing:border-box}
 html,body{margin:0;width:100%;height:100%;overflow:hidden;-webkit-text-size-adjust:100%;text-size-adjust:100%}
-body{background:light-dark(#edf2f6,#0b1c2a);font-family:'Segoe UI',Arial,sans-serif}
+body{background:#edf3f7;font-family:'Segoe UI',Arial,sans-serif}
 [hidden]{display:none!important}
-#sunset-daily-phone{height:100vh;height:100dvh;width:100%;display:flex;justify-content:center;align-items:stretch;padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left)}
-#sunset-daily-phone .pv-app{--pv-paper:light-dark(#fffefa,#152b3c);--pv-ink:light-dark(#223c52,#e6f0fa);--pv-muted:light-dark(#536b7e,#b5cad8);--pv-line:light-dark(#dce5ec,#365064);--pv-shadow:light-dark(#1c3b62,#020c1a);--pv-coral:light-dark(#e16a50,#ff967d);--pv-sea:light-dark(#008e99,#55d1d8);--pv-navy:light-dark(#203d69,#122845);--pv-label:80px;--pv-table-min:494px;--pv-table-height:494px;--pv-tracks:minmax(28px,.75fr) minmax(30px,.8fr) minmax(64px,1.8fr) minmax(30px,.8fr) minmax(30px,.8fr) minmax(30px,.8fr) minmax(40px,1fr) minmax(30px,.8fr) minmax(40px,1fr) minmax(60px,1.6fr) minmax(112px,3fr);width:100%;max-width:1100px;height:100%;min-height:0;display:flex;flex-direction:column;overflow:hidden;background:var(--pv-paper);color:var(--pv-ink);font:13px/1.3 'Segoe UI',Arial,sans-serif}
+#sunset-daily-phone{position:fixed;top:0;left:0;width:100%;height:100vh;height:100dvh;display:flex;justify-content:center;align-items:stretch;padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left)}
+#sunset-daily-phone .pv-app{
+  --u:1px;--pv-paper:#fff;--pv-ink:#18354f;--pv-muted:#61788b;--pv-line:#dfe8ee;--pv-shadow:#1c3b62;--pv-coral:#f48168;--pv-sea:#008f9b;--pv-navy:#203d69;
+  --pv-label:calc(76 * var(--u));--pv-table-height:calc(600 * var(--u));
+  --pv-tracks:calc(32 * var(--u)) calc(28 * var(--u)) minmax(calc(68 * var(--u)),1fr) calc(34 * var(--u)) calc(34 * var(--u)) calc(34 * var(--u)) calc(46 * var(--u)) calc(34 * var(--u)) calc(46 * var(--u)) calc(72 * var(--u)) minmax(calc(132 * var(--u)),2fr);
+  width:100%;max-width:1200px;height:100%;min-height:0;display:flex;flex-direction:column;overflow:hidden;background:var(--pv-paper);color:var(--pv-ink);font:calc(13 * var(--u))/1.3 'Segoe UI',Arial,sans-serif;
+}
 #sunset-daily-phone button,#sunset-daily-phone summary{cursor:pointer;-webkit-tap-highlight-color:transparent}
-#sunset-daily-phone button:focus-visible,#sunset-daily-phone summary:focus-visible,#sunset-daily-phone .pv-pages:focus-visible,#sunset-daily-phone .pv-forecast:focus-visible{outline:2px solid #3986cf;outline-offset:-2px}
-#sunset-daily-phone .pv-header{flex-shrink:0;display:flex;align-items:center;justify-content:space-between;gap:8px;padding:8px 10px;background:var(--pv-navy);color:light-dark(#fff8ee,#f5f6fc);border-bottom:3px solid var(--pv-coral)}
+#sunset-daily-phone button:focus-visible,#sunset-daily-phone summary:focus-visible,#sunset-daily-phone .pv-pages:focus-visible,#sunset-daily-phone .pv-forecast:focus-visible{outline:calc(2 * var(--u)) solid #3986cf;outline-offset:calc(-2 * var(--u))}
+#sunset-daily-phone .pv-header{flex-shrink:0;display:flex;align-items:center;justify-content:space-between;gap:calc(8 * var(--u));padding:calc(9 * var(--u)) calc(12 * var(--u));background:var(--pv-navy);color:#fff;border-bottom:calc(3 * var(--u)) solid var(--pv-coral)}
 #sunset-daily-phone .pv-brand{min-width:0}
-#sunset-daily-phone .pv-brand h2{margin:0;font-size:21px;font-weight:600;letter-spacing:-.5px}
-#sunset-daily-phone .pv-brand small{display:block;font-size:11px;color:light-dark(#cbdde9,#c1d6e7);margin-top:1px;white-space:normal}
-#sunset-daily-phone .pv-nav{display:flex;gap:2px;flex-shrink:0}
-#sunset-daily-phone .pv-nav button{display:flex;align-items:center;justify-content:center;width:40px;height:40px;padding:0;border:0;border-radius:7px;background:transparent;color:inherit;font:26px 'Segoe UI',Arial,sans-serif}
+#sunset-daily-phone .pv-brand h2{margin:0;font-size:calc(23 * var(--u));line-height:1.15;font-weight:650;letter-spacing:calc(-.6 * var(--u))}
+#sunset-daily-phone .pv-brand small{display:block;font-size:calc(11 * var(--u));color:#cbdde9;margin-top:calc(3 * var(--u));white-space:normal}
+#sunset-daily-phone .pv-nav{display:flex;gap:calc(4 * var(--u));flex-shrink:0}
+#sunset-daily-phone .pv-nav button{display:flex;align-items:center;justify-content:center;width:calc(44 * var(--u));height:calc(44 * var(--u));min-width:44px;min-height:44px;padding:0;border:0;border-radius:calc(12 * var(--u));background:#ffffff12;color:inherit;font:calc(28 * var(--u))/1 'Segoe UI',Arial,sans-serif}
+#sunset-daily-phone .pv-nav .pv-open{background:transparent}
+#sunset-daily-phone .pv-nav .pv-open svg{width:calc(19 * var(--u));height:calc(19 * var(--u))}
 #sunset-daily-phone .pv-nav button:disabled{opacity:.3}
-#sunset-daily-phone .pv-date{flex-shrink:0;display:flex;flex-direction:column;gap:4px;padding:8px 10px;border-bottom:1px solid var(--pv-line)}
-#sunset-daily-phone .pv-date-line{display:flex;align-items:center;justify-content:space-between;gap:8px}
-#sunset-daily-phone .pv-date strong{font-size:15px;font-weight:600}
-#sunset-daily-phone .pv-resolution{color:var(--pv-muted);font-size:11px;white-space:nowrap}
-#sunset-daily-phone .pv-solar{display:flex;align-items:center;justify-content:space-between;gap:8px;color:var(--pv-muted);font-size:12px}
-#sunset-daily-phone .pv-solar b{font-weight:500;color:var(--pv-ink);font-variant-numeric:tabular-nums}
-#sunset-daily-phone .pv-error{flex-shrink:0;max-height:25dvh;overflow:auto;padding:10px;background:#fff0e8;color:#924131;font-size:12px}
-#sunset-daily-phone .pv-empty{flex:1;min-height:0;padding:24px 12px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px}
-#sunset-daily-phone .pv-forecast{flex:1;min-height:0;display:flex;align-items:flex-start;overflow-y:auto;overflow-x:hidden;overscroll-behavior-y:contain}
-#sunset-daily-phone .pv-labels{flex:0 0 var(--pv-label);width:var(--pv-label);height:var(--pv-table-height);display:grid;grid-template-rows:var(--pv-tracks);background:var(--pv-paper);border-right:1px solid var(--pv-line);z-index:3}
-#sunset-daily-phone .pv-label{position:relative;min-width:0;min-height:0;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:2px;padding:2px 5px 2px 6px;border-bottom:1px solid var(--pv-line);color:var(--pv-muted);font-size:11px;line-height:1.2}
-#sunset-daily-phone .pv-label small{font-size:11px}
-#sunset-daily-phone .pv-pages{flex:1;min-width:0;height:var(--pv-table-height);display:flex;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;scrollbar-width:none;touch-action:pan-x pan-y pinch-zoom;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch}
+#sunset-daily-phone .pv-date{flex-shrink:0;display:flex;flex-direction:column;gap:calc(8 * var(--u));padding:calc(11 * var(--u)) calc(12 * var(--u));border-bottom:1px solid var(--pv-line)}
+#sunset-daily-phone .pv-date-line{display:flex;align-items:center;justify-content:space-between;gap:calc(8 * var(--u))}
+#sunset-daily-phone .pv-date strong{font-size:calc(17 * var(--u));font-weight:650;letter-spacing:calc(-.2 * var(--u))}
+#sunset-daily-phone .pv-resolution{color:var(--pv-muted);font-size:calc(10.5 * var(--u));white-space:nowrap;border-radius:calc(6 * var(--u));background:#eff5f8;padding:calc(4 * var(--u)) calc(6 * var(--u))}
+#sunset-daily-phone .pv-solar{display:flex;align-items:center;justify-content:space-between;gap:calc(8 * var(--u));color:var(--pv-muted);font-size:calc(12 * var(--u))}
+#sunset-daily-phone .pv-solar b{font-weight:600;color:var(--pv-ink);font-variant-numeric:tabular-nums}
+#sunset-daily-phone .pv-sunrise:before,#sunset-daily-phone .pv-dusk:before{display:inline-block;content:'';width:calc(14 * var(--u));height:calc(14 * var(--u));vertical-align:calc(-2 * var(--u));margin-right:calc(5 * var(--u));background:center/contain no-repeat url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none' stroke='%23dd8150' stroke-width='1.5' stroke-linecap='round'%3E%3Cpath d='M2 15h16M5 12a5 5 0 0 1 10 0M10 2v3M3 5l2 2M17 5l-2 2M1 10h2M17 10h2'/%3E%3C/svg%3E")}
+#sunset-daily-phone .pv-dusk:before{transform:rotate(180deg)}
+#sunset-daily-phone .pv-error{flex-shrink:0;max-height:25dvh;overflow:auto;padding:calc(10 * var(--u));background:#fff0e8;color:#924131;font-size:calc(13 * var(--u))}
+#sunset-daily-phone .pv-empty{flex:1;min-height:0;padding:calc(24 * var(--u)) calc(12 * var(--u));display:flex;flex-direction:column;align-items:center;justify-content:center;gap:calc(12 * var(--u))}
+#sunset-daily-phone .pv-forecast{flex:1;min-height:0;display:flex;align-items:flex-start;overflow-y:auto;overflow-x:hidden;overscroll-behavior-y:contain;background:#f5f8fa}
+#sunset-daily-phone .pv-labels{flex:0 0 var(--pv-label);width:var(--pv-label);height:var(--pv-table-height);display:grid;grid-template-rows:var(--pv-tracks);background:#f3f7fa;border-right:1px solid var(--pv-line);z-index:3}
+#sunset-daily-phone .pv-label{position:relative;min-width:0;min-height:0;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:calc(1 * var(--u));padding:calc(3 * var(--u)) calc(4 * var(--u)) calc(3 * var(--u)) calc(8 * var(--u));border-bottom:1px solid var(--pv-line);color:#476277;font-size:calc(11.5 * var(--u));font-weight:550;line-height:1.2}
+#sunset-daily-phone .pv-label small{font-size:calc(10 * var(--u));font-weight:400;color:var(--pv-muted)}
+#sunset-daily-phone .pv-pages{flex:1;min-width:0;height:var(--pv-table-height);display:flex;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;scrollbar-width:none;touch-action:pan-x pan-y pinch-zoom;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch;background:var(--pv-paper)}
 #sunset-daily-phone .pv-pages::-webkit-scrollbar{display:none}
 #sunset-daily-phone .pv-day{flex:0 0 100%;height:100%;min-width:0;scroll-snap-align:start;scroll-snap-stop:always}
 #sunset-daily-phone .pv-table{position:relative;isolation:isolate;display:grid;grid-template-columns:repeat(var(--pv-columns,8),minmax(0,1fr));grid-template-rows:var(--pv-tracks);height:100%}
-#sunset-daily-phone .pv-cell{position:relative;min-width:0;min-height:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:1px;padding:2px 1px;border-right:1px solid color-mix(in srgb,var(--pv-line) 50%,transparent);border-bottom:1px solid var(--pv-line);text-align:center}
-#sunset-daily-phone .pv-time{font-size:13px;font-weight:600;font-variant-numeric:tabular-nums}
-#sunset-daily-phone .pv-quality{font-size:11px;font-weight:500;line-height:1.15;overflow:hidden}
-#sunset-daily-phone .pv-quality.good{background:light-dark(#dff2e7,#1d4439)}
-#sunset-daily-phone .pv-quality.fair{background:light-dark(#fff0c9,#504224)}
-#sunset-daily-phone .pv-quality.rough{background:light-dark(#ffe0d5,#583b34)}
-#sunset-daily-phone .pv-spectrum{padding:2px 1px}
+#sunset-daily-phone .pv-cell{position:relative;min-width:0;min-height:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:calc(1 * var(--u));padding:calc(2 * var(--u)) 0;border-right:1px solid #dfe8ee88;border-bottom:1px solid var(--pv-line);text-align:center}
+#sunset-daily-phone .pv-time{font-size:calc(13 * var(--u));font-weight:700;font-variant-numeric:tabular-nums}
+#sunset-daily-phone .pv-quality{font-size:calc(10.5 * var(--u));font-weight:550;line-height:1.15;overflow:hidden}
+#sunset-daily-phone .pv-quality.good{background:#e2f3e9;color:#24654d}
+#sunset-daily-phone .pv-quality.fair{background:#fff1cb;color:#795a22}
+#sunset-daily-phone .pv-quality.rough{background:#ffe4d9;color:#9a4a32}
+#sunset-daily-phone .pv-spectrum{padding:calc(4 * var(--u)) calc(1 * var(--u)) calc(2 * var(--u))}
 #sunset-daily-phone .pv-spectrum svg{display:block;width:100%;height:100%;overflow:hidden}
-#sunset-daily-phone .pv-spectrum-fill{fill:var(--pv-sea);fill-opacity:.35}
-#sunset-daily-phone .pv-spectrum-line{fill:none;stroke:var(--pv-sea);stroke-width:1.6;stroke-linejoin:round;stroke-linecap:round}
-#sunset-daily-phone .pv-spectrum-tick{fill:var(--pv-muted);font:11px 'Segoe UI',Arial,sans-serif}
-#sunset-daily-phone .pv-spectrum-grid{stroke:var(--pv-line);stroke-width:.7}
-#sunset-daily-phone .pv-spectrum-gap{fill:none;stroke:var(--pv-muted);stroke-width:.7;stroke-dasharray:2 2}
-#sunset-daily-phone .pv-unavailable{font-size:12px;color:var(--pv-muted)}
-#sunset-daily-phone .pv-numeric{font-size:14px;font-weight:500;font-variant-numeric:tabular-nums}
+#sunset-daily-phone .pv-spectrum-fill{fill:var(--pv-sea);fill-opacity:.22}
+#sunset-daily-phone .pv-spectrum-line{fill:none;stroke:var(--pv-sea);stroke-width:calc(1.5 * var(--u));stroke-linejoin:round;stroke-linecap:round}
+#sunset-daily-phone .pv-spectrum-tick{fill:var(--pv-muted);font:calc(9 * var(--u)) 'Segoe UI',Arial,sans-serif}
+#sunset-daily-phone .pv-spectrum-grid{stroke:var(--pv-line);stroke-width:calc(.7 * var(--u))}
+#sunset-daily-phone .pv-spectrum-gap{fill:none;stroke:var(--pv-muted);stroke-width:calc(.7 * var(--u));stroke-dasharray:2 2}
+#sunset-daily-phone .pv-unavailable{font-size:calc(12 * var(--u));color:var(--pv-muted)}
+#sunset-daily-phone .pv-numeric{font-size:calc(14 * var(--u));font-weight:600;font-variant-numeric:tabular-nums}
 #sunset-daily-phone .pv-cell.pv-heat{background:var(--heat);color:var(--heat-ink)}
 #sunset-daily-phone .pv-direction{gap:0}
-#sunset-daily-phone .pv-arrow{width:22px;height:22px;flex-shrink:0}
+#sunset-daily-phone .pv-arrow{width:calc(23 * var(--u));height:calc(23 * var(--u));flex-shrink:0}
 #sunset-daily-phone .pv-arrow path{stroke:currentColor;stroke-width:3;stroke-linecap:round;fill:none}
 #sunset-daily-phone .pv-arrow polygon{fill:currentColor}
-#sunset-daily-phone .pv-direction.wave{color:light-dark(#3264bb,#9bbdff)}
-#sunset-daily-phone .pv-direction.wind{color:var(--pv-coral)}
-#sunset-daily-phone .pv-bearing{font-size:11px;line-height:1.1;color:var(--pv-muted);font-variant-numeric:tabular-nums}
-#sunset-daily-phone .pv-weather{gap:1px}
-#sunset-daily-phone .pv-weather-icon{font-size:20px;line-height:1.1}
-#sunset-daily-phone .pv-temperature{font-size:11px;line-height:1.15;color:var(--pv-ink);font-variant-numeric:tabular-nums;white-space:nowrap}
+#sunset-daily-phone .pv-direction.wave{color:#356dc2}
+#sunset-daily-phone .pv-direction.wind{color:#e67859}
+#sunset-daily-phone .pv-bearing{font-size:calc(10 * var(--u));line-height:1.1;color:var(--pv-muted);font-variant-numeric:tabular-nums}
+#sunset-daily-phone .pv-weather{gap:calc(2 * var(--u))}
+#sunset-daily-phone .pv-weather-icon{font-size:calc(21 * var(--u));line-height:1.1}
+#sunset-daily-phone .pv-temperature{font-size:calc(11 * var(--u));line-height:1.15;color:var(--pv-ink);font-variant-numeric:tabular-nums;white-space:nowrap}
 #sunset-daily-phone .pv-temperature.water{color:var(--pv-muted)}
-#sunset-daily-phone .pv-tide-label{justify-content:flex-start;padding-top:8px}
-#sunset-daily-phone .pv-tide-tick{position:absolute;right:4px;transform:translateY(-50%);font-size:11px}
+#sunset-daily-phone .pv-tide-label{justify-content:flex-start;padding-top:calc(8 * var(--u))}
+#sunset-daily-phone .pv-tide-tick{position:absolute;right:calc(5 * var(--u));transform:translateY(-50%);font-size:calc(10 * var(--u));font-weight:400}
 #sunset-daily-phone .pv-tide{grid-column:1 / -1;min-width:0;min-height:0;border-bottom:1px solid var(--pv-line)}
 #sunset-daily-phone .pv-tide svg{display:block;width:100%;height:100%;overflow:hidden}
-#sunset-daily-phone .pv-tide-line{fill:none;stroke:var(--pv-sea);stroke-width:1.8}
-#sunset-daily-phone .pv-tide-fill{fill:var(--pv-sea);fill-opacity:.12}
-#sunset-daily-phone .pv-tide-grid{stroke:var(--pv-line);stroke-width:.7}
-#sunset-daily-phone .pv-tide-event{fill:var(--pv-ink);font:500 11px 'Segoe UI',Arial,sans-serif;text-anchor:middle}
-#sunset-daily-phone .pv-tide-level{fill:var(--pv-muted);font:11px 'Segoe UI',Arial,sans-serif;text-anchor:middle}
-#sunset-daily-phone .pv-tide-hour{fill:var(--pv-muted);font:11px 'Segoe UI',Arial,sans-serif;text-anchor:middle}
-#sunset-daily-phone .pv-tide-empty{display:flex;align-items:center;justify-content:center;height:100%;padding:8px;color:var(--pv-muted);font-size:12px}
-#sunset-daily-phone .pv-lighting{position:absolute;left:0;right:0;top:0;bottom:var(--pv-tide-height,112px);z-index:2;pointer-events:none}
+#sunset-daily-phone .pv-tide-line{fill:none;stroke:var(--pv-sea);stroke-width:calc(1.8 * var(--u))}
+#sunset-daily-phone .pv-tide-fill{fill:var(--pv-sea);fill-opacity:.1}
+#sunset-daily-phone .pv-tide-grid{stroke:var(--pv-line);stroke-width:calc(.7 * var(--u))}
+#sunset-daily-phone .pv-tide-event{fill:var(--pv-ink);font:600 calc(10 * var(--u)) 'Segoe UI',Arial,sans-serif;text-anchor:middle}
+#sunset-daily-phone .pv-tide-level{fill:var(--pv-muted);font:calc(9.5 * var(--u)) 'Segoe UI',Arial,sans-serif;text-anchor:middle}
+#sunset-daily-phone .pv-tide-hour{fill:var(--pv-muted);font:calc(10 * var(--u)) 'Segoe UI',Arial,sans-serif;text-anchor:middle}
+#sunset-daily-phone .pv-tide-empty{display:flex;align-items:center;justify-content:center;height:100%;padding:calc(8 * var(--u));color:var(--pv-muted);font-size:calc(12 * var(--u))}
+#sunset-daily-phone .pv-lighting{position:absolute;left:0;right:0;top:0;bottom:var(--pv-tide-height,132px);z-index:2;pointer-events:none}
 #sunset-daily-phone .pv-lighting svg{display:block;width:100%;height:100%;pointer-events:none}
-#sunset-daily-phone .pv-footer{flex-shrink:0;padding:6px 9px;color:var(--pv-muted);font-size:11px}
-#sunset-daily-phone .pv-footer-top{display:flex;align-items:center;justify-content:space-between;gap:8px}
-#sunset-daily-phone .pv-page-status{font-variant-numeric:tabular-nums}
-#sunset-daily-phone .pv-options{flex-shrink:0;max-height:45dvh;overflow-y:auto;border-top:1px solid var(--pv-line);padding:0 9px;color:var(--pv-muted);font-size:11px}
-#sunset-daily-phone .pv-options summary{padding:6px 0;min-height:28px}
-#sunset-daily-phone .pv-options p{margin:8px 0;line-height:1.6}
-#sunset-daily-phone .pv-option-controls{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
-#sunset-daily-phone .pv-option-controls [role=group]{display:flex;gap:3px}
-#sunset-daily-phone .pv-empty button,#sunset-daily-phone .pv-option-controls button{min-height:34px;border:1px solid var(--pv-line);border-radius:6px;background:var(--pv-paper);color:var(--pv-ink);font:12px 'Segoe UI',Arial,sans-serif;padding:5px 9px}
-#sunset-daily-phone .pv-option-controls [aria-pressed=true]{background:light-dark(#e6f1f7,#315365);color:var(--pv-ink)}
-@media(pointer:coarse){#sunset-daily-phone .pv-nav button{width:44px;height:44px}#sunset-daily-phone .pv-option-controls button,#sunset-daily-phone .pv-empty button{min-height:40px}}
-@media(max-width:350px){#sunset-daily-phone .pv-app{--pv-label:72px}#sunset-daily-phone .pv-arrow{width:20px;height:20px}}
-@media(max-height:720px){#sunset-daily-phone .pv-app{--pv-table-min:464px;--pv-tracks:minmax(26px,.75fr) minmax(28px,.8fr) minmax(60px,1.8fr) minmax(28px,.8fr) minmax(28px,.8fr) minmax(28px,.8fr) minmax(36px,1fr) minmax(28px,.8fr) minmax(36px,1fr) minmax(58px,1.6fr) minmax(108px,3fr)}#sunset-daily-phone .pv-header{padding-top:4px;padding-bottom:4px}#sunset-daily-phone .pv-date{padding-top:5px;padding-bottom:5px;gap:2px}#sunset-daily-phone .pv-footer{padding-top:4px;padding-bottom:4px}#sunset-daily-phone .pv-options summary{padding-top:4px;padding-bottom:4px;min-height:26px}#sunset-daily-phone .pv-arrow{height:20px;width:20px}}
-@media(min-width:800px) and (pointer:fine){#sunset-daily-phone{padding:12px}#sunset-daily-phone .pv-app{border:1px solid var(--pv-line);border-radius:16px}#sunset-daily-phone .pv-label{font-size:12px}#sunset-daily-phone .pv-temperature{font-size:12px}}
+#sunset-daily-phone .pv-footer{flex-shrink:0;padding:calc(7 * var(--u)) calc(12 * var(--u));color:var(--pv-muted);font-size:calc(11 * var(--u));background:#fff}
+#sunset-daily-phone .pv-footer-top{display:flex;align-items:center;justify-content:space-between;gap:calc(8 * var(--u))}
+#sunset-daily-phone .pv-page-status{font-variant-numeric:tabular-nums;font-weight:600;color:var(--pv-ink)}
+#sunset-daily-phone .pv-options{flex-shrink:0;max-height:45%;overflow-y:auto;border-top:1px solid var(--pv-line);padding:0 calc(12 * var(--u));color:var(--pv-muted);font-size:calc(12 * var(--u));background:#fff}
+#sunset-daily-phone .pv-options summary{padding:calc(8 * var(--u)) 0;min-height:calc(34 * var(--u))}
+#sunset-daily-phone .pv-options p{margin:calc(8 * var(--u)) 0;line-height:1.6}
+#sunset-daily-phone .pv-option-controls{display:flex;flex-wrap:wrap;gap:calc(8 * var(--u));align-items:center}
+#sunset-daily-phone .pv-option-controls [role=group]{display:flex;gap:calc(3 * var(--u))}
+#sunset-daily-phone .pv-empty button,#sunset-daily-phone .pv-option-controls button{min-height:calc(44 * var(--u));border:1px solid var(--pv-line);border-radius:calc(8 * var(--u));background:var(--pv-paper);color:var(--pv-ink);font:calc(13 * var(--u)) 'Segoe UI',Arial,sans-serif;padding:calc(6 * var(--u)) calc(10 * var(--u))}
+#sunset-daily-phone .pv-option-controls [aria-pressed=true]{background:#e6f1f7;border-color:#b2d3e3;color:#174e70}
+#sunset-daily-phone .pv-app.pv-compact{--pv-tracks:calc(30 * var(--u)) calc(26 * var(--u)) minmax(calc(60 * var(--u)),1fr) calc(30 * var(--u)) calc(30 * var(--u)) calc(30 * var(--u)) calc(40 * var(--u)) calc(30 * var(--u)) calc(40 * var(--u)) calc(62 * var(--u)) minmax(calc(116 * var(--u)),2fr)}
+#sunset-daily-phone .pv-compact .pv-header{padding-top:calc(5 * var(--u));padding-bottom:calc(5 * var(--u))}
+#sunset-daily-phone .pv-compact .pv-date{padding-top:calc(7 * var(--u));padding-bottom:calc(7 * var(--u));gap:calc(5 * var(--u))}
+#sunset-daily-phone .pv-compact .pv-footer{padding-top:calc(4 * var(--u));padding-bottom:calc(4 * var(--u))}
+#sunset-daily-phone .pv-compact .pv-options summary{padding-top:calc(5 * var(--u));padding-bottom:calc(5 * var(--u));min-height:calc(28 * var(--u))}
+#sunset-daily-phone .pv-app.pv-desktop{margin:12px;border:1px solid var(--pv-line);border-radius:16px;height:calc(100% - 24px);max-height:900px}
+#sunset-daily-phone .pv-desktop .pv-header{padding-left:20px;padding-right:20px}
+#sunset-daily-phone .pv-desktop .pv-label{font-size:13px}
 @media(prefers-reduced-motion:reduce){#sunset-daily-phone .pv-pages{scroll-behavior:auto}}
+
 </style>
 <div id="sunset-daily-phone">
   <article class="pv-app" aria-label="Portrait phone forecast, one day per swipe">
@@ -103,11 +117,11 @@ body{background:light-dark(#edf2f6,#0b1c2a);font-family:'Segoe UI',Arial,sans-se
     <div class="pv-date pv-current-date" hidden><div class="pv-date-line"><strong class="pv-date-title"></strong><small class="pv-resolution"></small></div><div class="pv-solar"><span class="pv-sunrise">Sunrise <b>–</b></span><span class="pv-dusk" aria-label="End of civil twilight">Dusk <b>–</b></span></div></div>
     <div class="pv-forecast" hidden role="region" aria-label="Forecast table">
       <aside class="pv-labels" aria-label="Forecast row labels">
-        <div class="pv-label pv-label-time">Local time</div><div class="pv-label">Conditions</div><div class="pv-label">Spectrum</div><div class="pv-label">Beach Hs ·m</div><div class="pv-label">Offshore ·m</div><div class="pv-label">Period · s</div><div class="pv-label">Swell from</div><div class="pv-label pv-label-wind">Wind · kn</div><div class="pv-label">Wind from</div><div class="pv-label">Weather<small>Air / Water<br>°C</small></div><div class="pv-label pv-tide-label">Tide · m<span class="pv-tide-tick" data-value="2">+2</span><span class="pv-tide-tick" data-value="0">0</span><span class="pv-tide-tick" data-value="-2">−2</span></div>
+        <div class="pv-label pv-label-time">Local time</div><div class="pv-label">Conditions</div><div class="pv-label">Spectrum</div><div class="pv-label">Beach Hs<small>m</small></div><div class="pv-label">Offshore<small>m</small></div><div class="pv-label">Period<small>s</small></div><div class="pv-label">Swell from</div><div class="pv-label pv-label-wind">Wind · kn</div><div class="pv-label">Wind from</div><div class="pv-label">Weather<small>Air / Sea<br>°C</small></div><div class="pv-label pv-tide-label">Tide · m<span class="pv-tide-tick" data-value="2">+2</span><span class="pv-tide-tick" data-value="0">0</span><span class="pv-tide-tick" data-value="-2">−2</span></div>
       </aside>
       <div class="pv-pages" aria-label="Daily forecast values. Swipe sideways to advance."></div>
     </div>
-    <footer class="pv-footer"><div class="pv-footer-top"><span>← Swipe for another day →</span><span class="pv-page-status" aria-live="polite"></span></div></footer>
+    <footer class="pv-footer"><div class="pv-footer-top"><span>Swipe to the next day</span><span class="pv-page-status" aria-live="polite"></span></div></footer>
     <details class="pv-options"><summary>Forecast options</summary><div class="pv-option-controls"><div role="group" aria-label="Time zone"><button type="button" data-timezone="local" aria-pressed="true">Local</button><button type="button" data-timezone="utc" aria-pressed="false">UTC</button></div><div role="group" aria-label="Wind units"><button type="button" data-wind-unit="kt" aria-pressed="true">knots</button><button type="button" data-wind-unit="ms" aria-pressed="false">m/s</button></div><button type="button" class="pv-add-tide">Add tide file</button></div><p class="pv-cycle"></p><p>Sunrise uses the standard solar horizon; dusk is the end of civil twilight. Shading follows these solar transitions, independently of forecast steps. Spectra show offshore Hs per original integrated period band on a shared scale. The smooth curves are visual guides through those band heights; missing bands remain gaps. The view ends at 22 s. Beach Hs is an estimate. Water temperature is a surface-skin proxy. Tides are model-relative, exclude storm surge and use a fixed −2 to +2 m axis.</p></details>
   </article>
 </div>
@@ -116,6 +130,29 @@ body{background:light-dark(#edf2f6,#0b1c2a);font-family:'Segoe UI',Arial,sans-se
 (() => {
   'use strict';
   const root=document.getElementById('sunset-daily-phone');
+  const app=root.querySelector('.pv-app');
+  let uiUnit=1,viewportFrame=0;
+  const initialPageScale=window.visualViewport?.scale||1;
+  function sizeViewport(){
+    const width=document.documentElement.clientWidth;
+    const touch=navigator.maxTouchPoints>0||matchMedia('(pointer:coarse)').matches;
+    const portrait=width<innerHeight;
+    // Use stable layout width, not visualViewport.width: pinch zoom must
+    // magnify the forecast rather than trigger a smaller version of the UI.
+    // This also handles Android's wide, desktop-style portrait viewport.
+    const shortScreen=Math.min(screen.width,screen.height);
+    const widePhone=width>=980&&width/innerHeight<.6&&matchMedia('(pointer:coarse)').matches;
+    const handset=touch&&(shortScreen<=600||widePhone);
+    uiUnit=handset&&portrait?Math.max(.78,Math.min(3,width/390)):1;
+    app.style.setProperty('--u',`${uiUnit}px`);
+    const vv=window.visualViewport;
+    // Only follow browser chrome at the original page scale, never a pinch.
+    const resting=!vv||Math.abs(vv.scale-initialPageScale)<.03;
+    if(resting)root.style.height=`${vv?.height||innerHeight}px`;
+    app.classList.toggle('pv-compact',root.clientHeight/uiUnit<800);
+    app.classList.toggle('pv-desktop',!handset&&width>=800);
+  }
+  sizeViewport();
   const board=root.querySelector('.pv-forecast'),labels=root.querySelector('.pv-labels'),dateHeading=root.querySelector('.pv-current-date');
   const pager=root.querySelector('.pv-pages'),previous=root.querySelector('.pv-previous'),next=root.querySelector('.pv-next');
   const alertNode=root.querySelector('.pv-error'),emptyNode=root.querySelector('.pv-empty');
@@ -317,21 +354,24 @@ body{background:light-dark(#edf2f6,#0b1c2a);font-family:'Segoe UI',Arial,sans-se
   }
   function fitTable(){
     if(board.hidden)return;
-    const minimum=parseFloat(getComputedStyle(root.querySelector('.pv-app')).getPropertyValue('--pv-table-min'))||494;
-    board.style.setProperty('--pv-table-height',`${Math.max(minimum,board.clientHeight)}px`);
+    const compact=app.classList.contains('pv-compact');
+    // Ordinary rows keep their readable rhythm; only the two charts share
+    // extra space, with a bound that prevents tall screens inflating them.
+    const minimum=(compact?494:564)*uiUnit,maximum=(compact?576:660)*uiUnit;
+    board.style.setProperty('--pv-table-height',`${Math.max(minimum,Math.min(maximum,board.clientHeight))}px`);
   }
   function tideY(value,height){
-    return 26+(2-value)/4*(height-60);
+    return 27*uiUnit+(2-value)/4*(height-60*uiUnit);
   }
 
 
   function drawSpectra(page,day){
     const maximum=Math.max(.4,Math.ceil(Math.max(0,...payload.forecast.flatMap(r=>r.bands.filter(v=>v!==null)))*10)/10);
     page.querySelectorAll('.pv-spectrum').forEach((node,i)=>{
-      const r=day.rows[i],w=Math.max(20,node.clientWidth-2),height=Math.max(48,node.clientHeight-4),baseline=height-19,top=7;
-      const x=t=>2+(t-10)/12*(w-4),y=v=>baseline-v/maximum*(baseline-top);
+      const r=day.rows[i],w=Math.max(20*uiUnit,node.clientWidth-2*uiUnit),height=Math.max(48*uiUnit,node.clientHeight-6*uiUnit),baseline=height-15*uiUnit,top=5*uiUnit;
+      const x=t=>2*uiUnit+(t-10)/12*(w-4*uiUnit),y=v=>baseline-v/maximum*(baseline-top);
       const bands=[{lo:10,hi:12,mid:11},{lo:12,hi:14,mid:13},{lo:14,hi:17,mid:15.5},{lo:17,hi:21,mid:19},{lo:21,hi:25,mid:23}].map((b,j)=>({...b,value:r.bands[j]}));
-      const ticks=`<text class="pv-spectrum-tick" x="2" y="${height-3}">10</text><text class="pv-spectrum-tick" text-anchor="end" x="${w-2}" y="${height-3}">22</text>`;
+      const ticks=`<text class="pv-spectrum-tick" x="${2*uiUnit}" y="${height-2*uiUnit}">10</text><text class="pv-spectrum-tick" text-anchor="end" x="${w-2*uiUnit}" y="${height-2*uiUnit}">22</text>`;
       if(bands.every(b=>b.value===null)){node.innerHTML='<span class="pv-unavailable" aria-label="Spectrum unavailable">—</span>';return;}
       const runs=[];let run=[];const close=()=>{if(run.length)runs.push(run);run=[];};
       bands.forEach(b=>{if(b.value===null)close();else run.push(b);});close();
@@ -364,11 +404,11 @@ body{background:light-dark(#edf2f6,#0b1c2a);font-family:'Segoe UI',Arial,sans-se
     const shade=solarShading(start,end,w,height,'tide-'+day.key);
     const guides=[2,0,-2].map(v=>`<line class="pv-tide-grid" x1="0" x2="${w}" y1="${y(v)}" y2="${y(v)}"/>`).join('');
     const events=payload.events.filter(e=>e[0]>=start&&e[0]<end).map(e=>{
-      const px=x(e[0]),py=Math.max(4,Math.min(height-4,y(e[2]))),high=e[1]==='high',tx=Math.max(23,Math.min(w-23,px));
-      const ty=high?Math.max(12,py-20):Math.min(height-23,py+15);
-      return `<circle cx="${px}" cy="${py}" r="2.5" fill="var(--pv-sea)"/><text class="pv-tide-event" x="${tx}" y="${ty}">${high?'▲':'▼'}${timeOf(e[0])}</text><text class="pv-tide-level" x="${tx}" y="${ty+12}">${e[2]>0?'+':''}${e[2].toFixed(2)}m</text>`;
+      const px=x(e[0]),py=Math.max(4*uiUnit,Math.min(height-4*uiUnit,y(e[2]))),high=e[1]==='high',tx=Math.max(24*uiUnit,Math.min(w-24*uiUnit,px));
+      const ty=high?Math.max(12*uiUnit,py-20*uiUnit):Math.min(height-23*uiUnit,py+15*uiUnit);
+      return `<circle cx="${px}" cy="${py}" r="${2.5*uiUnit}" fill="var(--pv-sea)"/><text class="pv-tide-event" x="${tx}" y="${ty}">${high?'▲':'▼'}${timeOf(e[0])}</text><text class="pv-tide-level" x="${tx}" y="${ty+12*uiUnit}">${e[2]>0?'+':''}${e[2].toFixed(2)}m</text>`;
     }).join('');
-    const hours=[0,6,12,18,24].map(h=>`<text class="pv-tide-hour" x="${Math.max(9,Math.min(w-9,x(wallTime(day.key,h))))}" y="${height-4}">${String(h).padStart(2,'0')}</text>`).join('');
+    const hours=[0,6,12,18,24].map(h=>`<text class="pv-tide-hour" x="${Math.max(9*uiUnit,Math.min(w-9*uiUnit,x(wallTime(day.key,h))))}" y="${height-4*uiUnit}">${String(h).padStart(2,'0')}</text>`).join('');
     node.innerHTML=`<svg viewBox="0 0 ${w} ${height}" data-y-min="-2" data-y-max="2" role="img" aria-label="Full calendar-day tide curve, high and low times, fixed minus two to plus two metre scale">${shade}${guides}<path class="pv-tide-fill" d="${line} L${x(samples.at(-1)[0])} ${y(0)} L${x(samples[0][0])} ${y(0)}Z"/><path class="pv-tide-line" d="${line}"/>${events}${hours}</svg>`;
   }
 
@@ -408,6 +448,14 @@ body{background:light-dark(#edf2f6,#0b1c2a);font-family:'Segoe UI',Arial,sans-se
   const go=index=>{if(!days.length)return;clearTimeout(timer);active=Math.max(0,Math.min(days.length-1,index));pager.scrollTo({left:active*pager.clientWidth,behavior:matchMedia('(prefers-reduced-motion:reduce)').matches?'instant':'smooth'});update();};
   previous.addEventListener('click',()=>go(active-1));next.addEventListener('click',()=>go(active+1));
   pager.addEventListener('scroll',()=>{clearTimeout(timer);if(repositioning)return;timer=setTimeout(()=>{if(!days.length||repositioning)return;active=Math.max(0,Math.min(days.length-1,Math.round(pager.scrollLeft/pager.clientWidth)));update();},160);});
+  function refreshViewport(){
+    cancelAnimationFrame(viewportFrame);
+    viewportFrame=requestAnimationFrame(()=>{sizeViewport();if(payload){fitTable();draw();positionPage();}});
+  }
+  window.addEventListener('resize',refreshViewport);
+  window.visualViewport?.addEventListener('resize',()=>{
+    if(Math.abs(window.visualViewport.scale-initialPageScale)<.03)refreshViewport();
+  });
   new ResizeObserver(()=>{if(!payload)return;fitTable();draw();positionPage();}).observe(board);
   const fileInput=root.querySelector('#forecast-file'),tideInput=root.querySelector('#tide-file');
   root.querySelector('.pv-open').addEventListener('click',()=>fileInput.click());
