@@ -57,8 +57,10 @@ body{background:#edf3f7;font-family:'Segoe UI',Arial,sans-serif}
 #sunset-daily-phone .pv-quality.rough{background:#ffe4d9;color:#9a4a32}
 #sunset-daily-phone .pv-spectrum{padding:calc(4 * var(--u)) calc(1 * var(--u)) calc(2 * var(--u))}
 #sunset-daily-phone .pv-spectrum svg{display:block;width:100%;height:100%;overflow:hidden}
-#sunset-daily-phone .pv-spectrum-fill{fill:var(--pv-sea);fill-opacity:.22}
-#sunset-daily-phone .pv-spectrum-line{fill:none;stroke:var(--pv-sea);stroke-width:calc(1.5 * var(--u));stroke-linejoin:round;stroke-linecap:round}
+#sunset-daily-phone .pv-spectrum{--pv-spectrum-color:var(--pv-sea)}
+#sunset-daily-phone .pv-spectrum.pv-long-period{--pv-spectrum-color:#20935b}
+#sunset-daily-phone .pv-spectrum-fill{fill:var(--pv-spectrum-color);fill-opacity:.22}
+#sunset-daily-phone .pv-spectrum-line{fill:none;stroke:var(--pv-spectrum-color);stroke-width:calc(1.5 * var(--u));stroke-linejoin:round;stroke-linecap:round}
 #sunset-daily-phone .pv-spectrum-tick{fill:var(--pv-muted);font:calc(9 * var(--u)) 'Segoe UI',Arial,sans-serif}
 #sunset-daily-phone .pv-spectrum-grid{stroke:var(--pv-line);stroke-width:calc(.7 * var(--u))}
 #sunset-daily-phone .pv-spectrum-gap{fill:none;stroke:var(--pv-muted);stroke-width:calc(.7 * var(--u));stroke-dasharray:2 2}
@@ -122,7 +124,7 @@ body{background:#edf3f7;font-family:'Segoe UI',Arial,sans-serif}
       <div class="pv-pages" aria-label="Daily forecast values. Swipe sideways to advance."></div>
     </div>
     <footer class="pv-footer"><div class="pv-footer-top"><span>Swipe to the next day</span><span class="pv-page-status" aria-live="polite"></span></div></footer>
-    <details class="pv-options"><summary>Forecast options</summary><div class="pv-option-controls"><div role="group" aria-label="Time zone"><button type="button" data-timezone="local" aria-pressed="true">Local</button><button type="button" data-timezone="utc" aria-pressed="false">UTC</button></div><div role="group" aria-label="Wind units"><button type="button" data-wind-unit="kt" aria-pressed="true">knots</button><button type="button" data-wind-unit="ms" aria-pressed="false">m/s</button></div><button type="button" class="pv-add-tide">Add tide file</button></div><p class="pv-cycle"></p><p>Sunrise uses the standard solar horizon; dusk is the end of civil twilight. Shading follows these solar transitions, independently of forecast steps. Spectra show offshore Hs per original integrated period band on a shared scale. The smooth curves are visual guides through those band heights; missing bands remain gaps. The view ends at 22 s. Beach Hs is an estimate. Water temperature is a surface-skin proxy. Tides are model-relative, exclude storm surge and use a fixed −2 to +2 m axis.</p></details>
+    <details class="pv-options"><summary>Forecast options</summary><div class="pv-option-controls"><div role="group" aria-label="Time zone"><button type="button" data-timezone="local" aria-pressed="true">Local</button><button type="button" data-timezone="utc" aria-pressed="false">UTC</button></div><div role="group" aria-label="Wind units"><button type="button" data-wind-unit="kt" aria-pressed="true">knots</button><button type="button" data-wind-unit="ms" aria-pressed="false">m/s</button></div><button type="button" class="pv-add-tide">Add tide file</button></div><p class="pv-cycle"></p><p>Sunrise uses the standard solar horizon; dusk is the end of civil twilight. Shading follows these solar transitions, independently of forecast steps. Spectra show offshore Hs per original integrated period band on a shared scale. The smooth curves are visual guides through those band heights; missing bands remain gaps. Green spectra mean at least one original band above 12 s exceeds 0.5 m Hs, including bands beyond the visible range. Wave and tide shading share midnight-to-midnight day boundaries. The view ends at 22 s. Beach Hs is an estimate. Water temperature is a surface-skin proxy. Tides are model-relative, exclude storm surge and use a fixed −2 to +2 m axis.</p></details>
   </article>
 </div>
 <script>
@@ -365,10 +367,18 @@ body{background:#edf3f7;font-family:'Segoe UI',Arial,sans-serif}
   }
 
 
+  // All continuous time graphics share the same calendar-day bounds.
+  function dayRange(day){return {start:wallTime(day.key),end:wallTime(day.key,24)};}
+
   function drawSpectra(page,day){
     const maximum=Math.max(.4,Math.ceil(Math.max(0,...payload.forecast.flatMap(r=>r.bands.filter(v=>v!==null)))*10)/10);
     page.querySelectorAll('.pv-spectrum').forEach((node,i)=>{
-      const r=day.rows[i],w=Math.max(20*uiUnit,node.clientWidth-2*uiUnit),height=Math.max(48*uiUnit,node.clientHeight-6*uiUnit),baseline=height-15*uiUnit,top=5*uiUnit;
+      const r=day.rows[i];
+      // Integrated 12–14 s and longer bands, including those beyond the
+      // visible 22 s edge. Compare original values, before display rounding.
+      const longPeriod=r.bands.slice(1).some(value=>value!==null&&value>.5);
+      node.classList.toggle('pv-long-period',longPeriod);
+      const w=Math.max(20*uiUnit,node.clientWidth-2*uiUnit),height=Math.max(48*uiUnit,node.clientHeight-6*uiUnit),baseline=height-15*uiUnit,top=5*uiUnit;
       const x=t=>2*uiUnit+(t-10)/12*(w-4*uiUnit),y=v=>baseline-v/maximum*(baseline-top);
       const bands=[{lo:10,hi:12,mid:11},{lo:12,hi:14,mid:13},{lo:14,hi:17,mid:15.5},{lo:17,hi:21,mid:19},{lo:21,hi:25,mid:23}].map((b,j)=>({...b,value:r.bands[j]}));
       const ticks=`<text class="pv-spectrum-tick" x="${2*uiUnit}" y="${height-2*uiUnit}">10</text><text class="pv-spectrum-tick" text-anchor="end" x="${w-2*uiUnit}" y="${height-2*uiUnit}">22</text>`;
@@ -389,14 +399,14 @@ body{background:#edf3f7;font-family:'Segoe UI',Arial,sans-serif}
       }).join('');
       const gaps=bands.filter(b=>b.value===null).map(b=>`<rect class="pv-spectrum-gap" x="${x(b.lo)}" y="${top}" width="${Math.max(1,x(Math.min(22,b.hi))-x(b.lo))}" height="${baseline-top}"/>`).join('');
       const clip=`pv-spectrum-clip-${day.key}-${i}`;
-      node.innerHTML=`<svg viewBox="0 0 ${w} ${height}" data-scale-max="${maximum}" role="img" aria-label="Smooth visual guide through offshore period-band Hs, metres: ${bands.map(b=>b.value===null?'unavailable':b.value).join(', ')}. Display range 10 to 22 seconds; final segment belongs to the full 21–25 second band."><defs><clipPath id="${clip}"><rect x="0" y="0" width="${w}" height="${baseline+1}"/></clipPath></defs><line class="pv-spectrum-grid" x1="0" x2="${w}" y1="${baseline}" y2="${baseline}"/><g clip-path="url(#${clip})">${curves}${gaps}</g>${ticks}</svg>`;
+      node.innerHTML=`<svg viewBox="0 0 ${w} ${height}" data-scale-max="${maximum}" role="img" aria-label="Smooth visual guide through offshore period-band Hs, metres: ${bands.map(b=>b.value===null?'unavailable':b.value).join(', ')}. Display range 10 to 22 seconds; final segment belongs to the full 21–25 second band.${longPeriod?' Green: a period band above 12 seconds exceeds 0.5 metres Hs.':''}"><defs><clipPath id="${clip}"><rect x="0" y="0" width="${w}" height="${baseline+1}"/></clipPath></defs><line class="pv-spectrum-grid" x1="0" x2="${w}" y1="${baseline}" y2="${baseline}"/><g clip-path="url(#${clip})">${curves}${gaps}</g>${ticks}</svg>`;
     });
   }
 
 
   function drawTide(page,day){
     const node=page.querySelector('.pv-tide'),w=node.clientWidth,height=node.clientHeight;
-    const start=wallTime(day.key),end=wallTime(day.key,24),x=t=>(t-start)/(end-start)*w,y=v=>tideY(v,height);
+    const {start,end}=dayRange(day),x=t=>(t-start)/(end-start)*w,y=v=>tideY(v,height);
     const samples=payload.tide.filter(p=>p[0]>=start&&p[0]<=end);
     labels.querySelectorAll('.pv-tide-tick').forEach(tick=>tick.style.top=`${y(Number(tick.dataset.value))}px`);
     if(samples.length<2){node.innerHTML='<span class="pv-tide-empty">No tide data</span>';return;}
@@ -409,13 +419,13 @@ body{background:#edf3f7;font-family:'Segoe UI',Arial,sans-serif}
       return `<circle cx="${px}" cy="${py}" r="${2.5*uiUnit}" fill="var(--pv-sea)"/><text class="pv-tide-event" x="${tx}" y="${ty}">${high?'▲':'▼'}${timeOf(e[0])}</text><text class="pv-tide-level" x="${tx}" y="${ty+12*uiUnit}">${e[2]>0?'+':''}${e[2].toFixed(2)}m</text>`;
     }).join('');
     const hours=[0,6,12,18,24].map(h=>`<text class="pv-tide-hour" x="${Math.max(9*uiUnit,Math.min(w-9*uiUnit,x(wallTime(day.key,h))))}" y="${height-4*uiUnit}">${String(h).padStart(2,'0')}</text>`).join('');
-    node.innerHTML=`<svg viewBox="0 0 ${w} ${height}" data-y-min="-2" data-y-max="2" role="img" aria-label="Full calendar-day tide curve, high and low times, fixed minus two to plus two metre scale">${shade}${guides}<path class="pv-tide-fill" d="${line} L${x(samples.at(-1)[0])} ${y(0)} L${x(samples[0][0])} ${y(0)}Z"/><path class="pv-tide-line" d="${line}"/>${events}${hours}</svg>`;
+    node.innerHTML=`<svg viewBox="0 0 ${w} ${height}" data-start="${start}" data-end="${end}" data-y-min="-2" data-y-max="2" role="img" aria-label="Full calendar-day tide curve, high and low times, fixed minus two to plus two metre scale">${shade}${guides}<path class="pv-tide-fill" d="${line} L${x(samples.at(-1)[0])} ${y(0)} L${x(samples[0][0])} ${y(0)}Z"/><path class="pv-tide-line" d="${line}"/>${events}${hours}</svg>`;
   }
 
   function drawWaveLighting(page,day){
     page.style.setProperty('--pv-tide-height',`${page.querySelector('.pv-tide').getBoundingClientRect().height}px`);
     const node=page.querySelector('.pv-lighting'),w=node.clientWidth,h=node.clientHeight;
-    const step=day.rows.length>1?day.rows[1].t-day.rows[0].t:6*3600000,start=day.rows[0].t-step/2,end=day.rows.at(-1).t+step/2;
+    const {start,end}=dayRange(day);
     node.innerHTML=`<svg width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" data-start="${start}" data-end="${end}">${solarShading(start,end,w,h,'wave-'+day.key)}</svg>`;
   }
   function draw(){if(!payload||!days.length)return;pager.querySelectorAll('.pv-day').forEach((page,i)=>{drawSpectra(page,days[i]);drawTide(page,days[i]);drawWaveLighting(page,days[i]);});}

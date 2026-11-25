@@ -1,6 +1,6 @@
 {
   "source": "ECMWF IFS 0.1 degree",
-  "cycle_utc": "2026-11-23T00:00:00Z",
+  "cycle_utc": "2026-11-24T12:00:00Z",
   "requested_point": {
     "latitude": 36.2383,
     "longitude": -6.0627
@@ -100,650 +100,38 @@
   "wave_direction_conversion": "ECMWF GRIB2 mwd native FROM (no rotation)",
   "forecast": [
     {
-      "time_utc": "2026-11-23T00:00:00Z",
+      "time_utc": "2026-11-24T12:00:00Z",
       "lead_hours": 0,
-      "hs_m": 0.911,
-      "tp_s": 9.269,
-      "wave_direction_from_deg": 287.5,
+      "hs_m": 0.661,
+      "tp_s": 9.356,
+      "wave_direction_from_deg": 263.5,
       "spectral_band_hs_m": {
-        "h1012": 0.3372,
-        "h1214": 0.1964,
-        "h1417": 0.0949,
-        "h1721": 0.0284,
-        "h2125": 0.0116,
-        "h2530": 0.0038
-      },
-      "wind_speed_ms": 5.103,
-      "wind_direction_from_deg": 25.82,
-      "cloud_cover_pct": 0.0,
-      "rain_rate_mm_h": 0.0,
-      "rain_mm_interval": null,
-      "air_temperature_c": 14.5,
-      "sea_surface_skin_temperature_c": 19.6,
-      "water_temperature_c": 19.6,
-      "breaking_hs_m": 1.18,
-      "surf_height_class": "Shoulder height",
-      "wave_exposed": true,
-      "wave_energy_kj_m2": 0.52,
-      "wave_power_kw_m": 3.4,
-      "wind_sector": "Side-offshore",
-      "wind_deviation_deg": 129.82,
-      "wind_limit_kt": 28.39,
-      "wind_glassy_limit_kt": 6.77,
-      "wind_blown_limit_kt": 38.62,
-      "wind_speed_kt": 9.92,
-      "wind_quality": "Offshore breeze",
-      "wind_acceptable": true,
-      "weather_icon": "\u2600\ufe0f",
-      "weather_label": "Clear",
-      "weather_code": "clear",
-      "surf_quality": "Offshore breeze",
-      "surf_suitable": true,
-      "surf_label": "Shoulder height \u00b7 Offshore breeze",
-      "spectral_band_energy_kj_m2": {
-        "h1012": 0.07145753,
-        "h1214": 0.0242413,
-        "h1417": 0.00565986,
-        "h1721": 0.00050689,
-        "h2125": 8.456e-05,
-        "h2530": 9.07e-06
-      },
-      "tide_m": 1.016
-    },
-    {
-      "time_utc": "2026-11-23T03:00:00Z",
-      "lead_hours": 3,
-      "hs_m": 0.833,
-      "tp_s": 9.875,
-      "wave_direction_from_deg": 281.5,
-      "spectral_band_hs_m": {
-        "h1012": 0.3606,
-        "h1214": 0.2198,
-        "h1417": 0.1105,
-        "h1721": 0.0323,
-        "h2125": 0.0116,
-        "h2530": 0.0038
-      },
-      "wind_speed_ms": 3.422,
-      "wind_direction_from_deg": 39.18,
-      "cloud_cover_pct": 0.0,
-      "rain_rate_mm_h": 0.0,
-      "rain_mm_interval": 0.0,
-      "air_temperature_c": 14.1,
-      "sea_surface_skin_temperature_c": 19.3,
-      "water_temperature_c": 19.3,
-      "breaking_hs_m": 1.15,
-      "surf_height_class": "Shoulder height",
-      "wave_exposed": true,
-      "wave_energy_kj_m2": 0.44,
-      "wave_power_kw_m": 3.03,
-      "wind_sector": "Offshore",
-      "wind_deviation_deg": 143.18,
-      "wind_limit_kt": 30.0,
-      "wind_glassy_limit_kt": 7.0,
-      "wind_blown_limit_kt": 40.0,
-      "wind_speed_kt": 6.65,
-      "wind_quality": "Glassy",
-      "wind_acceptable": true,
-      "weather_icon": "\u2600\ufe0f",
-      "weather_label": "Clear",
-      "weather_code": "clear",
-      "surf_quality": "Glassy",
-      "surf_suitable": true,
-      "surf_label": "Shoulder height \u00b7 Glassy",
-      "spectral_band_energy_kj_m2": {
-        "h1012": 0.08171924,
-        "h1214": 0.03036185,
-        "h1417": 0.00767357,
-        "h1721": 0.00065566,
-        "h2125": 8.456e-05,
-        "h2530": 9.07e-06
-      },
-      "tide_m": 0.172
-    },
-    {
-      "time_utc": "2026-11-23T06:00:00Z",
-      "lead_hours": 6,
-      "hs_m": 0.786,
-      "tp_s": 10.283,
-      "wave_direction_from_deg": 280.0,
-      "spectral_band_hs_m": {
-        "h1012": 0.3606,
-        "h1214": 0.2355,
-        "h1417": 0.1261,
-        "h1721": 0.0401,
-        "h2125": 0.0126,
-        "h2530": 0.004
-      },
-      "wind_speed_ms": 3.857,
-      "wind_direction_from_deg": 73.93,
-      "cloud_cover_pct": 0.0,
-      "rain_rate_mm_h": 0.0,
-      "rain_mm_interval": 0.0,
-      "air_temperature_c": 15.4,
-      "sea_surface_skin_temperature_c": 19.4,
-      "water_temperature_c": 19.4,
-      "breaking_hs_m": 1.12,
-      "surf_height_class": "Shoulder height",
-      "wave_exposed": true,
-      "wave_energy_kj_m2": 0.39,
-      "wave_power_kw_m": 2.81,
-      "wind_sector": "Offshore",
-      "wind_deviation_deg": 177.93,
-      "wind_limit_kt": 30.0,
-      "wind_glassy_limit_kt": 7.0,
-      "wind_blown_limit_kt": 40.0,
-      "wind_speed_kt": 7.5,
-      "wind_quality": "Offshore breeze",
-      "wind_acceptable": true,
-      "weather_icon": "\u2600\ufe0f",
-      "weather_label": "Clear",
-      "weather_code": "clear",
-      "surf_quality": "Offshore breeze",
-      "surf_suitable": true,
-      "surf_label": "Shoulder height \u00b7 Offshore breeze",
-      "spectral_band_energy_kj_m2": {
-        "h1012": 0.08171924,
-        "h1214": 0.03485417,
-        "h1417": 0.00999317,
-        "h1721": 0.00101056,
-        "h2125": 9.977e-05,
-        "h2530": 1.006e-05
-      },
-      "tide_m": -1.031
-    },
-    {
-      "time_utc": "2026-11-23T09:00:00Z",
-      "lead_hours": 9,
-      "hs_m": 0.801,
-      "tp_s": 10.345,
-      "wave_direction_from_deg": 271.5,
-      "spectral_band_hs_m": {
-        "h1012": 0.3606,
-        "h1214": 0.2276,
-        "h1417": 0.1183,
-        "h1721": 0.0401,
-        "h2125": 0.0126,
-        "h2530": 0.0043
-      },
-      "wind_speed_ms": 5.436,
-      "wind_direction_from_deg": 92.32,
-      "cloud_cover_pct": 40.6,
-      "rain_rate_mm_h": 0.0,
-      "rain_mm_interval": 0.0,
-      "air_temperature_c": 17.2,
-      "sea_surface_skin_temperature_c": 19.5,
-      "water_temperature_c": 19.5,
-      "breaking_hs_m": 1.16,
-      "surf_height_class": "Shoulder height",
-      "wave_exposed": true,
-      "wave_energy_kj_m2": 0.4,
-      "wave_power_kw_m": 2.93,
-      "wind_sector": "Offshore",
-      "wind_deviation_deg": 163.68,
-      "wind_limit_kt": 30.0,
-      "wind_glassy_limit_kt": 7.0,
-      "wind_blown_limit_kt": 40.0,
-      "wind_speed_kt": 10.57,
-      "wind_quality": "Offshore breeze",
-      "wind_acceptable": true,
-      "weather_icon": "\ud83c\udf24\ufe0f",
-      "weather_label": "Partly cloudy",
-      "weather_code": "partly_cloudy",
-      "surf_quality": "Offshore breeze",
-      "surf_suitable": true,
-      "surf_label": "Shoulder height \u00b7 Offshore breeze",
-      "spectral_band_energy_kj_m2": {
-        "h1012": 0.08171924,
-        "h1214": 0.03255498,
-        "h1417": 0.00879513,
-        "h1721": 0.00101056,
-        "h2125": 9.977e-05,
-        "h2530": 1.162e-05
-      },
-      "tide_m": -0.261
-    },
-    {
-      "time_utc": "2026-11-23T12:00:00Z",
-      "lead_hours": 12,
-      "hs_m": 0.958,
-      "tp_s": 9.687,
-      "wave_direction_from_deg": 219.0,
-      "spectral_band_hs_m": {
-        "h1012": 0.3528,
-        "h1214": 0.2198,
-        "h1417": 0.1183,
-        "h1721": 0.0401,
-        "h2125": 0.0126,
-        "h2530": 0.004
-      },
-      "wind_speed_ms": 7.296,
-      "wind_direction_from_deg": 112.07,
-      "cloud_cover_pct": 1.6,
-      "rain_rate_mm_h": 0.0,
-      "rain_mm_interval": 0.0,
-      "air_temperature_c": 19.4,
-      "sea_surface_skin_temperature_c": 19.6,
-      "water_temperature_c": 19.6,
-      "breaking_hs_m": 1.22,
-      "surf_height_class": "Shoulder height",
-      "wave_exposed": true,
-      "wave_energy_kj_m2": 0.58,
-      "wave_power_kw_m": 3.93,
-      "wind_sector": "Offshore",
-      "wind_deviation_deg": 143.93,
-      "wind_limit_kt": 30.0,
-      "wind_glassy_limit_kt": 7.0,
-      "wind_blown_limit_kt": 40.0,
-      "wind_speed_kt": 14.18,
-      "wind_quality": "Offshore breeze",
-      "wind_acceptable": true,
-      "weather_icon": "\u2600\ufe0f",
-      "weather_label": "Clear",
-      "weather_code": "clear",
-      "surf_quality": "Offshore breeze",
-      "surf_suitable": true,
-      "surf_label": "Shoulder height \u00b7 Offshore breeze",
-      "spectral_band_energy_kj_m2": {
-        "h1012": 0.0782222,
-        "h1214": 0.03036185,
-        "h1417": 0.00879513,
-        "h1721": 0.00101056,
-        "h2125": 9.977e-05,
-        "h2530": 1.006e-05
-      },
-      "tide_m": 1.048
-    },
-    {
-      "time_utc": "2026-11-23T15:00:00Z",
-      "lead_hours": 15,
-      "hs_m": 0.958,
-      "tp_s": 9.749,
-      "wave_direction_from_deg": 219.0,
-      "spectral_band_hs_m": {
-        "h1012": 0.345,
-        "h1214": 0.2198,
-        "h1417": 0.1261,
-        "h1721": 0.0401,
-        "h2125": 0.0126,
-        "h2530": 0.0043
-      },
-      "wind_speed_ms": 6.961,
-      "wind_direction_from_deg": 113.27,
-      "cloud_cover_pct": 0.0,
-      "rain_rate_mm_h": 0.0,
-      "rain_mm_interval": 0.0,
-      "air_temperature_c": 19.5,
-      "sea_surface_skin_temperature_c": 19.6,
-      "water_temperature_c": 19.6,
-      "breaking_hs_m": 1.22,
-      "surf_height_class": "Shoulder height",
-      "wave_exposed": true,
-      "wave_energy_kj_m2": 0.58,
-      "wave_power_kw_m": 3.95,
-      "wind_sector": "Offshore",
-      "wind_deviation_deg": 142.73,
-      "wind_limit_kt": 30.0,
-      "wind_glassy_limit_kt": 7.0,
-      "wind_blown_limit_kt": 40.0,
-      "wind_speed_kt": 13.53,
-      "wind_quality": "Offshore breeze",
-      "wind_acceptable": true,
-      "weather_icon": "\u2600\ufe0f",
-      "weather_label": "Clear",
-      "weather_code": "clear",
-      "surf_quality": "Offshore breeze",
-      "surf_suitable": true,
-      "surf_label": "Shoulder height \u00b7 Offshore breeze",
-      "spectral_band_energy_kj_m2": {
-        "h1012": 0.07480163,
-        "h1214": 0.03036185,
-        "h1417": 0.00999317,
-        "h1721": 0.00101056,
-        "h2125": 9.977e-05,
-        "h2530": 1.162e-05
-      },
-      "tide_m": 0.387
-    },
-    {
-      "time_utc": "2026-11-23T18:00:00Z",
-      "lead_hours": 18,
-      "hs_m": 0.989,
-      "tp_s": 9.969,
-      "wave_direction_from_deg": 220.0,
-      "spectral_band_hs_m": {
-        "h1012": 0.3528,
-        "h1214": 0.2433,
-        "h1417": 0.1418,
-        "h1721": 0.0401,
-        "h2125": 0.0126,
-        "h2530": 0.0043
-      },
-      "wind_speed_ms": 7.513,
-      "wind_direction_from_deg": 109.85,
-      "cloud_cover_pct": 0.0,
-      "rain_rate_mm_h": 0.0,
-      "rain_mm_interval": 0.0,
-      "air_temperature_c": 18.3,
-      "sea_surface_skin_temperature_c": 19.6,
-      "water_temperature_c": 19.6,
-      "breaking_hs_m": 1.27,
-      "surf_height_class": "Shoulder height",
-      "wave_exposed": true,
-      "wave_energy_kj_m2": 0.61,
-      "wave_power_kw_m": 4.31,
-      "wind_sector": "Offshore",
-      "wind_deviation_deg": 146.15,
-      "wind_limit_kt": 30.0,
-      "wind_glassy_limit_kt": 7.0,
-      "wind_blown_limit_kt": 40.0,
-      "wind_speed_kt": 14.6,
-      "wind_quality": "Offshore breeze",
-      "wind_acceptable": true,
-      "weather_icon": "\u2600\ufe0f",
-      "weather_label": "Clear",
-      "weather_code": "clear",
-      "surf_quality": "Offshore breeze",
-      "surf_suitable": true,
-      "surf_label": "Shoulder height \u00b7 Offshore breeze",
-      "spectral_band_energy_kj_m2": {
-        "h1012": 0.0782222,
-        "h1214": 0.03720121,
-        "h1417": 0.01263646,
-        "h1721": 0.00101056,
-        "h2125": 9.977e-05,
-        "h2530": 1.162e-05
-      },
-      "tide_m": -1.046
-    },
-    {
-      "time_utc": "2026-11-23T21:00:00Z",
-      "lead_hours": 21,
-      "hs_m": 0.989,
-      "tp_s": 10.345,
-      "wave_direction_from_deg": 220.0,
-      "spectral_band_hs_m": {
-        "h1012": 0.3606,
-        "h1214": 0.2589,
-        "h1417": 0.1339,
-        "h1721": 0.0401,
-        "h2125": 0.0126,
-        "h2530": 0.0043
-      },
-      "wind_speed_ms": 7.265,
-      "wind_direction_from_deg": 107.52,
-      "cloud_cover_pct": 28.1,
-      "rain_rate_mm_h": 0.0,
-      "rain_mm_interval": 0.0,
-      "air_temperature_c": 18.1,
-      "sea_surface_skin_temperature_c": 19.6,
-      "water_temperature_c": 19.6,
-      "breaking_hs_m": 1.29,
-      "surf_height_class": "Shoulder height",
-      "wave_exposed": true,
-      "wave_energy_kj_m2": 0.61,
-      "wave_power_kw_m": 4.47,
-      "wind_sector": "Offshore",
-      "wind_deviation_deg": 148.48,
-      "wind_limit_kt": 30.0,
-      "wind_glassy_limit_kt": 7.0,
-      "wind_blown_limit_kt": 40.0,
-      "wind_speed_kt": 14.12,
-      "wind_quality": "Offshore breeze",
-      "wind_acceptable": true,
-      "weather_icon": "\ud83c\udf24\ufe0f",
-      "weather_label": "Partly cloudy",
-      "weather_code": "partly_cloudy",
-      "surf_quality": "Offshore breeze",
-      "surf_suitable": true,
-      "surf_label": "Shoulder height \u00b7 Offshore breeze",
-      "spectral_band_energy_kj_m2": {
-        "h1012": 0.08171924,
-        "h1214": 0.04212472,
-        "h1417": 0.01126767,
-        "h1721": 0.00101056,
-        "h2125": 9.977e-05,
-        "h2530": 1.162e-05
-      },
-      "tide_m": -0.485
-    },
-    {
-      "time_utc": "2026-11-24T00:00:00Z",
-      "lead_hours": 24,
-      "hs_m": 1.004,
-      "tp_s": 9.593,
-      "wave_direction_from_deg": 195.0,
-      "spectral_band_hs_m": {
-        "h1012": 0.345,
-        "h1214": 0.2433,
-        "h1417": 0.1261,
-        "h1721": 0.0323,
-        "h2125": 0.0126,
-        "h2530": 0.0038
-      },
-      "wind_speed_ms": 7.739,
-      "wind_direction_from_deg": 115.83,
-      "cloud_cover_pct": 25.0,
-      "rain_rate_mm_h": 0.0,
-      "rain_mm_interval": 0.0,
-      "air_temperature_c": 18.2,
-      "sea_surface_skin_temperature_c": 19.6,
-      "water_temperature_c": 19.6,
-      "breaking_hs_m": 1.03,
-      "surf_height_class": "Shoulder height",
-      "wave_exposed": true,
-      "wave_energy_kj_m2": 0.63,
-      "wave_power_kw_m": 4.27,
-      "wind_sector": "Offshore",
-      "wind_deviation_deg": 140.17,
-      "wind_limit_kt": 30.0,
-      "wind_glassy_limit_kt": 7.0,
-      "wind_blown_limit_kt": 40.0,
-      "wind_speed_kt": 15.04,
-      "wind_quality": "Offshore breeze",
-      "wind_acceptable": true,
-      "weather_icon": "\u2600\ufe0f",
-      "weather_label": "Clear",
-      "weather_code": "clear",
-      "surf_quality": "Offshore breeze",
-      "surf_suitable": true,
-      "surf_label": "Shoulder height \u00b7 Offshore breeze",
-      "spectral_band_energy_kj_m2": {
-        "h1012": 0.07480163,
-        "h1214": 0.03720121,
-        "h1417": 0.00999317,
-        "h1721": 0.00065566,
-        "h2125": 9.977e-05,
-        "h2530": 9.07e-06
-      },
-      "tide_m": 0.986
-    },
-    {
-      "time_utc": "2026-11-24T03:00:00Z",
-      "lead_hours": 27,
-      "hs_m": 0.958,
-      "tp_s": 8.687,
-      "wave_direction_from_deg": 182.5,
-      "spectral_band_hs_m": {
-        "h1012": 0.3216,
-        "h1214": 0.212,
-        "h1417": 0.1027,
-        "h1721": 0.0323,
-        "h2125": 0.0126,
-        "h2530": 0.0038
-      },
-      "wind_speed_ms": 7.83,
-      "wind_direction_from_deg": 126.82,
-      "cloud_cover_pct": 6.2,
-      "rain_rate_mm_h": 0.0,
-      "rain_mm_interval": 0.0,
-      "air_temperature_c": 18.1,
-      "sea_surface_skin_temperature_c": 19.5,
-      "water_temperature_c": 19.5,
-      "breaking_hs_m": 0.77,
-      "surf_height_class": "Waist height",
-      "wave_exposed": true,
-      "wave_energy_kj_m2": 0.58,
-      "wave_power_kw_m": 3.52,
-      "wind_sector": "Side-offshore",
-      "wind_deviation_deg": 129.18,
-      "wind_limit_kt": 28.19,
-      "wind_glassy_limit_kt": 6.74,
-      "wind_blown_limit_kt": 38.45,
-      "wind_speed_kt": 15.22,
-      "wind_quality": "Offshore breeze",
-      "wind_acceptable": true,
-      "weather_icon": "\u2600\ufe0f",
-      "weather_label": "Clear",
-      "weather_code": "clear",
-      "surf_quality": "Offshore breeze",
-      "surf_suitable": true,
-      "surf_label": "Waist height \u00b7 Offshore breeze",
-      "spectral_band_energy_kj_m2": {
-        "h1012": 0.06499874,
-        "h1214": 0.0282452,
-        "h1417": 0.00662848,
-        "h1721": 0.00065566,
-        "h2125": 9.977e-05,
-        "h2530": 9.07e-06
-      },
-      "tide_m": 0.599
-    },
-    {
-      "time_utc": "2026-11-24T06:00:00Z",
-      "lead_hours": 30,
-      "hs_m": 0.864,
-      "tp_s": 9.288,
-      "wave_direction_from_deg": 195.0,
-      "spectral_band_hs_m": {
-        "h1012": 0.2903,
-        "h1214": 0.173,
-        "h1417": 0.0793,
-        "h1721": 0.0245,
-        "h2125": 0.0087,
-        "h2530": 0.0038
-      },
-      "wind_speed_ms": 7.351,
-      "wind_direction_from_deg": 138.46,
-      "cloud_cover_pct": 25.0,
-      "rain_rate_mm_h": 0.0,
-      "rain_mm_interval": 0.0,
-      "air_temperature_c": 18.2,
-      "sea_surface_skin_temperature_c": 19.5,
-      "water_temperature_c": 19.5,
-      "breaking_hs_m": 0.9,
-      "surf_height_class": "Waist height",
-      "wave_exposed": true,
-      "wave_energy_kj_m2": 0.47,
-      "wave_power_kw_m": 3.06,
-      "wind_sector": "Side-offshore",
-      "wind_deviation_deg": 117.54,
-      "wind_limit_kt": 24.57,
-      "wind_glassy_limit_kt": 6.22,
-      "wind_blown_limit_kt": 35.34,
-      "wind_speed_kt": 14.29,
-      "wind_quality": "Offshore breeze",
-      "wind_acceptable": true,
-      "weather_icon": "\u2600\ufe0f",
-      "weather_label": "Clear",
-      "weather_code": "clear",
-      "surf_quality": "Offshore breeze",
-      "surf_suitable": true,
-      "surf_label": "Waist height \u00b7 Offshore breeze",
-      "spectral_band_energy_kj_m2": {
-        "h1012": 0.05296232,
-        "h1214": 0.01880897,
-        "h1417": 0.00395202,
-        "h1721": 0.00037723,
-        "h2125": 4.757e-05,
-        "h2530": 9.07e-06
-      },
-      "tide_m": -0.993
-    },
-    {
-      "time_utc": "2026-11-24T09:00:00Z",
-      "lead_hours": 33,
-      "hs_m": 0.739,
-      "tp_s": 9.626,
-      "wave_direction_from_deg": 230.0,
-      "spectral_band_hs_m": {
-        "h1012": 0.2591,
-        "h1214": 0.1417,
+        "h1012": 0.2356,
+        "h1214": 0.1339,
         "h1417": 0.0636,
         "h1721": 0.0245,
         "h2125": 0.0087,
-        "h2530": 0.0038
+        "h2530": 0.0028
       },
-      "wind_speed_ms": 5.859,
-      "wind_direction_from_deg": 160.55,
-      "cloud_cover_pct": 42.2,
+      "wind_speed_ms": 5.389,
+      "wind_direction_from_deg": 258.07,
+      "cloud_cover_pct": 92.2,
       "rain_rate_mm_h": 0.0,
-      "rain_mm_interval": 0.0,
-      "air_temperature_c": 18.0,
+      "rain_mm_interval": null,
+      "air_temperature_c": 18.5,
       "sea_surface_skin_temperature_c": 19.5,
       "water_temperature_c": 19.5,
-      "breaking_hs_m": 1.03,
-      "surf_height_class": "Shoulder height",
-      "wave_exposed": true,
-      "wave_energy_kj_m2": 0.34,
-      "wave_power_kw_m": 2.32,
-      "wind_sector": "Side-offshore",
-      "wind_deviation_deg": 95.45,
-      "wind_limit_kt": 17.7,
-      "wind_glassy_limit_kt": 5.24,
-      "wind_blown_limit_kt": 29.45,
-      "wind_speed_kt": 11.39,
-      "wind_quality": "Choppy",
-      "wind_acceptable": true,
-      "weather_icon": "\ud83c\udf24\ufe0f",
-      "weather_label": "Partly cloudy",
-      "weather_code": "partly_cloudy",
-      "surf_quality": "Choppy",
-      "surf_suitable": true,
-      "surf_label": "Shoulder height \u00b7 Choppy",
-      "spectral_band_energy_kj_m2": {
-        "h1012": 0.04218982,
-        "h1214": 0.01261864,
-        "h1417": 0.00254207,
-        "h1721": 0.00037723,
-        "h2125": 4.757e-05,
-        "h2530": 9.07e-06
-      },
-      "tide_m": -0.689
-    },
-    {
-      "time_utc": "2026-11-24T12:00:00Z",
-      "lead_hours": 36,
-      "hs_m": 0.614,
-      "tp_s": 9.219,
-      "wave_direction_from_deg": 258.5,
-      "spectral_band_hs_m": {
-        "h1012": 0.2278,
-        "h1214": 0.1183,
-        "h1417": 0.0558,
-        "h1721": 0.0245,
-        "h2125": 0.0126,
-        "h2530": 0.0038
-      },
-      "wind_speed_ms": 3.764,
-      "wind_direction_from_deg": 198.57,
-      "cloud_cover_pct": 96.9,
-      "rain_rate_mm_h": 0.0,
-      "rain_mm_interval": 0.0,
-      "air_temperature_c": 18.3,
-      "sea_surface_skin_temperature_c": 19.6,
-      "water_temperature_c": 19.6,
-      "breaking_hs_m": 0.91,
+      "breaking_hs_m": 0.97,
       "surf_height_class": "Waist height",
       "wave_exposed": true,
-      "wave_energy_kj_m2": 0.24,
-      "wave_power_kw_m": 1.53,
-      "wind_sector": "Side-onshore",
-      "wind_deviation_deg": 57.43,
-      "wind_limit_kt": 14.55,
-      "wind_glassy_limit_kt": 4.28,
-      "wind_blown_limit_kt": 26.91,
-      "wind_speed_kt": 7.32,
+      "wave_energy_kj_m2": 0.27,
+      "wave_power_kw_m": 1.8,
+      "wind_sector": "Onshore",
+      "wind_deviation_deg": 2.07,
+      "wind_limit_kt": 12.09,
+      "wind_glassy_limit_kt": 3.05,
+      "wind_blown_limit_kt": 25.07,
+      "wind_speed_kt": 10.48,
       "wind_quality": "Choppy",
       "wind_acceptable": true,
       "weather_icon": "\u2601\ufe0f",
@@ -753,48 +141,48 @@
       "surf_suitable": true,
       "surf_label": "Waist height \u00b7 Choppy",
       "spectral_band_energy_kj_m2": {
-        "h1012": 0.03261222,
-        "h1214": 0.00879513,
-        "h1417": 0.00195678,
+        "h1012": 0.03488377,
+        "h1214": 0.01126767,
+        "h1417": 0.00254207,
         "h1721": 0.00037723,
-        "h2125": 9.977e-05,
-        "h2530": 9.07e-06
+        "h2125": 4.757e-05,
+        "h2530": 4.93e-06
       },
       "tide_m": 0.879
     },
     {
       "time_utc": "2026-11-24T15:00:00Z",
-      "lead_hours": 39,
-      "hs_m": 0.645,
-      "tp_s": 9.009,
-      "wave_direction_from_deg": 261.5,
+      "lead_hours": 3,
+      "hs_m": 0.723,
+      "tp_s": 8.5,
+      "wave_direction_from_deg": 269.5,
       "spectral_band_hs_m": {
-        "h1012": 0.2122,
+        "h1012": 0.2044,
         "h1214": 0.1105,
-        "h1417": 0.0558,
-        "h1721": 0.0323,
+        "h1417": 0.048,
+        "h1721": 0.0245,
         "h2125": 0.0126,
-        "h2530": 0.0047
+        "h2530": 0.0043
       },
-      "wind_speed_ms": 5.592,
-      "wind_direction_from_deg": 236.05,
-      "cloud_cover_pct": 48.4,
+      "wind_speed_ms": 4.811,
+      "wind_direction_from_deg": 283.57,
+      "cloud_cover_pct": 54.7,
       "rain_rate_mm_h": 0.0,
       "rain_mm_interval": 0.0,
-      "air_temperature_c": 19.0,
-      "sea_surface_skin_temperature_c": 19.7,
-      "water_temperature_c": 19.7,
-      "breaking_hs_m": 0.94,
+      "air_temperature_c": 18.8,
+      "sea_surface_skin_temperature_c": 19.6,
+      "water_temperature_c": 19.6,
+      "breaking_hs_m": 0.99,
       "surf_height_class": "Waist height",
       "wave_exposed": true,
-      "wave_energy_kj_m2": 0.26,
-      "wave_power_kw_m": 1.65,
+      "wave_energy_kj_m2": 0.33,
+      "wave_power_kw_m": 1.96,
       "wind_sector": "Onshore",
-      "wind_deviation_deg": 19.95,
-      "wind_limit_kt": 12.89,
-      "wind_glassy_limit_kt": 3.44,
-      "wind_blown_limit_kt": 25.66,
-      "wind_speed_kt": 10.87,
+      "wind_deviation_deg": 27.57,
+      "wind_limit_kt": 13.23,
+      "wind_glassy_limit_kt": 3.61,
+      "wind_blown_limit_kt": 25.92,
+      "wind_speed_kt": 9.35,
       "wind_quality": "Choppy",
       "wind_acceptable": true,
       "weather_icon": "\ud83c\udf24\ufe0f",
@@ -804,48 +192,150 @@
       "surf_suitable": true,
       "surf_label": "Waist height \u00b7 Choppy",
       "spectral_band_energy_kj_m2": {
-        "h1012": 0.02829852,
+        "h1012": 0.02625637,
         "h1214": 0.00767357,
-        "h1417": 0.00195678,
-        "h1721": 0.00065566,
+        "h1417": 0.00144796,
+        "h1721": 0.00037723,
         "h2125": 9.977e-05,
-        "h2530": 1.388e-05
+        "h2530": 1.162e-05
       },
       "tide_m": 0.808
     },
     {
       "time_utc": "2026-11-24T18:00:00Z",
-      "lead_hours": 42,
-      "hs_m": 0.77,
-      "tp_s": 5.656,
-      "wave_direction_from_deg": 252.0,
+      "lead_hours": 6,
+      "hs_m": 0.692,
+      "tp_s": 6.812,
+      "wave_direction_from_deg": 267.5,
       "spectral_band_hs_m": {
-        "h1012": 0.1887,
-        "h1214": 0.1026,
-        "h1417": 0.0558,
-        "h1721": 0.0401,
-        "h2125": 0.0165,
-        "h2530": 0.0057
+        "h1012": 0.1809,
+        "h1214": 0.087,
+        "h1417": 0.048,
+        "h1721": 0.0323,
+        "h2125": 0.0146,
+        "h2530": 0.0052
       },
-      "wind_speed_ms": 6.671,
-      "wind_direction_from_deg": 219.2,
-      "cloud_cover_pct": 93.8,
-      "rain_rate_mm_h": 0.33,
-      "rain_mm_interval": 0.99,
-      "air_temperature_c": 19.3,
-      "sea_surface_skin_temperature_c": 19.7,
-      "water_temperature_c": 19.7,
-      "breaking_hs_m": 0.91,
+      "wind_speed_ms": 2.777,
+      "wind_direction_from_deg": 278.88,
+      "cloud_cover_pct": 54.7,
+      "rain_rate_mm_h": 0.0,
+      "rain_mm_interval": 0.0,
+      "air_temperature_c": 18.6,
+      "sea_surface_skin_temperature_c": 19.5,
+      "water_temperature_c": 19.5,
+      "breaking_hs_m": 0.89,
       "surf_height_class": "Waist height",
       "wave_exposed": true,
-      "wave_energy_kj_m2": 0.37,
-      "wave_power_kw_m": 1.48,
+      "wave_energy_kj_m2": 0.3,
+      "wave_power_kw_m": 1.44,
       "wind_sector": "Onshore",
-      "wind_deviation_deg": 36.8,
-      "wind_limit_kt": 13.64,
-      "wind_glassy_limit_kt": 3.82,
-      "wind_blown_limit_kt": 26.23,
-      "wind_speed_kt": 12.97,
+      "wind_deviation_deg": 22.88,
+      "wind_limit_kt": 13.02,
+      "wind_glassy_limit_kt": 3.51,
+      "wind_blown_limit_kt": 25.76,
+      "wind_speed_kt": 5.4,
+      "wind_quality": "With texture",
+      "wind_acceptable": true,
+      "weather_icon": "\ud83c\udf24\ufe0f",
+      "weather_label": "Partly cloudy",
+      "weather_code": "partly_cloudy",
+      "surf_quality": "With texture",
+      "surf_suitable": true,
+      "surf_label": "Waist height \u00b7 With texture",
+      "spectral_band_energy_kj_m2": {
+        "h1012": 0.02056601,
+        "h1214": 0.00475676,
+        "h1417": 0.00144796,
+        "h1721": 0.00065566,
+        "h2125": 0.00013396,
+        "h2530": 1.699e-05
+      },
+      "tide_m": -0.858
+    },
+    {
+      "time_utc": "2026-11-24T21:00:00Z",
+      "lead_hours": 9,
+      "hs_m": 0.614,
+      "tp_s": 6.156,
+      "wave_direction_from_deg": 266.0,
+      "spectral_band_hs_m": {
+        "h1012": 0.1497,
+        "h1214": 0.0792,
+        "h1417": 0.0558,
+        "h1721": 0.0401,
+        "h2125": 0.0185,
+        "h2530": 0.0052
+      },
+      "wind_speed_ms": 2.54,
+      "wind_direction_from_deg": 252.3,
+      "cloud_cover_pct": 100.0,
+      "rain_rate_mm_h": 0.0,
+      "rain_mm_interval": 0.0,
+      "air_temperature_c": 18.9,
+      "sea_surface_skin_temperature_c": 19.7,
+      "water_temperature_c": 19.7,
+      "breaking_hs_m": 0.78,
+      "surf_height_class": "Waist height",
+      "wave_exposed": true,
+      "wave_energy_kj_m2": 0.24,
+      "wave_power_kw_m": 1.02,
+      "wind_sector": "Onshore",
+      "wind_deviation_deg": 3.7,
+      "wind_limit_kt": 12.16,
+      "wind_glassy_limit_kt": 3.08,
+      "wind_blown_limit_kt": 25.12,
+      "wind_speed_kt": 4.94,
+      "wind_quality": "With texture",
+      "wind_acceptable": true,
+      "weather_icon": "\u2601\ufe0f",
+      "weather_label": "Overcast",
+      "weather_code": "overcast",
+      "surf_quality": "With texture",
+      "surf_suitable": true,
+      "surf_label": "Waist height \u00b7 With texture",
+      "spectral_band_energy_kj_m2": {
+        "h1012": 0.01408369,
+        "h1214": 0.00394206,
+        "h1417": 0.00195678,
+        "h1721": 0.00101056,
+        "h2125": 0.00021509,
+        "h2530": 1.699e-05
+      },
+      "tide_m": -0.828
+    },
+    {
+      "time_utc": "2026-11-25T00:00:00Z",
+      "lead_hours": 12,
+      "hs_m": 0.614,
+      "tp_s": 6.281,
+      "wave_direction_from_deg": 273.5,
+      "spectral_band_hs_m": {
+        "h1012": 0.1341,
+        "h1214": 0.087,
+        "h1417": 0.0714,
+        "h1721": 0.0558,
+        "h2125": 0.0204,
+        "h2530": 0.0043
+      },
+      "wind_speed_ms": 7.14,
+      "wind_direction_from_deg": 347.17,
+      "cloud_cover_pct": 87.5,
+      "rain_rate_mm_h": 0.33,
+      "rain_mm_interval": 0.99,
+      "air_temperature_c": 17.3,
+      "sea_surface_skin_temperature_c": 19.6,
+      "water_temperature_c": 19.6,
+      "breaking_hs_m": 0.77,
+      "surf_height_class": "Waist height",
+      "wave_exposed": true,
+      "wave_energy_kj_m2": 0.24,
+      "wave_power_kw_m": 1.05,
+      "wind_sector": "Side-offshore",
+      "wind_deviation_deg": 91.17,
+      "wind_limit_kt": 16.36,
+      "wind_glassy_limit_kt": 5.05,
+      "wind_blown_limit_kt": 28.31,
+      "wind_speed_kt": 13.88,
       "wind_quality": "Choppy",
       "wind_acceptable": true,
       "weather_icon": "\ud83c\udf26\ufe0f",
@@ -855,150 +345,48 @@
       "surf_suitable": true,
       "surf_label": "Waist height \u00b7 Choppy",
       "spectral_band_energy_kj_m2": {
-        "h1012": 0.02237776,
-        "h1214": 0.00661558,
-        "h1417": 0.00195678,
-        "h1721": 0.00101056,
-        "h2125": 0.0001711,
-        "h2530": 2.042e-05
-      },
-      "tide_m": -0.858
-    },
-    {
-      "time_utc": "2026-11-24T21:00:00Z",
-      "lead_hours": 45,
-      "hs_m": 0.864,
-      "tp_s": 4.407,
-      "wave_direction_from_deg": 253.5,
-      "spectral_band_hs_m": {
-        "h1012": 0.1731,
-        "h1214": 0.0948,
-        "h1417": 0.0714,
-        "h1721": 0.048,
-        "h2125": 0.0204,
-        "h2530": 0.0052
-      },
-      "wind_speed_ms": 6.543,
-      "wind_direction_from_deg": 17.92,
-      "cloud_cover_pct": 28.1,
-      "rain_rate_mm_h": 0.0,
-      "rain_mm_interval": 0.0,
-      "air_temperature_c": 17.4,
-      "sea_surface_skin_temperature_c": 19.6,
-      "water_temperature_c": 19.6,
-      "breaking_hs_m": 0.92,
-      "surf_height_class": "Waist height",
-      "wave_exposed": true,
-      "wave_energy_kj_m2": 0.47,
-      "wave_power_kw_m": 1.45,
-      "wind_sector": "Side-offshore",
-      "wind_deviation_deg": 121.92,
-      "wind_limit_kt": 25.93,
-      "wind_glassy_limit_kt": 6.42,
-      "wind_blown_limit_kt": 36.51,
-      "wind_speed_kt": 12.72,
-      "wind_quality": "Offshore breeze",
-      "wind_acceptable": true,
-      "weather_icon": "\ud83c\udf24\ufe0f",
-      "weather_label": "Partly cloudy",
-      "weather_code": "partly_cloudy",
-      "surf_quality": "Offshore breeze",
-      "surf_suitable": true,
-      "surf_label": "Waist height \u00b7 Offshore breeze",
-      "spectral_band_energy_kj_m2": {
-        "h1012": 0.01883072,
-        "h1214": 0.00564793,
+        "h1012": 0.01130135,
+        "h1214": 0.00475676,
         "h1417": 0.00320383,
-        "h1721": 0.00144796,
-        "h2125": 0.00026154,
-        "h2530": 1.699e-05
-      },
-      "tide_m": -0.828
-    },
-    {
-      "time_utc": "2026-11-25T00:00:00Z",
-      "lead_hours": 48,
-      "hs_m": 0.958,
-      "tp_s": 4.72,
-      "wave_direction_from_deg": 279.5,
-      "spectral_band_hs_m": {
-        "h1012": 0.1575,
-        "h1214": 0.1026,
-        "h1417": 0.0793,
-        "h1721": 0.0558,
-        "h2125": 0.0185,
-        "h2530": 0.0043
-      },
-      "wind_speed_ms": 7.281,
-      "wind_direction_from_deg": 341.74,
-      "cloud_cover_pct": 20.3,
-      "rain_rate_mm_h": 0.0,
-      "rain_mm_interval": 0.0,
-      "air_temperature_c": 15.6,
-      "sea_surface_skin_temperature_c": 19.5,
-      "water_temperature_c": 19.5,
-      "breaking_hs_m": 1.0,
-      "surf_height_class": "Shoulder height",
-      "wave_exposed": true,
-      "wave_energy_kj_m2": 0.58,
-      "wave_power_kw_m": 1.91,
-      "wind_sector": "Side-onshore",
-      "wind_deviation_deg": 85.74,
-      "wind_limit_kt": 15.81,
-      "wind_glassy_limit_kt": 4.91,
-      "wind_blown_limit_kt": 27.86,
-      "wind_speed_kt": 14.15,
-      "wind_quality": "Choppy",
-      "wind_acceptable": true,
-      "weather_icon": "\u2600\ufe0f",
-      "weather_label": "Clear",
-      "weather_code": "clear",
-      "surf_quality": "Choppy",
-      "surf_suitable": true,
-      "surf_label": "Shoulder height \u00b7 Choppy",
-      "spectral_band_energy_kj_m2": {
-        "h1012": 0.01558957,
-        "h1214": 0.00661558,
-        "h1417": 0.00395202,
         "h1721": 0.00195678,
-        "h2125": 0.00021509,
+        "h2125": 0.00026154,
         "h2530": 1.162e-05
       },
       "tide_m": 0.765
     },
     {
       "time_utc": "2026-11-25T03:00:00Z",
-      "lead_hours": 51,
-      "hs_m": 0.989,
-      "tp_s": 5.595,
-      "wave_direction_from_deg": 283.5,
+      "lead_hours": 15,
+      "hs_m": 0.864,
+      "tp_s": 4.377,
+      "wave_direction_from_deg": 296.5,
       "spectral_band_hs_m": {
-        "h1012": 0.1497,
-        "h1214": 0.1105,
+        "h1012": 0.1341,
+        "h1214": 0.0948,
         "h1417": 0.0949,
-        "h1721": 0.0636,
-        "h2125": 0.0165,
-        "h2530": 0.0038
+        "h1721": 0.0714,
+        "h2125": 0.0185,
+        "h2530": 0.0033
       },
-      "wind_speed_ms": 6.272,
-      "wind_direction_from_deg": 344.65,
-      "cloud_cover_pct": 0.0,
+      "wind_speed_ms": 7.349,
+      "wind_direction_from_deg": 346.15,
+      "cloud_cover_pct": 1.6,
       "rain_rate_mm_h": 0.0,
       "rain_mm_interval": 0.0,
-      "air_temperature_c": 14.2,
+      "air_temperature_c": 15.3,
       "sea_surface_skin_temperature_c": 19.4,
       "water_temperature_c": 19.4,
-      "breaking_hs_m": 1.07,
-      "surf_height_class": "Shoulder height",
+      "breaking_hs_m": 0.84,
+      "surf_height_class": "Waist height",
       "wave_exposed": true,
-      "wave_energy_kj_m2": 0.61,
-      "wave_power_kw_m": 2.42,
-      "wind_sector": "Side-onshore",
-      "wind_deviation_deg": 88.65,
-      "wind_limit_kt": 15.94,
-      "wind_glassy_limit_kt": 4.97,
-      "wind_blown_limit_kt": 27.95,
-      "wind_speed_kt": 12.19,
+      "wave_energy_kj_m2": 0.47,
+      "wave_power_kw_m": 1.44,
+      "wind_sector": "Side-offshore",
+      "wind_deviation_deg": 90.15,
+      "wind_limit_kt": 16.05,
+      "wind_glassy_limit_kt": 5.01,
+      "wind_blown_limit_kt": 28.04,
+      "wind_speed_kt": 14.29,
       "wind_quality": "Choppy",
       "wind_acceptable": true,
       "weather_icon": "\u2600\ufe0f",
@@ -1006,50 +394,50 @@
       "weather_code": "clear",
       "surf_quality": "Choppy",
       "surf_suitable": true,
-      "surf_label": "Shoulder height \u00b7 Choppy",
+      "surf_label": "Waist height \u00b7 Choppy",
       "spectral_band_energy_kj_m2": {
-        "h1012": 0.01408369,
-        "h1214": 0.00767357,
+        "h1012": 0.01130135,
+        "h1214": 0.00564793,
         "h1417": 0.00565986,
-        "h1721": 0.00254207,
-        "h2125": 0.0001711,
-        "h2530": 9.07e-06
+        "h1721": 0.00320383,
+        "h2125": 0.00021509,
+        "h2530": 6.84e-06
       },
       "tide_m": 0.985
     },
     {
       "time_utc": "2026-11-25T06:00:00Z",
-      "lead_hours": 54,
-      "hs_m": 1.004,
-      "tp_s": 6.44,
-      "wave_direction_from_deg": 284.0,
+      "lead_hours": 18,
+      "hs_m": 0.911,
+      "tp_s": 5.093,
+      "wave_direction_from_deg": 292.0,
       "spectral_band_hs_m": {
-        "h1012": 0.1653,
-        "h1214": 0.1261,
-        "h1417": 0.1183,
-        "h1721": 0.0636,
-        "h2125": 0.0126,
+        "h1012": 0.1497,
+        "h1214": 0.1183,
+        "h1417": 0.1261,
+        "h1721": 0.0714,
+        "h2125": 0.0165,
         "h2530": 0.0033
       },
-      "wind_speed_ms": 6.354,
-      "wind_direction_from_deg": 347.74,
-      "cloud_cover_pct": 84.4,
+      "wind_speed_ms": 5.724,
+      "wind_direction_from_deg": 345.93,
+      "cloud_cover_pct": 85.9,
       "rain_rate_mm_h": 0.0,
       "rain_mm_interval": 0.0,
-      "air_temperature_c": 14.0,
-      "sea_surface_skin_temperature_c": 19.3,
-      "water_temperature_c": 19.3,
-      "breaking_hs_m": 1.14,
-      "surf_height_class": "Shoulder height",
+      "air_temperature_c": 14.6,
+      "sea_surface_skin_temperature_c": 19.4,
+      "water_temperature_c": 19.4,
+      "breaking_hs_m": 0.94,
+      "surf_height_class": "Waist height",
       "wave_exposed": true,
-      "wave_energy_kj_m2": 0.63,
-      "wave_power_kw_m": 2.87,
-      "wind_sector": "Side-offshore",
-      "wind_deviation_deg": 91.74,
-      "wind_limit_kt": 16.54,
-      "wind_glassy_limit_kt": 5.08,
-      "wind_blown_limit_kt": 28.46,
-      "wind_speed_kt": 12.35,
+      "wave_energy_kj_m2": 0.52,
+      "wave_power_kw_m": 1.87,
+      "wind_sector": "Side-onshore",
+      "wind_deviation_deg": 89.93,
+      "wind_limit_kt": 16.0,
+      "wind_glassy_limit_kt": 5.0,
+      "wind_blown_limit_kt": 28.0,
+      "wind_speed_kt": 11.13,
       "wind_quality": "Choppy",
       "wind_acceptable": true,
       "weather_icon": "\u2601\ufe0f",
@@ -1057,50 +445,50 @@
       "weather_code": "overcast",
       "surf_quality": "Choppy",
       "surf_suitable": true,
-      "surf_label": "Shoulder height \u00b7 Choppy",
+      "surf_label": "Waist height \u00b7 Choppy",
       "spectral_band_energy_kj_m2": {
-        "h1012": 0.01717191,
-        "h1214": 0.00999317,
-        "h1417": 0.00879513,
-        "h1721": 0.00254207,
-        "h2125": 9.977e-05,
+        "h1012": 0.01408369,
+        "h1214": 0.00879513,
+        "h1417": 0.00999317,
+        "h1721": 0.00320383,
+        "h2125": 0.0001711,
         "h2530": 6.84e-06
       },
       "tide_m": -0.735
     },
     {
       "time_utc": "2026-11-25T09:00:00Z",
-      "lead_hours": 57,
-      "hs_m": 0.973,
-      "tp_s": 6.906,
-      "wave_direction_from_deg": 279.5,
+      "lead_hours": 21,
+      "hs_m": 0.926,
+      "tp_s": 5.5,
+      "wave_direction_from_deg": 285.0,
       "spectral_band_hs_m": {
-        "h1012": 0.1887,
+        "h1012": 0.1731,
         "h1214": 0.1495,
         "h1417": 0.1339,
         "h1721": 0.0636,
-        "h2125": 0.0126,
+        "h2125": 0.0146,
         "h2530": 0.0033
       },
-      "wind_speed_ms": 3.778,
-      "wind_direction_from_deg": 357.37,
-      "cloud_cover_pct": 51.6,
+      "wind_speed_ms": 4.019,
+      "wind_direction_from_deg": 352.67,
+      "cloud_cover_pct": 60.9,
       "rain_rate_mm_h": 0.0,
       "rain_mm_interval": 0.0,
-      "air_temperature_c": 14.1,
-      "sea_surface_skin_temperature_c": 19.2,
-      "water_temperature_c": 19.2,
-      "breaking_hs_m": 1.15,
+      "air_temperature_c": 15.0,
+      "sea_surface_skin_temperature_c": 19.3,
+      "water_temperature_c": 19.3,
+      "breaking_hs_m": 1.0,
       "surf_height_class": "Shoulder height",
       "wave_exposed": true,
-      "wave_energy_kj_m2": 0.59,
-      "wave_power_kw_m": 2.89,
+      "wave_energy_kj_m2": 0.54,
+      "wave_power_kw_m": 2.08,
       "wind_sector": "Side-offshore",
-      "wind_deviation_deg": 101.37,
-      "wind_limit_kt": 19.54,
-      "wind_glassy_limit_kt": 5.51,
-      "wind_blown_limit_kt": 31.03,
-      "wind_speed_kt": 7.34,
+      "wind_deviation_deg": 96.67,
+      "wind_limit_kt": 18.08,
+      "wind_glassy_limit_kt": 5.3,
+      "wind_blown_limit_kt": 29.78,
+      "wind_speed_kt": 7.81,
       "wind_quality": "With texture",
       "wind_acceptable": true,
       "weather_icon": "\ud83c\udf24\ufe0f",
@@ -1110,201 +498,99 @@
       "surf_suitable": true,
       "surf_label": "Shoulder height \u00b7 With texture",
       "spectral_band_energy_kj_m2": {
-        "h1012": 0.02237776,
+        "h1012": 0.01883072,
         "h1214": 0.01404608,
         "h1417": 0.01126767,
         "h1721": 0.00254207,
-        "h2125": 9.977e-05,
+        "h2125": 0.00013396,
         "h2530": 6.84e-06
       },
       "tide_m": -1.045
     },
     {
       "time_utc": "2026-11-25T12:00:00Z",
-      "lead_hours": 60,
-      "hs_m": 0.958,
-      "tp_s": 7.315,
-      "wave_direction_from_deg": 279.5,
+      "lead_hours": 24,
+      "hs_m": 0.989,
+      "tp_s": 5.97,
+      "wave_direction_from_deg": 285.0,
       "spectral_band_hs_m": {
-        "h1012": 0.22,
-        "h1214": 0.173,
-        "h1417": 0.1496,
-        "h1721": 0.0675,
+        "h1012": 0.2044,
+        "h1214": 0.1651,
+        "h1417": 0.1418,
+        "h1721": 0.0636,
         "h2125": 0.0126,
-        "h2530": 0.0038
+        "h2530": 0.0033
       },
-      "wind_speed_ms": 6.03,
-      "wind_direction_from_deg": 315.28,
-      "cloud_cover_pct": 65.6,
-      "rain_rate_mm_h": 0.055,
-      "rain_mm_interval": 0.16,
-      "air_temperature_c": 16.3,
-      "sea_surface_skin_temperature_c": 19.4,
-      "water_temperature_c": 19.4,
-      "breaking_hs_m": 1.16,
+      "wind_speed_ms": 6.26,
+      "wind_direction_from_deg": 321.28,
+      "cloud_cover_pct": 78.1,
+      "rain_rate_mm_h": 0.0,
+      "rain_mm_interval": 0.0,
+      "air_temperature_c": 16.4,
+      "sea_surface_skin_temperature_c": 19.3,
+      "water_temperature_c": 19.3,
+      "breaking_hs_m": 1.09,
       "surf_height_class": "Shoulder height",
       "wave_exposed": true,
-      "wave_energy_kj_m2": 0.58,
-      "wave_power_kw_m": 2.96,
+      "wave_energy_kj_m2": 0.61,
+      "wave_power_kw_m": 2.58,
       "wind_sector": "Side-onshore",
-      "wind_deviation_deg": 59.28,
-      "wind_limit_kt": 14.63,
-      "wind_glassy_limit_kt": 4.32,
-      "wind_blown_limit_kt": 26.98,
-      "wind_speed_kt": 11.72,
+      "wind_deviation_deg": 65.28,
+      "wind_limit_kt": 14.9,
+      "wind_glassy_limit_kt": 4.45,
+      "wind_blown_limit_kt": 27.18,
+      "wind_speed_kt": 12.17,
       "wind_quality": "Choppy",
       "wind_acceptable": true,
-      "weather_icon": "\ud83c\udf24\ufe0f",
-      "weather_label": "Partly cloudy",
-      "weather_code": "partly_cloudy",
+      "weather_icon": "\u2601\ufe0f",
+      "weather_label": "Overcast",
+      "weather_code": "overcast",
       "surf_quality": "Choppy",
       "surf_suitable": true,
       "surf_label": "Shoulder height \u00b7 Choppy",
       "spectral_band_energy_kj_m2": {
-        "h1012": 0.03041713,
-        "h1214": 0.01880897,
-        "h1417": 0.01406488,
-        "h1721": 0.00286339,
+        "h1012": 0.02625637,
+        "h1214": 0.01713038,
+        "h1417": 0.01263646,
+        "h1721": 0.00254207,
         "h2125": 9.977e-05,
-        "h2530": 9.07e-06
+        "h2530": 6.84e-06
       },
       "tide_m": 0.511
     },
     {
       "time_utc": "2026-11-25T15:00:00Z",
-      "lead_hours": 63,
+      "lead_hours": 27,
       "hs_m": 0.958,
-      "tp_s": 7.438,
-      "wave_direction_from_deg": 278.5,
+      "tp_s": 6.625,
+      "wave_direction_from_deg": 281.0,
       "spectral_band_hs_m": {
-        "h1012": 0.2356,
-        "h1214": 0.1808,
-        "h1417": 0.1496,
-        "h1721": 0.0714,
+        "h1012": 0.2278,
+        "h1214": 0.173,
+        "h1417": 0.1418,
+        "h1721": 0.0675,
         "h2125": 0.0146,
-        "h2530": 0.0038
+        "h2530": 0.0033
       },
-      "wind_speed_ms": 6.232,
-      "wind_direction_from_deg": 302.89,
-      "cloud_cover_pct": 68.8,
-      "rain_rate_mm_h": 0.027,
-      "rain_mm_interval": 0.08,
-      "air_temperature_c": 16.7,
-      "sea_surface_skin_temperature_c": 19.2,
-      "water_temperature_c": 19.2,
-      "breaking_hs_m": 1.17,
+      "wind_speed_ms": 5.938,
+      "wind_direction_from_deg": 299.44,
+      "cloud_cover_pct": 100.0,
+      "rain_rate_mm_h": 0.0,
+      "rain_mm_interval": 0.0,
+      "air_temperature_c": 16.4,
+      "sea_surface_skin_temperature_c": 19.3,
+      "water_temperature_c": 19.3,
+      "breaking_hs_m": 1.11,
       "surf_height_class": "Shoulder height",
       "wave_exposed": true,
       "wave_energy_kj_m2": 0.58,
-      "wave_power_kw_m": 3.01,
-      "wind_sector": "Side-onshore",
-      "wind_deviation_deg": 46.89,
-      "wind_limit_kt": 14.08,
-      "wind_glassy_limit_kt": 4.04,
-      "wind_blown_limit_kt": 26.56,
-      "wind_speed_kt": 12.11,
-      "wind_quality": "Choppy",
-      "wind_acceptable": true,
-      "weather_icon": "\ud83c\udf24\ufe0f",
-      "weather_label": "Partly cloudy",
-      "weather_code": "partly_cloudy",
-      "surf_quality": "Choppy",
-      "surf_suitable": true,
-      "surf_label": "Shoulder height \u00b7 Choppy",
-      "spectral_band_energy_kj_m2": {
-        "h1012": 0.03488377,
-        "h1214": 0.02054328,
-        "h1417": 0.01406488,
-        "h1721": 0.00320383,
-        "h2125": 0.00013396,
-        "h2530": 9.07e-06
-      },
-      "tide_m": 1.093
-    },
-    {
-      "time_utc": "2026-11-25T18:00:00Z",
-      "lead_hours": 66,
-      "hs_m": 0.895,
-      "tp_s": 7.591,
-      "wave_direction_from_deg": 276.0,
-      "spectral_band_hs_m": {
-        "h1012": 0.2356,
-        "h1214": 0.1808,
-        "h1417": 0.1496,
-        "h1721": 0.0714,
-        "h2125": 0.0146,
-        "h2530": 0.0038
-      },
-      "wind_speed_ms": 4.501,
-      "wind_direction_from_deg": 307.87,
-      "cloud_cover_pct": 65.6,
-      "rain_rate_mm_h": 0.027,
-      "rain_mm_interval": 0.08,
-      "air_temperature_c": 16.7,
-      "sea_surface_skin_temperature_c": 19.3,
-      "water_temperature_c": 19.3,
-      "breaking_hs_m": 1.12,
-      "surf_height_class": "Shoulder height",
-      "wave_exposed": true,
-      "wave_energy_kj_m2": 0.5,
       "wave_power_kw_m": 2.68,
-      "wind_sector": "Side-onshore",
-      "wind_deviation_deg": 51.87,
-      "wind_limit_kt": 14.31,
-      "wind_glassy_limit_kt": 4.15,
-      "wind_blown_limit_kt": 26.73,
-      "wind_speed_kt": 8.75,
-      "wind_quality": "Choppy",
-      "wind_acceptable": true,
-      "weather_icon": "\ud83c\udf24\ufe0f",
-      "weather_label": "Partly cloudy",
-      "weather_code": "partly_cloudy",
-      "surf_quality": "Choppy",
-      "surf_suitable": true,
-      "surf_label": "Shoulder height \u00b7 Choppy",
-      "spectral_band_energy_kj_m2": {
-        "h1012": 0.03488377,
-        "h1214": 0.02054328,
-        "h1417": 0.01406488,
-        "h1721": 0.00320383,
-        "h2125": 0.00013396,
-        "h2530": 9.07e-06
-      },
-      "tide_m": -0.484
-    },
-    {
-      "time_utc": "2026-11-25T21:00:00Z",
-      "lead_hours": 69,
-      "hs_m": 0.833,
-      "tp_s": 7.689,
-      "wave_direction_from_deg": 275.0,
-      "spectral_band_hs_m": {
-        "h1012": 0.2278,
-        "h1214": 0.1808,
-        "h1417": 0.1418,
-        "h1721": 0.0597,
-        "h2125": 0.0107,
-        "h2530": 0.0033
-      },
-      "wind_speed_ms": 4.939,
-      "wind_direction_from_deg": 294.8,
-      "cloud_cover_pct": 76.6,
-      "rain_rate_mm_h": 0.069,
-      "rain_mm_interval": 0.21,
-      "air_temperature_c": 17.0,
-      "sea_surface_skin_temperature_c": 19.2,
-      "water_temperature_c": 19.2,
-      "breaking_hs_m": 1.06,
-      "surf_height_class": "Shoulder height",
-      "wave_exposed": true,
-      "wave_energy_kj_m2": 0.44,
-      "wave_power_kw_m": 2.36,
       "wind_sector": "Onshore",
-      "wind_deviation_deg": 38.8,
-      "wind_limit_kt": 13.72,
-      "wind_glassy_limit_kt": 3.86,
-      "wind_blown_limit_kt": 26.29,
-      "wind_speed_kt": 9.6,
+      "wind_deviation_deg": 43.44,
+      "wind_limit_kt": 13.93,
+      "wind_glassy_limit_kt": 3.97,
+      "wind_blown_limit_kt": 26.45,
+      "wind_speed_kt": 11.54,
       "wind_quality": "Choppy",
       "wind_acceptable": true,
       "weather_icon": "\u2601\ufe0f",
@@ -1315,110 +601,212 @@
       "surf_label": "Shoulder height \u00b7 Choppy",
       "spectral_band_energy_kj_m2": {
         "h1012": 0.03261222,
-        "h1214": 0.02054328,
+        "h1214": 0.01880897,
         "h1417": 0.01263646,
-        "h1721": 0.00223986,
-        "h2125": 7.195e-05,
+        "h1721": 0.00286339,
+        "h2125": 0.00013396,
+        "h2530": 6.84e-06
+      },
+      "tide_m": 1.093
+    },
+    {
+      "time_utc": "2026-11-25T18:00:00Z",
+      "lead_hours": 30,
+      "hs_m": 0.911,
+      "tp_s": 7.281,
+      "wave_direction_from_deg": 278.5,
+      "spectral_band_hs_m": {
+        "h1012": 0.2356,
+        "h1214": 0.1886,
+        "h1417": 0.1496,
+        "h1721": 0.0675,
+        "h2125": 0.0126,
+        "h2530": 0.0033
+      },
+      "wind_speed_ms": 5.87,
+      "wind_direction_from_deg": 294.49,
+      "cloud_cover_pct": 78.1,
+      "rain_rate_mm_h": 0.137,
+      "rain_mm_interval": 0.41,
+      "air_temperature_c": 16.6,
+      "sea_surface_skin_temperature_c": 19.4,
+      "water_temperature_c": 19.4,
+      "breaking_hs_m": 1.11,
+      "surf_height_class": "Shoulder height",
+      "wave_exposed": true,
+      "wave_energy_kj_m2": 0.52,
+      "wave_power_kw_m": 2.67,
+      "wind_sector": "Onshore",
+      "wind_deviation_deg": 38.49,
+      "wind_limit_kt": 13.71,
+      "wind_glassy_limit_kt": 3.86,
+      "wind_blown_limit_kt": 26.28,
+      "wind_speed_kt": 11.41,
+      "wind_quality": "Choppy",
+      "wind_acceptable": true,
+      "weather_icon": "\ud83c\udf26\ufe0f",
+      "weather_label": "Light rain",
+      "weather_code": "light_rain",
+      "surf_quality": "Choppy",
+      "surf_suitable": true,
+      "surf_label": "Shoulder height \u00b7 Choppy",
+      "spectral_band_energy_kj_m2": {
+        "h1012": 0.03488377,
+        "h1214": 0.02235405,
+        "h1417": 0.01406488,
+        "h1721": 0.00286339,
+        "h2125": 9.977e-05,
+        "h2530": 6.84e-06
+      },
+      "tide_m": -0.484
+    },
+    {
+      "time_utc": "2026-11-25T21:00:00Z",
+      "lead_hours": 33,
+      "hs_m": 0.895,
+      "tp_s": 7.597,
+      "wave_direction_from_deg": 276.5,
+      "spectral_band_hs_m": {
+        "h1012": 0.2434,
+        "h1214": 0.1964,
+        "h1417": 0.1418,
+        "h1721": 0.0558,
+        "h2125": 0.0087,
+        "h2530": 0.0033
+      },
+      "wind_speed_ms": 5.102,
+      "wind_direction_from_deg": 310.42,
+      "cloud_cover_pct": 23.4,
+      "rain_rate_mm_h": 0.11,
+      "rain_mm_interval": 0.33,
+      "air_temperature_c": 16.5,
+      "sea_surface_skin_temperature_c": 19.3,
+      "water_temperature_c": 19.3,
+      "breaking_hs_m": 1.12,
+      "surf_height_class": "Shoulder height",
+      "wave_exposed": true,
+      "wave_energy_kj_m2": 0.5,
+      "wave_power_kw_m": 2.69,
+      "wind_sector": "Side-onshore",
+      "wind_deviation_deg": 54.42,
+      "wind_limit_kt": 14.42,
+      "wind_glassy_limit_kt": 4.21,
+      "wind_blown_limit_kt": 26.81,
+      "wind_speed_kt": 9.92,
+      "wind_quality": "Choppy",
+      "wind_acceptable": true,
+      "weather_icon": "\ud83c\udf26\ufe0f",
+      "weather_label": "Light rain",
+      "weather_code": "light_rain",
+      "surf_quality": "Choppy",
+      "surf_suitable": true,
+      "surf_label": "Shoulder height \u00b7 Choppy",
+      "spectral_band_energy_kj_m2": {
+        "h1012": 0.0372318,
+        "h1214": 0.0242413,
+        "h1417": 0.01263646,
+        "h1721": 0.00195678,
+        "h2125": 4.757e-05,
         "h2530": 6.84e-06
       },
       "tide_m": -1.055
     },
     {
       "time_utc": "2026-11-26T00:00:00Z",
-      "lead_hours": 72,
-      "hs_m": 0.848,
-      "tp_s": 7.345,
-      "wave_direction_from_deg": 280.0,
+      "lead_hours": 36,
+      "hs_m": 0.926,
+      "tp_s": 6.437,
+      "wave_direction_from_deg": 277.5,
       "spectral_band_hs_m": {
-        "h1012": 0.22,
-        "h1214": 0.173,
-        "h1417": 0.1261,
-        "h1721": 0.048,
+        "h1012": 0.2434,
+        "h1214": 0.1886,
+        "h1417": 0.1339,
+        "h1721": 0.044,
         "h2125": 0.0068,
-        "h2530": 0.0033
+        "h2530": 0.0028
       },
-      "wind_speed_ms": 5.97,
-      "wind_direction_from_deg": 332.34,
-      "cloud_cover_pct": 79.7,
-      "rain_rate_mm_h": 0.055,
-      "rain_mm_interval": 0.16,
-      "air_temperature_c": 16.3,
-      "sea_surface_skin_temperature_c": 19.3,
-      "water_temperature_c": 19.3,
-      "breaking_hs_m": 1.05,
+      "wind_speed_ms": 4.959,
+      "wind_direction_from_deg": 338.7,
+      "cloud_cover_pct": 12.5,
+      "rain_rate_mm_h": 0.027,
+      "rain_mm_interval": 0.08,
+      "air_temperature_c": 15.7,
+      "sea_surface_skin_temperature_c": 19.4,
+      "water_temperature_c": 19.4,
+      "breaking_hs_m": 1.08,
       "surf_height_class": "Shoulder height",
       "wave_exposed": true,
-      "wave_energy_kj_m2": 0.45,
-      "wave_power_kw_m": 2.33,
+      "wave_energy_kj_m2": 0.54,
+      "wave_power_kw_m": 2.44,
       "wind_sector": "Side-onshore",
-      "wind_deviation_deg": 76.34,
-      "wind_limit_kt": 15.39,
-      "wind_glassy_limit_kt": 4.7,
-      "wind_blown_limit_kt": 27.54,
-      "wind_speed_kt": 11.6,
+      "wind_deviation_deg": 82.7,
+      "wind_limit_kt": 15.68,
+      "wind_glassy_limit_kt": 4.84,
+      "wind_blown_limit_kt": 27.76,
+      "wind_speed_kt": 9.64,
       "wind_quality": "Choppy",
       "wind_acceptable": true,
-      "weather_icon": "\u2601\ufe0f",
-      "weather_label": "Overcast",
-      "weather_code": "overcast",
+      "weather_icon": "\u2600\ufe0f",
+      "weather_label": "Clear",
+      "weather_code": "clear",
       "surf_quality": "Choppy",
       "surf_suitable": true,
       "surf_label": "Shoulder height \u00b7 Choppy",
       "spectral_band_energy_kj_m2": {
-        "h1012": 0.03041713,
-        "h1214": 0.01880897,
-        "h1417": 0.00999317,
-        "h1721": 0.00144796,
+        "h1012": 0.0372318,
+        "h1214": 0.02235405,
+        "h1417": 0.01126767,
+        "h1721": 0.00121669,
         "h2125": 2.906e-05,
-        "h2530": 6.84e-06
+        "h2530": 4.93e-06
       },
       "tide_m": 0.394
     },
     {
       "time_utc": "2026-11-26T03:00:00Z",
-      "lead_hours": 75,
-      "hs_m": 0.879,
-      "tp_s": 5.944,
-      "wave_direction_from_deg": 284.5,
+      "lead_hours": 39,
+      "hs_m": 0.911,
+      "tp_s": 6.408,
+      "wave_direction_from_deg": 280.0,
       "spectral_band_hs_m": {
-        "h1012": 0.2122,
-        "h1214": 0.1651,
-        "h1417": 0.1105,
+        "h1012": 0.2356,
+        "h1214": 0.1886,
+        "h1417": 0.1183,
         "h1721": 0.0362,
         "h2125": 0.0048,
         "h2530": 0.0033
       },
-      "wind_speed_ms": 5.608,
-      "wind_direction_from_deg": 344.33,
-      "cloud_cover_pct": 71.9,
+      "wind_speed_ms": 5.222,
+      "wind_direction_from_deg": 357.4,
+      "cloud_cover_pct": 9.4,
       "rain_rate_mm_h": 0.0,
       "rain_mm_interval": 0.0,
-      "air_temperature_c": 15.2,
+      "air_temperature_c": 13.7,
       "sea_surface_skin_temperature_c": 19.3,
       "water_temperature_c": 19.3,
-      "breaking_hs_m": 0.99,
-      "surf_height_class": "Waist height",
+      "breaking_hs_m": 1.06,
+      "surf_height_class": "Shoulder height",
       "wave_exposed": true,
-      "wave_energy_kj_m2": 0.49,
-      "wave_power_kw_m": 2.03,
-      "wind_sector": "Side-onshore",
-      "wind_deviation_deg": 88.33,
-      "wind_limit_kt": 15.93,
-      "wind_glassy_limit_kt": 4.96,
-      "wind_blown_limit_kt": 27.94,
-      "wind_speed_kt": 10.9,
-      "wind_quality": "Choppy",
+      "wave_energy_kj_m2": 0.52,
+      "wave_power_kw_m": 2.35,
+      "wind_sector": "Side-offshore",
+      "wind_deviation_deg": 101.4,
+      "wind_limit_kt": 19.55,
+      "wind_glassy_limit_kt": 5.51,
+      "wind_blown_limit_kt": 31.04,
+      "wind_speed_kt": 10.15,
+      "wind_quality": "With texture",
       "wind_acceptable": true,
-      "weather_icon": "\u2601\ufe0f",
-      "weather_label": "Overcast",
-      "weather_code": "overcast",
-      "surf_quality": "Choppy",
+      "weather_icon": "\u2600\ufe0f",
+      "weather_label": "Clear",
+      "weather_code": "clear",
+      "surf_quality": "With texture",
       "surf_suitable": true,
-      "surf_label": "Waist height \u00b7 Choppy",
+      "surf_label": "Shoulder height \u00b7 With texture",
       "spectral_band_energy_kj_m2": {
-        "h1012": 0.02829852,
-        "h1214": 0.01713038,
-        "h1417": 0.00767357,
+        "h1012": 0.03488377,
+        "h1214": 0.02235405,
+        "h1417": 0.00879513,
         "h1721": 0.00082355,
         "h2125": 1.448e-05,
         "h2530": 6.84e-06
@@ -1427,88 +815,37 @@
     },
     {
       "time_utc": "2026-11-26T06:00:00Z",
-      "lead_hours": 78,
-      "hs_m": 0.848,
-      "tp_s": 6.117,
-      "wave_direction_from_deg": 286.5,
+      "lead_hours": 42,
+      "hs_m": 0.879,
+      "tp_s": 6.531,
+      "wave_direction_from_deg": 283.0,
       "spectral_band_hs_m": {
-        "h1012": 0.2122,
-        "h1214": 0.1651,
-        "h1417": 0.1027,
-        "h1721": 0.0284,
+        "h1012": 0.2356,
+        "h1214": 0.1808,
+        "h1417": 0.1105,
+        "h1721": 0.0323,
         "h2125": 0.0048,
         "h2530": 0.0033
       },
-      "wind_speed_ms": 5.348,
-      "wind_direction_from_deg": 351.77,
-      "cloud_cover_pct": 0.0,
+      "wind_speed_ms": 4.695,
+      "wind_direction_from_deg": 1.36,
+      "cloud_cover_pct": 1.6,
       "rain_rate_mm_h": 0.0,
       "rain_mm_interval": 0.0,
-      "air_temperature_c": 13.8,
-      "sea_surface_skin_temperature_c": 19.2,
-      "water_temperature_c": 19.2,
-      "breaking_hs_m": 0.96,
-      "surf_height_class": "Waist height",
+      "air_temperature_c": 12.4,
+      "sea_surface_skin_temperature_c": 19.0,
+      "water_temperature_c": 19.0,
+      "breaking_hs_m": 1.03,
+      "surf_height_class": "Shoulder height",
       "wave_exposed": true,
-      "wave_energy_kj_m2": 0.45,
-      "wave_power_kw_m": 1.94,
+      "wave_energy_kj_m2": 0.49,
+      "wave_power_kw_m": 2.23,
       "wind_sector": "Side-offshore",
-      "wind_deviation_deg": 95.77,
-      "wind_limit_kt": 17.8,
-      "wind_glassy_limit_kt": 5.26,
-      "wind_blown_limit_kt": 29.54,
-      "wind_speed_kt": 10.4,
-      "wind_quality": "Choppy",
-      "wind_acceptable": true,
-      "weather_icon": "\u2600\ufe0f",
-      "weather_label": "Clear",
-      "weather_code": "clear",
-      "surf_quality": "Choppy",
-      "surf_suitable": true,
-      "surf_label": "Waist height \u00b7 Choppy",
-      "spectral_band_energy_kj_m2": {
-        "h1012": 0.02829852,
-        "h1214": 0.01713038,
-        "h1417": 0.00662848,
-        "h1721": 0.00050689,
-        "h2125": 1.448e-05,
-        "h2530": 6.84e-06
-      },
-      "tide_m": -0.289
-    },
-    {
-      "time_utc": "2026-11-26T09:00:00Z",
-      "lead_hours": 81,
-      "hs_m": 0.77,
-      "tp_s": 7.439,
-      "wave_direction_from_deg": 284.0,
-      "spectral_band_hs_m": {
-        "h1012": 0.2278,
-        "h1214": 0.1651,
-        "h1417": 0.1027,
-        "h1721": 0.0284,
-        "h2125": 0.0048,
-        "h2530": 0.0033
-      },
-      "wind_speed_ms": 3.835,
-      "wind_direction_from_deg": 6.08,
-      "cloud_cover_pct": 0.0,
-      "rain_rate_mm_h": 0.0,
-      "rain_mm_interval": 0.0,
-      "air_temperature_c": 13.0,
-      "sea_surface_skin_temperature_c": 18.9,
-      "water_temperature_c": 18.9,
-      "breaking_hs_m": 0.96,
-      "surf_height_class": "Waist height",
-      "wave_exposed": true,
-      "wave_energy_kj_m2": 0.37,
-      "wave_power_kw_m": 1.95,
-      "wind_sector": "Side-offshore",
-      "wind_deviation_deg": 110.08,
-      "wind_limit_kt": 22.25,
-      "wind_glassy_limit_kt": 5.89,
-      "wind_blown_limit_kt": 33.35,
-      "wind_speed_kt": 7.45,
+      "wind_deviation_deg": 105.36,
+      "wind_limit_kt": 20.78,
+      "wind_glassy_limit_kt": 5.68,
+      "wind_blown_limit_kt": 32.1,
+      "wind_speed_kt": 9.13,
       "wind_quality": "Offshore breeze",
       "wind_acceptable": true,
       "weather_icon": "\u2600\ufe0f",
@@ -1516,50 +853,50 @@
       "weather_code": "clear",
       "surf_quality": "Offshore breeze",
       "surf_suitable": true,
-      "surf_label": "Waist height \u00b7 Offshore breeze",
+      "surf_label": "Shoulder height \u00b7 Offshore breeze",
       "spectral_band_energy_kj_m2": {
-        "h1012": 0.03261222,
-        "h1214": 0.01713038,
-        "h1417": 0.00662848,
-        "h1721": 0.00050689,
+        "h1012": 0.03488377,
+        "h1214": 0.02054328,
+        "h1417": 0.00767357,
+        "h1721": 0.00065566,
         "h2125": 1.448e-05,
         "h2530": 6.84e-06
       },
-      "tide_m": -1.228
+      "tide_m": -0.289
     },
     {
-      "time_utc": "2026-11-26T12:00:00Z",
-      "lead_hours": 84,
-      "hs_m": 0.708,
-      "tp_s": 8.72,
-      "wave_direction_from_deg": 280.5,
+      "time_utc": "2026-11-26T09:00:00Z",
+      "lead_hours": 45,
+      "hs_m": 0.833,
+      "tp_s": 6.909,
+      "wave_direction_from_deg": 284.0,
       "spectral_band_hs_m": {
-        "h1012": 0.2356,
-        "h1214": 0.173,
-        "h1417": 0.1027,
+        "h1012": 0.2434,
+        "h1214": 0.1808,
+        "h1417": 0.1105,
         "h1721": 0.0284,
-        "h2125": 0.0048,
+        "h2125": 0.0058,
         "h2530": 0.0033
       },
-      "wind_speed_ms": 3.073,
-      "wind_direction_from_deg": 321.48,
+      "wind_speed_ms": 3.946,
+      "wind_direction_from_deg": 355.11,
       "cloud_cover_pct": 0.0,
       "rain_rate_mm_h": 0.0,
       "rain_mm_interval": 0.0,
-      "air_temperature_c": 14.6,
-      "sea_surface_skin_temperature_c": 18.9,
-      "water_temperature_c": 18.9,
-      "breaking_hs_m": 0.96,
+      "air_temperature_c": 12.6,
+      "sea_surface_skin_temperature_c": 19.0,
+      "water_temperature_c": 19.0,
+      "breaking_hs_m": 1.0,
       "surf_height_class": "Waist height",
       "wave_exposed": true,
-      "wave_energy_kj_m2": 0.32,
-      "wave_power_kw_m": 1.93,
-      "wind_sector": "Side-onshore",
-      "wind_deviation_deg": 65.48,
-      "wind_limit_kt": 14.91,
-      "wind_glassy_limit_kt": 4.46,
-      "wind_blown_limit_kt": 27.18,
-      "wind_speed_kt": 5.97,
+      "wave_energy_kj_m2": 0.44,
+      "wave_power_kw_m": 2.12,
+      "wind_sector": "Side-offshore",
+      "wind_deviation_deg": 99.11,
+      "wind_limit_kt": 18.83,
+      "wind_glassy_limit_kt": 5.4,
+      "wind_blown_limit_kt": 30.43,
+      "wind_speed_kt": 7.67,
       "wind_quality": "With texture",
       "wind_acceptable": true,
       "weather_icon": "\u2600\ufe0f",
@@ -1569,48 +906,99 @@
       "surf_suitable": true,
       "surf_label": "Waist height \u00b7 With texture",
       "spectral_band_energy_kj_m2": {
+        "h1012": 0.0372318,
+        "h1214": 0.02054328,
+        "h1417": 0.00767357,
+        "h1721": 0.00050689,
+        "h2125": 2.114e-05,
+        "h2530": 6.84e-06
+      },
+      "tide_m": -1.228
+    },
+    {
+      "time_utc": "2026-11-26T12:00:00Z",
+      "lead_hours": 48,
+      "hs_m": 0.77,
+      "tp_s": 7.5,
+      "wave_direction_from_deg": 283.5,
+      "spectral_band_hs_m": {
+        "h1012": 0.2356,
+        "h1214": 0.173,
+        "h1417": 0.1027,
+        "h1721": 0.0284,
+        "h2125": 0.0058,
+        "h2530": 0.0033
+      },
+      "wind_speed_ms": 4.087,
+      "wind_direction_from_deg": 321.95,
+      "cloud_cover_pct": 0.0,
+      "rain_rate_mm_h": 0.0,
+      "rain_mm_interval": 0.0,
+      "air_temperature_c": 14.2,
+      "sea_surface_skin_temperature_c": 19.1,
+      "water_temperature_c": 19.1,
+      "breaking_hs_m": 0.97,
+      "surf_height_class": "Waist height",
+      "wave_exposed": true,
+      "wave_energy_kj_m2": 0.37,
+      "wave_power_kw_m": 1.96,
+      "wind_sector": "Side-onshore",
+      "wind_deviation_deg": 65.95,
+      "wind_limit_kt": 14.93,
+      "wind_glassy_limit_kt": 4.47,
+      "wind_blown_limit_kt": 27.2,
+      "wind_speed_kt": 7.94,
+      "wind_quality": "Choppy",
+      "wind_acceptable": true,
+      "weather_icon": "\u2600\ufe0f",
+      "weather_label": "Clear",
+      "weather_code": "clear",
+      "surf_quality": "Choppy",
+      "surf_suitable": true,
+      "surf_label": "Waist height \u00b7 Choppy",
+      "spectral_band_energy_kj_m2": {
         "h1012": 0.03488377,
         "h1214": 0.01880897,
         "h1417": 0.00662848,
         "h1721": 0.00050689,
-        "h2125": 1.448e-05,
+        "h2125": 2.114e-05,
         "h2530": 6.84e-06
       },
       "tide_m": 0.03
     },
     {
       "time_utc": "2026-11-26T15:00:00Z",
-      "lead_hours": 87,
-      "hs_m": 0.692,
-      "tp_s": 8.665,
-      "wave_direction_from_deg": 281.5,
+      "lead_hours": 51,
+      "hs_m": 0.723,
+      "tp_s": 8.013,
+      "wave_direction_from_deg": 283.5,
       "spectral_band_hs_m": {
         "h1012": 0.22,
         "h1214": 0.1573,
         "h1417": 0.0949,
-        "h1721": 0.0284,
+        "h1721": 0.0245,
         "h2125": 0.0048,
         "h2530": 0.0033
       },
-      "wind_speed_ms": 5.136,
-      "wind_direction_from_deg": 313.43,
-      "cloud_cover_pct": 1.6,
+      "wind_speed_ms": 4.701,
+      "wind_direction_from_deg": 315.42,
+      "cloud_cover_pct": 0.0,
       "rain_rate_mm_h": 0.0,
       "rain_mm_interval": 0.0,
-      "air_temperature_c": 15.5,
+      "air_temperature_c": 15.1,
       "sea_surface_skin_temperature_c": 19.0,
       "water_temperature_c": 19.0,
       "breaking_hs_m": 0.94,
       "surf_height_class": "Waist height",
       "wave_exposed": true,
-      "wave_energy_kj_m2": 0.3,
-      "wave_power_kw_m": 1.83,
+      "wave_energy_kj_m2": 0.33,
+      "wave_power_kw_m": 1.85,
       "wind_sector": "Side-onshore",
-      "wind_deviation_deg": 57.43,
-      "wind_limit_kt": 14.55,
-      "wind_glassy_limit_kt": 4.28,
-      "wind_blown_limit_kt": 26.91,
-      "wind_speed_kt": 9.98,
+      "wind_deviation_deg": 59.42,
+      "wind_limit_kt": 14.64,
+      "wind_glassy_limit_kt": 4.32,
+      "wind_blown_limit_kt": 26.98,
+      "wind_speed_kt": 9.14,
       "wind_quality": "Choppy",
       "wind_acceptable": true,
       "weather_icon": "\u2600\ufe0f",
@@ -1623,7 +1011,7 @@
         "h1012": 0.03041713,
         "h1214": 0.01555,
         "h1417": 0.00565986,
-        "h1721": 0.00050689,
+        "h1721": 0.00037723,
         "h2125": 1.448e-05,
         "h2530": 6.84e-06
       },
@@ -1631,37 +1019,88 @@
     },
     {
       "time_utc": "2026-11-26T18:00:00Z",
-      "lead_hours": 90,
-      "hs_m": 0.661,
-      "tp_s": 8.532,
+      "lead_hours": 54,
+      "hs_m": 0.692,
+      "tp_s": 8.45,
       "wave_direction_from_deg": 282.5,
       "spectral_band_hs_m": {
-        "h1012": 0.1966,
-        "h1214": 0.1417,
-        "h1417": 0.0871,
+        "h1012": 0.2044,
+        "h1214": 0.1495,
+        "h1417": 0.0793,
         "h1721": 0.0206,
         "h2125": 0.0048,
         "h2530": 0.0033
       },
-      "wind_speed_ms": 4.104,
-      "wind_direction_from_deg": 314.94,
-      "cloud_cover_pct": 1.6,
+      "wind_speed_ms": 4.478,
+      "wind_direction_from_deg": 323.07,
+      "cloud_cover_pct": 0.0,
       "rain_rate_mm_h": 0.0,
       "rain_mm_interval": 0.0,
-      "air_temperature_c": 15.9,
-      "sea_surface_skin_temperature_c": 19.1,
-      "water_temperature_c": 19.1,
-      "breaking_hs_m": 0.9,
+      "air_temperature_c": 15.5,
+      "sea_surface_skin_temperature_c": 19.0,
+      "water_temperature_c": 19.0,
+      "breaking_hs_m": 0.93,
       "surf_height_class": "Waist height",
       "wave_exposed": true,
-      "wave_energy_kj_m2": 0.27,
-      "wave_power_kw_m": 1.65,
+      "wave_energy_kj_m2": 0.3,
+      "wave_power_kw_m": 1.79,
       "wind_sector": "Side-onshore",
-      "wind_deviation_deg": 58.94,
-      "wind_limit_kt": 14.62,
-      "wind_glassy_limit_kt": 4.31,
-      "wind_blown_limit_kt": 26.96,
-      "wind_speed_kt": 7.98,
+      "wind_deviation_deg": 67.07,
+      "wind_limit_kt": 14.98,
+      "wind_glassy_limit_kt": 4.49,
+      "wind_blown_limit_kt": 27.24,
+      "wind_speed_kt": 8.7,
+      "wind_quality": "Choppy",
+      "wind_acceptable": true,
+      "weather_icon": "\u2600\ufe0f",
+      "weather_label": "Clear",
+      "weather_code": "clear",
+      "surf_quality": "Choppy",
+      "surf_suitable": true,
+      "surf_label": "Waist height \u00b7 Choppy",
+      "spectral_band_energy_kj_m2": {
+        "h1012": 0.02625637,
+        "h1214": 0.01404608,
+        "h1417": 0.00395202,
+        "h1721": 0.00026669,
+        "h2125": 1.448e-05,
+        "h2530": 6.84e-06
+      },
+      "tide_m": -0.005
+    },
+    {
+      "time_utc": "2026-11-26T21:00:00Z",
+      "lead_hours": 57,
+      "hs_m": 0.629,
+      "tp_s": 8.378,
+      "wave_direction_from_deg": 280.5,
+      "spectral_band_hs_m": {
+        "h1012": 0.1966,
+        "h1214": 0.1261,
+        "h1417": 0.0636,
+        "h1721": 0.0128,
+        "h2125": 0.0038,
+        "h2530": 0.0038
+      },
+      "wind_speed_ms": 4.069,
+      "wind_direction_from_deg": 325.68,
+      "cloud_cover_pct": 0.0,
+      "rain_rate_mm_h": 0.0,
+      "rain_mm_interval": 0.0,
+      "air_temperature_c": 16.2,
+      "sea_surface_skin_temperature_c": 19.0,
+      "water_temperature_c": 19.0,
+      "breaking_hs_m": 0.86,
+      "surf_height_class": "Waist height",
+      "wave_exposed": true,
+      "wave_energy_kj_m2": 0.25,
+      "wave_power_kw_m": 1.46,
+      "wind_sector": "Side-onshore",
+      "wind_deviation_deg": 69.68,
+      "wind_limit_kt": 15.1,
+      "wind_glassy_limit_kt": 4.55,
+      "wind_blown_limit_kt": 27.32,
+      "wind_speed_kt": 7.91,
       "wind_quality": "Choppy",
       "wind_acceptable": true,
       "weather_icon": "\u2600\ufe0f",
@@ -1672,47 +1111,149 @@
       "surf_label": "Waist height \u00b7 Choppy",
       "spectral_band_energy_kj_m2": {
         "h1012": 0.02429069,
-        "h1214": 0.01261864,
-        "h1417": 0.0047677,
-        "h1721": 0.00026669,
-        "h2125": 1.448e-05,
-        "h2530": 6.84e-06
+        "h1214": 0.00999317,
+        "h1417": 0.00254207,
+        "h1721": 0.00010297,
+        "h2125": 9.07e-06,
+        "h2530": 9.07e-06
       },
-      "tide_m": -0.005
+      "tide_m": -1.096
     },
     {
-      "time_utc": "2026-11-26T21:00:00Z",
-      "lead_hours": 93,
-      "hs_m": 0.567,
-      "tp_s": 8.566,
-      "wave_direction_from_deg": 279.0,
+      "time_utc": "2026-11-27T00:00:00Z",
+      "lead_hours": 60,
+      "hs_m": 0.629,
+      "tp_s": 7.593,
+      "wave_direction_from_deg": 284.5,
       "spectral_band_hs_m": {
         "h1012": 0.1809,
-        "h1214": 0.1261,
-        "h1417": 0.0636,
-        "h1721": 0.0167,
+        "h1214": 0.1105,
+        "h1417": 0.048,
+        "h1721": 0.0128,
         "h2125": 0.0048,
         "h2530": 0.0038
       },
-      "wind_speed_ms": 2.548,
-      "wind_direction_from_deg": 337.87,
-      "cloud_cover_pct": 15.6,
+      "wind_speed_ms": 3.562,
+      "wind_direction_from_deg": 24.1,
+      "cloud_cover_pct": 3.1,
       "rain_rate_mm_h": 0.0,
       "rain_mm_interval": 0.0,
-      "air_temperature_c": 16.2,
-      "sea_surface_skin_temperature_c": 19.0,
-      "water_temperature_c": 19.0,
-      "breaking_hs_m": 0.8,
+      "air_temperature_c": 13.4,
+      "sea_surface_skin_temperature_c": 18.9,
+      "water_temperature_c": 18.9,
+      "breaking_hs_m": 0.82,
+      "surf_height_class": "Waist height",
+      "wave_exposed": true,
+      "wave_energy_kj_m2": 0.25,
+      "wave_power_kw_m": 1.33,
+      "wind_sector": "Side-offshore",
+      "wind_deviation_deg": 128.1,
+      "wind_limit_kt": 27.85,
+      "wind_glassy_limit_kt": 6.69,
+      "wind_blown_limit_kt": 38.16,
+      "wind_speed_kt": 6.92,
+      "wind_quality": "Offshore breeze",
+      "wind_acceptable": true,
+      "weather_icon": "\u2600\ufe0f",
+      "weather_label": "Clear",
+      "weather_code": "clear",
+      "surf_quality": "Offshore breeze",
+      "surf_suitable": true,
+      "surf_label": "Waist height \u00b7 Offshore breeze",
+      "spectral_band_energy_kj_m2": {
+        "h1012": 0.02056601,
+        "h1214": 0.00767357,
+        "h1417": 0.00144796,
+        "h1721": 0.00010297,
+        "h2125": 1.448e-05,
+        "h2530": 9.07e-06
+      },
+      "tide_m": -0.035
+    },
+    {
+      "time_utc": "2026-11-27T03:00:00Z",
+      "lead_hours": 63,
+      "hs_m": 0.567,
+      "tp_s": 7.752,
+      "wave_direction_from_deg": 286.0,
+      "spectral_band_hs_m": {
+        "h1012": 0.1653,
+        "h1214": 0.0948,
+        "h1417": 0.0402,
+        "h1721": 0.0128,
+        "h2125": 0.0048,
+        "h2530": 0.0043
+      },
+      "wind_speed_ms": 3.718,
+      "wind_direction_from_deg": 16.96,
+      "cloud_cover_pct": 0.0,
+      "rain_rate_mm_h": 0.0,
+      "rain_mm_interval": 0.0,
+      "air_temperature_c": 12.8,
+      "sea_surface_skin_temperature_c": 18.9,
+      "water_temperature_c": 18.9,
+      "breaking_hs_m": 0.75,
       "surf_height_class": "Waist height",
       "wave_exposed": true,
       "wave_energy_kj_m2": 0.2,
-      "wave_power_kw_m": 1.22,
-      "wind_sector": "Side-onshore",
-      "wind_deviation_deg": 81.87,
-      "wind_limit_kt": 15.64,
-      "wind_glassy_limit_kt": 4.82,
-      "wind_blown_limit_kt": 27.73,
-      "wind_speed_kt": 4.95,
+      "wave_power_kw_m": 1.1,
+      "wind_sector": "Side-offshore",
+      "wind_deviation_deg": 120.96,
+      "wind_limit_kt": 25.63,
+      "wind_glassy_limit_kt": 6.38,
+      "wind_blown_limit_kt": 36.26,
+      "wind_speed_kt": 7.23,
+      "wind_quality": "Offshore breeze",
+      "wind_acceptable": true,
+      "weather_icon": "\u2600\ufe0f",
+      "weather_label": "Clear",
+      "weather_code": "clear",
+      "surf_quality": "Offshore breeze",
+      "surf_suitable": true,
+      "surf_label": "Waist height \u00b7 Offshore breeze",
+      "spectral_band_energy_kj_m2": {
+        "h1012": 0.01717191,
+        "h1214": 0.00564793,
+        "h1417": 0.00101561,
+        "h1721": 0.00010297,
+        "h2125": 1.448e-05,
+        "h2530": 1.162e-05
+      },
+      "tide_m": 1.197
+    },
+    {
+      "time_utc": "2026-11-27T06:00:00Z",
+      "lead_hours": 66,
+      "hs_m": 0.52,
+      "tp_s": 8.156,
+      "wave_direction_from_deg": 287.0,
+      "spectral_band_hs_m": {
+        "h1012": 0.1575,
+        "h1214": 0.087,
+        "h1417": 0.0402,
+        "h1721": 0.0128,
+        "h2125": 0.0058,
+        "h2530": 0.0043
+      },
+      "wind_speed_ms": 3.982,
+      "wind_direction_from_deg": 352.13,
+      "cloud_cover_pct": 0.0,
+      "rain_rate_mm_h": 0.0,
+      "rain_mm_interval": 0.0,
+      "air_temperature_c": 12.8,
+      "sea_surface_skin_temperature_c": 18.8,
+      "water_temperature_c": 18.8,
+      "breaking_hs_m": 0.71,
+      "surf_height_class": "Waist height",
+      "wave_exposed": true,
+      "wave_energy_kj_m2": 0.17,
+      "wave_power_kw_m": 0.97,
+      "wind_sector": "Side-offshore",
+      "wind_deviation_deg": 96.13,
+      "wind_limit_kt": 17.91,
+      "wind_glassy_limit_kt": 5.27,
+      "wind_blown_limit_kt": 29.63,
+      "wind_speed_kt": 7.74,
       "wind_quality": "With texture",
       "wind_acceptable": true,
       "weather_icon": "\u2600\ufe0f",
@@ -1722,163 +1263,10 @@
       "surf_suitable": true,
       "surf_label": "Waist height \u00b7 With texture",
       "spectral_band_energy_kj_m2": {
-        "h1012": 0.02056601,
-        "h1214": 0.00999317,
-        "h1417": 0.00254207,
-        "h1721": 0.00017527,
-        "h2125": 1.448e-05,
-        "h2530": 9.07e-06
-      },
-      "tide_m": -1.096
-    },
-    {
-      "time_utc": "2026-11-27T00:00:00Z",
-      "lead_hours": 96,
-      "hs_m": 0.52,
-      "tp_s": 8.381,
-      "wave_direction_from_deg": 279.0,
-      "spectral_band_hs_m": {
-        "h1012": 0.1653,
-        "h1214": 0.1026,
-        "h1417": 0.048,
-        "h1721": 0.0128,
-        "h2125": 0.0048,
-        "h2530": 0.0043
-      },
-      "wind_speed_ms": 2.443,
-      "wind_direction_from_deg": 47.16,
-      "cloud_cover_pct": 6.2,
-      "rain_rate_mm_h": 0.0,
-      "rain_mm_interval": 0.0,
-      "air_temperature_c": 14.9,
-      "sea_surface_skin_temperature_c": 19.0,
-      "water_temperature_c": 19.0,
-      "breaking_hs_m": 0.74,
-      "surf_height_class": "Waist height",
-      "wave_exposed": true,
-      "wave_energy_kj_m2": 0.17,
-      "wave_power_kw_m": 1.0,
-      "wind_sector": "Offshore",
-      "wind_deviation_deg": 151.16,
-      "wind_limit_kt": 30.0,
-      "wind_glassy_limit_kt": 7.0,
-      "wind_blown_limit_kt": 40.0,
-      "wind_speed_kt": 4.75,
-      "wind_quality": "Glassy",
-      "wind_acceptable": true,
-      "weather_icon": "\u2600\ufe0f",
-      "weather_label": "Clear",
-      "weather_code": "clear",
-      "surf_quality": "Glassy",
-      "surf_suitable": true,
-      "surf_label": "Waist height \u00b7 Glassy",
-      "spectral_band_energy_kj_m2": {
-        "h1012": 0.01717191,
-        "h1214": 0.00661558,
-        "h1417": 0.00144796,
+        "h1012": 0.01558957,
+        "h1214": 0.00475676,
+        "h1417": 0.00101561,
         "h1721": 0.00010297,
-        "h2125": 1.448e-05,
-        "h2530": 1.162e-05
-      },
-      "tide_m": -0.035
-    },
-    {
-      "time_utc": "2026-11-27T03:00:00Z",
-      "lead_hours": 99,
-      "hs_m": 0.489,
-      "tp_s": 8.343,
-      "wave_direction_from_deg": 280.0,
-      "spectral_band_hs_m": {
-        "h1012": 0.1575,
-        "h1214": 0.087,
-        "h1417": 0.0402,
-        "h1721": 0.0089,
-        "h2125": 0.0048,
-        "h2530": 0.0043
-      },
-      "wind_speed_ms": 2.436,
-      "wind_direction_from_deg": 37.66,
-      "cloud_cover_pct": 0.0,
-      "rain_rate_mm_h": 0.0,
-      "rain_mm_interval": 0.0,
-      "air_temperature_c": 14.1,
-      "sea_surface_skin_temperature_c": 18.9,
-      "water_temperature_c": 18.9,
-      "breaking_hs_m": 0.7,
-      "surf_height_class": "Waist height",
-      "wave_exposed": true,
-      "wave_energy_kj_m2": 0.15,
-      "wave_power_kw_m": 0.88,
-      "wind_sector": "Offshore",
-      "wind_deviation_deg": 141.66,
-      "wind_limit_kt": 30.0,
-      "wind_glassy_limit_kt": 7.0,
-      "wind_blown_limit_kt": 40.0,
-      "wind_speed_kt": 4.74,
-      "wind_quality": "Glassy",
-      "wind_acceptable": true,
-      "weather_icon": "\u2600\ufe0f",
-      "weather_label": "Clear",
-      "weather_code": "clear",
-      "surf_quality": "Glassy",
-      "surf_suitable": true,
-      "surf_label": "Waist height \u00b7 Glassy",
-      "spectral_band_energy_kj_m2": {
-        "h1012": 0.01558957,
-        "h1214": 0.00475676,
-        "h1417": 0.00101561,
-        "h1721": 4.978e-05,
-        "h2125": 1.448e-05,
-        "h2530": 1.162e-05
-      },
-      "tide_m": 1.197
-    },
-    {
-      "time_utc": "2026-11-27T06:00:00Z",
-      "lead_hours": 102,
-      "hs_m": 0.458,
-      "tp_s": 8.502,
-      "wave_direction_from_deg": 280.5,
-      "spectral_band_hs_m": {
-        "h1012": 0.1575,
-        "h1214": 0.087,
-        "h1417": 0.0402,
-        "h1721": 0.0089,
-        "h2125": 0.0058,
-        "h2530": 0.0043
-      },
-      "wind_speed_ms": 2.511,
-      "wind_direction_from_deg": 36.72,
-      "cloud_cover_pct": 6.2,
-      "rain_rate_mm_h": 0.0,
-      "rain_mm_interval": 0.0,
-      "air_temperature_c": 12.7,
-      "sea_surface_skin_temperature_c": 18.9,
-      "water_temperature_c": 18.9,
-      "breaking_hs_m": 0.67,
-      "surf_height_class": "Waist height",
-      "wave_exposed": true,
-      "wave_energy_kj_m2": 0.13,
-      "wave_power_kw_m": 0.79,
-      "wind_sector": "Offshore",
-      "wind_deviation_deg": 140.72,
-      "wind_limit_kt": 30.0,
-      "wind_glassy_limit_kt": 7.0,
-      "wind_blown_limit_kt": 40.0,
-      "wind_speed_kt": 4.88,
-      "wind_quality": "Glassy",
-      "wind_acceptable": true,
-      "weather_icon": "\u2600\ufe0f",
-      "weather_label": "Clear",
-      "weather_code": "clear",
-      "surf_quality": "Glassy",
-      "surf_suitable": true,
-      "surf_label": "Waist height \u00b7 Glassy",
-      "spectral_band_energy_kj_m2": {
-        "h1012": 0.01558957,
-        "h1214": 0.00475676,
-        "h1417": 0.00101561,
-        "h1721": 4.978e-05,
         "h2125": 2.114e-05,
         "h2530": 1.162e-05
       },
@@ -1886,48 +1274,48 @@
     },
     {
       "time_utc": "2026-11-27T09:00:00Z",
-      "lead_hours": 105,
-      "hs_m": 0.458,
-      "tp_s": 8.656,
-      "wave_direction_from_deg": 281.0,
+      "lead_hours": 69,
+      "hs_m": 0.52,
+      "tp_s": 8.282,
+      "wave_direction_from_deg": 295.0,
       "spectral_band_hs_m": {
-        "h1012": 0.1575,
-        "h1214": 0.087,
+        "h1012": 0.1497,
+        "h1214": 0.0792,
         "h1417": 0.0402,
         "h1721": 0.0128,
         "h2125": 0.0058,
         "h2530": 0.0043
       },
-      "wind_speed_ms": 2.615,
-      "wind_direction_from_deg": 51.22,
+      "wind_speed_ms": 5.01,
+      "wind_direction_from_deg": 356.93,
       "cloud_cover_pct": 0.0,
       "rain_rate_mm_h": 0.0,
       "rain_mm_interval": 0.0,
-      "air_temperature_c": 13.2,
-      "sea_surface_skin_temperature_c": 18.8,
-      "water_temperature_c": 18.8,
-      "breaking_hs_m": 0.67,
+      "air_temperature_c": 13.3,
+      "sea_surface_skin_temperature_c": 18.9,
+      "water_temperature_c": 18.9,
+      "breaking_hs_m": 0.69,
       "surf_height_class": "Waist height",
       "wave_exposed": true,
-      "wave_energy_kj_m2": 0.13,
-      "wave_power_kw_m": 0.8,
-      "wind_sector": "Offshore",
-      "wind_deviation_deg": 155.22,
-      "wind_limit_kt": 30.0,
-      "wind_glassy_limit_kt": 7.0,
-      "wind_blown_limit_kt": 40.0,
-      "wind_speed_kt": 5.08,
-      "wind_quality": "Glassy",
+      "wave_energy_kj_m2": 0.17,
+      "wave_power_kw_m": 0.99,
+      "wind_sector": "Side-offshore",
+      "wind_deviation_deg": 100.93,
+      "wind_limit_kt": 19.4,
+      "wind_glassy_limit_kt": 5.49,
+      "wind_blown_limit_kt": 30.91,
+      "wind_speed_kt": 9.74,
+      "wind_quality": "With texture",
       "wind_acceptable": true,
       "weather_icon": "\u2600\ufe0f",
       "weather_label": "Clear",
       "weather_code": "clear",
-      "surf_quality": "Glassy",
+      "surf_quality": "With texture",
       "surf_suitable": true,
-      "surf_label": "Waist height \u00b7 Glassy",
+      "surf_label": "Waist height \u00b7 With texture",
       "spectral_band_energy_kj_m2": {
-        "h1012": 0.01558957,
-        "h1214": 0.00475676,
+        "h1012": 0.01408369,
+        "h1214": 0.00394206,
         "h1417": 0.00101561,
         "h1721": 0.00010297,
         "h2125": 2.114e-05,
@@ -1937,37 +1325,37 @@
     },
     {
       "time_utc": "2026-11-27T12:00:00Z",
-      "lead_hours": 108,
-      "hs_m": 0.442,
-      "tp_s": 8.746,
-      "wave_direction_from_deg": 278.5,
+      "lead_hours": 72,
+      "hs_m": 0.473,
+      "tp_s": 8.625,
+      "wave_direction_from_deg": 290.0,
       "spectral_band_hs_m": {
-        "h1012": 0.1497,
-        "h1214": 0.087,
+        "h1012": 0.1419,
+        "h1214": 0.0792,
         "h1417": 0.0402,
         "h1721": 0.0128,
         "h2125": 0.0058,
         "h2530": 0.0043
       },
-      "wind_speed_ms": 3.625,
-      "wind_direction_from_deg": 136.87,
-      "cloud_cover_pct": 1.6,
+      "wind_speed_ms": 3.225,
+      "wind_direction_from_deg": 11.98,
+      "cloud_cover_pct": 0.0,
       "rain_rate_mm_h": 0.0,
       "rain_mm_interval": 0.0,
       "air_temperature_c": 16.2,
       "sea_surface_skin_temperature_c": 18.9,
       "water_temperature_c": 18.9,
-      "breaking_hs_m": 0.66,
+      "breaking_hs_m": 0.67,
       "surf_height_class": "Waist height",
       "wave_exposed": true,
-      "wave_energy_kj_m2": 0.12,
-      "wave_power_kw_m": 0.75,
+      "wave_energy_kj_m2": 0.14,
+      "wave_power_kw_m": 0.85,
       "wind_sector": "Side-offshore",
-      "wind_deviation_deg": 119.13,
-      "wind_limit_kt": 25.06,
-      "wind_glassy_limit_kt": 6.29,
-      "wind_blown_limit_kt": 35.77,
-      "wind_speed_kt": 7.05,
+      "wind_deviation_deg": 115.98,
+      "wind_limit_kt": 24.08,
+      "wind_glassy_limit_kt": 6.15,
+      "wind_blown_limit_kt": 34.93,
+      "wind_speed_kt": 6.27,
       "wind_quality": "Offshore breeze",
       "wind_acceptable": true,
       "weather_icon": "\u2600\ufe0f",
@@ -1977,8 +1365,8 @@
       "surf_suitable": true,
       "surf_label": "Waist height \u00b7 Offshore breeze",
       "spectral_band_energy_kj_m2": {
-        "h1012": 0.01408369,
-        "h1214": 0.00475676,
+        "h1012": 0.01265429,
+        "h1214": 0.00394206,
         "h1417": 0.00101561,
         "h1721": 0.00010297,
         "h2125": 2.114e-05,
@@ -1988,37 +1376,37 @@
     },
     {
       "time_utc": "2026-11-27T15:00:00Z",
-      "lead_hours": 111,
+      "lead_hours": 75,
       "hs_m": 0.426,
-      "tp_s": 9.033,
-      "wave_direction_from_deg": 275.0,
+      "tp_s": 9.042,
+      "wave_direction_from_deg": 282.0,
       "spectral_band_hs_m": {
         "h1012": 0.1497,
-        "h1214": 0.087,
+        "h1214": 0.0792,
         "h1417": 0.0402,
         "h1721": 0.0128,
         "h2125": 0.0058,
         "h2530": 0.0043
       },
-      "wind_speed_ms": 1.488,
-      "wind_direction_from_deg": 134.52,
+      "wind_speed_ms": 1.612,
+      "wind_direction_from_deg": 94.17,
       "cloud_cover_pct": 0.0,
       "rain_rate_mm_h": 0.0,
       "rain_mm_interval": 0.0,
-      "air_temperature_c": 17.1,
+      "air_temperature_c": 17.4,
       "sea_surface_skin_temperature_c": 18.9,
       "water_temperature_c": 18.9,
-      "breaking_hs_m": 0.66,
+      "breaking_hs_m": 0.64,
       "surf_height_class": "Waist height",
       "wave_exposed": true,
       "wave_energy_kj_m2": 0.11,
       "wave_power_kw_m": 0.72,
-      "wind_sector": "Side-offshore",
-      "wind_deviation_deg": 121.48,
-      "wind_limit_kt": 25.79,
-      "wind_glassy_limit_kt": 6.4,
-      "wind_blown_limit_kt": 36.39,
-      "wind_speed_kt": 2.89,
+      "wind_sector": "Offshore",
+      "wind_deviation_deg": 161.83,
+      "wind_limit_kt": 30.0,
+      "wind_glassy_limit_kt": 7.0,
+      "wind_blown_limit_kt": 40.0,
+      "wind_speed_kt": 3.13,
       "wind_quality": "Glassy",
       "wind_acceptable": true,
       "weather_icon": "\u2600\ufe0f",
@@ -2029,7 +1417,7 @@
       "surf_label": "Waist height \u00b7 Glassy",
       "spectral_band_energy_kj_m2": {
         "h1012": 0.01408369,
-        "h1214": 0.00475676,
+        "h1214": 0.00394206,
         "h1417": 0.00101561,
         "h1721": 0.00010297,
         "h2125": 2.114e-05,
@@ -2039,37 +1427,37 @@
     },
     {
       "time_utc": "2026-11-27T18:00:00Z",
-      "lead_hours": 114,
+      "lead_hours": 78,
       "hs_m": 0.395,
-      "tp_s": 9.093,
-      "wave_direction_from_deg": 274.0,
+      "tp_s": 9.218,
+      "wave_direction_from_deg": 277.0,
       "spectral_band_hs_m": {
         "h1012": 0.1419,
-        "h1214": 0.0792,
+        "h1214": 0.0714,
         "h1417": 0.0324,
         "h1721": 0.0128,
         "h2125": 0.0058,
         "h2530": 0.0043
       },
-      "wind_speed_ms": 2.557,
-      "wind_direction_from_deg": 44.93,
+      "wind_speed_ms": 1.943,
+      "wind_direction_from_deg": 154.05,
       "cloud_cover_pct": 0.0,
       "rain_rate_mm_h": 0.0,
       "rain_mm_interval": 0.0,
-      "air_temperature_c": 16.7,
+      "air_temperature_c": 16.9,
       "sea_surface_skin_temperature_c": 18.9,
       "water_temperature_c": 18.9,
       "breaking_hs_m": 0.62,
       "surf_height_class": "Waist height",
       "wave_exposed": true,
       "wave_energy_kj_m2": 0.1,
-      "wave_power_kw_m": 0.63,
-      "wind_sector": "Offshore",
-      "wind_deviation_deg": 148.93,
-      "wind_limit_kt": 30.0,
-      "wind_glassy_limit_kt": 7.0,
-      "wind_blown_limit_kt": 40.0,
-      "wind_speed_kt": 4.97,
+      "wave_power_kw_m": 0.64,
+      "wind_sector": "Side-offshore",
+      "wind_deviation_deg": 101.95,
+      "wind_limit_kt": 19.72,
+      "wind_glassy_limit_kt": 5.53,
+      "wind_blown_limit_kt": 31.19,
+      "wind_speed_kt": 3.78,
       "wind_quality": "Glassy",
       "wind_acceptable": true,
       "weather_icon": "\u2600\ufe0f",
@@ -2080,7 +1468,7 @@
       "surf_label": "Waist height \u00b7 Glassy",
       "spectral_band_energy_kj_m2": {
         "h1012": 0.01265429,
-        "h1214": 0.00394206,
+        "h1214": 0.00320383,
         "h1417": 0.00065972,
         "h1721": 0.00010297,
         "h2125": 2.114e-05,
@@ -2090,37 +1478,37 @@
     },
     {
       "time_utc": "2026-11-27T21:00:00Z",
-      "lead_hours": 117,
-      "hs_m": 0.411,
-      "tp_s": 9.032,
+      "lead_hours": 81,
+      "hs_m": 0.395,
+      "tp_s": 9.19,
       "wave_direction_from_deg": 278.5,
       "spectral_band_hs_m": {
         "h1012": 0.1341,
-        "h1214": 0.0636,
+        "h1214": 0.0714,
         "h1417": 0.0324,
-        "h1721": 0.0128,
+        "h1721": 0.0167,
         "h2125": 0.0068,
-        "h2530": 0.0047
+        "h2530": 0.0045
       },
-      "wind_speed_ms": 3.098,
-      "wind_direction_from_deg": 66.78,
+      "wind_speed_ms": 3.597,
+      "wind_direction_from_deg": 80.12,
       "cloud_cover_pct": 0.0,
       "rain_rate_mm_h": 0.0,
       "rain_mm_interval": 0.0,
-      "air_temperature_c": 15.3,
-      "sea_surface_skin_temperature_c": 19.0,
-      "water_temperature_c": 19.0,
-      "breaking_hs_m": 0.63,
+      "air_temperature_c": 15.2,
+      "sea_surface_skin_temperature_c": 18.8,
+      "water_temperature_c": 18.8,
+      "breaking_hs_m": 0.62,
       "surf_height_class": "Waist height",
       "wave_exposed": true,
-      "wave_energy_kj_m2": 0.11,
-      "wave_power_kw_m": 0.67,
+      "wave_energy_kj_m2": 0.1,
+      "wave_power_kw_m": 0.63,
       "wind_sector": "Offshore",
-      "wind_deviation_deg": 170.78,
+      "wind_deviation_deg": 175.88,
       "wind_limit_kt": 30.0,
       "wind_glassy_limit_kt": 7.0,
       "wind_blown_limit_kt": 40.0,
-      "wind_speed_kt": 6.02,
+      "wind_speed_kt": 6.99,
       "wind_quality": "Glassy",
       "wind_acceptable": true,
       "weather_icon": "\u2600\ufe0f",
@@ -2131,302 +1519,98 @@
       "surf_label": "Waist height \u00b7 Glassy",
       "spectral_band_energy_kj_m2": {
         "h1012": 0.01130135,
-        "h1214": 0.00254207,
+        "h1214": 0.00320383,
         "h1417": 0.00065972,
-        "h1721": 0.00010297,
+        "h1721": 0.00017527,
         "h2125": 2.906e-05,
-        "h2530": 1.388e-05
+        "h2530": 1.273e-05
       },
       "tide_m": -0.925
     },
     {
       "time_utc": "2026-11-28T00:00:00Z",
-      "lead_hours": 120,
+      "lead_hours": 84,
       "hs_m": 0.395,
-      "tp_s": 8.847,
-      "wave_direction_from_deg": 281.5,
+      "tp_s": 9.158,
+      "wave_direction_from_deg": 282.0,
       "spectral_band_hs_m": {
-        "h1012": 0.1262,
+        "h1012": 0.1341,
         "h1214": 0.0636,
         "h1417": 0.0324,
-        "h1721": 0.0167,
-        "h2125": 0.0077,
+        "h1721": 0.0206,
+        "h2125": 0.0087,
         "h2530": 0.0047
       },
-      "wind_speed_ms": 3.456,
-      "wind_direction_from_deg": 55.51,
+      "wind_speed_ms": 3.657,
+      "wind_direction_from_deg": 64.42,
       "cloud_cover_pct": 21.9,
       "rain_rate_mm_h": 0.0,
       "rain_mm_interval": 0.0,
-      "air_temperature_c": 13.8,
-      "sea_surface_skin_temperature_c": 18.8,
-      "water_temperature_c": 18.8,
-      "breaking_hs_m": 0.6,
+      "air_temperature_c": 13.9,
+      "sea_surface_skin_temperature_c": 18.9,
+      "water_temperature_c": 18.9,
+      "breaking_hs_m": 0.61,
       "surf_height_class": "Waist height",
       "wave_exposed": true,
       "wave_energy_kj_m2": 0.1,
-      "wave_power_kw_m": 0.61,
+      "wave_power_kw_m": 0.63,
       "wind_sector": "Offshore",
-      "wind_deviation_deg": 159.51,
+      "wind_deviation_deg": 168.42,
       "wind_limit_kt": 30.0,
       "wind_glassy_limit_kt": 7.0,
       "wind_blown_limit_kt": 40.0,
-      "wind_speed_kt": 6.72,
-      "wind_quality": "Glassy",
+      "wind_speed_kt": 7.11,
+      "wind_quality": "Offshore breeze",
       "wind_acceptable": true,
       "weather_icon": "\u2600\ufe0f",
       "weather_label": "Clear",
       "weather_code": "clear",
-      "surf_quality": "Glassy",
+      "surf_quality": "Offshore breeze",
       "surf_suitable": true,
-      "surf_label": "Waist height \u00b7 Glassy",
+      "surf_label": "Waist height \u00b7 Offshore breeze",
       "spectral_band_energy_kj_m2": {
-        "h1012": 0.01000902,
+        "h1012": 0.01130135,
         "h1214": 0.00254207,
         "h1417": 0.00065972,
-        "h1721": 0.00017527,
-        "h2125": 3.726e-05,
+        "h1721": 0.00026669,
+        "h2125": 4.757e-05,
         "h2530": 1.388e-05
       },
       "tide_m": -0.418
     },
     {
       "time_utc": "2026-11-28T03:00:00Z",
-      "lead_hours": 123,
-      "hs_m": 0.411,
-      "tp_s": 8.845,
-      "wave_direction_from_deg": 284.5,
+      "lead_hours": 87,
+      "hs_m": 0.426,
+      "tp_s": 9.156,
+      "wave_direction_from_deg": 296.5,
       "spectral_band_hs_m": {
         "h1012": 0.1262,
         "h1214": 0.0714,
-        "h1417": 0.048,
-        "h1721": 0.0245,
-        "h2125": 0.0087,
+        "h1417": 0.0402,
+        "h1721": 0.0284,
+        "h2125": 0.0097,
         "h2530": 0.0047
       },
-      "wind_speed_ms": 3.372,
-      "wind_direction_from_deg": 59.16,
-      "cloud_cover_pct": 82.8,
+      "wind_speed_ms": 4.438,
+      "wind_direction_from_deg": 66.63,
+      "cloud_cover_pct": 98.4,
       "rain_rate_mm_h": 0.0,
       "rain_mm_interval": 0.0,
-      "air_temperature_c": 13.1,
+      "air_temperature_c": 13.6,
       "sea_surface_skin_temperature_c": 18.8,
       "water_temperature_c": 18.8,
       "breaking_hs_m": 0.61,
       "surf_height_class": "Waist height",
       "wave_exposed": true,
       "wave_energy_kj_m2": 0.11,
-      "wave_power_kw_m": 0.66,
+      "wave_power_kw_m": 0.73,
       "wind_sector": "Offshore",
-      "wind_deviation_deg": 163.16,
+      "wind_deviation_deg": 170.63,
       "wind_limit_kt": 30.0,
       "wind_glassy_limit_kt": 7.0,
       "wind_blown_limit_kt": 40.0,
-      "wind_speed_kt": 6.55,
-      "wind_quality": "Glassy",
-      "wind_acceptable": true,
-      "weather_icon": "\u2601\ufe0f",
-      "weather_label": "Overcast",
-      "weather_code": "overcast",
-      "surf_quality": "Glassy",
-      "surf_suitable": true,
-      "surf_label": "Waist height \u00b7 Glassy",
-      "spectral_band_energy_kj_m2": {
-        "h1012": 0.01000902,
-        "h1214": 0.00320383,
-        "h1417": 0.00144796,
-        "h1721": 0.00037723,
-        "h2125": 4.757e-05,
-        "h2530": 1.388e-05
-      },
-      "tide_m": 0.945
-    },
-    {
-      "time_utc": "2026-11-28T06:00:00Z",
-      "lead_hours": 126,
-      "hs_m": 0.395,
-      "tp_s": 8.875,
-      "wave_direction_from_deg": 284.0,
-      "spectral_band_hs_m": {
-        "h1012": 0.1262,
-        "h1214": 0.0792,
-        "h1417": 0.0558,
-        "h1721": 0.0284,
-        "h2125": 0.0077,
-        "h2530": 0.0047
-      },
-      "wind_speed_ms": 3.111,
-      "wind_direction_from_deg": 53.71,
-      "cloud_cover_pct": 92.2,
-      "rain_rate_mm_h": 0.0,
-      "rain_mm_interval": 0.0,
-      "air_temperature_c": 12.8,
-      "sea_surface_skin_temperature_c": 18.9,
-      "water_temperature_c": 18.9,
-      "breaking_hs_m": 0.6,
-      "surf_height_class": "Waist height",
-      "wave_exposed": true,
-      "wave_energy_kj_m2": 0.1,
-      "wave_power_kw_m": 0.61,
-      "wind_sector": "Offshore",
-      "wind_deviation_deg": 157.71,
-      "wind_limit_kt": 30.0,
-      "wind_glassy_limit_kt": 7.0,
-      "wind_blown_limit_kt": 40.0,
-      "wind_speed_kt": 6.05,
-      "wind_quality": "Glassy",
-      "wind_acceptable": true,
-      "weather_icon": "\u2601\ufe0f",
-      "weather_label": "Overcast",
-      "weather_code": "overcast",
-      "surf_quality": "Glassy",
-      "surf_suitable": true,
-      "surf_label": "Waist height \u00b7 Glassy",
-      "spectral_band_energy_kj_m2": {
-        "h1012": 0.01000902,
-        "h1214": 0.00394206,
-        "h1417": 0.00195678,
-        "h1721": 0.00050689,
-        "h2125": 3.726e-05,
-        "h2530": 1.388e-05
-      },
-      "tide_m": 0.689
-    },
-    {
-      "time_utc": "2026-11-28T09:00:00Z",
-      "lead_hours": 129,
-      "hs_m": 0.395,
-      "tp_s": 9.002,
-      "wave_direction_from_deg": 285.5,
-      "spectral_band_hs_m": {
-        "h1012": 0.1262,
-        "h1214": 0.087,
-        "h1417": 0.0558,
-        "h1721": 0.0284,
-        "h2125": 0.0068,
-        "h2530": 0.0043
-      },
-      "wind_speed_ms": 3.023,
-      "wind_direction_from_deg": 60.43,
-      "cloud_cover_pct": 90.6,
-      "rain_rate_mm_h": 0.0,
-      "rain_mm_interval": 0.0,
-      "air_temperature_c": 14.0,
-      "sea_surface_skin_temperature_c": 18.8,
-      "water_temperature_c": 18.8,
-      "breaking_hs_m": 0.6,
-      "surf_height_class": "Waist height",
-      "wave_exposed": true,
-      "wave_energy_kj_m2": 0.1,
-      "wave_power_kw_m": 0.62,
-      "wind_sector": "Offshore",
-      "wind_deviation_deg": 164.43,
-      "wind_limit_kt": 30.0,
-      "wind_glassy_limit_kt": 7.0,
-      "wind_blown_limit_kt": 40.0,
-      "wind_speed_kt": 5.88,
-      "wind_quality": "Glassy",
-      "wind_acceptable": true,
-      "weather_icon": "\u2601\ufe0f",
-      "weather_label": "Overcast",
-      "weather_code": "overcast",
-      "surf_quality": "Glassy",
-      "surf_suitable": true,
-      "surf_label": "Waist height \u00b7 Glassy",
-      "spectral_band_energy_kj_m2": {
-        "h1012": 0.01000902,
-        "h1214": 0.00475676,
-        "h1417": 0.00195678,
-        "h1721": 0.00050689,
-        "h2125": 2.906e-05,
-        "h2530": 1.162e-05
-      },
-      "tide_m": -0.869
-    },
-    {
-      "time_utc": "2026-11-28T12:00:00Z",
-      "lead_hours": 132,
-      "hs_m": 0.364,
-      "tp_s": 9.406,
-      "wave_direction_from_deg": 281.5,
-      "spectral_band_hs_m": {
-        "h1012": 0.1341,
-        "h1214": 0.087,
-        "h1417": 0.0558,
-        "h1721": 0.0245,
-        "h2125": 0.0068,
-        "h2530": 0.0043
-      },
-      "wind_speed_ms": 2.651,
-      "wind_direction_from_deg": 95.03,
-      "cloud_cover_pct": 93.8,
-      "rain_rate_mm_h": 0.0,
-      "rain_mm_interval": 0.0,
-      "air_temperature_c": 17.3,
-      "sea_surface_skin_temperature_c": 18.9,
-      "water_temperature_c": 18.9,
-      "breaking_hs_m": 0.58,
-      "surf_height_class": "Waist height",
-      "wave_exposed": true,
-      "wave_energy_kj_m2": 0.08,
-      "wave_power_kw_m": 0.55,
-      "wind_sector": "Offshore",
-      "wind_deviation_deg": 160.97,
-      "wind_limit_kt": 30.0,
-      "wind_glassy_limit_kt": 7.0,
-      "wind_blown_limit_kt": 40.0,
-      "wind_speed_kt": 5.15,
-      "wind_quality": "Glassy",
-      "wind_acceptable": true,
-      "weather_icon": "\u2601\ufe0f",
-      "weather_label": "Overcast",
-      "weather_code": "overcast",
-      "surf_quality": "Glassy",
-      "surf_suitable": true,
-      "surf_label": "Waist height \u00b7 Glassy",
-      "spectral_band_energy_kj_m2": {
-        "h1012": 0.01130135,
-        "h1214": 0.00475676,
-        "h1417": 0.00195678,
-        "h1721": 0.00037723,
-        "h2125": 2.906e-05,
-        "h2530": 1.162e-05
-      },
-      "tide_m": -0.784
-    },
-    {
-      "time_utc": "2026-11-28T15:00:00Z",
-      "lead_hours": 135,
-      "hs_m": 0.395,
-      "tp_s": 9.907,
-      "wave_direction_from_deg": 277.0,
-      "spectral_band_hs_m": {
-        "h1012": 0.1341,
-        "h1214": 0.087,
-        "h1417": 0.0558,
-        "h1721": 0.0206,
-        "h2125": 0.0068,
-        "h2530": 0.0047
-      },
-      "wind_speed_ms": 4.402,
-      "wind_direction_from_deg": 79.23,
-      "cloud_cover_pct": 100.0,
-      "rain_rate_mm_h": 0.0,
-      "rain_mm_interval": 0.0,
-      "air_temperature_c": 18.2,
-      "sea_surface_skin_temperature_c": 19.1,
-      "water_temperature_c": 19.1,
-      "breaking_hs_m": 0.64,
-      "surf_height_class": "Waist height",
-      "wave_exposed": true,
-      "wave_energy_kj_m2": 0.1,
-      "wave_power_kw_m": 0.68,
-      "wind_sector": "Offshore",
-      "wind_deviation_deg": 176.77,
-      "wind_limit_kt": 30.0,
-      "wind_glassy_limit_kt": 7.0,
-      "wind_blown_limit_kt": 40.0,
-      "wind_speed_kt": 8.56,
+      "wind_speed_kt": 8.63,
       "wind_quality": "Offshore breeze",
       "wind_acceptable": true,
       "weather_icon": "\u2601\ufe0f",
@@ -2436,99 +1620,864 @@
       "surf_suitable": true,
       "surf_label": "Waist height \u00b7 Offshore breeze",
       "spectral_band_energy_kj_m2": {
-        "h1012": 0.01130135,
-        "h1214": 0.00475676,
-        "h1417": 0.00195678,
-        "h1721": 0.00026669,
-        "h2125": 2.906e-05,
+        "h1012": 0.01000902,
+        "h1214": 0.00320383,
+        "h1417": 0.00101561,
+        "h1721": 0.00050689,
+        "h2125": 5.913e-05,
         "h2530": 1.388e-05
       },
-      "tide_m": 0.529
+      "tide_m": 0.945
     },
     {
-      "time_utc": "2026-11-28T18:00:00Z",
-      "lead_hours": 138,
-      "hs_m": 0.504,
-      "tp_s": 9.194,
-      "wave_direction_from_deg": 80.0,
+      "time_utc": "2026-11-28T06:00:00Z",
+      "lead_hours": 90,
+      "hs_m": 0.426,
+      "tp_s": 9.187,
+      "wave_direction_from_deg": 312.0,
       "spectral_band_hs_m": {
-        "h1012": 0.1341,
-        "h1214": 0.087,
-        "h1417": 0.0636,
-        "h1721": 0.0245,
-        "h2125": 0.0068,
-        "h2530": 0.0047
+        "h1012": 0.1262,
+        "h1214": 0.0792,
+        "h1417": 0.0558,
+        "h1721": 0.0323,
+        "h2125": 0.0087,
+        "h2530": 0.0045
       },
-      "wind_speed_ms": 5.488,
-      "wind_direction_from_deg": 76.49,
-      "cloud_cover_pct": 84.4,
+      "wind_speed_ms": 4.86,
+      "wind_direction_from_deg": 59.24,
+      "cloud_cover_pct": 100.0,
       "rain_rate_mm_h": 0.0,
       "rain_mm_interval": 0.0,
-      "air_temperature_c": 16.2,
+      "air_temperature_c": 13.7,
       "sea_surface_skin_temperature_c": 18.9,
       "water_temperature_c": 18.9,
-      "breaking_hs_m": 0.0,
-      "surf_height_class": "Flat",
-      "wave_exposed": false,
-      "wave_energy_kj_m2": 0.16,
-      "wave_power_kw_m": 1.03,
+      "breaking_hs_m": 0.54,
+      "surf_height_class": "Waist height",
+      "wave_exposed": true,
+      "wave_energy_kj_m2": 0.11,
+      "wave_power_kw_m": 0.74,
       "wind_sector": "Offshore",
-      "wind_deviation_deg": 179.51,
+      "wind_deviation_deg": 163.24,
       "wind_limit_kt": 30.0,
       "wind_glassy_limit_kt": 7.0,
       "wind_blown_limit_kt": 40.0,
-      "wind_speed_kt": 10.67,
+      "wind_speed_kt": 9.45,
       "wind_quality": "Offshore breeze",
       "wind_acceptable": true,
       "weather_icon": "\u2601\ufe0f",
       "weather_label": "Overcast",
       "weather_code": "overcast",
       "surf_quality": "Offshore breeze",
-      "surf_suitable": false,
-      "surf_label": "Flat \u00b7 Offshore breeze",
+      "surf_suitable": true,
+      "surf_label": "Waist height \u00b7 Offshore breeze",
+      "spectral_band_energy_kj_m2": {
+        "h1012": 0.01000902,
+        "h1214": 0.00394206,
+        "h1417": 0.00195678,
+        "h1721": 0.00065566,
+        "h2125": 4.757e-05,
+        "h2530": 1.273e-05
+      },
+      "tide_m": 0.689
+    },
+    {
+      "time_utc": "2026-11-28T09:00:00Z",
+      "lead_hours": 93,
+      "hs_m": 0.426,
+      "tp_s": 9.376,
+      "wave_direction_from_deg": 318.0,
+      "spectral_band_hs_m": {
+        "h1012": 0.1262,
+        "h1214": 0.0792,
+        "h1417": 0.0636,
+        "h1721": 0.0323,
+        "h2125": 0.0077,
+        "h2530": 0.0045
+      },
+      "wind_speed_ms": 4.526,
+      "wind_direction_from_deg": 62.58,
+      "cloud_cover_pct": 98.4,
+      "rain_rate_mm_h": 0.0,
+      "rain_mm_interval": 0.0,
+      "air_temperature_c": 14.7,
+      "sea_surface_skin_temperature_c": 18.8,
+      "water_temperature_c": 18.8,
+      "breaking_hs_m": 0.5,
+      "surf_height_class": "Waist height",
+      "wave_exposed": true,
+      "wave_energy_kj_m2": 0.11,
+      "wave_power_kw_m": 0.75,
+      "wind_sector": "Offshore",
+      "wind_deviation_deg": 166.58,
+      "wind_limit_kt": 30.0,
+      "wind_glassy_limit_kt": 7.0,
+      "wind_blown_limit_kt": 40.0,
+      "wind_speed_kt": 8.8,
+      "wind_quality": "Offshore breeze",
+      "wind_acceptable": true,
+      "weather_icon": "\u2601\ufe0f",
+      "weather_label": "Overcast",
+      "weather_code": "overcast",
+      "surf_quality": "Offshore breeze",
+      "surf_suitable": true,
+      "surf_label": "Waist height \u00b7 Offshore breeze",
+      "spectral_band_energy_kj_m2": {
+        "h1012": 0.01000902,
+        "h1214": 0.00394206,
+        "h1417": 0.00254207,
+        "h1721": 0.00065566,
+        "h2125": 3.726e-05,
+        "h2530": 1.273e-05
+      },
+      "tide_m": -0.869
+    },
+    {
+      "time_utc": "2026-11-28T12:00:00Z",
+      "lead_hours": 96,
+      "hs_m": 0.395,
+      "tp_s": 9.657,
+      "wave_direction_from_deg": 295.0,
+      "spectral_band_hs_m": {
+        "h1012": 0.1341,
+        "h1214": 0.087,
+        "h1417": 0.0714,
+        "h1721": 0.0362,
+        "h2125": 0.0077,
+        "h2530": 0.0045
+      },
+      "wind_speed_ms": 3.581,
+      "wind_direction_from_deg": 64.0,
+      "cloud_cover_pct": 100.0,
+      "rain_rate_mm_h": 0.0,
+      "rain_mm_interval": 0.0,
+      "air_temperature_c": 17.0,
+      "sea_surface_skin_temperature_c": 18.8,
+      "water_temperature_c": 18.8,
+      "breaking_hs_m": 0.59,
+      "surf_height_class": "Waist height",
+      "wave_exposed": true,
+      "wave_energy_kj_m2": 0.1,
+      "wave_power_kw_m": 0.67,
+      "wind_sector": "Offshore",
+      "wind_deviation_deg": 168.0,
+      "wind_limit_kt": 30.0,
+      "wind_glassy_limit_kt": 7.0,
+      "wind_blown_limit_kt": 40.0,
+      "wind_speed_kt": 6.96,
+      "wind_quality": "Glassy",
+      "wind_acceptable": true,
+      "weather_icon": "\u2601\ufe0f",
+      "weather_label": "Overcast",
+      "weather_code": "overcast",
+      "surf_quality": "Glassy",
+      "surf_suitable": true,
+      "surf_label": "Waist height \u00b7 Glassy",
       "spectral_band_energy_kj_m2": {
         "h1012": 0.01130135,
         "h1214": 0.00475676,
-        "h1417": 0.00254207,
-        "h1721": 0.00037723,
-        "h2125": 2.906e-05,
+        "h1417": 0.00320383,
+        "h1721": 0.00082355,
+        "h2125": 3.726e-05,
+        "h2530": 1.273e-05
+      },
+      "tide_m": -0.784
+    },
+    {
+      "time_utc": "2026-11-28T15:00:00Z",
+      "lead_hours": 99,
+      "hs_m": 0.379,
+      "tp_s": 9.813,
+      "wave_direction_from_deg": 282.5,
+      "spectral_band_hs_m": {
+        "h1012": 0.1419,
+        "h1214": 0.1026,
+        "h1417": 0.0871,
+        "h1721": 0.044,
+        "h2125": 0.0097,
+        "h2530": 0.0045
+      },
+      "wind_speed_ms": 1.962,
+      "wind_direction_from_deg": 62.93,
+      "cloud_cover_pct": 98.4,
+      "rain_rate_mm_h": 0.0,
+      "rain_mm_interval": 0.0,
+      "air_temperature_c": 17.9,
+      "sea_surface_skin_temperature_c": 18.7,
+      "water_temperature_c": 18.7,
+      "breaking_hs_m": 0.6,
+      "surf_height_class": "Waist height",
+      "wave_exposed": true,
+      "wave_energy_kj_m2": 0.09,
+      "wave_power_kw_m": 0.62,
+      "wind_sector": "Offshore",
+      "wind_deviation_deg": 166.93,
+      "wind_limit_kt": 30.0,
+      "wind_glassy_limit_kt": 7.0,
+      "wind_blown_limit_kt": 40.0,
+      "wind_speed_kt": 3.81,
+      "wind_quality": "Glassy",
+      "wind_acceptable": true,
+      "weather_icon": "\u2601\ufe0f",
+      "weather_label": "Overcast",
+      "weather_code": "overcast",
+      "surf_quality": "Glassy",
+      "surf_suitable": true,
+      "surf_label": "Waist height \u00b7 Glassy",
+      "spectral_band_energy_kj_m2": {
+        "h1012": 0.01265429,
+        "h1214": 0.00661558,
+        "h1417": 0.0047677,
+        "h1721": 0.00121669,
+        "h2125": 5.913e-05,
+        "h2530": 1.273e-05
+      },
+      "tide_m": 0.529
+    },
+    {
+      "time_utc": "2026-11-28T18:00:00Z",
+      "lead_hours": 102,
+      "hs_m": 0.395,
+      "tp_s": 11.065,
+      "wave_direction_from_deg": 286.5,
+      "spectral_band_hs_m": {
+        "h1012": 0.1419,
+        "h1214": 0.1261,
+        "h1417": 0.1183,
+        "h1721": 0.0558,
+        "h2125": 0.0116,
+        "h2530": 0.0047
+      },
+      "wind_speed_ms": 4.01,
+      "wind_direction_from_deg": 59.38,
+      "cloud_cover_pct": 100.0,
+      "rain_rate_mm_h": 0.0,
+      "rain_mm_interval": 0.0,
+      "air_temperature_c": 16.1,
+      "sea_surface_skin_temperature_c": 18.9,
+      "water_temperature_c": 18.9,
+      "breaking_hs_m": 0.64,
+      "surf_height_class": "Waist height",
+      "wave_exposed": true,
+      "wave_energy_kj_m2": 0.1,
+      "wave_power_kw_m": 0.76,
+      "wind_sector": "Offshore",
+      "wind_deviation_deg": 163.38,
+      "wind_limit_kt": 30.0,
+      "wind_glassy_limit_kt": 7.0,
+      "wind_blown_limit_kt": 40.0,
+      "wind_speed_kt": 7.79,
+      "wind_quality": "Offshore breeze",
+      "wind_acceptable": true,
+      "weather_icon": "\u2601\ufe0f",
+      "weather_label": "Overcast",
+      "weather_code": "overcast",
+      "surf_quality": "Offshore breeze",
+      "surf_suitable": true,
+      "surf_label": "Waist height \u00b7 Offshore breeze",
+      "spectral_band_energy_kj_m2": {
+        "h1012": 0.01265429,
+        "h1214": 0.00999317,
+        "h1417": 0.00879513,
+        "h1721": 0.00195678,
+        "h2125": 8.456e-05,
         "h2530": 1.388e-05
       },
       "tide_m": 0.741
     },
     {
       "time_utc": "2026-11-28T21:00:00Z",
-      "lead_hours": 141,
-      "hs_m": 0.551,
-      "tp_s": 6.379,
-      "wave_direction_from_deg": 93.0,
+      "lead_hours": 105,
+      "hs_m": 0.426,
+      "tp_s": 12.969,
+      "wave_direction_from_deg": 288.5,
       "spectral_band_hs_m": {
-        "h1012": 0.1341,
-        "h1214": 0.1026,
-        "h1417": 0.0793,
-        "h1721": 0.0284,
-        "h2125": 0.0077,
-        "h2530": 0.0047
+        "h1012": 0.1497,
+        "h1214": 0.1495,
+        "h1417": 0.1418,
+        "h1721": 0.0636,
+        "h2125": 0.0126,
+        "h2530": 0.005
       },
-      "wind_speed_ms": 5.488,
-      "wind_direction_from_deg": 62.01,
-      "cloud_cover_pct": 51.6,
+      "wind_speed_ms": 3.179,
+      "wind_direction_from_deg": 71.82,
+      "cloud_cover_pct": 100.0,
       "rain_rate_mm_h": 0.0,
       "rain_mm_interval": 0.0,
-      "air_temperature_c": 15.0,
-      "sea_surface_skin_temperature_c": 19.0,
-      "water_temperature_c": 19.0,
-      "breaking_hs_m": 0.0,
-      "surf_height_class": "Flat",
-      "wave_exposed": false,
-      "wave_energy_kj_m2": 0.19,
-      "wave_power_kw_m": 0.86,
+      "air_temperature_c": 15.1,
+      "sea_surface_skin_temperature_c": 18.8,
+      "water_temperature_c": 18.8,
+      "breaking_hs_m": 0.72,
+      "surf_height_class": "Waist height",
+      "wave_exposed": true,
+      "wave_energy_kj_m2": 0.11,
+      "wave_power_kw_m": 1.04,
       "wind_sector": "Offshore",
-      "wind_deviation_deg": 166.01,
+      "wind_deviation_deg": 175.82,
       "wind_limit_kt": 30.0,
       "wind_glassy_limit_kt": 7.0,
       "wind_blown_limit_kt": 40.0,
-      "wind_speed_kt": 10.67,
+      "wind_speed_kt": 6.18,
+      "wind_quality": "Glassy",
+      "wind_acceptable": true,
+      "weather_icon": "\u2601\ufe0f",
+      "weather_label": "Overcast",
+      "weather_code": "overcast",
+      "surf_quality": "Glassy",
+      "surf_suitable": true,
+      "surf_label": "Waist height \u00b7 Glassy",
+      "spectral_band_energy_kj_m2": {
+        "h1012": 0.01408369,
+        "h1214": 0.01404608,
+        "h1417": 0.01263646,
+        "h1721": 0.00254207,
+        "h2125": 9.977e-05,
+        "h2530": 1.571e-05
+      },
+      "tide_m": -0.573
+    },
+    {
+      "time_utc": "2026-11-29T00:00:00Z",
+      "lead_hours": 108,
+      "hs_m": 0.426,
+      "tp_s": 13.284,
+      "wave_direction_from_deg": 289.0,
+      "spectral_band_hs_m": {
+        "h1012": 0.1575,
+        "h1214": 0.173,
+        "h1417": 0.1574,
+        "h1721": 0.0636,
+        "h2125": 0.0116,
+        "h2530": 0.005
+      },
+      "wind_speed_ms": 3.03,
+      "wind_direction_from_deg": 56.1,
+      "cloud_cover_pct": 23.4,
+      "rain_rate_mm_h": 0.0,
+      "rain_mm_interval": 0.0,
+      "air_temperature_c": 14.0,
+      "sea_surface_skin_temperature_c": 18.6,
+      "water_temperature_c": 18.6,
+      "breaking_hs_m": 0.73,
+      "surf_height_class": "Waist height",
+      "wave_exposed": true,
+      "wave_energy_kj_m2": 0.11,
+      "wave_power_kw_m": 1.06,
+      "wind_sector": "Offshore",
+      "wind_deviation_deg": 160.1,
+      "wind_limit_kt": 30.0,
+      "wind_glassy_limit_kt": 7.0,
+      "wind_blown_limit_kt": 40.0,
+      "wind_speed_kt": 5.89,
+      "wind_quality": "Glassy",
+      "wind_acceptable": true,
+      "weather_icon": "\u2600\ufe0f",
+      "weather_label": "Clear",
+      "weather_code": "clear",
+      "surf_quality": "Glassy",
+      "surf_suitable": true,
+      "surf_label": "Waist height \u00b7 Glassy",
+      "spectral_band_energy_kj_m2": {
+        "h1012": 0.01558957,
+        "h1214": 0.01880897,
+        "h1417": 0.01556978,
+        "h1721": 0.00254207,
+        "h2125": 8.456e-05,
+        "h2530": 1.571e-05
+      },
+      "tide_m": -0.664
+    },
+    {
+      "time_utc": "2026-11-29T03:00:00Z",
+      "lead_hours": 111,
+      "hs_m": 0.426,
+      "tp_s": 13.281,
+      "wave_direction_from_deg": 290.0,
+      "spectral_band_hs_m": {
+        "h1012": 0.1575,
+        "h1214": 0.1808,
+        "h1417": 0.1574,
+        "h1721": 0.0558,
+        "h2125": 0.0107,
+        "h2530": 0.005
+      },
+      "wind_speed_ms": 3.339,
+      "wind_direction_from_deg": 50.08,
+      "cloud_cover_pct": 35.9,
+      "rain_rate_mm_h": 0.0,
+      "rain_mm_interval": 0.0,
+      "air_temperature_c": 13.4,
+      "sea_surface_skin_temperature_c": 18.6,
+      "water_temperature_c": 18.6,
+      "breaking_hs_m": 0.72,
+      "surf_height_class": "Waist height",
+      "wave_exposed": true,
+      "wave_energy_kj_m2": 0.11,
+      "wave_power_kw_m": 1.06,
+      "wind_sector": "Offshore",
+      "wind_deviation_deg": 154.08,
+      "wind_limit_kt": 30.0,
+      "wind_glassy_limit_kt": 7.0,
+      "wind_blown_limit_kt": 40.0,
+      "wind_speed_kt": 6.49,
+      "wind_quality": "Glassy",
+      "wind_acceptable": true,
+      "weather_icon": "\ud83c\udf24\ufe0f",
+      "weather_label": "Partly cloudy",
+      "weather_code": "partly_cloudy",
+      "surf_quality": "Glassy",
+      "surf_suitable": true,
+      "surf_label": "Waist height \u00b7 Glassy",
+      "spectral_band_energy_kj_m2": {
+        "h1012": 0.01558957,
+        "h1214": 0.02054328,
+        "h1417": 0.01556978,
+        "h1721": 0.00195678,
+        "h2125": 7.195e-05,
+        "h2530": 1.571e-05
+      },
+      "tide_m": 0.535
+    },
+    {
+      "time_utc": "2026-11-29T06:00:00Z",
+      "lead_hours": 114,
+      "hs_m": 0.442,
+      "tp_s": 13.093,
+      "wave_direction_from_deg": 291.0,
+      "spectral_band_hs_m": {
+        "h1012": 0.1731,
+        "h1214": 0.2042,
+        "h1417": 0.1496,
+        "h1721": 0.048,
+        "h2125": 0.0087,
+        "h2530": 0.005
+      },
+      "wind_speed_ms": 3.723,
+      "wind_direction_from_deg": 56.5,
+      "cloud_cover_pct": 65.6,
+      "rain_rate_mm_h": 0.0,
+      "rain_mm_interval": 0.0,
+      "air_temperature_c": 13.4,
+      "sea_surface_skin_temperature_c": 18.8,
+      "water_temperature_c": 18.8,
+      "breaking_hs_m": 0.74,
+      "surf_height_class": "Waist height",
+      "wave_exposed": true,
+      "wave_energy_kj_m2": 0.12,
+      "wave_power_kw_m": 1.13,
+      "wind_sector": "Offshore",
+      "wind_deviation_deg": 160.5,
+      "wind_limit_kt": 30.0,
+      "wind_glassy_limit_kt": 7.0,
+      "wind_blown_limit_kt": 40.0,
+      "wind_speed_kt": 7.24,
+      "wind_quality": "Offshore breeze",
+      "wind_acceptable": true,
+      "weather_icon": "\ud83c\udf24\ufe0f",
+      "weather_label": "Partly cloudy",
+      "weather_code": "partly_cloudy",
+      "surf_quality": "Offshore breeze",
+      "surf_suitable": true,
+      "surf_label": "Waist height \u00b7 Offshore breeze",
+      "spectral_band_energy_kj_m2": {
+        "h1012": 0.01883072,
+        "h1214": 0.02620501,
+        "h1417": 0.01406488,
+        "h1721": 0.00144796,
+        "h2125": 4.757e-05,
+        "h2530": 1.571e-05
+      },
+      "tide_m": 0.936
+    },
+    {
+      "time_utc": "2026-11-29T09:00:00Z",
+      "lead_hours": 117,
+      "hs_m": 0.458,
+      "tp_s": 12.5,
+      "wave_direction_from_deg": 288.5,
+      "spectral_band_hs_m": {
+        "h1012": 0.2044,
+        "h1214": 0.212,
+        "h1417": 0.1339,
+        "h1721": 0.0362,
+        "h2125": 0.0097,
+        "h2530": 0.005
+      },
+      "wind_speed_ms": 3.565,
+      "wind_direction_from_deg": 67.69,
+      "cloud_cover_pct": 62.5,
+      "rain_rate_mm_h": 0.0,
+      "rain_mm_interval": 0.0,
+      "air_temperature_c": 14.5,
+      "sea_surface_skin_temperature_c": 18.8,
+      "water_temperature_c": 18.8,
+      "breaking_hs_m": 0.75,
+      "surf_height_class": "Waist height",
+      "wave_exposed": true,
+      "wave_energy_kj_m2": 0.13,
+      "wave_power_kw_m": 1.16,
+      "wind_sector": "Offshore",
+      "wind_deviation_deg": 171.69,
+      "wind_limit_kt": 30.0,
+      "wind_glassy_limit_kt": 7.0,
+      "wind_blown_limit_kt": 40.0,
+      "wind_speed_kt": 6.93,
+      "wind_quality": "Glassy",
+      "wind_acceptable": true,
+      "weather_icon": "\ud83c\udf24\ufe0f",
+      "weather_label": "Partly cloudy",
+      "weather_code": "partly_cloudy",
+      "surf_quality": "Glassy",
+      "surf_suitable": true,
+      "surf_label": "Waist height \u00b7 Glassy",
+      "spectral_band_energy_kj_m2": {
+        "h1012": 0.02625637,
+        "h1214": 0.0282452,
+        "h1417": 0.01126767,
+        "h1721": 0.00082355,
+        "h2125": 5.913e-05,
+        "h2530": 1.571e-05
+      },
+      "tide_m": -0.397
+    },
+    {
+      "time_utc": "2026-11-29T12:00:00Z",
+      "lead_hours": 120,
+      "hs_m": 0.458,
+      "tp_s": 11.942,
+      "wave_direction_from_deg": 284.5,
+      "spectral_band_hs_m": {
+        "h1012": 0.2278,
+        "h1214": 0.2042,
+        "h1417": 0.1105,
+        "h1721": 0.0401,
+        "h2125": 0.0107,
+        "h2530": 0.0055
+      },
+      "wind_speed_ms": 2.322,
+      "wind_direction_from_deg": 106.57,
+      "cloud_cover_pct": 3.1,
+      "rain_rate_mm_h": 0.0,
+      "rain_mm_interval": 0.0,
+      "air_temperature_c": 16.9,
+      "sea_surface_skin_temperature_c": 18.7,
+      "water_temperature_c": 18.7,
+      "breaking_hs_m": 0.75,
+      "surf_height_class": "Waist height",
+      "wave_exposed": true,
+      "wave_energy_kj_m2": 0.13,
+      "wave_power_kw_m": 1.11,
+      "wind_sector": "Offshore",
+      "wind_deviation_deg": 149.43,
+      "wind_limit_kt": 30.0,
+      "wind_glassy_limit_kt": 7.0,
+      "wind_blown_limit_kt": 40.0,
+      "wind_speed_kt": 4.51,
+      "wind_quality": "Glassy",
+      "wind_acceptable": true,
+      "weather_icon": "\u2600\ufe0f",
+      "weather_label": "Clear",
+      "weather_code": "clear",
+      "surf_quality": "Glassy",
+      "surf_suitable": true,
+      "surf_label": "Waist height \u00b7 Glassy",
+      "spectral_band_energy_kj_m2": {
+        "h1012": 0.03261222,
+        "h1214": 0.02620501,
+        "h1417": 0.00767357,
+        "h1721": 0.00101056,
+        "h2125": 7.195e-05,
+        "h2530": 1.901e-05
+      },
+      "tide_m": -0.917
+    },
+    {
+      "time_utc": "2026-11-29T15:00:00Z",
+      "lead_hours": 123,
+      "hs_m": 0.442,
+      "tp_s": 11.594,
+      "wave_direction_from_deg": 283.5,
+      "spectral_band_hs_m": {
+        "h1012": 0.2278,
+        "h1214": 0.1886,
+        "h1417": 0.1105,
+        "h1721": 0.048,
+        "h2125": 0.0126,
+        "h2530": 0.0057
+      },
+      "wind_speed_ms": 2.203,
+      "wind_direction_from_deg": 149.28,
+      "cloud_cover_pct": 32.8,
+      "rain_rate_mm_h": 0.0,
+      "rain_mm_interval": 0.0,
+      "air_temperature_c": 17.7,
+      "sea_surface_skin_temperature_c": 18.7,
+      "water_temperature_c": 18.7,
+      "breaking_hs_m": 0.73,
+      "surf_height_class": "Waist height",
+      "wave_exposed": true,
+      "wave_energy_kj_m2": 0.12,
+      "wave_power_kw_m": 1.0,
+      "wind_sector": "Side-offshore",
+      "wind_deviation_deg": 106.72,
+      "wind_limit_kt": 21.2,
+      "wind_glassy_limit_kt": 5.74,
+      "wind_blown_limit_kt": 32.46,
+      "wind_speed_kt": 4.28,
+      "wind_quality": "Glassy",
+      "wind_acceptable": true,
+      "weather_icon": "\ud83c\udf24\ufe0f",
+      "weather_label": "Partly cloudy",
+      "weather_code": "partly_cloudy",
+      "surf_quality": "Glassy",
+      "surf_suitable": true,
+      "surf_label": "Waist height \u00b7 Glassy",
+      "spectral_band_energy_kj_m2": {
+        "h1012": 0.03261222,
+        "h1214": 0.02235405,
+        "h1417": 0.00767357,
+        "h1721": 0.00144796,
+        "h2125": 9.977e-05,
+        "h2530": 2.042e-05
+      },
+      "tide_m": 0.055
+    },
+    {
+      "time_utc": "2026-11-29T18:00:00Z",
+      "lead_hours": 126,
+      "hs_m": 0.504,
+      "tp_s": 11.437,
+      "wave_direction_from_deg": 281.5,
+      "spectral_band_hs_m": {
+        "h1012": 0.2122,
+        "h1214": 0.1808,
+        "h1417": 0.1261,
+        "h1721": 0.0558,
+        "h2125": 0.0136,
+        "h2530": 0.006
+      },
+      "wind_speed_ms": 4.265,
+      "wind_direction_from_deg": 72.58,
+      "cloud_cover_pct": 31.2,
+      "rain_rate_mm_h": 0.0,
+      "rain_mm_interval": 0.0,
+      "air_temperature_c": 16.4,
+      "sea_surface_skin_temperature_c": 18.8,
+      "water_temperature_c": 18.8,
+      "breaking_hs_m": 0.81,
+      "surf_height_class": "Waist height",
+      "wave_exposed": true,
+      "wave_energy_kj_m2": 0.16,
+      "wave_power_kw_m": 1.28,
+      "wind_sector": "Offshore",
+      "wind_deviation_deg": 176.58,
+      "wind_limit_kt": 30.0,
+      "wind_glassy_limit_kt": 7.0,
+      "wind_blown_limit_kt": 40.0,
+      "wind_speed_kt": 8.29,
+      "wind_quality": "Offshore breeze",
+      "wind_acceptable": true,
+      "weather_icon": "\ud83c\udf24\ufe0f",
+      "weather_label": "Partly cloudy",
+      "weather_code": "partly_cloudy",
+      "surf_quality": "Offshore breeze",
+      "surf_suitable": true,
+      "surf_label": "Waist height \u00b7 Offshore breeze",
+      "spectral_band_energy_kj_m2": {
+        "h1012": 0.02829852,
+        "h1214": 0.02054328,
+        "h1417": 0.00999317,
+        "h1721": 0.00195678,
+        "h2125": 0.00011624,
+        "h2530": 2.262e-05
+      },
+      "tide_m": 0.79
+    },
+    {
+      "time_utc": "2026-11-29T21:00:00Z",
+      "lead_hours": 129,
+      "hs_m": 0.52,
+      "tp_s": 11.5,
+      "wave_direction_from_deg": 286.0,
+      "spectral_band_hs_m": {
+        "h1012": 0.1966,
+        "h1214": 0.173,
+        "h1417": 0.1261,
+        "h1721": 0.0558,
+        "h2125": 0.0126,
+        "h2530": 0.006
+      },
+      "wind_speed_ms": 4.895,
+      "wind_direction_from_deg": 78.77,
+      "cloud_cover_pct": 29.7,
+      "rain_rate_mm_h": 0.0,
+      "rain_mm_interval": 0.0,
+      "air_temperature_c": 15.3,
+      "sea_surface_skin_temperature_c": 18.8,
+      "water_temperature_c": 18.8,
+      "breaking_hs_m": 0.82,
+      "surf_height_class": "Waist height",
+      "wave_exposed": true,
+      "wave_energy_kj_m2": 0.17,
+      "wave_power_kw_m": 1.37,
+      "wind_sector": "Offshore",
+      "wind_deviation_deg": 177.23,
+      "wind_limit_kt": 30.0,
+      "wind_glassy_limit_kt": 7.0,
+      "wind_blown_limit_kt": 40.0,
+      "wind_speed_kt": 9.52,
+      "wind_quality": "Offshore breeze",
+      "wind_acceptable": true,
+      "weather_icon": "\ud83c\udf24\ufe0f",
+      "weather_label": "Partly cloudy",
+      "weather_code": "partly_cloudy",
+      "surf_quality": "Offshore breeze",
+      "surf_suitable": true,
+      "surf_label": "Waist height \u00b7 Offshore breeze",
+      "spectral_band_energy_kj_m2": {
+        "h1012": 0.02429069,
+        "h1214": 0.01880897,
+        "h1417": 0.00999317,
+        "h1721": 0.00195678,
+        "h2125": 9.977e-05,
+        "h2530": 2.262e-05
+      },
+      "tide_m": -0.13
+    },
+    {
+      "time_utc": "2026-11-30T00:00:00Z",
+      "lead_hours": 132,
+      "hs_m": 0.551,
+      "tp_s": 11.906,
+      "wave_direction_from_deg": 319.0,
+      "spectral_band_hs_m": {
+        "h1012": 0.1887,
+        "h1214": 0.173,
+        "h1417": 0.1261,
+        "h1721": 0.0519,
+        "h2125": 0.0116,
+        "h2530": 0.0057
+      },
+      "wind_speed_ms": 5.97,
+      "wind_direction_from_deg": 66.68,
+      "cloud_cover_pct": 32.8,
+      "rain_rate_mm_h": 0.0,
+      "rain_mm_interval": 0.0,
+      "air_temperature_c": 14.8,
+      "sea_surface_skin_temperature_c": 18.8,
+      "water_temperature_c": 18.8,
+      "breaking_hs_m": 0.67,
+      "surf_height_class": "Waist height",
+      "wave_exposed": true,
+      "wave_energy_kj_m2": 0.19,
+      "wave_power_kw_m": 1.6,
+      "wind_sector": "Offshore",
+      "wind_deviation_deg": 170.68,
+      "wind_limit_kt": 30.0,
+      "wind_glassy_limit_kt": 7.0,
+      "wind_blown_limit_kt": 40.0,
+      "wind_speed_kt": 11.6,
+      "wind_quality": "Offshore breeze",
+      "wind_acceptable": true,
+      "weather_icon": "\ud83c\udf24\ufe0f",
+      "weather_label": "Partly cloudy",
+      "weather_code": "partly_cloudy",
+      "surf_quality": "Offshore breeze",
+      "surf_suitable": true,
+      "surf_label": "Waist height \u00b7 Offshore breeze",
+      "spectral_band_energy_kj_m2": {
+        "h1012": 0.02237776,
+        "h1214": 0.01880897,
+        "h1417": 0.00999317,
+        "h1721": 0.00169281,
+        "h2125": 8.456e-05,
+        "h2530": 2.042e-05
+      },
+      "tide_m": -0.72
+    },
+    {
+      "time_utc": "2026-11-30T03:00:00Z",
+      "lead_hours": 135,
+      "hs_m": 0.567,
+      "tp_s": 11.94,
+      "wave_direction_from_deg": 323.5,
+      "spectral_band_hs_m": {
+        "h1012": 0.1966,
+        "h1214": 0.1808,
+        "h1417": 0.1183,
+        "h1721": 0.044,
+        "h2125": 0.0107,
+        "h2530": 0.0057
+      },
+      "wind_speed_ms": 5.606,
+      "wind_direction_from_deg": 65.94,
+      "cloud_cover_pct": 98.4,
+      "rain_rate_mm_h": 0.0,
+      "rain_mm_interval": 0.0,
+      "air_temperature_c": 14.6,
+      "sea_surface_skin_temperature_c": 18.7,
+      "water_temperature_c": 18.7,
+      "breaking_hs_m": 0.64,
+      "surf_height_class": "Waist height",
+      "wave_exposed": true,
+      "wave_energy_kj_m2": 0.2,
+      "wave_power_kw_m": 1.69,
+      "wind_sector": "Offshore",
+      "wind_deviation_deg": 169.94,
+      "wind_limit_kt": 30.0,
+      "wind_glassy_limit_kt": 7.0,
+      "wind_blown_limit_kt": 40.0,
+      "wind_speed_kt": 10.9,
+      "wind_quality": "Offshore breeze",
+      "wind_acceptable": true,
+      "weather_icon": "\u2601\ufe0f",
+      "weather_label": "Overcast",
+      "weather_code": "overcast",
+      "surf_quality": "Offshore breeze",
+      "surf_suitable": true,
+      "surf_label": "Waist height \u00b7 Offshore breeze",
+      "spectral_band_energy_kj_m2": {
+        "h1012": 0.02429069,
+        "h1214": 0.02054328,
+        "h1417": 0.00879513,
+        "h1721": 0.00121669,
+        "h2125": 7.195e-05,
+        "h2530": 2.042e-05
+      },
+      "tide_m": 0.085
+    },
+    {
+      "time_utc": "2026-11-30T06:00:00Z",
+      "lead_hours": 138,
+      "hs_m": 0.614,
+      "tp_s": 11.562,
+      "wave_direction_from_deg": 352.5,
+      "spectral_band_hs_m": {
+        "h1012": 0.2044,
+        "h1214": 0.173,
+        "h1417": 0.1105,
+        "h1721": 0.044,
+        "h2125": 0.0107,
+        "h2530": 0.0055
+      },
+      "wind_speed_ms": 6.321,
+      "wind_direction_from_deg": 68.71,
+      "cloud_cover_pct": 26.6,
+      "rain_rate_mm_h": 0.0,
+      "rain_mm_interval": 0.0,
+      "air_temperature_c": 14.7,
+      "sea_surface_skin_temperature_c": 18.7,
+      "water_temperature_c": 18.7,
+      "breaking_hs_m": 0.0,
+      "surf_height_class": "Flat",
+      "wave_exposed": false,
+      "wave_energy_kj_m2": 0.24,
+      "wave_power_kw_m": 1.92,
+      "wind_sector": "Offshore",
+      "wind_deviation_deg": 172.71,
+      "wind_limit_kt": 30.0,
+      "wind_glassy_limit_kt": 7.0,
+      "wind_blown_limit_kt": 40.0,
+      "wind_speed_kt": 12.29,
       "wind_quality": "Offshore breeze",
       "wind_acceptable": true,
       "weather_icon": "\ud83c\udf24\ufe0f",
@@ -2538,99 +2487,48 @@
       "surf_suitable": false,
       "surf_label": "Flat \u00b7 Offshore breeze",
       "spectral_band_energy_kj_m2": {
-        "h1012": 0.01130135,
-        "h1214": 0.00661558,
-        "h1417": 0.00395202,
-        "h1721": 0.00050689,
-        "h2125": 3.726e-05,
-        "h2530": 1.388e-05
+        "h1012": 0.02625637,
+        "h1214": 0.01880897,
+        "h1417": 0.00767357,
+        "h1721": 0.00121669,
+        "h2125": 7.195e-05,
+        "h2530": 1.901e-05
       },
-      "tide_m": -0.573
+      "tide_m": 0.914
     },
     {
-      "time_utc": "2026-11-29T00:00:00Z",
-      "lead_hours": 144,
-      "hs_m": 0.645,
-      "tp_s": 5.062,
-      "wave_direction_from_deg": 114.5,
+      "time_utc": "2026-11-30T09:00:00Z",
+      "lead_hours": 141,
+      "hs_m": 0.661,
+      "tp_s": 10.844,
+      "wave_direction_from_deg": 45.5,
       "spectral_band_hs_m": {
-        "h1012": 0.1419,
-        "h1214": 0.1261,
-        "h1417": 0.0949,
-        "h1721": 0.0362,
-        "h2125": 0.0087,
-        "h2530": 0.005
-      },
-      "wind_speed_ms": 5.206,
-      "wind_direction_from_deg": 55.13,
-      "cloud_cover_pct": 1.6,
-      "rain_rate_mm_h": 0.0,
-      "rain_mm_interval": 0.0,
-      "air_temperature_c": 15.0,
-      "sea_surface_skin_temperature_c": 18.9,
-      "water_temperature_c": 18.9,
-      "breaking_hs_m": 0.0,
-      "surf_height_class": "Flat",
-      "wave_exposed": false,
-      "wave_energy_kj_m2": 0.26,
-      "wave_power_kw_m": 0.93,
-      "wind_sector": "Offshore",
-      "wind_deviation_deg": 159.13,
-      "wind_limit_kt": 30.0,
-      "wind_glassy_limit_kt": 7.0,
-      "wind_blown_limit_kt": 40.0,
-      "wind_speed_kt": 10.12,
-      "wind_quality": "Offshore breeze",
-      "wind_acceptable": true,
-      "weather_icon": "\u2600\ufe0f",
-      "weather_label": "Clear",
-      "weather_code": "clear",
-      "surf_quality": "Offshore breeze",
-      "surf_suitable": false,
-      "surf_label": "Flat \u00b7 Offshore breeze",
-      "spectral_band_energy_kj_m2": {
-        "h1012": 0.01265429,
-        "h1214": 0.00999317,
-        "h1417": 0.00565986,
-        "h1721": 0.00082355,
-        "h2125": 4.757e-05,
-        "h2530": 1.571e-05
-      },
-      "tide_m": -0.664
-    },
-    {
-      "time_utc": "2026-11-29T06:00:00Z",
-      "lead_hours": 150,
-      "hs_m": 0.676,
-      "tp_s": 5.846,
-      "wave_direction_from_deg": 117.5,
-      "spectral_band_hs_m": {
-        "h1012": 0.1575,
+        "h1012": 0.2044,
         "h1214": 0.1573,
         "h1417": 0.1105,
-        "h1721": 0.0284,
-        "h2125": 0.0077,
-        "h2530": 0.005
+        "h1721": 0.048,
+        "h2125": 0.0116,
+        "h2530": 0.0055
       },
-      "wind_speed_ms": 5.55,
-      "wind_direction_from_deg": 59.55,
-      "cloud_cover_pct": 10.9,
+      "wind_speed_ms": 7.098,
+      "wind_direction_from_deg": 70.29,
+      "cloud_cover_pct": 20.3,
       "rain_rate_mm_h": 0.0,
       "rain_mm_interval": 0.0,
-      "air_temperature_c": 14.7,
+      "air_temperature_c": 15.7,
       "sea_surface_skin_temperature_c": 18.8,
       "water_temperature_c": 18.8,
       "breaking_hs_m": 0.0,
       "surf_height_class": "Flat",
       "wave_exposed": false,
-      "wave_energy_kj_m2": 0.29,
-      "wave_power_kw_m": 1.18,
+      "wave_energy_kj_m2": 0.27,
+      "wave_power_kw_m": 2.09,
       "wind_sector": "Offshore",
-      "wind_deviation_deg": 163.55,
+      "wind_deviation_deg": 174.29,
       "wind_limit_kt": 30.0,
       "wind_glassy_limit_kt": 7.0,
       "wind_blown_limit_kt": 40.0,
-      "wind_speed_kt": 10.79,
+      "wind_speed_kt": 13.8,
       "wind_quality": "Offshore breeze",
       "wind_acceptable": true,
       "weather_icon": "\u2600\ufe0f",
@@ -2640,83 +2538,134 @@
       "surf_suitable": false,
       "surf_label": "Flat \u00b7 Offshore breeze",
       "spectral_band_energy_kj_m2": {
-        "h1012": 0.01558957,
+        "h1012": 0.02625637,
         "h1214": 0.01555,
         "h1417": 0.00767357,
-        "h1721": 0.00050689,
-        "h2125": 3.726e-05,
-        "h2530": 1.571e-05
+        "h1721": 0.00144796,
+        "h2125": 8.456e-05,
+        "h2530": 1.901e-05
       },
-      "tide_m": 0.936
+      "tide_m": 0.116
     },
     {
-      "time_utc": "2026-11-29T12:00:00Z",
-      "lead_hours": 156,
+      "time_utc": "2026-11-30T12:00:00Z",
+      "lead_hours": 144,
       "hs_m": 0.77,
-      "tp_s": 5.001,
-      "wave_direction_from_deg": 123.5,
+      "tp_s": 5.468,
+      "wave_direction_from_deg": 106.5,
       "spectral_band_hs_m": {
-        "h1012": 0.1887,
+        "h1012": 0.1966,
         "h1214": 0.1573,
-        "h1417": 0.0714,
-        "h1721": 0.0206,
-        "h2125": 0.0087,
-        "h2530": 0.0052
+        "h1417": 0.1183,
+        "h1721": 0.0558,
+        "h2125": 0.0136,
+        "h2530": 0.0055
       },
-      "wind_speed_ms": 7.468,
-      "wind_direction_from_deg": 101.4,
-      "cloud_cover_pct": 95.3,
+      "wind_speed_ms": 8.196,
+      "wind_direction_from_deg": 95.82,
+      "cloud_cover_pct": 64.1,
       "rain_rate_mm_h": 0.0,
       "rain_mm_interval": 0.0,
-      "air_temperature_c": 18.6,
-      "sea_surface_skin_temperature_c": 19.0,
-      "water_temperature_c": 19.0,
+      "air_temperature_c": 17.7,
+      "sea_surface_skin_temperature_c": 18.9,
+      "water_temperature_c": 18.9,
       "breaking_hs_m": 0.0,
       "surf_height_class": "Flat",
       "wave_exposed": false,
       "wave_energy_kj_m2": 0.37,
-      "wave_power_kw_m": 1.31,
+      "wave_power_kw_m": 1.43,
       "wind_sector": "Offshore",
-      "wind_deviation_deg": 154.6,
+      "wind_deviation_deg": 160.18,
       "wind_limit_kt": 30.0,
       "wind_glassy_limit_kt": 7.0,
       "wind_blown_limit_kt": 40.0,
-      "wind_speed_kt": 14.52,
+      "wind_speed_kt": 15.93,
       "wind_quality": "Offshore breeze",
       "wind_acceptable": true,
-      "weather_icon": "\u2601\ufe0f",
-      "weather_label": "Overcast",
-      "weather_code": "overcast",
+      "weather_icon": "\ud83c\udf24\ufe0f",
+      "weather_label": "Partly cloudy",
+      "weather_code": "partly_cloudy",
       "surf_quality": "Offshore breeze",
       "surf_suitable": false,
       "surf_label": "Flat \u00b7 Offshore breeze",
       "spectral_band_energy_kj_m2": {
-        "h1012": 0.02237776,
+        "h1012": 0.02429069,
         "h1214": 0.01555,
-        "h1417": 0.00320383,
-        "h1721": 0.00026669,
-        "h2125": 4.757e-05,
-        "h2530": 1.699e-05
+        "h1417": 0.00879513,
+        "h1721": 0.00195678,
+        "h2125": 0.00011624,
+        "h2530": 1.901e-05
       },
-      "tide_m": -0.917
+      "tide_m": -0.823
     },
     {
-      "time_utc": "2026-11-29T18:00:00Z",
-      "lead_hours": 162,
-      "hs_m": 0.77,
-      "tp_s": 5.222,
-      "wave_direction_from_deg": 122.0,
+      "time_utc": "2026-11-30T18:00:00Z",
+      "lead_hours": 150,
+      "hs_m": 0.754,
+      "tp_s": 5.94,
+      "wave_direction_from_deg": 111.5,
       "spectral_band_hs_m": {
-        "h1012": 0.1887,
-        "h1214": 0.1339,
-        "h1417": 0.0793,
-        "h1721": 0.0362,
-        "h2125": 0.0107,
+        "h1012": 0.1809,
+        "h1214": 0.1651,
+        "h1417": 0.1261,
+        "h1721": 0.0519,
+        "h2125": 0.0126,
         "h2530": 0.0055
       },
-      "wind_speed_ms": 6.317,
-      "wind_direction_from_deg": 80.03,
-      "cloud_cover_pct": 98.4,
+      "wind_speed_ms": 6.683,
+      "wind_direction_from_deg": 77.54,
+      "cloud_cover_pct": 9.4,
+      "rain_rate_mm_h": 0.0,
+      "rain_mm_interval": 0.0,
+      "air_temperature_c": 16.6,
+      "sea_surface_skin_temperature_c": 18.9,
+      "water_temperature_c": 18.9,
+      "breaking_hs_m": 0.0,
+      "surf_height_class": "Flat",
+      "wave_exposed": false,
+      "wave_energy_kj_m2": 0.36,
+      "wave_power_kw_m": 1.49,
+      "wind_sector": "Offshore",
+      "wind_deviation_deg": 178.46,
+      "wind_limit_kt": 30.0,
+      "wind_glassy_limit_kt": 7.0,
+      "wind_blown_limit_kt": 40.0,
+      "wind_speed_kt": 12.99,
+      "wind_quality": "Offshore breeze",
+      "wind_acceptable": true,
+      "weather_icon": "\u2600\ufe0f",
+      "weather_label": "Clear",
+      "weather_code": "clear",
+      "surf_quality": "Offshore breeze",
+      "surf_suitable": false,
+      "surf_label": "Flat \u00b7 Offshore breeze",
+      "spectral_band_energy_kj_m2": {
+        "h1012": 0.02056601,
+        "h1214": 0.01713038,
+        "h1417": 0.00999317,
+        "h1721": 0.00169281,
+        "h2125": 9.977e-05,
+        "h2530": 1.901e-05
+      },
+      "tide_m": 0.603
+    },
+    {
+      "time_utc": "2026-12-01T00:00:00Z",
+      "lead_hours": 156,
+      "hs_m": 1.145,
+      "tp_s": 5.187,
+      "wave_direction_from_deg": 124.0,
+      "spectral_band_hs_m": {
+        "h1012": 0.1731,
+        "h1214": 0.1495,
+        "h1417": 0.0949,
+        "h1721": 0.0362,
+        "h2125": 0.0107,
+        "h2530": 0.0052
+      },
+      "wind_speed_ms": 10.039,
+      "wind_direction_from_deg": 103.31,
+      "cloud_cover_pct": 4.7,
       "rain_rate_mm_h": 0.0,
       "rain_mm_interval": 0.0,
       "air_temperature_c": 17.1,
@@ -2725,167 +2674,14 @@
       "breaking_hs_m": 0.0,
       "surf_height_class": "Flat",
       "wave_exposed": false,
-      "wave_energy_kj_m2": 0.37,
-      "wave_power_kw_m": 1.37,
+      "wave_energy_kj_m2": 0.82,
+      "wave_power_kw_m": 3.0,
       "wind_sector": "Offshore",
-      "wind_deviation_deg": 175.97,
+      "wind_deviation_deg": 152.69,
       "wind_limit_kt": 30.0,
       "wind_glassy_limit_kt": 7.0,
       "wind_blown_limit_kt": 40.0,
-      "wind_speed_kt": 12.28,
-      "wind_quality": "Offshore breeze",
-      "wind_acceptable": true,
-      "weather_icon": "\u2601\ufe0f",
-      "weather_label": "Overcast",
-      "weather_code": "overcast",
-      "surf_quality": "Offshore breeze",
-      "surf_suitable": false,
-      "surf_label": "Flat \u00b7 Offshore breeze",
-      "spectral_band_energy_kj_m2": {
-        "h1012": 0.02237776,
-        "h1214": 0.01126767,
-        "h1417": 0.00395202,
-        "h1721": 0.00082355,
-        "h2125": 7.195e-05,
-        "h2530": 1.901e-05
-      },
-      "tide_m": 0.79
-    },
-    {
-      "time_utc": "2026-11-30T00:00:00Z",
-      "lead_hours": 168,
-      "hs_m": 0.754,
-      "tp_s": 4.969,
-      "wave_direction_from_deg": 129.5,
-      "spectral_band_hs_m": {
-        "h1012": 0.1809,
-        "h1214": 0.1417,
-        "h1417": 0.0949,
-        "h1721": 0.0401,
-        "h2125": 0.0107,
-        "h2530": 0.0052
-      },
-      "wind_speed_ms": 6.174,
-      "wind_direction_from_deg": 87.45,
-      "cloud_cover_pct": 100.0,
-      "rain_rate_mm_h": 0.0,
-      "rain_mm_interval": 0.0,
-      "air_temperature_c": 16.9,
-      "sea_surface_skin_temperature_c": 18.8,
-      "water_temperature_c": 18.8,
-      "breaking_hs_m": 0.0,
-      "surf_height_class": "Flat",
-      "wave_exposed": false,
-      "wave_energy_kj_m2": 0.36,
-      "wave_power_kw_m": 1.25,
-      "wind_sector": "Offshore",
-      "wind_deviation_deg": 168.55,
-      "wind_limit_kt": 30.0,
-      "wind_glassy_limit_kt": 7.0,
-      "wind_blown_limit_kt": 40.0,
-      "wind_speed_kt": 12.0,
-      "wind_quality": "Offshore breeze",
-      "wind_acceptable": true,
-      "weather_icon": "\u2601\ufe0f",
-      "weather_label": "Overcast",
-      "weather_code": "overcast",
-      "surf_quality": "Offshore breeze",
-      "surf_suitable": false,
-      "surf_label": "Flat \u00b7 Offshore breeze",
-      "spectral_band_energy_kj_m2": {
-        "h1012": 0.02056601,
-        "h1214": 0.01261864,
-        "h1417": 0.00565986,
-        "h1721": 0.00101056,
-        "h2125": 7.195e-05,
-        "h2530": 1.699e-05
-      },
-      "tide_m": -0.72
-    },
-    {
-      "time_utc": "2026-11-30T06:00:00Z",
-      "lead_hours": 174,
-      "hs_m": 0.911,
-      "tp_s": 4.781,
-      "wave_direction_from_deg": 128.5,
-      "spectral_band_hs_m": {
-        "h1012": 0.1887,
-        "h1214": 0.1339,
-        "h1417": 0.0871,
-        "h1721": 0.0362,
-        "h2125": 0.0097,
-        "h2530": 0.005
-      },
-      "wind_speed_ms": 8.342,
-      "wind_direction_from_deg": 105.16,
-      "cloud_cover_pct": 90.6,
-      "rain_rate_mm_h": 0.0,
-      "rain_mm_interval": 0.0,
-      "air_temperature_c": 17.0,
-      "sea_surface_skin_temperature_c": 18.9,
-      "water_temperature_c": 18.9,
-      "breaking_hs_m": 0.0,
-      "surf_height_class": "Flat",
-      "wave_exposed": false,
-      "wave_energy_kj_m2": 0.52,
-      "wave_power_kw_m": 1.75,
-      "wind_sector": "Offshore",
-      "wind_deviation_deg": 150.84,
-      "wind_limit_kt": 30.0,
-      "wind_glassy_limit_kt": 7.0,
-      "wind_blown_limit_kt": 40.0,
-      "wind_speed_kt": 16.22,
-      "wind_quality": "Offshore breeze",
-      "wind_acceptable": true,
-      "weather_icon": "\u2601\ufe0f",
-      "weather_label": "Overcast",
-      "weather_code": "overcast",
-      "surf_quality": "Offshore breeze",
-      "surf_suitable": false,
-      "surf_label": "Flat \u00b7 Offshore breeze",
-      "spectral_band_energy_kj_m2": {
-        "h1012": 0.02237776,
-        "h1214": 0.01126767,
-        "h1417": 0.0047677,
-        "h1721": 0.00082355,
-        "h2125": 5.913e-05,
-        "h2530": 1.571e-05
-      },
-      "tide_m": 0.914
-    },
-    {
-      "time_utc": "2026-11-30T12:00:00Z",
-      "lead_hours": 180,
-      "hs_m": 0.973,
-      "tp_s": 4.72,
-      "wave_direction_from_deg": 124.0,
-      "spectral_band_hs_m": {
-        "h1012": 0.1731,
-        "h1214": 0.1261,
-        "h1417": 0.1027,
-        "h1721": 0.048,
-        "h2125": 0.0126,
-        "h2530": 0.0052
-      },
-      "wind_speed_ms": 9.177,
-      "wind_direction_from_deg": 107.38,
-      "cloud_cover_pct": 23.4,
-      "rain_rate_mm_h": 0.0,
-      "rain_mm_interval": 0.0,
-      "air_temperature_c": 18.2,
-      "sea_surface_skin_temperature_c": 18.8,
-      "water_temperature_c": 18.8,
-      "breaking_hs_m": 0.0,
-      "surf_height_class": "Flat",
-      "wave_exposed": false,
-      "wave_energy_kj_m2": 0.59,
-      "wave_power_kw_m": 1.97,
-      "wind_sector": "Offshore",
-      "wind_deviation_deg": 148.62,
-      "wind_limit_kt": 30.0,
-      "wind_glassy_limit_kt": 7.0,
-      "wind_blown_limit_kt": 40.0,
-      "wind_speed_kt": 17.84,
+      "wind_speed_kt": 19.51,
       "wind_quality": "Offshore breeze",
       "wind_acceptable": true,
       "weather_icon": "\u2600\ufe0f",
@@ -2896,13 +2692,217 @@
       "surf_label": "Flat \u00b7 Offshore breeze",
       "spectral_band_energy_kj_m2": {
         "h1012": 0.01883072,
-        "h1214": 0.00999317,
-        "h1417": 0.00662848,
-        "h1721": 0.00144796,
-        "h2125": 9.977e-05,
+        "h1214": 0.01404608,
+        "h1417": 0.00565986,
+        "h1721": 0.00082355,
+        "h2125": 7.195e-05,
         "h2530": 1.699e-05
       },
-      "tide_m": -0.823
+      "tide_m": -0.584
+    },
+    {
+      "time_utc": "2026-12-01T06:00:00Z",
+      "lead_hours": 162,
+      "hs_m": 1.036,
+      "tp_s": 5.218,
+      "wave_direction_from_deg": 124.5,
+      "spectral_band_hs_m": {
+        "h1012": 0.1653,
+        "h1214": 0.1261,
+        "h1417": 0.0871,
+        "h1721": 0.0323,
+        "h2125": 0.0107,
+        "h2530": 0.005
+      },
+      "wind_speed_ms": 8.616,
+      "wind_direction_from_deg": 98.63,
+      "cloud_cover_pct": 3.1,
+      "rain_rate_mm_h": 0.0,
+      "rain_mm_interval": 0.0,
+      "air_temperature_c": 16.9,
+      "sea_surface_skin_temperature_c": 18.6,
+      "water_temperature_c": 18.6,
+      "breaking_hs_m": 0.0,
+      "surf_height_class": "Flat",
+      "wave_exposed": false,
+      "wave_energy_kj_m2": 0.67,
+      "wave_power_kw_m": 2.47,
+      "wind_sector": "Offshore",
+      "wind_deviation_deg": 157.37,
+      "wind_limit_kt": 30.0,
+      "wind_glassy_limit_kt": 7.0,
+      "wind_blown_limit_kt": 40.0,
+      "wind_speed_kt": 16.75,
+      "wind_quality": "Offshore breeze",
+      "wind_acceptable": true,
+      "weather_icon": "\u2600\ufe0f",
+      "weather_label": "Clear",
+      "weather_code": "clear",
+      "surf_quality": "Offshore breeze",
+      "surf_suitable": false,
+      "surf_label": "Flat \u00b7 Offshore breeze",
+      "spectral_band_energy_kj_m2": {
+        "h1012": 0.01717191,
+        "h1214": 0.00999317,
+        "h1417": 0.0047677,
+        "h1721": 0.00065566,
+        "h2125": 7.195e-05,
+        "h2530": 1.571e-05
+      },
+      "tide_m": 0.659
+    },
+    {
+      "time_utc": "2026-12-01T12:00:00Z",
+      "lead_hours": 168,
+      "hs_m": 1.02,
+      "tp_s": 5.0,
+      "wave_direction_from_deg": 120.0,
+      "spectral_band_hs_m": {
+        "h1012": 0.1497,
+        "h1214": 0.1183,
+        "h1417": 0.0793,
+        "h1721": 0.0245,
+        "h2125": 0.0097,
+        "h2530": 0.0052
+      },
+      "wind_speed_ms": 9.856,
+      "wind_direction_from_deg": 99.43,
+      "cloud_cover_pct": 18.8,
+      "rain_rate_mm_h": 0.0,
+      "rain_mm_interval": 0.0,
+      "air_temperature_c": 18.1,
+      "sea_surface_skin_temperature_c": 18.9,
+      "water_temperature_c": 18.9,
+      "breaking_hs_m": 0.0,
+      "surf_height_class": "Flat",
+      "wave_exposed": false,
+      "wave_energy_kj_m2": 0.65,
+      "wave_power_kw_m": 2.3,
+      "wind_sector": "Offshore",
+      "wind_deviation_deg": 156.57,
+      "wind_limit_kt": 30.0,
+      "wind_glassy_limit_kt": 7.0,
+      "wind_blown_limit_kt": 40.0,
+      "wind_speed_kt": 19.16,
+      "wind_quality": "Offshore breeze",
+      "wind_acceptable": true,
+      "weather_icon": "\u2600\ufe0f",
+      "weather_label": "Clear",
+      "weather_code": "clear",
+      "surf_quality": "Offshore breeze",
+      "surf_suitable": false,
+      "surf_label": "Flat \u00b7 Offshore breeze",
+      "spectral_band_energy_kj_m2": {
+        "h1012": 0.01408369,
+        "h1214": 0.00879513,
+        "h1417": 0.00395202,
+        "h1721": 0.00037723,
+        "h2125": 5.913e-05,
+        "h2530": 1.699e-05
+      },
+      "tide_m": -0.537
+    },
+    {
+      "time_utc": "2026-12-01T18:00:00Z",
+      "lead_hours": 174,
+      "hs_m": 0.942,
+      "tp_s": 5.126,
+      "wave_direction_from_deg": 122.5,
+      "spectral_band_hs_m": {
+        "h1012": 0.1341,
+        "h1214": 0.1026,
+        "h1417": 0.048,
+        "h1721": 0.0167,
+        "h2125": 0.0097,
+        "h2530": 0.006
+      },
+      "wind_speed_ms": 8.008,
+      "wind_direction_from_deg": 96.25,
+      "cloud_cover_pct": 6.2,
+      "rain_rate_mm_h": 0.0,
+      "rain_mm_interval": 0.0,
+      "air_temperature_c": 16.8,
+      "sea_surface_skin_temperature_c": 18.9,
+      "water_temperature_c": 18.9,
+      "breaking_hs_m": 0.0,
+      "surf_height_class": "Flat",
+      "wave_exposed": false,
+      "wave_energy_kj_m2": 0.56,
+      "wave_power_kw_m": 2.01,
+      "wind_sector": "Offshore",
+      "wind_deviation_deg": 159.75,
+      "wind_limit_kt": 30.0,
+      "wind_glassy_limit_kt": 7.0,
+      "wind_blown_limit_kt": 40.0,
+      "wind_speed_kt": 15.57,
+      "wind_quality": "Offshore breeze",
+      "wind_acceptable": true,
+      "weather_icon": "\u2600\ufe0f",
+      "weather_label": "Clear",
+      "weather_code": "clear",
+      "surf_quality": "Offshore breeze",
+      "surf_suitable": false,
+      "surf_label": "Flat \u00b7 Offshore breeze",
+      "spectral_band_energy_kj_m2": {
+        "h1012": 0.01130135,
+        "h1214": 0.00661558,
+        "h1417": 0.00144796,
+        "h1721": 0.00017527,
+        "h2125": 5.913e-05,
+        "h2530": 2.262e-05
+      },
+      "tide_m": 0.263
+    },
+    {
+      "time_utc": "2026-12-02T00:00:00Z",
+      "lead_hours": 180,
+      "hs_m": 0.911,
+      "tp_s": 5.065,
+      "wave_direction_from_deg": 123.0,
+      "spectral_band_hs_m": {
+        "h1012": 0.1262,
+        "h1214": 0.0714,
+        "h1417": 0.0402,
+        "h1721": 0.0167,
+        "h2125": 0.0126,
+        "h2530": 0.0079
+      },
+      "wind_speed_ms": 8.066,
+      "wind_direction_from_deg": 96.99,
+      "cloud_cover_pct": 1.6,
+      "rain_rate_mm_h": 0.0,
+      "rain_mm_interval": 0.0,
+      "air_temperature_c": 16.8,
+      "sea_surface_skin_temperature_c": 18.9,
+      "water_temperature_c": 18.9,
+      "breaking_hs_m": 0.0,
+      "surf_height_class": "Flat",
+      "wave_exposed": false,
+      "wave_energy_kj_m2": 0.52,
+      "wave_power_kw_m": 1.86,
+      "wind_sector": "Offshore",
+      "wind_deviation_deg": 159.01,
+      "wind_limit_kt": 30.0,
+      "wind_glassy_limit_kt": 7.0,
+      "wind_blown_limit_kt": 40.0,
+      "wind_speed_kt": 15.68,
+      "wind_quality": "Offshore breeze",
+      "wind_acceptable": true,
+      "weather_icon": "\u2600\ufe0f",
+      "weather_label": "Clear",
+      "weather_code": "clear",
+      "surf_quality": "Offshore breeze",
+      "surf_suitable": false,
+      "surf_label": "Flat \u00b7 Offshore breeze",
+      "spectral_band_energy_kj_m2": {
+        "h1012": 0.01000902,
+        "h1214": 0.00320383,
+        "h1417": 0.00101561,
+        "h1721": 0.00017527,
+        "h2125": 9.977e-05,
+        "h2530": 3.922e-05
+      },
+      "tide_m": -0.298
     }
   ],
   "surf_model": {
@@ -2982,870 +2982,6 @@
     "constituents": 22,
     "sampling_minutes": 10,
     "series": [
-      {
-        "time_utc": "2026-11-22T12:00:00Z",
-        "level_m": 0.996
-      },
-      {
-        "time_utc": "2026-11-22T12:10:00Z",
-        "level_m": 0.988
-      },
-      {
-        "time_utc": "2026-11-22T12:20:00Z",
-        "level_m": 0.973
-      },
-      {
-        "time_utc": "2026-11-22T12:30:00Z",
-        "level_m": 0.95
-      },
-      {
-        "time_utc": "2026-11-22T12:40:00Z",
-        "level_m": 0.921
-      },
-      {
-        "time_utc": "2026-11-22T12:50:00Z",
-        "level_m": 0.884
-      },
-      {
-        "time_utc": "2026-11-22T13:00:00Z",
-        "level_m": 0.841
-      },
-      {
-        "time_utc": "2026-11-22T13:10:00Z",
-        "level_m": 0.792
-      },
-      {
-        "time_utc": "2026-11-22T13:20:00Z",
-        "level_m": 0.736
-      },
-      {
-        "time_utc": "2026-11-22T13:30:00Z",
-        "level_m": 0.675
-      },
-      {
-        "time_utc": "2026-11-22T13:40:00Z",
-        "level_m": 0.609
-      },
-      {
-        "time_utc": "2026-11-22T13:50:00Z",
-        "level_m": 0.538
-      },
-      {
-        "time_utc": "2026-11-22T14:00:00Z",
-        "level_m": 0.463
-      },
-      {
-        "time_utc": "2026-11-22T14:10:00Z",
-        "level_m": 0.385
-      },
-      {
-        "time_utc": "2026-11-22T14:20:00Z",
-        "level_m": 0.303
-      },
-      {
-        "time_utc": "2026-11-22T14:30:00Z",
-        "level_m": 0.219
-      },
-      {
-        "time_utc": "2026-11-22T14:40:00Z",
-        "level_m": 0.133
-      },
-      {
-        "time_utc": "2026-11-22T14:50:00Z",
-        "level_m": 0.046
-      },
-      {
-        "time_utc": "2026-11-22T15:00:00Z",
-        "level_m": -0.041
-      },
-      {
-        "time_utc": "2026-11-22T15:10:00Z",
-        "level_m": -0.128
-      },
-      {
-        "time_utc": "2026-11-22T15:20:00Z",
-        "level_m": -0.214
-      },
-      {
-        "time_utc": "2026-11-22T15:30:00Z",
-        "level_m": -0.299
-      },
-      {
-        "time_utc": "2026-11-22T15:40:00Z",
-        "level_m": -0.381
-      },
-      {
-        "time_utc": "2026-11-22T15:50:00Z",
-        "level_m": -0.461
-      },
-      {
-        "time_utc": "2026-11-22T16:00:00Z",
-        "level_m": -0.537
-      },
-      {
-        "time_utc": "2026-11-22T16:10:00Z",
-        "level_m": -0.61
-      },
-      {
-        "time_utc": "2026-11-22T16:20:00Z",
-        "level_m": -0.678
-      },
-      {
-        "time_utc": "2026-11-22T16:30:00Z",
-        "level_m": -0.741
-      },
-      {
-        "time_utc": "2026-11-22T16:40:00Z",
-        "level_m": -0.799
-      },
-      {
-        "time_utc": "2026-11-22T16:50:00Z",
-        "level_m": -0.851
-      },
-      {
-        "time_utc": "2026-11-22T17:00:00Z",
-        "level_m": -0.897
-      },
-      {
-        "time_utc": "2026-11-22T17:10:00Z",
-        "level_m": -0.937
-      },
-      {
-        "time_utc": "2026-11-22T17:20:00Z",
-        "level_m": -0.97
-      },
-      {
-        "time_utc": "2026-11-22T17:30:00Z",
-        "level_m": -0.997
-      },
-      {
-        "time_utc": "2026-11-22T17:40:00Z",
-        "level_m": -1.016
-      },
-      {
-        "time_utc": "2026-11-22T17:50:00Z",
-        "level_m": -1.028
-      },
-      {
-        "time_utc": "2026-11-22T18:00:00Z",
-        "level_m": -1.033
-      },
-      {
-        "time_utc": "2026-11-22T18:10:00Z",
-        "level_m": -1.032
-      },
-      {
-        "time_utc": "2026-11-22T18:20:00Z",
-        "level_m": -1.023
-      },
-      {
-        "time_utc": "2026-11-22T18:30:00Z",
-        "level_m": -1.007
-      },
-      {
-        "time_utc": "2026-11-22T18:40:00Z",
-        "level_m": -0.984
-      },
-      {
-        "time_utc": "2026-11-22T18:50:00Z",
-        "level_m": -0.955
-      },
-      {
-        "time_utc": "2026-11-22T19:00:00Z",
-        "level_m": -0.919
-      },
-      {
-        "time_utc": "2026-11-22T19:10:00Z",
-        "level_m": -0.877
-      },
-      {
-        "time_utc": "2026-11-22T19:20:00Z",
-        "level_m": -0.829
-      },
-      {
-        "time_utc": "2026-11-22T19:30:00Z",
-        "level_m": -0.775
-      },
-      {
-        "time_utc": "2026-11-22T19:40:00Z",
-        "level_m": -0.717
-      },
-      {
-        "time_utc": "2026-11-22T19:50:00Z",
-        "level_m": -0.653
-      },
-      {
-        "time_utc": "2026-11-22T20:00:00Z",
-        "level_m": -0.586
-      },
-      {
-        "time_utc": "2026-11-22T20:10:00Z",
-        "level_m": -0.514
-      },
-      {
-        "time_utc": "2026-11-22T20:20:00Z",
-        "level_m": -0.439
-      },
-      {
-        "time_utc": "2026-11-22T20:30:00Z",
-        "level_m": -0.361
-      },
-      {
-        "time_utc": "2026-11-22T20:40:00Z",
-        "level_m": -0.28
-      },
-      {
-        "time_utc": "2026-11-22T20:50:00Z",
-        "level_m": -0.197
-      },
-      {
-        "time_utc": "2026-11-22T21:00:00Z",
-        "level_m": -0.113
-      },
-      {
-        "time_utc": "2026-11-22T21:10:00Z",
-        "level_m": -0.029
-      },
-      {
-        "time_utc": "2026-11-22T21:20:00Z",
-        "level_m": 0.057
-      },
-      {
-        "time_utc": "2026-11-22T21:30:00Z",
-        "level_m": 0.141
-      },
-      {
-        "time_utc": "2026-11-22T21:40:00Z",
-        "level_m": 0.226
-      },
-      {
-        "time_utc": "2026-11-22T21:50:00Z",
-        "level_m": 0.308
-      },
-      {
-        "time_utc": "2026-11-22T22:00:00Z",
-        "level_m": 0.389
-      },
-      {
-        "time_utc": "2026-11-22T22:10:00Z",
-        "level_m": 0.467
-      },
-      {
-        "time_utc": "2026-11-22T22:20:00Z",
-        "level_m": 0.542
-      },
-      {
-        "time_utc": "2026-11-22T22:30:00Z",
-        "level_m": 0.614
-      },
-      {
-        "time_utc": "2026-11-22T22:40:00Z",
-        "level_m": 0.681
-      },
-      {
-        "time_utc": "2026-11-22T22:50:00Z",
-        "level_m": 0.744
-      },
-      {
-        "time_utc": "2026-11-22T23:00:00Z",
-        "level_m": 0.801
-      },
-      {
-        "time_utc": "2026-11-22T23:10:00Z",
-        "level_m": 0.853
-      },
-      {
-        "time_utc": "2026-11-22T23:20:00Z",
-        "level_m": 0.899
-      },
-      {
-        "time_utc": "2026-11-22T23:30:00Z",
-        "level_m": 0.939
-      },
-      {
-        "time_utc": "2026-11-22T23:40:00Z",
-        "level_m": 0.972
-      },
-      {
-        "time_utc": "2026-11-22T23:50:00Z",
-        "level_m": 0.997
-      },
-      {
-        "time_utc": "2026-11-23T00:00:00Z",
-        "level_m": 1.016
-      },
-      {
-        "time_utc": "2026-11-23T00:10:00Z",
-        "level_m": 1.027
-      },
-      {
-        "time_utc": "2026-11-23T00:20:00Z",
-        "level_m": 1.03
-      },
-      {
-        "time_utc": "2026-11-23T00:30:00Z",
-        "level_m": 1.026
-      },
-      {
-        "time_utc": "2026-11-23T00:40:00Z",
-        "level_m": 1.014
-      },
-      {
-        "time_utc": "2026-11-23T00:50:00Z",
-        "level_m": 0.995
-      },
-      {
-        "time_utc": "2026-11-23T01:00:00Z",
-        "level_m": 0.968
-      },
-      {
-        "time_utc": "2026-11-23T01:10:00Z",
-        "level_m": 0.933
-      },
-      {
-        "time_utc": "2026-11-23T01:20:00Z",
-        "level_m": 0.892
-      },
-      {
-        "time_utc": "2026-11-23T01:30:00Z",
-        "level_m": 0.843
-      },
-      {
-        "time_utc": "2026-11-23T01:40:00Z",
-        "level_m": 0.788
-      },
-      {
-        "time_utc": "2026-11-23T01:50:00Z",
-        "level_m": 0.727
-      },
-      {
-        "time_utc": "2026-11-23T02:00:00Z",
-        "level_m": 0.66
-      },
-      {
-        "time_utc": "2026-11-23T02:10:00Z",
-        "level_m": 0.588
-      },
-      {
-        "time_utc": "2026-11-23T02:20:00Z",
-        "level_m": 0.512
-      },
-      {
-        "time_utc": "2026-11-23T02:30:00Z",
-        "level_m": 0.431
-      },
-      {
-        "time_utc": "2026-11-23T02:40:00Z",
-        "level_m": 0.347
-      },
-      {
-        "time_utc": "2026-11-23T02:50:00Z",
-        "level_m": 0.261
-      },
-      {
-        "time_utc": "2026-11-23T03:00:00Z",
-        "level_m": 0.172
-      },
-      {
-        "time_utc": "2026-11-23T03:10:00Z",
-        "level_m": 0.082
-      },
-      {
-        "time_utc": "2026-11-23T03:20:00Z",
-        "level_m": -0.009
-      },
-      {
-        "time_utc": "2026-11-23T03:30:00Z",
-        "level_m": -0.1
-      },
-      {
-        "time_utc": "2026-11-23T03:40:00Z",
-        "level_m": -0.19
-      },
-      {
-        "time_utc": "2026-11-23T03:50:00Z",
-        "level_m": -0.278
-      },
-      {
-        "time_utc": "2026-11-23T04:00:00Z",
-        "level_m": -0.364
-      },
-      {
-        "time_utc": "2026-11-23T04:10:00Z",
-        "level_m": -0.448
-      },
-      {
-        "time_utc": "2026-11-23T04:20:00Z",
-        "level_m": -0.528
-      },
-      {
-        "time_utc": "2026-11-23T04:30:00Z",
-        "level_m": -0.604
-      },
-      {
-        "time_utc": "2026-11-23T04:40:00Z",
-        "level_m": -0.676
-      },
-      {
-        "time_utc": "2026-11-23T04:50:00Z",
-        "level_m": -0.742
-      },
-      {
-        "time_utc": "2026-11-23T05:00:00Z",
-        "level_m": -0.803
-      },
-      {
-        "time_utc": "2026-11-23T05:10:00Z",
-        "level_m": -0.858
-      },
-      {
-        "time_utc": "2026-11-23T05:20:00Z",
-        "level_m": -0.906
-      },
-      {
-        "time_utc": "2026-11-23T05:30:00Z",
-        "level_m": -0.948
-      },
-      {
-        "time_utc": "2026-11-23T05:40:00Z",
-        "level_m": -0.983
-      },
-      {
-        "time_utc": "2026-11-23T05:50:00Z",
-        "level_m": -1.01
-      },
-      {
-        "time_utc": "2026-11-23T06:00:00Z",
-        "level_m": -1.031
-      },
-      {
-        "time_utc": "2026-11-23T06:10:00Z",
-        "level_m": -1.043
-      },
-      {
-        "time_utc": "2026-11-23T06:20:00Z",
-        "level_m": -1.049
-      },
-      {
-        "time_utc": "2026-11-23T06:30:00Z",
-        "level_m": -1.047
-      },
-      {
-        "time_utc": "2026-11-23T06:40:00Z",
-        "level_m": -1.037
-      },
-      {
-        "time_utc": "2026-11-23T06:50:00Z",
-        "level_m": -1.021
-      },
-      {
-        "time_utc": "2026-11-23T07:00:00Z",
-        "level_m": -0.997
-      },
-      {
-        "time_utc": "2026-11-23T07:10:00Z",
-        "level_m": -0.966
-      },
-      {
-        "time_utc": "2026-11-23T07:20:00Z",
-        "level_m": -0.928
-      },
-      {
-        "time_utc": "2026-11-23T07:30:00Z",
-        "level_m": -0.884
-      },
-      {
-        "time_utc": "2026-11-23T07:40:00Z",
-        "level_m": -0.834
-      },
-      {
-        "time_utc": "2026-11-23T07:50:00Z",
-        "level_m": -0.778
-      },
-      {
-        "time_utc": "2026-11-23T08:00:00Z",
-        "level_m": -0.717
-      },
-      {
-        "time_utc": "2026-11-23T08:10:00Z",
-        "level_m": -0.651
-      },
-      {
-        "time_utc": "2026-11-23T08:20:00Z",
-        "level_m": -0.58
-      },
-      {
-        "time_utc": "2026-11-23T08:30:00Z",
-        "level_m": -0.505
-      },
-      {
-        "time_utc": "2026-11-23T08:40:00Z",
-        "level_m": -0.427
-      },
-      {
-        "time_utc": "2026-11-23T08:50:00Z",
-        "level_m": -0.345
-      },
-      {
-        "time_utc": "2026-11-23T09:00:00Z",
-        "level_m": -0.261
-      },
-      {
-        "time_utc": "2026-11-23T09:10:00Z",
-        "level_m": -0.175
-      },
-      {
-        "time_utc": "2026-11-23T09:20:00Z",
-        "level_m": -0.087
-      },
-      {
-        "time_utc": "2026-11-23T09:30:00Z",
-        "level_m": 0.001
-      },
-      {
-        "time_utc": "2026-11-23T09:40:00Z",
-        "level_m": 0.09
-      },
-      {
-        "time_utc": "2026-11-23T09:50:00Z",
-        "level_m": 0.179
-      },
-      {
-        "time_utc": "2026-11-23T10:00:00Z",
-        "level_m": 0.267
-      },
-      {
-        "time_utc": "2026-11-23T10:10:00Z",
-        "level_m": 0.353
-      },
-      {
-        "time_utc": "2026-11-23T10:20:00Z",
-        "level_m": 0.437
-      },
-      {
-        "time_utc": "2026-11-23T10:30:00Z",
-        "level_m": 0.519
-      },
-      {
-        "time_utc": "2026-11-23T10:40:00Z",
-        "level_m": 0.597
-      },
-      {
-        "time_utc": "2026-11-23T10:50:00Z",
-        "level_m": 0.672
-      },
-      {
-        "time_utc": "2026-11-23T11:00:00Z",
-        "level_m": 0.743
-      },
-      {
-        "time_utc": "2026-11-23T11:10:00Z",
-        "level_m": 0.808
-      },
-      {
-        "time_utc": "2026-11-23T11:20:00Z",
-        "level_m": 0.869
-      },
-      {
-        "time_utc": "2026-11-23T11:30:00Z",
-        "level_m": 0.923
-      },
-      {
-        "time_utc": "2026-11-23T11:40:00Z",
-        "level_m": 0.972
-      },
-      {
-        "time_utc": "2026-11-23T11:50:00Z",
-        "level_m": 1.013
-      },
-      {
-        "time_utc": "2026-11-23T12:00:00Z",
-        "level_m": 1.048
-      },
-      {
-        "time_utc": "2026-11-23T12:10:00Z",
-        "level_m": 1.075
-      },
-      {
-        "time_utc": "2026-11-23T12:20:00Z",
-        "level_m": 1.095
-      },
-      {
-        "time_utc": "2026-11-23T12:30:00Z",
-        "level_m": 1.107
-      },
-      {
-        "time_utc": "2026-11-23T12:40:00Z",
-        "level_m": 1.111
-      },
-      {
-        "time_utc": "2026-11-23T12:50:00Z",
-        "level_m": 1.106
-      },
-      {
-        "time_utc": "2026-11-23T13:00:00Z",
-        "level_m": 1.094
-      },
-      {
-        "time_utc": "2026-11-23T13:10:00Z",
-        "level_m": 1.074
-      },
-      {
-        "time_utc": "2026-11-23T13:20:00Z",
-        "level_m": 1.045
-      },
-      {
-        "time_utc": "2026-11-23T13:30:00Z",
-        "level_m": 1.009
-      },
-      {
-        "time_utc": "2026-11-23T13:40:00Z",
-        "level_m": 0.965
-      },
-      {
-        "time_utc": "2026-11-23T13:50:00Z",
-        "level_m": 0.914
-      },
-      {
-        "time_utc": "2026-11-23T14:00:00Z",
-        "level_m": 0.856
-      },
-      {
-        "time_utc": "2026-11-23T14:10:00Z",
-        "level_m": 0.791
-      },
-      {
-        "time_utc": "2026-11-23T14:20:00Z",
-        "level_m": 0.72
-      },
-      {
-        "time_utc": "2026-11-23T14:30:00Z",
-        "level_m": 0.643
-      },
-      {
-        "time_utc": "2026-11-23T14:40:00Z",
-        "level_m": 0.562
-      },
-      {
-        "time_utc": "2026-11-23T14:50:00Z",
-        "level_m": 0.476
-      },
-      {
-        "time_utc": "2026-11-23T15:00:00Z",
-        "level_m": 0.387
-      },
-      {
-        "time_utc": "2026-11-23T15:10:00Z",
-        "level_m": 0.294
-      },
-      {
-        "time_utc": "2026-11-23T15:20:00Z",
-        "level_m": 0.199
-      },
-      {
-        "time_utc": "2026-11-23T15:30:00Z",
-        "level_m": 0.103
-      },
-      {
-        "time_utc": "2026-11-23T15:40:00Z",
-        "level_m": 0.006
-      },
-      {
-        "time_utc": "2026-11-23T15:50:00Z",
-        "level_m": -0.091
-      },
-      {
-        "time_utc": "2026-11-23T16:00:00Z",
-        "level_m": -0.188
-      },
-      {
-        "time_utc": "2026-11-23T16:10:00Z",
-        "level_m": -0.283
-      },
-      {
-        "time_utc": "2026-11-23T16:20:00Z",
-        "level_m": -0.376
-      },
-      {
-        "time_utc": "2026-11-23T16:30:00Z",
-        "level_m": -0.466
-      },
-      {
-        "time_utc": "2026-11-23T16:40:00Z",
-        "level_m": -0.552
-      },
-      {
-        "time_utc": "2026-11-23T16:50:00Z",
-        "level_m": -0.634
-      },
-      {
-        "time_utc": "2026-11-23T17:00:00Z",
-        "level_m": -0.711
-      },
-      {
-        "time_utc": "2026-11-23T17:10:00Z",
-        "level_m": -0.783
-      },
-      {
-        "time_utc": "2026-11-23T17:20:00Z",
-        "level_m": -0.849
-      },
-      {
-        "time_utc": "2026-11-23T17:30:00Z",
-        "level_m": -0.909
-      },
-      {
-        "time_utc": "2026-11-23T17:40:00Z",
-        "level_m": -0.961
-      },
-      {
-        "time_utc": "2026-11-23T17:50:00Z",
-        "level_m": -1.007
-      },
-      {
-        "time_utc": "2026-11-23T18:00:00Z",
-        "level_m": -1.046
-      },
-      {
-        "time_utc": "2026-11-23T18:10:00Z",
-        "level_m": -1.076
-      },
-      {
-        "time_utc": "2026-11-23T18:20:00Z",
-        "level_m": -1.099
-      },
-      {
-        "time_utc": "2026-11-23T18:30:00Z",
-        "level_m": -1.115
-      },
-      {
-        "time_utc": "2026-11-23T18:40:00Z",
-        "level_m": -1.122
-      },
-      {
-        "time_utc": "2026-11-23T18:50:00Z",
-        "level_m": -1.121
-      },
-      {
-        "time_utc": "2026-11-23T19:00:00Z",
-        "level_m": -1.113
-      },
-      {
-        "time_utc": "2026-11-23T19:10:00Z",
-        "level_m": -1.096
-      },
-      {
-        "time_utc": "2026-11-23T19:20:00Z",
-        "level_m": -1.073
-      },
-      {
-        "time_utc": "2026-11-23T19:30:00Z",
-        "level_m": -1.041
-      },
-      {
-        "time_utc": "2026-11-23T19:40:00Z",
-        "level_m": -1.003
-      },
-      {
-        "time_utc": "2026-11-23T19:50:00Z",
-        "level_m": -0.958
-      },
-      {
-        "time_utc": "2026-11-23T20:00:00Z",
-        "level_m": -0.907
-      },
-      {
-        "time_utc": "2026-11-23T20:10:00Z",
-        "level_m": -0.849
-      },
-      {
-        "time_utc": "2026-11-23T20:20:00Z",
-        "level_m": -0.786
-      },
-      {
-        "time_utc": "2026-11-23T20:30:00Z",
-        "level_m": -0.717
-      },
-      {
-        "time_utc": "2026-11-23T20:40:00Z",
-        "level_m": -0.644
-      },
-      {
-        "time_utc": "2026-11-23T20:50:00Z",
-        "level_m": -0.566
-      },
-      {
-        "time_utc": "2026-11-23T21:00:00Z",
-        "level_m": -0.485
-      },
-      {
-        "time_utc": "2026-11-23T21:10:00Z",
-        "level_m": -0.4
-      },
-      {
-        "time_utc": "2026-11-23T21:20:00Z",
-        "level_m": -0.313
-      },
-      {
-        "time_utc": "2026-11-23T21:30:00Z",
-        "level_m": -0.223
-      },
-      {
-        "time_utc": "2026-11-23T21:40:00Z",
-        "level_m": -0.132
-      },
-      {
-        "time_utc": "2026-11-23T21:50:00Z",
-        "level_m": -0.039
-      },
-      {
-        "time_utc": "2026-11-23T22:00:00Z",
-        "level_m": 0.054
-      },
-      {
-        "time_utc": "2026-11-23T22:10:00Z",
-        "level_m": 0.146
-      },
-      {
-        "time_utc": "2026-11-23T22:20:00Z",
-        "level_m": 0.238
-      },
-      {
-        "time_utc": "2026-11-23T22:30:00Z",
-        "level_m": 0.329
-      },
-      {
-        "time_utc": "2026-11-23T22:40:00Z",
-        "level_m": 0.417
-      },
-      {
-        "time_utc": "2026-11-23T22:50:00Z",
-        "level_m": 0.503
-      },
-      {
-        "time_utc": "2026-11-23T23:00:00Z",
-        "level_m": 0.586
-      },
-      {
-        "time_utc": "2026-11-23T23:10:00Z",
-        "level_m": 0.666
-      },
-      {
-        "time_utc": "2026-11-23T23:20:00Z",
-        "level_m": 0.74
-      },
-      {
-        "time_utc": "2026-11-23T23:30:00Z",
-        "level_m": 0.81
-      },
-      {
-        "time_utc": "2026-11-23T23:40:00Z",
-        "level_m": 0.875
-      },
-      {
-        "time_utc": "2026-11-23T23:50:00Z",
-        "level_m": 0.934
-      },
       {
         "time_utc": "2026-11-24T00:00:00Z",
         "level_m": 0.986
@@ -7881,34 +7017,873 @@
       {
         "time_utc": "2026-12-01T00:00:00Z",
         "level_m": -0.584
+      },
+      {
+        "time_utc": "2026-12-01T00:10:00Z",
+        "level_m": -0.602
+      },
+      {
+        "time_utc": "2026-12-01T00:20:00Z",
+        "level_m": -0.615
+      },
+      {
+        "time_utc": "2026-12-01T00:30:00Z",
+        "level_m": -0.625
+      },
+      {
+        "time_utc": "2026-12-01T00:40:00Z",
+        "level_m": -0.629
+      },
+      {
+        "time_utc": "2026-12-01T00:50:00Z",
+        "level_m": -0.63
+      },
+      {
+        "time_utc": "2026-12-01T01:00:00Z",
+        "level_m": -0.626
+      },
+      {
+        "time_utc": "2026-12-01T01:10:00Z",
+        "level_m": -0.618
+      },
+      {
+        "time_utc": "2026-12-01T01:20:00Z",
+        "level_m": -0.606
+      },
+      {
+        "time_utc": "2026-12-01T01:30:00Z",
+        "level_m": -0.59
+      },
+      {
+        "time_utc": "2026-12-01T01:40:00Z",
+        "level_m": -0.571
+      },
+      {
+        "time_utc": "2026-12-01T01:50:00Z",
+        "level_m": -0.547
+      },
+      {
+        "time_utc": "2026-12-01T02:00:00Z",
+        "level_m": -0.52
+      },
+      {
+        "time_utc": "2026-12-01T02:10:00Z",
+        "level_m": -0.49
+      },
+      {
+        "time_utc": "2026-12-01T02:20:00Z",
+        "level_m": -0.456
+      },
+      {
+        "time_utc": "2026-12-01T02:30:00Z",
+        "level_m": -0.42
+      },
+      {
+        "time_utc": "2026-12-01T02:40:00Z",
+        "level_m": -0.38
+      },
+      {
+        "time_utc": "2026-12-01T02:50:00Z",
+        "level_m": -0.337
+      },
+      {
+        "time_utc": "2026-12-01T03:00:00Z",
+        "level_m": -0.292
+      },
+      {
+        "time_utc": "2026-12-01T03:10:00Z",
+        "level_m": -0.245
+      },
+      {
+        "time_utc": "2026-12-01T03:20:00Z",
+        "level_m": -0.195
+      },
+      {
+        "time_utc": "2026-12-01T03:30:00Z",
+        "level_m": -0.143
+      },
+      {
+        "time_utc": "2026-12-01T03:40:00Z",
+        "level_m": -0.089
+      },
+      {
+        "time_utc": "2026-12-01T03:50:00Z",
+        "level_m": -0.034
+      },
+      {
+        "time_utc": "2026-12-01T04:00:00Z",
+        "level_m": 0.022
+      },
+      {
+        "time_utc": "2026-12-01T04:10:00Z",
+        "level_m": 0.079
+      },
+      {
+        "time_utc": "2026-12-01T04:20:00Z",
+        "level_m": 0.137
+      },
+      {
+        "time_utc": "2026-12-01T04:30:00Z",
+        "level_m": 0.195
+      },
+      {
+        "time_utc": "2026-12-01T04:40:00Z",
+        "level_m": 0.253
+      },
+      {
+        "time_utc": "2026-12-01T04:50:00Z",
+        "level_m": 0.31
+      },
+      {
+        "time_utc": "2026-12-01T05:00:00Z",
+        "level_m": 0.366
+      },
+      {
+        "time_utc": "2026-12-01T05:10:00Z",
+        "level_m": 0.421
+      },
+      {
+        "time_utc": "2026-12-01T05:20:00Z",
+        "level_m": 0.474
+      },
+      {
+        "time_utc": "2026-12-01T05:30:00Z",
+        "level_m": 0.525
+      },
+      {
+        "time_utc": "2026-12-01T05:40:00Z",
+        "level_m": 0.573
+      },
+      {
+        "time_utc": "2026-12-01T05:50:00Z",
+        "level_m": 0.618
+      },
+      {
+        "time_utc": "2026-12-01T06:00:00Z",
+        "level_m": 0.659
+      },
+      {
+        "time_utc": "2026-12-01T06:10:00Z",
+        "level_m": 0.697
+      },
+      {
+        "time_utc": "2026-12-01T06:20:00Z",
+        "level_m": 0.73
+      },
+      {
+        "time_utc": "2026-12-01T06:30:00Z",
+        "level_m": 0.758
+      },
+      {
+        "time_utc": "2026-12-01T06:40:00Z",
+        "level_m": 0.782
+      },
+      {
+        "time_utc": "2026-12-01T06:50:00Z",
+        "level_m": 0.8
+      },
+      {
+        "time_utc": "2026-12-01T07:00:00Z",
+        "level_m": 0.813
+      },
+      {
+        "time_utc": "2026-12-01T07:10:00Z",
+        "level_m": 0.82
+      },
+      {
+        "time_utc": "2026-12-01T07:20:00Z",
+        "level_m": 0.821
+      },
+      {
+        "time_utc": "2026-12-01T07:30:00Z",
+        "level_m": 0.817
+      },
+      {
+        "time_utc": "2026-12-01T07:40:00Z",
+        "level_m": 0.806
+      },
+      {
+        "time_utc": "2026-12-01T07:50:00Z",
+        "level_m": 0.79
+      },
+      {
+        "time_utc": "2026-12-01T08:00:00Z",
+        "level_m": 0.768
+      },
+      {
+        "time_utc": "2026-12-01T08:10:00Z",
+        "level_m": 0.741
+      },
+      {
+        "time_utc": "2026-12-01T08:20:00Z",
+        "level_m": 0.708
+      },
+      {
+        "time_utc": "2026-12-01T08:30:00Z",
+        "level_m": 0.67
+      },
+      {
+        "time_utc": "2026-12-01T08:40:00Z",
+        "level_m": 0.627
+      },
+      {
+        "time_utc": "2026-12-01T08:50:00Z",
+        "level_m": 0.58
+      },
+      {
+        "time_utc": "2026-12-01T09:00:00Z",
+        "level_m": 0.529
+      },
+      {
+        "time_utc": "2026-12-01T09:10:00Z",
+        "level_m": 0.474
+      },
+      {
+        "time_utc": "2026-12-01T09:20:00Z",
+        "level_m": 0.416
+      },
+      {
+        "time_utc": "2026-12-01T09:30:00Z",
+        "level_m": 0.355
+      },
+      {
+        "time_utc": "2026-12-01T09:40:00Z",
+        "level_m": 0.292
+      },
+      {
+        "time_utc": "2026-12-01T09:50:00Z",
+        "level_m": 0.228
+      },
+      {
+        "time_utc": "2026-12-01T10:00:00Z",
+        "level_m": 0.163
+      },
+      {
+        "time_utc": "2026-12-01T10:10:00Z",
+        "level_m": 0.097
+      },
+      {
+        "time_utc": "2026-12-01T10:20:00Z",
+        "level_m": 0.031
+      },
+      {
+        "time_utc": "2026-12-01T10:30:00Z",
+        "level_m": -0.035
+      },
+      {
+        "time_utc": "2026-12-01T10:40:00Z",
+        "level_m": -0.1
+      },
+      {
+        "time_utc": "2026-12-01T10:50:00Z",
+        "level_m": -0.163
+      },
+      {
+        "time_utc": "2026-12-01T11:00:00Z",
+        "level_m": -0.224
+      },
+      {
+        "time_utc": "2026-12-01T11:10:00Z",
+        "level_m": -0.284
+      },
+      {
+        "time_utc": "2026-12-01T11:20:00Z",
+        "level_m": -0.341
+      },
+      {
+        "time_utc": "2026-12-01T11:30:00Z",
+        "level_m": -0.395
+      },
+      {
+        "time_utc": "2026-12-01T11:40:00Z",
+        "level_m": -0.446
+      },
+      {
+        "time_utc": "2026-12-01T11:50:00Z",
+        "level_m": -0.493
+      },
+      {
+        "time_utc": "2026-12-01T12:00:00Z",
+        "level_m": -0.537
+      },
+      {
+        "time_utc": "2026-12-01T12:10:00Z",
+        "level_m": -0.577
+      },
+      {
+        "time_utc": "2026-12-01T12:20:00Z",
+        "level_m": -0.613
+      },
+      {
+        "time_utc": "2026-12-01T12:30:00Z",
+        "level_m": -0.646
+      },
+      {
+        "time_utc": "2026-12-01T12:40:00Z",
+        "level_m": -0.674
+      },
+      {
+        "time_utc": "2026-12-01T12:50:00Z",
+        "level_m": -0.698
+      },
+      {
+        "time_utc": "2026-12-01T13:00:00Z",
+        "level_m": -0.717
+      },
+      {
+        "time_utc": "2026-12-01T13:10:00Z",
+        "level_m": -0.733
+      },
+      {
+        "time_utc": "2026-12-01T13:20:00Z",
+        "level_m": -0.744
+      },
+      {
+        "time_utc": "2026-12-01T13:30:00Z",
+        "level_m": -0.751
+      },
+      {
+        "time_utc": "2026-12-01T13:40:00Z",
+        "level_m": -0.753
+      },
+      {
+        "time_utc": "2026-12-01T13:50:00Z",
+        "level_m": -0.752
+      },
+      {
+        "time_utc": "2026-12-01T14:00:00Z",
+        "level_m": -0.746
+      },
+      {
+        "time_utc": "2026-12-01T14:10:00Z",
+        "level_m": -0.737
+      },
+      {
+        "time_utc": "2026-12-01T14:20:00Z",
+        "level_m": -0.723
+      },
+      {
+        "time_utc": "2026-12-01T14:30:00Z",
+        "level_m": -0.706
+      },
+      {
+        "time_utc": "2026-12-01T14:40:00Z",
+        "level_m": -0.685
+      },
+      {
+        "time_utc": "2026-12-01T14:50:00Z",
+        "level_m": -0.66
+      },
+      {
+        "time_utc": "2026-12-01T15:00:00Z",
+        "level_m": -0.632
+      },
+      {
+        "time_utc": "2026-12-01T15:10:00Z",
+        "level_m": -0.6
+      },
+      {
+        "time_utc": "2026-12-01T15:20:00Z",
+        "level_m": -0.565
+      },
+      {
+        "time_utc": "2026-12-01T15:30:00Z",
+        "level_m": -0.526
+      },
+      {
+        "time_utc": "2026-12-01T15:40:00Z",
+        "level_m": -0.485
+      },
+      {
+        "time_utc": "2026-12-01T15:50:00Z",
+        "level_m": -0.441
+      },
+      {
+        "time_utc": "2026-12-01T16:00:00Z",
+        "level_m": -0.394
+      },
+      {
+        "time_utc": "2026-12-01T16:10:00Z",
+        "level_m": -0.345
+      },
+      {
+        "time_utc": "2026-12-01T16:20:00Z",
+        "level_m": -0.293
+      },
+      {
+        "time_utc": "2026-12-01T16:30:00Z",
+        "level_m": -0.24
+      },
+      {
+        "time_utc": "2026-12-01T16:40:00Z",
+        "level_m": -0.186
+      },
+      {
+        "time_utc": "2026-12-01T16:50:00Z",
+        "level_m": -0.13
+      },
+      {
+        "time_utc": "2026-12-01T17:00:00Z",
+        "level_m": -0.073
+      },
+      {
+        "time_utc": "2026-12-01T17:10:00Z",
+        "level_m": -0.016
+      },
+      {
+        "time_utc": "2026-12-01T17:20:00Z",
+        "level_m": 0.041
+      },
+      {
+        "time_utc": "2026-12-01T17:30:00Z",
+        "level_m": 0.098
+      },
+      {
+        "time_utc": "2026-12-01T17:40:00Z",
+        "level_m": 0.155
+      },
+      {
+        "time_utc": "2026-12-01T17:50:00Z",
+        "level_m": 0.21
+      },
+      {
+        "time_utc": "2026-12-01T18:00:00Z",
+        "level_m": 0.263
+      },
+      {
+        "time_utc": "2026-12-01T18:10:00Z",
+        "level_m": 0.314
+      },
+      {
+        "time_utc": "2026-12-01T18:20:00Z",
+        "level_m": 0.363
+      },
+      {
+        "time_utc": "2026-12-01T18:30:00Z",
+        "level_m": 0.409
+      },
+      {
+        "time_utc": "2026-12-01T18:40:00Z",
+        "level_m": 0.452
+      },
+      {
+        "time_utc": "2026-12-01T18:50:00Z",
+        "level_m": 0.491
+      },
+      {
+        "time_utc": "2026-12-01T19:00:00Z",
+        "level_m": 0.526
+      },
+      {
+        "time_utc": "2026-12-01T19:10:00Z",
+        "level_m": 0.556
+      },
+      {
+        "time_utc": "2026-12-01T19:20:00Z",
+        "level_m": 0.582
+      },
+      {
+        "time_utc": "2026-12-01T19:30:00Z",
+        "level_m": 0.603
+      },
+      {
+        "time_utc": "2026-12-01T19:40:00Z",
+        "level_m": 0.619
+      },
+      {
+        "time_utc": "2026-12-01T19:50:00Z",
+        "level_m": 0.629
+      },
+      {
+        "time_utc": "2026-12-01T20:00:00Z",
+        "level_m": 0.635
+      },
+      {
+        "time_utc": "2026-12-01T20:10:00Z",
+        "level_m": 0.634
+      },
+      {
+        "time_utc": "2026-12-01T20:20:00Z",
+        "level_m": 0.629
+      },
+      {
+        "time_utc": "2026-12-01T20:30:00Z",
+        "level_m": 0.618
+      },
+      {
+        "time_utc": "2026-12-01T20:40:00Z",
+        "level_m": 0.602
+      },
+      {
+        "time_utc": "2026-12-01T20:50:00Z",
+        "level_m": 0.581
+      },
+      {
+        "time_utc": "2026-12-01T21:00:00Z",
+        "level_m": 0.555
+      },
+      {
+        "time_utc": "2026-12-01T21:10:00Z",
+        "level_m": 0.524
+      },
+      {
+        "time_utc": "2026-12-01T21:20:00Z",
+        "level_m": 0.489
+      },
+      {
+        "time_utc": "2026-12-01T21:30:00Z",
+        "level_m": 0.451
+      },
+      {
+        "time_utc": "2026-12-01T21:40:00Z",
+        "level_m": 0.409
+      },
+      {
+        "time_utc": "2026-12-01T21:50:00Z",
+        "level_m": 0.364
+      },
+      {
+        "time_utc": "2026-12-01T22:00:00Z",
+        "level_m": 0.316
+      },
+      {
+        "time_utc": "2026-12-01T22:10:00Z",
+        "level_m": 0.266
+      },
+      {
+        "time_utc": "2026-12-01T22:20:00Z",
+        "level_m": 0.214
+      },
+      {
+        "time_utc": "2026-12-01T22:30:00Z",
+        "level_m": 0.161
+      },
+      {
+        "time_utc": "2026-12-01T22:40:00Z",
+        "level_m": 0.108
+      },
+      {
+        "time_utc": "2026-12-01T22:50:00Z",
+        "level_m": 0.054
+      },
+      {
+        "time_utc": "2026-12-01T23:00:00Z",
+        "level_m": -0.0
+      },
+      {
+        "time_utc": "2026-12-01T23:10:00Z",
+        "level_m": -0.053
+      },
+      {
+        "time_utc": "2026-12-01T23:20:00Z",
+        "level_m": -0.106
+      },
+      {
+        "time_utc": "2026-12-01T23:30:00Z",
+        "level_m": -0.157
+      },
+      {
+        "time_utc": "2026-12-01T23:40:00Z",
+        "level_m": -0.206
+      },
+      {
+        "time_utc": "2026-12-01T23:50:00Z",
+        "level_m": -0.253
+      },
+      {
+        "time_utc": "2026-12-02T00:00:00Z",
+        "level_m": -0.298
+      },
+      {
+        "time_utc": "2026-12-02T00:10:00Z",
+        "level_m": -0.34
+      },
+      {
+        "time_utc": "2026-12-02T00:20:00Z",
+        "level_m": -0.38
+      },
+      {
+        "time_utc": "2026-12-02T00:30:00Z",
+        "level_m": -0.416
+      },
+      {
+        "time_utc": "2026-12-02T00:40:00Z",
+        "level_m": -0.449
+      },
+      {
+        "time_utc": "2026-12-02T00:50:00Z",
+        "level_m": -0.479
+      },
+      {
+        "time_utc": "2026-12-02T01:00:00Z",
+        "level_m": -0.505
+      },
+      {
+        "time_utc": "2026-12-02T01:10:00Z",
+        "level_m": -0.527
+      },
+      {
+        "time_utc": "2026-12-02T01:20:00Z",
+        "level_m": -0.546
+      },
+      {
+        "time_utc": "2026-12-02T01:30:00Z",
+        "level_m": -0.561
+      },
+      {
+        "time_utc": "2026-12-02T01:40:00Z",
+        "level_m": -0.572
+      },
+      {
+        "time_utc": "2026-12-02T01:50:00Z",
+        "level_m": -0.58
+      },
+      {
+        "time_utc": "2026-12-02T02:00:00Z",
+        "level_m": -0.584
+      },
+      {
+        "time_utc": "2026-12-02T02:10:00Z",
+        "level_m": -0.583
+      },
+      {
+        "time_utc": "2026-12-02T02:20:00Z",
+        "level_m": -0.579
+      },
+      {
+        "time_utc": "2026-12-02T02:30:00Z",
+        "level_m": -0.572
+      },
+      {
+        "time_utc": "2026-12-02T02:40:00Z",
+        "level_m": -0.56
+      },
+      {
+        "time_utc": "2026-12-02T02:50:00Z",
+        "level_m": -0.545
+      },
+      {
+        "time_utc": "2026-12-02T03:00:00Z",
+        "level_m": -0.526
+      },
+      {
+        "time_utc": "2026-12-02T03:10:00Z",
+        "level_m": -0.504
+      },
+      {
+        "time_utc": "2026-12-02T03:20:00Z",
+        "level_m": -0.478
+      },
+      {
+        "time_utc": "2026-12-02T03:30:00Z",
+        "level_m": -0.449
+      },
+      {
+        "time_utc": "2026-12-02T03:40:00Z",
+        "level_m": -0.417
+      },
+      {
+        "time_utc": "2026-12-02T03:50:00Z",
+        "level_m": -0.381
+      },
+      {
+        "time_utc": "2026-12-02T04:00:00Z",
+        "level_m": -0.342
+      },
+      {
+        "time_utc": "2026-12-02T04:10:00Z",
+        "level_m": -0.301
+      },
+      {
+        "time_utc": "2026-12-02T04:20:00Z",
+        "level_m": -0.257
+      },
+      {
+        "time_utc": "2026-12-02T04:30:00Z",
+        "level_m": -0.21
+      },
+      {
+        "time_utc": "2026-12-02T04:40:00Z",
+        "level_m": -0.162
+      },
+      {
+        "time_utc": "2026-12-02T04:50:00Z",
+        "level_m": -0.111
+      },
+      {
+        "time_utc": "2026-12-02T05:00:00Z",
+        "level_m": -0.059
+      },
+      {
+        "time_utc": "2026-12-02T05:10:00Z",
+        "level_m": -0.005
+      },
+      {
+        "time_utc": "2026-12-02T05:20:00Z",
+        "level_m": 0.05
+      },
+      {
+        "time_utc": "2026-12-02T05:30:00Z",
+        "level_m": 0.106
+      },
+      {
+        "time_utc": "2026-12-02T05:40:00Z",
+        "level_m": 0.161
+      },
+      {
+        "time_utc": "2026-12-02T05:50:00Z",
+        "level_m": 0.217
+      },
+      {
+        "time_utc": "2026-12-02T06:00:00Z",
+        "level_m": 0.273
+      },
+      {
+        "time_utc": "2026-12-02T06:10:00Z",
+        "level_m": 0.327
+      },
+      {
+        "time_utc": "2026-12-02T06:20:00Z",
+        "level_m": 0.38
+      },
+      {
+        "time_utc": "2026-12-02T06:30:00Z",
+        "level_m": 0.431
+      },
+      {
+        "time_utc": "2026-12-02T06:40:00Z",
+        "level_m": 0.481
+      },
+      {
+        "time_utc": "2026-12-02T06:50:00Z",
+        "level_m": 0.527
+      },
+      {
+        "time_utc": "2026-12-02T07:00:00Z",
+        "level_m": 0.571
+      },
+      {
+        "time_utc": "2026-12-02T07:10:00Z",
+        "level_m": 0.611
+      },
+      {
+        "time_utc": "2026-12-02T07:20:00Z",
+        "level_m": 0.647
+      },
+      {
+        "time_utc": "2026-12-02T07:30:00Z",
+        "level_m": 0.679
+      },
+      {
+        "time_utc": "2026-12-02T07:40:00Z",
+        "level_m": 0.706
+      },
+      {
+        "time_utc": "2026-12-02T07:50:00Z",
+        "level_m": 0.729
+      },
+      {
+        "time_utc": "2026-12-02T08:00:00Z",
+        "level_m": 0.746
+      },
+      {
+        "time_utc": "2026-12-02T08:10:00Z",
+        "level_m": 0.759
+      },
+      {
+        "time_utc": "2026-12-02T08:20:00Z",
+        "level_m": 0.766
+      },
+      {
+        "time_utc": "2026-12-02T08:30:00Z",
+        "level_m": 0.768
+      },
+      {
+        "time_utc": "2026-12-02T08:40:00Z",
+        "level_m": 0.764
+      },
+      {
+        "time_utc": "2026-12-02T08:50:00Z",
+        "level_m": 0.754
+      },
+      {
+        "time_utc": "2026-12-02T09:00:00Z",
+        "level_m": 0.739
+      },
+      {
+        "time_utc": "2026-12-02T09:10:00Z",
+        "level_m": 0.719
+      },
+      {
+        "time_utc": "2026-12-02T09:20:00Z",
+        "level_m": 0.694
+      },
+      {
+        "time_utc": "2026-12-02T09:30:00Z",
+        "level_m": 0.664
+      },
+      {
+        "time_utc": "2026-12-02T09:40:00Z",
+        "level_m": 0.628
+      },
+      {
+        "time_utc": "2026-12-02T09:50:00Z",
+        "level_m": 0.589
+      },
+      {
+        "time_utc": "2026-12-02T10:00:00Z",
+        "level_m": 0.546
+      },
+      {
+        "time_utc": "2026-12-02T10:10:00Z",
+        "level_m": 0.498
+      },
+      {
+        "time_utc": "2026-12-02T10:20:00Z",
+        "level_m": 0.448
+      },
+      {
+        "time_utc": "2026-12-02T10:30:00Z",
+        "level_m": 0.395
+      },
+      {
+        "time_utc": "2026-12-02T10:40:00Z",
+        "level_m": 0.339
+      },
+      {
+        "time_utc": "2026-12-02T10:50:00Z",
+        "level_m": 0.281
+      },
+      {
+        "time_utc": "2026-12-02T11:00:00Z",
+        "level_m": 0.222
+      },
+      {
+        "time_utc": "2026-12-02T11:10:00Z",
+        "level_m": 0.161
+      },
+      {
+        "time_utc": "2026-12-02T11:20:00Z",
+        "level_m": 0.1
+      },
+      {
+        "time_utc": "2026-12-02T11:30:00Z",
+        "level_m": 0.039
+      },
+      {
+        "time_utc": "2026-12-02T11:40:00Z",
+        "level_m": -0.022
+      },
+      {
+        "time_utc": "2026-12-02T11:50:00Z",
+        "level_m": -0.082
+      },
+      {
+        "time_utc": "2026-12-02T12:00:00Z",
+        "level_m": -0.141
       }
     ],
     "extrema": [
-      {
-        "time_utc": "2026-11-22T18:02:19Z",
-        "type": "low",
-        "level_m": -1.034
-      },
-      {
-        "time_utc": "2026-11-23T00:19:34Z",
-        "type": "high",
-        "level_m": 1.031
-      },
-      {
-        "time_utc": "2026-11-23T06:22:17Z",
-        "type": "low",
-        "level_m": -1.049
-      },
-      {
-        "time_utc": "2026-11-23T12:39:48Z",
-        "type": "high",
-        "level_m": 1.111
-      },
-      {
-        "time_utc": "2026-11-23T18:44:10Z",
-        "type": "low",
-        "level_m": -1.122
-      },
       {
         "time_utc": "2026-11-24T01:02:50Z",
         "type": "high",
@@ -8043,6 +8018,36 @@
         "time_utc": "2026-11-30T18:54:57Z",
         "type": "high",
         "level_m": 0.689
+      },
+      {
+        "time_utc": "2026-12-01T00:46:02Z",
+        "type": "low",
+        "level_m": -0.63
+      },
+      {
+        "time_utc": "2026-12-01T07:17:18Z",
+        "type": "high",
+        "level_m": 0.821
+      },
+      {
+        "time_utc": "2026-12-01T13:41:36Z",
+        "type": "low",
+        "level_m": -0.753
+      },
+      {
+        "time_utc": "2026-12-01T20:04:35Z",
+        "type": "high",
+        "level_m": 0.635
+      },
+      {
+        "time_utc": "2026-12-02T02:04:33Z",
+        "type": "low",
+        "level_m": -0.584
+      },
+      {
+        "time_utc": "2026-12-02T08:27:54Z",
+        "type": "high",
+        "level_m": 0.768
       }
     ]
   }
