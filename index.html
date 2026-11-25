@@ -8,126 +8,107 @@
 </head>
 <body>
 <style>
-  #sunset-daily-phone { display:flex; justify-content:center; color-scheme:light dark; }
-  #sunset-daily-phone .pv-app { --pv-paper:light-dark(#fffefa,#152b3c);--pv-ink:light-dark(#223c52,#e6f0fa);--pv-muted:light-dark(#536b7e,#b5cad8);--pv-line:light-dark(#dce5ec,#365064);--pv-night:light-dark(#e6edf6,#0e2035);--pv-dusk:light-dark(#f9eee6,#302c37);--pv-coral:light-dark(#e16a50,#ff967d);--pv-sea:light-dark(#008e99,#55d1d8);--pv-navy:light-dark(#203d69,#122845);--pv-label:84px; width:100%;max-width:420px;min-width:0;overflow:hidden;border:1px solid var(--pv-line);border-radius:17px;background:var(--pv-paper);color:var(--pv-ink);font:13px/1.35 'Segoe UI',Arial,sans-serif; }
-  #sunset-daily-phone .pv-header { display:flex;align-items:center;justify-content:space-between;gap:8px;padding:8px 10px;background:var(--pv-navy);color:light-dark(#fff8ee,#f5f6fc);border-bottom:3px solid var(--pv-coral); }
-  #sunset-daily-phone .pv-brand h2 { margin:0;font-size:21px;font-weight:600;letter-spacing:-.5px; }
-  #sunset-daily-phone .pv-brand small { display:block;font-size:11px;color:light-dark(#cbdde9,#c1d6e7);margin-top:1px; }
-  #sunset-daily-phone .pv-nav { display:flex;gap:2px; }
-  #sunset-daily-phone .pv-nav button { display:flex;align-items:center;justify-content:center;width:40px;height:40px;padding:0;border:0;border-radius:7px;background:transparent;color:inherit;font:26px 'Segoe UI',Arial,sans-serif; }
-  #sunset-daily-phone .pv-nav button:disabled { opacity:.3; }
-  #sunset-daily-phone .pv-pages { display:flex;width:100%;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;scrollbar-width:none;touch-action:pan-x pan-y pinch-zoom;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch; }
-  #sunset-daily-phone .pv-pages::-webkit-scrollbar { display:none; }
-  #sunset-daily-phone .pv-day { flex:0 0 100%;min-width:0;scroll-snap-align:start;scroll-snap-stop:always; }
-  #sunset-daily-phone .pv-date { display:flex;align-items:center;justify-content:space-between;gap:8px;padding:10px;border-bottom:1px solid var(--pv-line);min-height:43px; }
-  #sunset-daily-phone .pv-date strong { font-size:15px;font-weight:600; }
-  #sunset-daily-phone .pv-date small { color:var(--pv-muted);font-size:11px;white-space:nowrap; }
-  #sunset-daily-phone .pv-table { position:relative;isolation:isolate;display:grid;grid-template-columns:var(--pv-label) repeat(var(--pv-columns,8),minmax(0,1fr)); }
-  #sunset-daily-phone .pv-cell { position:relative;min-width:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:1px;padding:3px 1px;border-right:1px solid color-mix(in srgb,var(--pv-line) 50%,transparent);border-bottom:1px solid var(--pv-line);text-align:center; }
-  #sunset-daily-phone .pv-label { align-items:flex-start;text-align:left;padding-left:8px;padding-right:4px;font-size:12px;color:var(--pv-muted); }
-  #sunset-daily-phone .pv-label small { font-size:11px; }
-  #sunset-daily-phone .pv-time { height:31px;font-size:14px;font-weight:600;font-variant-numeric:tabular-nums; }
-  #sunset-daily-phone .pv-quality { height:33px;font-size:11px;font-weight:500;line-height:1.2; }
-  #sunset-daily-phone .pv-quality.good { background:light-dark(#dff2e7,#1d4439); }
-  #sunset-daily-phone .pv-quality.fair { background:light-dark(#fff0c9,#504224); }
-  #sunset-daily-phone .pv-quality.rough { background:light-dark(#ffe0d5,#583b34); }
-  #sunset-daily-phone .pv-spectrum { height:72px;padding:0 1px; }
-  #sunset-daily-phone .pv-spectrum svg { display:block;width:100%;height:68px;overflow:visible; }
-  #sunset-daily-phone .pv-spectrum-label { align-items:flex-start;justify-content:flex-start;padding-top:12px; }
-  #sunset-daily-phone .pv-spectrum-label .pv-axis { position:absolute;right:3px;transform:translateY(-50%);font-size:11px; }
-  #sunset-daily-phone .pv-axis.max { top:38px; }
-  #sunset-daily-phone .pv-axis.zero { top:74px; }
-  #sunset-daily-phone .pv-spectrum-fill { fill:var(--pv-sea);fill-opacity:.35; }
-  #sunset-daily-phone .pv-spectrum-line { fill:none;stroke:var(--pv-sea);stroke-width:1.6;stroke-linejoin:round; }
-  #sunset-daily-phone .pv-spectrum-value { fill:var(--pv-ink);font:11px 'Segoe UI',Arial,sans-serif;text-anchor:middle; }
-  #sunset-daily-phone .pv-spectrum-tick { fill:var(--pv-muted);font:11px 'Segoe UI',Arial,sans-serif; }
-  #sunset-daily-phone .pv-spectrum-leader { stroke:var(--pv-line);stroke-width:.8; }
-  #sunset-daily-phone .pv-spectrum-grid { stroke:var(--pv-line);stroke-width:.7; }
-  #sunset-daily-phone .pv-numeric { height:31px;font-size:14px;font-weight:500;font-variant-numeric:tabular-nums; }
-  #sunset-daily-phone .pv-cell.pv-heat { background:var(--heat);color:var(--heat-ink); }
-  #sunset-daily-phone .pv-direction { height:43px;flex-direction:row;gap:2px; }
-  #sunset-daily-phone .pv-arrow { width:25px;height:25px;flex-shrink:0; }
-  #sunset-daily-phone .pv-arrow path { stroke:currentColor;stroke-width:3;stroke-linecap:round;fill:none; }
-  #sunset-daily-phone .pv-arrow polygon { fill:currentColor; }
-  #sunset-daily-phone .pv-direction.wave { color:light-dark(#3264bb,#9bbdff); }
-  #sunset-daily-phone .pv-direction.wind { color:var(--pv-coral); }
-  #sunset-daily-phone .pv-bearing { font-size:11px;color:var(--pv-muted);font-variant-numeric:tabular-nums; }
-  #sunset-daily-phone .pv-weather { height:72px;gap:1px; }
-  #sunset-daily-phone .pv-weather-icon { font-size:21px;line-height:1.2; }
-  #sunset-daily-phone .pv-temperature { font-size:12px;color:var(--pv-ink);font-variant-numeric:tabular-nums; }
-  #sunset-daily-phone .pv-temperature.water { color:var(--pv-muted); }
-  #sunset-daily-phone .pv-tide-label { position:relative;align-items:flex-start;justify-content:flex-start;padding-top:13px;height:132px; }
-  #sunset-daily-phone .pv-tide-label span[style] { position:absolute;right:4px;transform:translateY(-50%);font-size:11px; }
-  #sunset-daily-phone .pv-tide { grid-column:2 / -1;height:132px;min-width:0;border-bottom:1px solid var(--pv-line); }
-  #sunset-daily-phone .pv-tide svg { width:100%;height:132px;display:block; }
-  #sunset-daily-phone .pv-tide-line { fill:none;stroke:var(--pv-sea);stroke-width:1.8; }
-  #sunset-daily-phone .pv-tide-fill { fill:var(--pv-sea);fill-opacity:.12; }
-  #sunset-daily-phone .pv-tide-grid { stroke:var(--pv-line);stroke-width:.7; }
-  #sunset-daily-phone .pv-tide-event { fill:var(--pv-ink);font:500 11px 'Segoe UI',Arial,sans-serif;text-anchor:middle; }
-  #sunset-daily-phone .pv-tide-level { fill:var(--pv-muted);font:11px 'Segoe UI',Arial,sans-serif;text-anchor:middle; }
-  #sunset-daily-phone .pv-tide-hour { fill:var(--pv-muted);font:11px 'Segoe UI',Arial,sans-serif;text-anchor:middle; }
-  #sunset-daily-phone .pv-footer { display:flex;flex-direction:column;gap:3px;padding:7px 9px;color:var(--pv-muted);font-size:11px; }
-  #sunset-daily-phone .pv-footer-top { display:flex;align-items:center;justify-content:space-between;gap:8px; }
-  #sunset-daily-phone .pv-page-status { font-variant-numeric:tabular-nums; }
-  @media(max-width:350px) {
-    #sunset-daily-phone .pv-app { --pv-label:66px; }
-    #sunset-daily-phone .pv-label { padding-left:6px;font-size:11px; }
-    #sunset-daily-phone .pv-direction { gap:0; }
-    #sunset-daily-phone .pv-arrow { width:23px;height:23px; }
-    #sunset-daily-phone .pv-brand small { font-size:11px; }
-  }
-  @media(pointer:coarse) { #sunset-daily-phone .pv-nav button { width:44px;height:44px; } }
-  @media(prefers-reduced-motion:reduce) { #sunset-daily-phone .pv-pages { scroll-behavior:auto; } }
-  #sunset-daily-phone .pv-app { --pv-label:72px;--pv-shadow:light-dark(#1c3b62,#020c1a); }
-  #sunset-daily-phone .pv-label { font-size:11px;padding-left:6px; }
-  #sunset-daily-phone .pv-time { font-size:13px; }
-  #sunset-daily-phone .pv-direction { flex-direction:column;gap:0; }
-  #sunset-daily-phone .pv-arrow { width:22px;height:22px; }
-  #sunset-daily-phone .pv-bearing { line-height:1.1; }
-  #sunset-daily-phone .pv-weather-icon { font-size:20px; }
-  #sunset-daily-phone .pv-temperature { font-size:11px;white-space:nowrap; }
-  #sunset-daily-phone .pv-lighting { position:absolute;left:var(--pv-label);right:0;top:0;bottom:132px;z-index:2;pointer-events:none; }
-  #sunset-daily-phone .pv-lighting svg { display:block;width:100%;height:100%;pointer-events:none; }
-  #sunset-daily-phone .pv-spectrum-tick { display:none; }
-  @media(max-width:350px) {
-    #sunset-daily-phone .pv-app { --pv-label:64px; }
-    #sunset-daily-phone .pv-arrow { width:20px;height:20px; }
-  }
-
-html{-webkit-text-size-adjust:100%;text-size-adjust:100%}body{margin:0;background:#edf2f6}*{box-sizing:border-box}[hidden]{display:none!important}
-#sunset-daily-phone{padding:8px 0;align-items:flex-start;font-family:'Segoe UI',Arial,sans-serif}
-#sunset-daily-phone .pv-app{max-width:840px}
-#sunset-daily-phone .pv-brand{min-width:0}
-#sunset-daily-phone .pv-brand small{white-space:normal}
-#sunset-daily-phone .pv-header .pv-nav{flex-shrink:0}
+:root{color-scheme:light dark}
+*{box-sizing:border-box}
+html,body{margin:0;width:100%;height:100%;overflow:hidden;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{background:light-dark(#edf2f6,#0b1c2a);font-family:'Segoe UI',Arial,sans-serif}
+[hidden]{display:none!important}
+#sunset-daily-phone{height:100vh;height:100dvh;width:100%;display:flex;justify-content:center;align-items:stretch;padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left)}
+#sunset-daily-phone .pv-app{--pv-paper:light-dark(#fffefa,#152b3c);--pv-ink:light-dark(#223c52,#e6f0fa);--pv-muted:light-dark(#536b7e,#b5cad8);--pv-line:light-dark(#dce5ec,#365064);--pv-shadow:light-dark(#1c3b62,#020c1a);--pv-coral:light-dark(#e16a50,#ff967d);--pv-sea:light-dark(#008e99,#55d1d8);--pv-navy:light-dark(#203d69,#122845);--pv-label:80px;--pv-table-min:494px;--pv-table-height:494px;--pv-tracks:minmax(28px,.75fr) minmax(30px,.8fr) minmax(64px,1.8fr) minmax(30px,.8fr) minmax(30px,.8fr) minmax(30px,.8fr) minmax(40px,1fr) minmax(30px,.8fr) minmax(40px,1fr) minmax(60px,1.6fr) minmax(112px,3fr);width:100%;max-width:1100px;height:100%;min-height:0;display:flex;flex-direction:column;overflow:hidden;background:var(--pv-paper);color:var(--pv-ink);font:13px/1.3 'Segoe UI',Arial,sans-serif}
 #sunset-daily-phone button,#sunset-daily-phone summary{cursor:pointer;-webkit-tap-highlight-color:transparent}
-#sunset-daily-phone button:focus-visible,#sunset-daily-phone summary:focus-visible,#sunset-daily-phone .pv-pages:focus-visible{outline:2px solid #3986cf;outline-offset:2px}
-#sunset-daily-phone .pv-date{display:flex;flex-direction:column;align-items:stretch;gap:4px;padding:8px 10px}
-#sunset-daily-phone .pv-date-line{display:flex;justify-content:space-between;align-items:center;gap:8px}
+#sunset-daily-phone button:focus-visible,#sunset-daily-phone summary:focus-visible,#sunset-daily-phone .pv-pages:focus-visible,#sunset-daily-phone .pv-forecast:focus-visible{outline:2px solid #3986cf;outline-offset:-2px}
+#sunset-daily-phone .pv-header{flex-shrink:0;display:flex;align-items:center;justify-content:space-between;gap:8px;padding:8px 10px;background:var(--pv-navy);color:light-dark(#fff8ee,#f5f6fc);border-bottom:3px solid var(--pv-coral)}
+#sunset-daily-phone .pv-brand{min-width:0}
+#sunset-daily-phone .pv-brand h2{margin:0;font-size:21px;font-weight:600;letter-spacing:-.5px}
+#sunset-daily-phone .pv-brand small{display:block;font-size:11px;color:light-dark(#cbdde9,#c1d6e7);margin-top:1px;white-space:normal}
+#sunset-daily-phone .pv-nav{display:flex;gap:2px;flex-shrink:0}
+#sunset-daily-phone .pv-nav button{display:flex;align-items:center;justify-content:center;width:40px;height:40px;padding:0;border:0;border-radius:7px;background:transparent;color:inherit;font:26px 'Segoe UI',Arial,sans-serif}
+#sunset-daily-phone .pv-nav button:disabled{opacity:.3}
+#sunset-daily-phone .pv-date{flex-shrink:0;display:flex;flex-direction:column;gap:4px;padding:8px 10px;border-bottom:1px solid var(--pv-line)}
+#sunset-daily-phone .pv-date-line{display:flex;align-items:center;justify-content:space-between;gap:8px}
+#sunset-daily-phone .pv-date strong{font-size:15px;font-weight:600}
+#sunset-daily-phone .pv-resolution{color:var(--pv-muted);font-size:11px;white-space:nowrap}
 #sunset-daily-phone .pv-solar{display:flex;align-items:center;justify-content:space-between;gap:8px;color:var(--pv-muted);font-size:12px}
-#sunset-daily-phone .pv-solar b{color:var(--pv-ink);font-weight:500;font-variant-numeric:tabular-nums}
-#sunset-daily-phone .pv-error{padding:10px;background:#fff0e8;color:#924131;font-size:12px}
-#sunset-daily-phone .pv-empty{padding:32px 12px;display:flex;flex-direction:column;align-items:center;gap:12px}
-#sunset-daily-phone .pv-empty button,#sunset-daily-phone .pv-option-controls button{min-height:34px;border:1px solid var(--pv-line);border-radius:6px;background:var(--pv-paper);color:var(--pv-ink);font:12px 'Segoe UI',Arial,sans-serif;padding:5px 9px}
-#sunset-daily-phone .pv-option-controls [aria-pressed=true]{background:#e6f1f7;color:#203d69}
-#sunset-daily-phone .pv-options{border-top:1px solid var(--pv-line);padding:0 9px;color:var(--pv-muted);font-size:11px}
+#sunset-daily-phone .pv-solar b{font-weight:500;color:var(--pv-ink);font-variant-numeric:tabular-nums}
+#sunset-daily-phone .pv-error{flex-shrink:0;max-height:25dvh;overflow:auto;padding:10px;background:#fff0e8;color:#924131;font-size:12px}
+#sunset-daily-phone .pv-empty{flex:1;min-height:0;padding:24px 12px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px}
+#sunset-daily-phone .pv-forecast{flex:1;min-height:0;display:flex;align-items:flex-start;overflow-y:auto;overflow-x:hidden;overscroll-behavior-y:contain}
+#sunset-daily-phone .pv-labels{flex:0 0 var(--pv-label);width:var(--pv-label);height:var(--pv-table-height);display:grid;grid-template-rows:var(--pv-tracks);background:var(--pv-paper);border-right:1px solid var(--pv-line);z-index:3}
+#sunset-daily-phone .pv-label{position:relative;min-width:0;min-height:0;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:2px;padding:2px 5px 2px 6px;border-bottom:1px solid var(--pv-line);color:var(--pv-muted);font-size:11px;line-height:1.2}
+#sunset-daily-phone .pv-label small{font-size:11px}
+#sunset-daily-phone .pv-pages{flex:1;min-width:0;height:var(--pv-table-height);display:flex;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;scrollbar-width:none;touch-action:pan-x pan-y pinch-zoom;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch}
+#sunset-daily-phone .pv-pages::-webkit-scrollbar{display:none}
+#sunset-daily-phone .pv-day{flex:0 0 100%;height:100%;min-width:0;scroll-snap-align:start;scroll-snap-stop:always}
+#sunset-daily-phone .pv-table{position:relative;isolation:isolate;display:grid;grid-template-columns:repeat(var(--pv-columns,8),minmax(0,1fr));grid-template-rows:var(--pv-tracks);height:100%}
+#sunset-daily-phone .pv-cell{position:relative;min-width:0;min-height:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:1px;padding:2px 1px;border-right:1px solid color-mix(in srgb,var(--pv-line) 50%,transparent);border-bottom:1px solid var(--pv-line);text-align:center}
+#sunset-daily-phone .pv-time{font-size:13px;font-weight:600;font-variant-numeric:tabular-nums}
+#sunset-daily-phone .pv-quality{font-size:11px;font-weight:500;line-height:1.15;overflow:hidden}
+#sunset-daily-phone .pv-quality.good{background:light-dark(#dff2e7,#1d4439)}
+#sunset-daily-phone .pv-quality.fair{background:light-dark(#fff0c9,#504224)}
+#sunset-daily-phone .pv-quality.rough{background:light-dark(#ffe0d5,#583b34)}
+#sunset-daily-phone .pv-spectrum{padding:2px 1px}
+#sunset-daily-phone .pv-spectrum svg{display:block;width:100%;height:100%;overflow:hidden}
+#sunset-daily-phone .pv-spectrum-fill{fill:var(--pv-sea);fill-opacity:.35}
+#sunset-daily-phone .pv-spectrum-line{fill:none;stroke:var(--pv-sea);stroke-width:1.6;stroke-linejoin:round;stroke-linecap:round}
+#sunset-daily-phone .pv-spectrum-tick{fill:var(--pv-muted);font:11px 'Segoe UI',Arial,sans-serif}
+#sunset-daily-phone .pv-spectrum-grid{stroke:var(--pv-line);stroke-width:.7}
+#sunset-daily-phone .pv-spectrum-gap{fill:none;stroke:var(--pv-muted);stroke-width:.7;stroke-dasharray:2 2}
+#sunset-daily-phone .pv-unavailable{font-size:12px;color:var(--pv-muted)}
+#sunset-daily-phone .pv-numeric{font-size:14px;font-weight:500;font-variant-numeric:tabular-nums}
+#sunset-daily-phone .pv-cell.pv-heat{background:var(--heat);color:var(--heat-ink)}
+#sunset-daily-phone .pv-direction{gap:0}
+#sunset-daily-phone .pv-arrow{width:22px;height:22px;flex-shrink:0}
+#sunset-daily-phone .pv-arrow path{stroke:currentColor;stroke-width:3;stroke-linecap:round;fill:none}
+#sunset-daily-phone .pv-arrow polygon{fill:currentColor}
+#sunset-daily-phone .pv-direction.wave{color:light-dark(#3264bb,#9bbdff)}
+#sunset-daily-phone .pv-direction.wind{color:var(--pv-coral)}
+#sunset-daily-phone .pv-bearing{font-size:11px;line-height:1.1;color:var(--pv-muted);font-variant-numeric:tabular-nums}
+#sunset-daily-phone .pv-weather{gap:1px}
+#sunset-daily-phone .pv-weather-icon{font-size:20px;line-height:1.1}
+#sunset-daily-phone .pv-temperature{font-size:11px;line-height:1.15;color:var(--pv-ink);font-variant-numeric:tabular-nums;white-space:nowrap}
+#sunset-daily-phone .pv-temperature.water{color:var(--pv-muted)}
+#sunset-daily-phone .pv-tide-label{justify-content:flex-start;padding-top:8px}
+#sunset-daily-phone .pv-tide-tick{position:absolute;right:4px;transform:translateY(-50%);font-size:11px}
+#sunset-daily-phone .pv-tide{grid-column:1 / -1;min-width:0;min-height:0;border-bottom:1px solid var(--pv-line)}
+#sunset-daily-phone .pv-tide svg{display:block;width:100%;height:100%;overflow:hidden}
+#sunset-daily-phone .pv-tide-line{fill:none;stroke:var(--pv-sea);stroke-width:1.8}
+#sunset-daily-phone .pv-tide-fill{fill:var(--pv-sea);fill-opacity:.12}
+#sunset-daily-phone .pv-tide-grid{stroke:var(--pv-line);stroke-width:.7}
+#sunset-daily-phone .pv-tide-event{fill:var(--pv-ink);font:500 11px 'Segoe UI',Arial,sans-serif;text-anchor:middle}
+#sunset-daily-phone .pv-tide-level{fill:var(--pv-muted);font:11px 'Segoe UI',Arial,sans-serif;text-anchor:middle}
+#sunset-daily-phone .pv-tide-hour{fill:var(--pv-muted);font:11px 'Segoe UI',Arial,sans-serif;text-anchor:middle}
+#sunset-daily-phone .pv-tide-empty{display:flex;align-items:center;justify-content:center;height:100%;padding:8px;color:var(--pv-muted);font-size:12px}
+#sunset-daily-phone .pv-lighting{position:absolute;left:0;right:0;top:0;bottom:var(--pv-tide-height,112px);z-index:2;pointer-events:none}
+#sunset-daily-phone .pv-lighting svg{display:block;width:100%;height:100%;pointer-events:none}
+#sunset-daily-phone .pv-footer{flex-shrink:0;padding:6px 9px;color:var(--pv-muted);font-size:11px}
+#sunset-daily-phone .pv-footer-top{display:flex;align-items:center;justify-content:space-between;gap:8px}
+#sunset-daily-phone .pv-page-status{font-variant-numeric:tabular-nums}
+#sunset-daily-phone .pv-options{flex-shrink:0;max-height:45dvh;overflow-y:auto;border-top:1px solid var(--pv-line);padding:0 9px;color:var(--pv-muted);font-size:11px}
 #sunset-daily-phone .pv-options summary{padding:6px 0;min-height:28px}
 #sunset-daily-phone .pv-options p{margin:8px 0;line-height:1.6}
 #sunset-daily-phone .pv-option-controls{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
 #sunset-daily-phone .pv-option-controls [role=group]{display:flex;gap:3px}
-#sunset-daily-phone .pv-tide-empty{display:flex;align-items:center;height:100%;padding:8px;color:var(--pv-muted);font-size:12px}
-#sunset-daily-phone .pv-unavailable{font-size:12px;color:var(--pv-muted)}
-#sunset-daily-phone .pv-spectrum-gap{fill:none;stroke:var(--pv-muted);stroke-width:.7;stroke-dasharray:2 2}
-@media(min-width:600px){#sunset-daily-phone{padding:14px}#sunset-daily-phone .pv-label{font-size:12px}#sunset-daily-phone .pv-temperature{font-size:12px}#sunset-daily-phone .pv-spectrum{height:90px}#sunset-daily-phone .pv-spectrum svg{height:86px}}
-@media(pointer:coarse){#sunset-daily-phone .pv-options summary{min-height:36px}#sunset-daily-phone .pv-option-controls button,#sunset-daily-phone .pv-empty button{min-height:40px}}
+#sunset-daily-phone .pv-empty button,#sunset-daily-phone .pv-option-controls button{min-height:34px;border:1px solid var(--pv-line);border-radius:6px;background:var(--pv-paper);color:var(--pv-ink);font:12px 'Segoe UI',Arial,sans-serif;padding:5px 9px}
+#sunset-daily-phone .pv-option-controls [aria-pressed=true]{background:light-dark(#e6f1f7,#315365);color:var(--pv-ink)}
+@media(pointer:coarse){#sunset-daily-phone .pv-nav button{width:44px;height:44px}#sunset-daily-phone .pv-option-controls button,#sunset-daily-phone .pv-empty button{min-height:40px}}
+@media(max-width:350px){#sunset-daily-phone .pv-app{--pv-label:72px}#sunset-daily-phone .pv-arrow{width:20px;height:20px}}
+@media(max-height:720px){#sunset-daily-phone .pv-app{--pv-table-min:464px;--pv-tracks:minmax(26px,.75fr) minmax(28px,.8fr) minmax(60px,1.8fr) minmax(28px,.8fr) minmax(28px,.8fr) minmax(28px,.8fr) minmax(36px,1fr) minmax(28px,.8fr) minmax(36px,1fr) minmax(58px,1.6fr) minmax(108px,3fr)}#sunset-daily-phone .pv-header{padding-top:4px;padding-bottom:4px}#sunset-daily-phone .pv-date{padding-top:5px;padding-bottom:5px;gap:2px}#sunset-daily-phone .pv-footer{padding-top:4px;padding-bottom:4px}#sunset-daily-phone .pv-options summary{padding-top:4px;padding-bottom:4px;min-height:26px}#sunset-daily-phone .pv-arrow{height:20px;width:20px}}
+@media(min-width:800px) and (pointer:fine){#sunset-daily-phone{padding:12px}#sunset-daily-phone .pv-app{border:1px solid var(--pv-line);border-radius:16px}#sunset-daily-phone .pv-label{font-size:12px}#sunset-daily-phone .pv-temperature{font-size:12px}}
+@media(prefers-reduced-motion:reduce){#sunset-daily-phone .pv-pages{scroll-behavior:auto}}
 </style>
 <div id="sunset-daily-phone">
   <article class="pv-app" aria-label="Portrait phone forecast, one day per swipe">
     <header class="pv-header"><div class="pv-brand"><h2>Surf forecast</h2><small class="pv-point">Your coast. One clear view.</small></div><nav class="pv-nav" aria-label="Forecast controls"><button type="button" class="pv-open" aria-label="Open forecast"><svg width="19" height="19" viewBox="0 0 20 20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13V3m-4 4 4-4 4 4M4 12v4a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1v-4"/></svg></button><button type="button" class="cursor-interaction pv-previous" aria-label="Previous forecast day">‹</button><button type="button" class="cursor-interaction pv-next" aria-label="Next forecast day">›</button></nav></header>
     <input id="forecast-file" type="file" accept=".json,application/json" hidden><input id="tide-file" type="file" accept=".json,application/json" hidden><div class="pv-error" role="alert" hidden></div><div class="pv-empty"><strong>Open a forecast</strong><button class="pv-open-empty" type="button">Choose forecast JSON</button></div>
-    <div hidden class="pv-pages" aria-label="Daily forecast pages. Swipe sideways to advance."></div>
+    <div class="pv-date pv-current-date" hidden><div class="pv-date-line"><strong class="pv-date-title"></strong><small class="pv-resolution"></small></div><div class="pv-solar"><span class="pv-sunrise">Sunrise <b>–</b></span><span class="pv-dusk" aria-label="End of civil twilight">Dusk <b>–</b></span></div></div>
+    <div class="pv-forecast" hidden role="region" aria-label="Forecast table">
+      <aside class="pv-labels" aria-label="Forecast row labels">
+        <div class="pv-label pv-label-time">Local time</div><div class="pv-label">Conditions</div><div class="pv-label">Spectrum</div><div class="pv-label">Beach Hs ·m</div><div class="pv-label">Offshore ·m</div><div class="pv-label">Period · s</div><div class="pv-label">Swell from</div><div class="pv-label pv-label-wind">Wind · kn</div><div class="pv-label">Wind from</div><div class="pv-label">Weather<small>Air / Water<br>°C</small></div><div class="pv-label pv-tide-label">Tide · m<span class="pv-tide-tick" data-value="2">+2</span><span class="pv-tide-tick" data-value="0">0</span><span class="pv-tide-tick" data-value="-2">−2</span></div>
+      </aside>
+      <div class="pv-pages" aria-label="Daily forecast values. Swipe sideways to advance."></div>
+    </div>
     <footer class="pv-footer"><div class="pv-footer-top"><span>← Swipe for another day →</span><span class="pv-page-status" aria-live="polite"></span></div></footer>
-    <details class="pv-options"><summary>Forecast options</summary><div class="pv-option-controls"><div role="group" aria-label="Time zone"><button type="button" data-timezone="local" aria-pressed="true">Local</button><button type="button" data-timezone="utc" aria-pressed="false">UTC</button></div><div role="group" aria-label="Wind units"><button type="button" data-wind-unit="kt" aria-pressed="true">knots</button><button type="button" data-wind-unit="ms" aria-pressed="false">m/s</button></div><button type="button" class="pv-add-tide">Add tide file</button></div><p class="pv-cycle"></p><p>Sunrise uses the standard solar horizon; dusk is the end of civil twilight. Shading follows these solar transitions, independently of forecast steps. Spectra show offshore Hs per original integrated period band on a shared scale; the view ends at 22 s. Beach Hs is an estimate. Water temperature is a surface-skin proxy. Tides are model-relative, exclude storm surge and use a fixed −2 to +2 m axis.</p></details>
+    <details class="pv-options"><summary>Forecast options</summary><div class="pv-option-controls"><div role="group" aria-label="Time zone"><button type="button" data-timezone="local" aria-pressed="true">Local</button><button type="button" data-timezone="utc" aria-pressed="false">UTC</button></div><div role="group" aria-label="Wind units"><button type="button" data-wind-unit="kt" aria-pressed="true">knots</button><button type="button" data-wind-unit="ms" aria-pressed="false">m/s</button></div><button type="button" class="pv-add-tide">Add tide file</button></div><p class="pv-cycle"></p><p>Sunrise uses the standard solar horizon; dusk is the end of civil twilight. Shading follows these solar transitions, independently of forecast steps. Spectra show offshore Hs per original integrated period band on a shared scale. The smooth curves are visual guides through those band heights; missing bands remain gaps. The view ends at 22 s. Beach Hs is an estimate. Water temperature is a surface-skin proxy. Tides are model-relative, exclude storm surge and use a fixed −2 to +2 m axis.</p></details>
   </article>
 </div>
 <script>
@@ -135,6 +116,7 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}body{margin:0;backgroun
 (() => {
   'use strict';
   const root=document.getElementById('sunset-daily-phone');
+  const board=root.querySelector('.pv-forecast'),labels=root.querySelector('.pv-labels'),dateHeading=root.querySelector('.pv-current-date');
   const pager=root.querySelector('.pv-pages'),previous=root.querySelector('.pv-previous'),next=root.querySelector('.pv-next');
   const alertNode=root.querySelector('.pv-error'),emptyNode=root.querySelector('.pv-empty');
   const SITE_TZ='Europe/Madrid';
@@ -308,75 +290,110 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}body{margin:0;backgroun
     const point=root.querySelector('.pv-point');
     point.textContent=payload.lat!==null&&payload.lon!==null?`${Math.abs(payload.lat).toFixed(2)}° ${payload.lat>=0?'N':'S'} · ${Math.abs(payload.lon).toFixed(2)}° ${payload.lon>=0?'E':'W'}`:'Selected forecast location';
     root.querySelector('.pv-cycle').textContent=input.cycle_utc?`Forecast cycle ${input.cycle_utc.replace('T',' ').replace(':00:00Z',' UTC')}`:'ECMWF forecast';
-    emptyNode.hidden=true;pager.hidden=false;note('');renderDays();draw();positionPage();update();
-  }
-  function renderDays(){
-    pager.replaceChildren();
-    days.forEach(day=>{
-    const page=document.createElement('section');page.className='pv-day';page.setAttribute('aria-label',dateTitle(day.key));page.dataset.day=day.key;
-    const cell=(body,cls='',i=-1,style='')=>`<div class="pv-cell ${cls}"${style?` style="${style}"`:''}>${body}</div>`;
-    const row=(label,body,cls='')=>cell(label,'pv-label')+day.rows.map((r,i)=>cell(body(r,i),cls,i)).join('');
-    const heatRow=(label,key,kind)=>cell(label,'pv-label')+day.rows.map((r,i)=>cell(shown(key==='wind'&&windUnit==='ms'&&r[key]!==null?r[key]/1.94384449:r[key]),'pv-numeric pv-heat',i,heat(r[key],kind))).join('');
-    const stepHours=day.rows.length>1?Math.round((day.rows[1].t-day.rows[0].t)/3600000):6;
-    const sun=solarTimes(day);
-    const shortQuality={'Offshore breeze':'Off','Glassy':'Glass','With texture':'Tex','Choppy':'Chop','Quite messy':'Mess','Blown out':'Blow','Flat':'Flat'};
-    page.style.setProperty('--pv-columns',day.rows.length);
-    page.innerHTML=`<div class="pv-date"><div class="pv-date-line"><strong>${dateTitle(day.key)}</strong><small>${timezone==='utc'?'UTC':'Local'} · ${stepHours}-hourly</small></div><div class="pv-solar"><span class="pv-sunrise" data-time="${sun.sunrise??''}">Sunrise <b>${sun.sunrise===null?'–':timeOf(sun.sunrise)}</b></span><span class="pv-dusk" data-time="${sun.dusk??''}" aria-label="End of civil twilight">Dusk <b>${sun.dusk===null?'–':timeOf(sun.dusk)}</b></span></div></div><div class="pv-table">`
-      +row(timezone==='utc'?'UTC time':'Local time',r=>`<span aria-label="${timeOf(r.t)}">${timeOf(r.t).slice(0,2)}</span>`,'pv-time')
-      +cell('Conditions','pv-label')+day.rows.map((r,i)=>cell(`<span aria-label="${escape(r.quality)}">${escape(r.beach!==null&&r.beach<.25?'Flat':shortQuality[r.quality]||r.quality)}</span>`,`pv-quality ${['Glassy','Offshore breeze'].includes(r.quality)?'good':['With texture','Choppy'].includes(r.quality)?'fair':'rough'}`,i)).join('')
-      +cell('<span>Spectrum</span><small>10–22 s</small>','pv-label pv-spectrum-label')+day.rows.map((r,i)=>cell('','pv-spectrum',i)).join('')
-      +heatRow('Beach Hs · m','beach','hs')+heatRow('Offshore · m','hs','hs')+heatRow('Period · s','period','period')
-      +row('Swell from',r=>arrow(r.swell,'Swell'),'pv-direction wave')+heatRow(windUnit==='kt'?'Wind · kn':'Wind · m/s','wind','wind')+row('Wind from',r=>arrow(r.from,'Wind'),'pv-direction wind')
-      +row('Weather<br><small>Air / Water<br>°C</small>',r=>{const [icon,label]=wx(r);return `<span class="pv-weather-icon" role="img" aria-label="${label}">${icon}</span><span class="pv-temperature">${shown(r.air)}${r.air===null?'':'°'}</span><span class="pv-temperature water">${shown(r.water)}${r.water===null?'':'°'}</span>`},'pv-weather')
-      +cell('<span>Tide · m</span><small>Fixed ±2</small><span style="top:30px">+2</span><span style="top:60px">0</span><span style="top:90px">−2</span>','pv-label pv-tide-label')+'<div class="pv-tide"></div><div class="pv-lighting" aria-hidden="true"></div></div>';
-    pager.appendChild(page);
-  });
+    emptyNode.hidden=true;board.hidden=false;dateHeading.hidden=false;note('');renderDays();update();fitTable();draw();positionPage();
   }
 
+  function renderDays(){
+    pager.replaceChildren();
+    const shortQuality={'Offshore breeze':'Off','Glassy':'Glass','With texture':'Tex','Choppy':'Chop','Quite messy':'Mess','Blown out':'Blow','Flat':'Flat'};
+    days.forEach(day=>{
+      const page=document.createElement('section');page.className='pv-day';page.setAttribute('aria-label',dateTitle(day.key));page.dataset.day=day.key;
+      page.style.setProperty('--pv-columns',day.rows.length);
+      const cell=(body,cls='',i=-1,style='')=>`<div class="pv-cell ${cls}"${style?` style="${style}"`:''}>${body}</div>`;
+      const row=(body,cls='')=>day.rows.map((r,i)=>cell(body(r,i),cls,i)).join('');
+      const heatRow=(key,kind)=>day.rows.map((r,i)=>cell(shown(key==='wind'&&windUnit==='ms'&&r[key]!==null?r[key]/1.94384449:r[key]),'pv-numeric pv-heat',i,heat(r[key],kind))).join('');
+      page.innerHTML='<div class="pv-table">'
+        +row(r=>`<span aria-label="${timeOf(r.t)}">${timeOf(r.t).slice(0,2)}</span>`,'pv-time')
+        +day.rows.map((r,i)=>cell(`<span aria-label="${escape(r.quality)}">${escape(r.beach!==null&&r.beach<.25?'Flat':shortQuality[r.quality]||'–')}</span>`,`pv-quality ${['Glassy','Offshore breeze'].includes(r.quality)?'good':['With texture','Choppy'].includes(r.quality)?'fair':'rough'}`,i)).join('')
+        +day.rows.map((r,i)=>cell('','pv-spectrum',i)).join('')
+        +heatRow('beach','hs')+heatRow('hs','hs')+heatRow('period','period')
+        +row(r=>arrow(r.swell,'Swell'),'pv-direction wave')+heatRow('wind','wind')+row(r=>arrow(r.from,'Wind'),'pv-direction wind')
+        +row(r=>{const [icon,label]=wx(r);return `<span class="pv-weather-icon" role="img" aria-label="${label}">${icon}</span><span class="pv-temperature">${shown(r.air)}${r.air===null?'':'°'}</span><span class="pv-temperature water">${shown(r.water)}${r.water===null?'':'°'}</span>`},'pv-weather')
+        +'<div class="pv-tide"></div><div class="pv-lighting" aria-hidden="true"></div></div>';
+      pager.appendChild(page);
+    });
+    labels.querySelector('.pv-label-time').textContent=timezone==='utc'?'UTC time':'Local time';
+    labels.querySelector('.pv-label-wind').textContent=windUnit==='kt'?'Wind · kn':'Wind ·m/s';
+  }
+  function fitTable(){
+    if(board.hidden)return;
+    const minimum=parseFloat(getComputedStyle(root.querySelector('.pv-app')).getPropertyValue('--pv-table-min'))||494;
+    board.style.setProperty('--pv-table-height',`${Math.max(minimum,board.clientHeight)}px`);
+  }
+  function tideY(value,height){
+    return 26+(2-value)/4*(height-60);
+  }
+
+
   function drawSpectra(page,day){
+    const maximum=Math.max(.4,Math.ceil(Math.max(0,...payload.forecast.flatMap(r=>r.bands.filter(v=>v!==null)))*10)/10);
     page.querySelectorAll('.pv-spectrum').forEach((node,i)=>{
-      const r=day.rows[i],w=node.clientWidth-2,y=v=>50-v/.4*38,x=t=>2+(t-10)/12*(w-4);
-      const edges=[10,12,14,17,21,25],values=r.bands.slice(0,5);
-      if(values.every(v=>v===null)){node.innerHTML='<span class="pv-unavailable" aria-label="Spectrum unavailable">—</span>';return;}
-      const runs=[];let run=[];
-      const close=()=>{if(run.length)runs.push(run);run=[];};
-      values.forEach((v,j)=>{if(v===null){close();return;}run.push({value:v,lo:edges[j],hi:Math.min(22,edges[j+1])});});close();
+      const r=day.rows[i],w=Math.max(20,node.clientWidth-2),height=Math.max(48,node.clientHeight-4),baseline=height-19,top=7;
+      const x=t=>2+(t-10)/12*(w-4),y=v=>baseline-v/maximum*(baseline-top);
+      const bands=[{lo:10,hi:12,mid:11},{lo:12,hi:14,mid:13},{lo:14,hi:17,mid:15.5},{lo:17,hi:21,mid:19},{lo:21,hi:25,mid:23}].map((b,j)=>({...b,value:r.bands[j]}));
+      const ticks=`<text class="pv-spectrum-tick" x="2" y="${height-3}">10</text><text class="pv-spectrum-tick" text-anchor="end" x="${w-2}" y="${height-3}">22</text>`;
+      if(bands.every(b=>b.value===null)){node.innerHTML='<span class="pv-unavailable" aria-label="Spectrum unavailable">—</span>';return;}
+      const runs=[];let run=[];const close=()=>{if(run.length)runs.push(run);run=[];};
+      bands.forEach(b=>{if(b.value===null)close();else run.push(b);});close();
       const curves=runs.map(run=>{
-        let path=`M${x(run[0].lo)} ${y(run[0].value)}`;
-        run.forEach((b,j)=>{if(j)path+=` L${x(b.lo)} ${y(b.value)}`;path+=` L${x(b.hi)} ${y(b.value)}`;});
-        return `<path class="pv-spectrum-fill" d="${path} L${x(run.at(-1).hi)} 50 L${x(run[0].lo)} 50Z"/><path class="pv-spectrum-line" d="${path}"/>`;
+        const first=run[0],last=run.at(-1);
+        let path=`M${x(first.lo)} ${y(first.value)} L${x(first.mid)} ${y(first.value)}`;
+        // Horizontal tangents at bin centres keep the guide smooth without
+        // overshooting either reported band height or bridging missing bins.
+        for(let j=1;j<run.length;j++){
+          const a=run[j-1],b=run[j],mid=(x(a.mid)+x(b.mid))/2;
+          path+=` C${mid} ${y(a.value)},${mid} ${y(b.value)},${x(b.mid)} ${y(b.value)}`;
+        }
+        path+=` L${x(last.hi)} ${y(last.value)}`;
+        return `<path class="pv-spectrum-fill" d="${path} L${x(last.hi)} ${baseline} L${x(first.lo)} ${baseline}Z"/><path class="pv-spectrum-line" d="${path}"/>`;
       }).join('');
-      const gaps=values.map((v,j)=>v===null?`<rect class="pv-spectrum-gap" x="${x(edges[j])}" y="12" width="${Math.max(1,x(Math.min(22,edges[j+1]))-x(edges[j]))}" height="38"/>`:'').join('');
-      node.innerHTML=`<svg viewBox="0 0 ${w} 68" role="img" aria-label="10 to 22 second view of offshore period-band Hs in metres: ${values.map(v=>v===null?'unavailable':v).join(', ')}; final segment belongs to the full 21–25 second band. No nearshore scaling."><line class="pv-spectrum-grid" x1="0" x2="${w}" y1="12" y2="12"/><line class="pv-spectrum-grid" x1="0" x2="${w}" y1="50" y2="50"/>${curves}${gaps}</svg>`;
+      const gaps=bands.filter(b=>b.value===null).map(b=>`<rect class="pv-spectrum-gap" x="${x(b.lo)}" y="${top}" width="${Math.max(1,x(Math.min(22,b.hi))-x(b.lo))}" height="${baseline-top}"/>`).join('');
+      const clip=`pv-spectrum-clip-${day.key}-${i}`;
+      node.innerHTML=`<svg viewBox="0 0 ${w} ${height}" data-scale-max="${maximum}" role="img" aria-label="Smooth visual guide through offshore period-band Hs, metres: ${bands.map(b=>b.value===null?'unavailable':b.value).join(', ')}. Display range 10 to 22 seconds; final segment belongs to the full 21–25 second band."><defs><clipPath id="${clip}"><rect x="0" y="0" width="${w}" height="${baseline+1}"/></clipPath></defs><line class="pv-spectrum-grid" x1="0" x2="${w}" y1="${baseline}" y2="${baseline}"/><g clip-path="url(#${clip})">${curves}${gaps}</g>${ticks}</svg>`;
     });
   }
+
+
   function drawTide(page,day){
-    const node=page.querySelector('.pv-tide'),w=node.clientWidth;
-    const start=wallTime(day.key),end=wallTime(day.key,24),x=t=>(t-start)/(end-start)*w,y=v=>60-v*15;
+    const node=page.querySelector('.pv-tide'),w=node.clientWidth,height=node.clientHeight;
+    const start=wallTime(day.key),end=wallTime(day.key,24),x=t=>(t-start)/(end-start)*w,y=v=>tideY(v,height);
     const samples=payload.tide.filter(p=>p[0]>=start&&p[0]<=end);
+    labels.querySelectorAll('.pv-tide-tick').forEach(tick=>tick.style.top=`${y(Number(tick.dataset.value))}px`);
     if(samples.length<2){node.innerHTML='<span class="pv-tide-empty">No tide data</span>';return;}
     const line=samples.map((p,i)=>`${i?'L':'M'}${x(p[0])} ${y(p[1])}`).join(' ');
-    const shade=solarShading(start,end,w,132,'tide-'+day.key);
+    const shade=solarShading(start,end,w,height,'tide-'+day.key);
     const guides=[2,0,-2].map(v=>`<line class="pv-tide-grid" x1="0" x2="${w}" y1="${y(v)}" y2="${y(v)}"/>`).join('');
     const events=payload.events.filter(e=>e[0]>=start&&e[0]<end).map(e=>{
-      const px=x(e[0]),py=y(e[2]),high=e[1]==='high',tx=Math.max(23,Math.min(w-23,px)),ty=high?py-23:py+15;
+      const px=x(e[0]),py=Math.max(4,Math.min(height-4,y(e[2]))),high=e[1]==='high',tx=Math.max(23,Math.min(w-23,px));
+      const ty=high?Math.max(12,py-20):Math.min(height-23,py+15);
       return `<circle cx="${px}" cy="${py}" r="2.5" fill="var(--pv-sea)"/><text class="pv-tide-event" x="${tx}" y="${ty}">${high?'▲':'▼'}${timeOf(e[0])}</text><text class="pv-tide-level" x="${tx}" y="${ty+12}">${e[2]>0?'+':''}${e[2].toFixed(2)}m</text>`;
     }).join('');
-    const hours=[0,6,12,18,24].map(h=>`<text class="pv-tide-hour" x="${Math.max(9,Math.min(w-9,x(wallTime(day.key,h))))}" y="125">${String(h).padStart(2,'0')}</text>`).join('');
-    node.innerHTML=`<svg viewBox="0 0 ${w} 132" role="img" aria-label="Full calendar-day tide curve, high and low times, fixed minus two to plus two metre scale">${shade}${guides}<path class="pv-tide-fill" d="${line} L${x(samples.at(-1)[0])} 60 L${x(samples[0][0])} 60Z"/><path class="pv-tide-line" d="${line}"/>${events}${hours}</svg>`;
+    const hours=[0,6,12,18,24].map(h=>`<text class="pv-tide-hour" x="${Math.max(9,Math.min(w-9,x(wallTime(day.key,h))))}" y="${height-4}">${String(h).padStart(2,'0')}</text>`).join('');
+    node.innerHTML=`<svg viewBox="0 0 ${w} ${height}" data-y-min="-2" data-y-max="2" role="img" aria-label="Full calendar-day tide curve, high and low times, fixed minus two to plus two metre scale">${shade}${guides}<path class="pv-tide-fill" d="${line} L${x(samples.at(-1)[0])} ${y(0)} L${x(samples[0][0])} ${y(0)}Z"/><path class="pv-tide-line" d="${line}"/>${events}${hours}</svg>`;
   }
+
   function drawWaveLighting(page,day){
+    page.style.setProperty('--pv-tide-height',`${page.querySelector('.pv-tide').getBoundingClientRect().height}px`);
     const node=page.querySelector('.pv-lighting'),w=node.clientWidth,h=node.clientHeight;
     const step=day.rows.length>1?day.rows[1].t-day.rows[0].t:6*3600000,start=day.rows[0].t-step/2,end=day.rows.at(-1).t+step/2;
     node.innerHTML=`<svg width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" data-start="${start}" data-end="${end}">${solarShading(start,end,w,h,'wave-'+day.key)}</svg>`;
   }
   function draw(){if(!payload||!days.length)return;pager.querySelectorAll('.pv-day').forEach((page,i)=>{drawSpectra(page,days[i]);drawTide(page,days[i]);drawWaveLighting(page,days[i]);});}
 
+
   function update(){
     previous.disabled=!days.length||active===0;next.disabled=!days.length||active===days.length-1;
     root.querySelector('.pv-page-status').textContent=days.length?`${active+1} / ${days.length}`:'';
     pager.querySelectorAll('.pv-day').forEach((page,i)=>page.setAttribute('aria-current',i===active?'date':'false'));
+    if(!days.length)return;
+    const day=days[active],sun=solarTimes(day),step=day.rows.length>1?Math.round((day.rows[1].t-day.rows[0].t)/3600000):6;
+    dateHeading.querySelector('.pv-date-title').textContent=dateTitle(day.key);
+    dateHeading.querySelector('.pv-resolution').textContent=`${timezone==='utc'?'UTC':'Local'} · ${step}-hourly`;
+    [['sunrise',sun.sunrise],['dusk',sun.dusk]].forEach(([kind,t])=>{
+      const node=dateHeading.querySelector('.pv-'+kind);node.dataset.time=t??'';node.querySelector('b').textContent=t===null?'–':timeOf(t);
+    });
   }
+
   let timer,positionVersion=0,repositioning=false;
   function positionPage(){
     clearTimeout(timer);repositioning=true;const version=++positionVersion;
@@ -391,7 +408,7 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}body{margin:0;backgroun
   const go=index=>{if(!days.length)return;clearTimeout(timer);active=Math.max(0,Math.min(days.length-1,index));pager.scrollTo({left:active*pager.clientWidth,behavior:matchMedia('(prefers-reduced-motion:reduce)').matches?'instant':'smooth'});update();};
   previous.addEventListener('click',()=>go(active-1));next.addEventListener('click',()=>go(active+1));
   pager.addEventListener('scroll',()=>{clearTimeout(timer);if(repositioning)return;timer=setTimeout(()=>{if(!days.length||repositioning)return;active=Math.max(0,Math.min(days.length-1,Math.round(pager.scrollLeft/pager.clientWidth)));update();},160);});
-  new ResizeObserver(()=>{if(!payload)return;draw();positionPage();}).observe(pager);
+  new ResizeObserver(()=>{if(!payload)return;fitTable();draw();positionPage();}).observe(board);
   const fileInput=root.querySelector('#forecast-file'),tideInput=root.querySelector('#tide-file');
   root.querySelector('.pv-open').addEventListener('click',()=>fileInput.click());
   root.querySelector('.pv-open-empty').addEventListener('click',()=>fileInput.click());
