@@ -117,14 +117,14 @@ body{background:#edf3f7;font-family:'Segoe UI',Arial,sans-serif}
 #sunset-daily-phone .pv-cell.pv-compass{padding:0;min-width:0;min-height:0;border-top:0;border-left:0;border-radius:0;background:transparent;color:inherit;font:inherit;appearance:none;touch-action:pan-x pan-y pinch-zoom}
 #sunset-daily-phone .pv-compass svg{display:block;width:100%;height:100%;overflow:hidden}
 #sunset-daily-phone .pv-component-height{font-family:'Segoe UI',Arial,sans-serif;font-weight:600;fill:var(--pv-ink);font-variant-numeric:tabular-nums}
-#sunset-daily-phone .pv-period-label{font:calc(10 * var(--u)) 'Segoe UI',Arial,sans-serif;fill:#4c6b7d;paint-order:stroke fill;stroke:var(--pv-paper);stroke-width:calc(3 * var(--u));stroke-linejoin:round}
+#sunset-daily-phone .pv-period-label{font:calc(10 * var(--u)) 'Segoe UI',Arial,sans-serif;fill:#4c6b7d;stroke:none}
 #sunset-daily-phone .pv-compass-note{font:calc(10 * var(--u)) 'Segoe UI',Arial,sans-serif;fill:var(--pv-muted)}
 #sunset-daily-phone .pv-swell-key{gap:calc(4 * var(--u))}
 #sunset-daily-phone .pv-compact .pv-swell-key{gap:calc(1 * var(--u))}
 #sunset-daily-phone .pv-swell-key small{display:flex;align-items:center;gap:calc(4 * var(--u));font-size:calc(10.5 * var(--u));line-height:1.1}
-#sunset-daily-phone .pv-swell-key i{width:calc(7 * var(--u));height:calc(7 * var(--u));border-radius:50%;background:#008f9b;flex-shrink:0}
-#sunset-daily-phone .pv-swell-key .pv-key-sea{background:#e56c4a}
-#sunset-daily-phone .pv-swell-key .pv-key-secondary{background:#8b82ae}
+#sunset-daily-phone .pv-swell-key i{width:calc(7 * var(--u));height:calc(7 * var(--u));border-radius:50%;background:#007e87;flex-shrink:0}
+#sunset-daily-phone .pv-swell-key .pv-key-sea{background:#d65335}
+#sunset-daily-phone .pv-swell-key .pv-key-secondary{background:#7d7294}
 #sunset-daily-phone .pv-compass-dialog{width:min(94vw,430px);max-height:94dvh;padding:0;border:1px solid var(--pv-line);border-radius:18px;color:var(--pv-ink);background:var(--pv-paper);font:14px/1.4 'Segoe UI',Arial,sans-serif;box-shadow:0 20px 70px #18354f40;overflow:auto}
 #sunset-daily-phone .pv-compass-dialog::backdrop{background:#102b45a6}
 #sunset-daily-phone .pv-compass-dialog-head{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 16px 4px}
@@ -133,10 +133,10 @@ body{background:#edf3f7;font-family:'Segoe UI',Arial,sans-serif}
 #sunset-daily-phone .pv-compass-close{width:44px;height:44px;flex-shrink:0;border:0;border-radius:50%;font-size:26px;background:#edf3f7;color:var(--pv-ink)}
 #sunset-daily-phone .pv-compass-detail-chart{height:clamp(180px,38dvh,300px);margin:0 12px}
 #sunset-daily-phone .pv-compass-detail-chart svg{display:block;width:100%;height:100%}
-#sunset-daily-phone .pv-compass-detail-chart .pv-period-label{font-size:12px;stroke-width:4px}
+#sunset-daily-phone .pv-compass-detail-chart .pv-period-label{font-size:12px}
 #sunset-daily-phone .pv-compass-detail-legend{display:flex;justify-content:center;gap:16px;font-size:12px;color:var(--pv-muted);margin:0 12px 12px}
 #sunset-daily-phone .pv-compass-detail-legend span{display:flex;align-items:center;gap:5px}
-#sunset-daily-phone .pv-compass-detail-legend i{width:16px;height:3px;background:#c5a568}
+#sunset-daily-phone .pv-compass-detail-legend i{width:16px;height:3px;background:#bba77e}
 #sunset-daily-phone .pv-partition-list{border-top:1px solid var(--pv-line);margin:0 16px}
 #sunset-daily-phone .pv-partition-detail{display:grid;grid-template-columns:minmax(0,1fr) auto;column-gap:10px;padding:11px 0;border-bottom:1px solid var(--pv-line);font-variant-numeric:tabular-nums}
 #sunset-daily-phone .pv-partition-name{display:flex;align-items:center;gap:8px;font-weight:600}
@@ -158,8 +158,8 @@ body{background:#edf3f7;font-family:'Segoe UI',Arial,sans-serif}
       <div class="pv-pages" aria-label="Daily forecast values. Swipe sideways to advance."></div>
     </div>
     <footer class="pv-footer"><div class="pv-footer-top"><span>Swipe to the next day</span><span class="pv-page-status" aria-live="polite"></span></div></footer>
-    <details class="pv-options"><summary>Forecast options</summary><div class="pv-option-controls"><div role="group" aria-label="Time zone"><button type="button" data-timezone="local" aria-pressed="true">Local</button><button type="button" data-timezone="utc" aria-pressed="false">UTC</button></div><div role="group" aria-label="Wind units"><button type="button" data-wind-unit="kt" aria-pressed="true">knots</button><button type="button" data-wind-unit="ms" aria-pressed="false">m/s</button></div><label class="pv-peak-control">Period estimate<select class="pv-peak-factor" aria-label="Mean to peak period factor"><option value="1.2">Mean × 1.2</option><option value="1.3">Mean × 1.3</option><option value="1.4" selected>Mean × 1.4</option><option value="1.5">Mean × 1.5</option></select></label><button type="button" class="pv-add-tide">Add tide file</button></div><p class="pv-cycle"></p><p>Sunrise uses the standard solar horizon; dusk is the end of civil twilight. Shading follows these solar transitions, independently of forecast steps. Tap any six-hourly compass for the full wave components. Compasses show the primary swell (teal), wind sea (coral) and secondary swell (dashed). Each arrow starts at a point showing Period and direction FROM on a fixed 0–25 s scale. Arrow length increases with offshore Hs; a short base length keeps small systems visible. A + marker at the rim means the Period exceeds 25 s; the popup retains the full value. Component Period values are approximate: source mean periods (Tm01) are multiplied by the selected factor (default 1.4). This depends on spectrum shape and does not reconstruct the true peak. A supplied component peak period is used directly. The main forecast Period row keeps the original total-wave peak period. Arrows show wave travel. The shore line uses the forecast beach orientation. Each compass samples the first available forecast record in a six-hour interval; other rows retain every forecast time. Missing components remain unavailable. Component values come from the downloaded partition fields, including Copernicus IBI when selected in the downloader. Wave and tide shading share midnight-to-midnight day boundaries. Beach Hs is an estimate. Water temperature is a surface-skin proxy. Tides are model-relative, exclude storm surge and use a fixed −2 to +2 m axis.</p></details>
-  <dialog class="pv-compass-dialog" aria-labelledby="pv-compass-title"><div class="pv-compass-dialog-head"><div><strong id="pv-compass-title">Wave components</strong><div class="pv-compass-dialog-date"></div></div><button type="button" class="pv-compass-close" aria-label="Close wave components">×</button></div><div class="pv-compass-detail-chart"></div><div class="pv-compass-detail-legend"><span><i></i>Beach orientation</span><span>Arrows show travel</span></div><div class="pv-partition-list"></div><p class="pv-compass-detail-caption">Points show Period and direction from. Arrow length indicates wave height. <span class="pv-peak-explanation"></span></p></dialog>
+    <details class="pv-options"><summary>Forecast options</summary><div class="pv-option-controls"><div role="group" aria-label="Time zone"><button type="button" data-timezone="local" aria-pressed="true">Local</button><button type="button" data-timezone="utc" aria-pressed="false">UTC</button></div><div role="group" aria-label="Wind units"><button type="button" data-wind-unit="kt" aria-pressed="true">knots</button><button type="button" data-wind-unit="ms" aria-pressed="false">m/s</button></div><label class="pv-peak-control">Period estimate<select class="pv-peak-factor" aria-label="Mean to peak period factor"><option value="1.2">Mean × 1.2</option><option value="1.3">Mean × 1.3</option><option value="1.4" selected>Mean × 1.4</option><option value="1.5">Mean × 1.5</option></select></label><button type="button" class="pv-add-tide">Add tide file</button></div><p class="pv-cycle"></p><p>Sunrise uses the standard solar horizon; dusk is the end of civil twilight. Shading follows these solar transitions, independently of forecast steps. Tap any six-hourly compass for the full wave components. Compasses show the primary swell (teal), wind sea (coral) and secondary swell (muted violet). Each arrow starts at a point showing Period and direction FROM on a fixed 0–25 s scale. Solid tapered arrow width increases with offshore Hs on a shared forecast scale; small systems retain a visible minimum width. A + marker at the rim means the Period exceeds 25 s; the popup retains the full value. Component Period values are approximate: source mean periods (Tm01) are multiplied by the selected factor (default 1.4). This depends on spectrum shape and does not reconstruct the true peak. A supplied component peak period is used directly. The main forecast Period row keeps the original total-wave peak period. Arrows show wave travel. The shore line uses the forecast beach orientation. Each compass samples the first available forecast record in a six-hour interval; other rows retain every forecast time. Missing components remain unavailable. Component values come from the downloaded partition fields, including Copernicus IBI when selected in the downloader. Wave and tide shading share midnight-to-midnight day boundaries. Beach Hs is an estimate. Water temperature is a surface-skin proxy. Tides are model-relative, exclude storm surge and use a fixed −2 to +2 m axis.</p></details>
+  <dialog class="pv-compass-dialog" aria-labelledby="pv-compass-title"><div class="pv-compass-dialog-head"><div><strong id="pv-compass-title">Wave components</strong><div class="pv-compass-dialog-date"></div></div><button type="button" class="pv-compass-close" aria-label="Close wave components">×</button></div><div class="pv-compass-detail-chart"></div><div class="pv-compass-detail-legend"><span><i></i>Beach orientation</span><span>Arrows show travel</span></div><div class="pv-partition-list"></div><p class="pv-compass-detail-caption">Points show Period and direction from. Arrow width indicates wave height. <span class="pv-peak-explanation"></span></p></dialog>
   </article>
 </div>
 <script>
@@ -408,7 +408,7 @@ body{background:#edf3f7;font-family:'Segoe UI',Arial,sans-serif}
 
   const componentKeys=['primary_swell','wind_sea','secondary_swell'];
   const componentNames=['Primary swell','Wind sea','Secondary swell'];
-  const componentColours=['#008f9b','#e56c4a','#8b82ae'];
+  const componentColours=['#007E87','#D65335','#7D7294'];
   let componentPeakFactor=1.4;
   function normalizeComponents(row){
     return componentKeys.map(key=>{
@@ -429,7 +429,7 @@ body{background:#edf3f7;font-family:'Segoe UI',Arial,sans-serif}
   }
   const compassVector=b=>({x:Math.sin(b*Math.PI/180),y:-Math.cos(b*Math.PI/180)});
   const compassPeriodMax=25;
-  let compassMaximumHs=0,detailSelection=null;
+  let compassHeightReference=1,detailSelection=null;
   const compassDialog=root.querySelector('.pv-compass-dialog');
   function layoutCompass(model){
     const {w,h,u,row,detail}=model,cx=w/2,cy=h/2,ring=Math.max(1,Math.min(w/2-6*u,h/2-7*u));
@@ -438,27 +438,31 @@ body{background:#edf3f7;font-family:'Segoe UI',Arial,sans-serif}
       const direction=compassVector(c.from),travel=compassVector(c.from+180);
       const plottedPeriod=Math.min(compassPeriodMax,c.period),overflow=c.period>compassPeriodMax;
       const x=cx+direction.x*ring*plottedPeriod/compassPeriodMax,y=cy+direction.y*ring*plottedPeriod/compassPeriodMax;
-      const relative=compassMaximumHs?Math.min(1,c.hs/compassMaximumHs):0,arrow=ring*(.18+.54*relative);
-      return [{...c,i,x,y,ax:x,ay:y,plottedPeriod,overflow,radius:(detail?3:2)*u,travel,arrow,head:Math.min(arrow*.5,(detail?7:3.2*u)+(detail?4:1.3*u)*relative)}];
+      const relative=Math.sqrt(Math.min(1,c.hs/compassHeightReference));
+      const arrow=ring*.70,arrowWidth=Math.min(ring*.22,.9*u+ring*.14*relative);
+      return [{...c,i,x,y,ax:x,ay:y,plottedPeriod,overflow,radius:(detail?3.3:2.1)*u,travel,arrow,arrowWidth}];
     });
     return {cx,cy,ring,nodes};
   }
   function periodLabels(layout,model,periodMax){
     const {cx,cy,ring,nodes}=layout,{w,h,u}=model,used=[];
-    const ticks=[...new Set([10,20,periodMax])].filter(p=>p<=periodMax);
+    const ticks=model.detail?[5,10,15,20,periodMax]:[periodMax];
     return ticks.map(period=>{
       const label=`${period}s`,font=(model.detail?12:10)*u,bw=label.length*font*.56+2*u,bh=font+2*u;
       let best=null;
-      for(const [rank,angle] of [135,115,150,90,60,30,180,210,240,270,300,330,0].entries()){
+      const angles=period===5?[180,210,150,240,120,90,60,30,270,300,330,0]:model.detail?[135,115,150,90,60,30,180,210,240,270,300,330,0]:[45,60,30,135,115,150,90,180,210,240,270,300,330,0];
+      for(const [rank,angle] of angles.entries()){
         const v=compassVector(angle),ax=cx+v.x*ring*period/periodMax,ay=cy+v.y*ring*period/periodMax;
         const x=Math.max(bw/2+u,Math.min(w-bw/2-u,ax)),y=Math.max(bh/2+u,Math.min(h-bh/2-u,ay));
         let score=rank*.03+Math.hypot(x-ax,y-ay)*.05,blocked=false;
         for(const p of nodes){
           const dx=Math.max(0,Math.abs(p.x-x)-bw/2),dy=Math.max(0,Math.abs(p.y-y)-bh/2),overlap=Math.max(0,p.radius+2*u-Math.hypot(dx,dy));
           score+=overlap*10;if(overlap>0)blocked=true;
-          for(let t=0;t<=1;t+=.2){
+          for(const t of [0,.1,.2,.3,.4,.5,.6,.68,.7,.8,.9,1]){
             const sx=p.x+p.travel.x*p.arrow*t,sy=p.y+p.travel.y*p.arrow*t;
-            if(Math.abs(sx-x)<bw/2+3*u&&Math.abs(sy-y)<bh/2+3*u){score+=20;blocked=true;break;}
+            const spread=p.arrowWidth*(t<.68?.14+.30*t/.68:.90*(1-t)/.32)+2*u;
+            const ax=Math.max(0,Math.abs(sx-x)-bw/2),ay=Math.max(0,Math.abs(sy-y)-bh/2);
+            if(Math.hypot(ax,ay)<spread){score+=20;blocked=true;break;}
           }
         }
         for(const p of used)if(Math.abs(p.x-x)<(p.bw+bw)/2+u&&Math.abs(p.y-y)<(p.bh+bh)/2+u){score+=100;blocked=true;}
@@ -466,7 +470,7 @@ body{background:#edf3f7;font-family:'Segoe UI',Arial,sans-serif}
       }
       if(best.blocked)return '';
       used.push(best);
-      return `<text class="pv-period-label" x="${best.x}" y="${best.y}" text-anchor="middle" dominant-baseline="central">${label}</text>`;
+      return `<text class="pv-period-label" data-period-label="${period}" x="${best.x}" y="${best.y}" text-anchor="middle" dominant-baseline="central">${label}</text>`;
     }).join('');
   }
   function componentSummary(row){
@@ -477,38 +481,42 @@ body{background:#edf3f7;font-family:'Segoe UI',Arial,sans-serif}
     const periodMax=compassPeriodMax;
     const known=row.components.filter(c=>c.hs!==null&&(c.hs===0||(c.period!==null&&c.from!==null))).length;
     const clip=`pv-shore-${detail?'detail-':''}${day.key}-${index}`;
-    let graphic=`<defs><clipPath id="${clip}"><circle cx="${cx}" cy="${cy}" r="${ring}"/></clipPath></defs><circle cx="${cx}" cy="${cy}" r="${ring}" fill="#e8f5f8"/>`;
+    let graphic=`<defs><clipPath id="${clip}"><circle cx="${cx}" cy="${cy}" r="${ring}"/></clipPath></defs><circle cx="${cx}" cy="${cy}" r="${ring}" fill="#e9f6f4"/>`;
     if(payload.coast!==null){
       const outward=compassVector(payload.coast),t={x:-outward.y,y:outward.x},reach=Math.max(w,h)*3;
       const point=(a,b)=>`${cx+t.x*a-outward.x*b},${cy+t.y*a-outward.y*b}`;
-      graphic+=`<polygon points="${point(-reach,0)} ${point(reach,0)} ${point(reach,reach)} ${point(-reach,reach)}" fill="#fbefda" clip-path="url(#${clip})"/>`;
-      graphic+=`<line x1="${cx-t.x*ring}" y1="${cy-t.y*ring}" x2="${cx+t.x*ring}" y2="${cy+t.y*ring}" stroke="#c5a568" stroke-width="${1.8*u}"/>`;
+      graphic+=`<polygon points="${point(-reach,0)} ${point(reach,0)} ${point(reach,reach)} ${point(-reach,reach)}" fill="#fff0dd" clip-path="url(#${clip})"/>`;
+      graphic+=`<line x1="${cx-t.x*ring}" y1="${cy-t.y*ring}" x2="${cx+t.x*ring}" y2="${cy+t.y*ring}" stroke="#bba77e" stroke-width="${1.8*u}"/>`;
     }
-    const step=detail?5:10,ticks=[...new Set([...Array.from({length:Math.floor(periodMax/step)},(_,i)=>(i+1)*step),periodMax])];
-    for(const period of ticks)graphic+=`<circle class="pv-period-ring" data-period="${period}" cx="${cx}" cy="${cy}" r="${ring*period/periodMax}" fill="none" stroke="#a6c3ce" stroke-opacity="${period%10===0?.8:.4}" stroke-width="${.7*u}"/>`;
+    const ticks=[5,10,15,20,periodMax];
+    for(const period of ticks)graphic+=`<circle class="pv-period-ring" data-period="${period}" cx="${cx}" cy="${cy}" r="${ring*period/periodMax}" fill="none" stroke="#c3d6d3" stroke-width="${(detail?.7:.55)*u}"/>`;
     graphic+=`<circle cx="${cx}" cy="${cy}" r="${1.3*u}" fill="#7895a3"/>`;
     // Arrows start at the Period/bearing point and point in the travel
-    // direction. Their lengths increase with Hs on one normalized scale.
+    // direction. Width indicates Hs on one shared forecast scale.
     const ordered=[...nodes].sort((a,b)=>[1,2,0][a.i]-[1,2,0][b.i]);
+    const origins=[];
     for(const p of ordered){
-      const c=componentColours[p.i],v=p.travel,px=-v.y,py=v.x;
-      const tip={x:p.x+v.x*p.arrow,y:p.y+v.y*p.arrow},stroke=(detail?(p.i===2?2.3:3.2):(p.i===2?1.7:2.2))*u;
-      graphic+=`<g class="pv-component" data-component="${componentKeys[p.i]}" data-hs="${p.hs}" data-radius="${p.radius}" data-x="${p.x}" data-y="${p.y}" data-from="${p.from}" data-period="${p.period}" data-plotted-period="${p.plottedPeriod}" data-overflow="${p.overflow}" data-arrow-length="${p.arrow}" data-mean-period="${p.meanPeriod??''}" data-peak-estimated="${p.periodEstimated}" data-anchor-x="${p.ax}" data-anchor-y="${p.ay}">`;
-      graphic+=`<line x1="${p.x}" y1="${p.y}" x2="${tip.x}" y2="${tip.y}" stroke="#fff" stroke-width="${stroke+2*u}" stroke-linecap="round"/><line class="pv-component-arrow" x1="${p.x}" y1="${p.y}" x2="${tip.x}" y2="${tip.y}" stroke="${c}" stroke-width="${stroke}" stroke-linecap="round"${p.i===2?` stroke-dasharray="${3*u} ${2*u}"`:''}/><path class="pv-component-arrowhead" d="M${tip.x-v.x*p.head+px*p.head*.6} ${tip.y-v.y*p.head+py*p.head*.6} L${tip.x} ${tip.y} L${tip.x-v.x*p.head-px*p.head*.6} ${tip.y-v.y*p.head-py*p.head*.6}Z" fill="${c}"/>`;
-      graphic+=`<circle class="pv-component-origin" cx="${p.x}" cy="${p.y}" r="${p.radius}" fill="${p.overflow?'#fff':c}" stroke="${p.overflow?c:'#fff'}" stroke-width="${1.2*u}"/>`;
+      const c=componentColours[p.i],L=p.arrow,W=p.arrowWidth;
+      const path=`M0 ${-W*.14} Q${L*.38} ${-W*.25} ${L*.68} ${-W*.44} L${L*.68} ${-W*.90} L${L} 0 L${L*.68} ${W*.90} L${L*.68} ${W*.44} Q${L*.38} ${W*.25} 0 ${W*.14}Z`;
+      graphic+=`<g class="pv-component" data-component="${componentKeys[p.i]}" data-hs="${p.hs}" data-radius="${p.radius}" data-x="${p.x}" data-y="${p.y}" data-from="${p.from}" data-period="${p.period}" data-plotted-period="${p.plottedPeriod}" data-overflow="${p.overflow}" data-arrow-length="${p.arrow}" data-arrow-width="${p.arrowWidth}" data-mean-period="${p.meanPeriod??''}" data-peak-estimated="${p.periodEstimated}" data-anchor-x="${p.ax}" data-anchor-y="${p.ay}">`;
+      graphic+=`<path class="pv-component-arrow" transform="translate(${p.x} ${p.y}) rotate(${p.from+90})" d="${path}" fill="${c}" stroke="none"/>`;
       if(p.overflow){
-        const plus=(detail?3.5:2.5)*u;
-        graphic+=`<path class="pv-period-overflow" d="M${p.x-plus} ${p.y}H${p.x+plus}M${p.x} ${p.y-plus}V${p.y+plus}" fill="none" stroke="${c}" stroke-width="${1.5*u}"/>`;
+        const a=(detail?3.5:2.5)*u,b=u;
+        origins.push(`<path class="pv-period-overflow pv-component-origin" data-component="${componentKeys[p.i]}" d="M${p.x-b} ${p.y-a}h${2*b}v${a-b}h${a-b}v${2*b}h${b-a}v${a-b}h${-2*b}v${b-a}h${b-a}v${-2*b}h${a-b}Z" fill="${c}" stroke="none"/>`);
+      }else{
+        origins.push(`<circle class="pv-component-origin" data-component="${componentKeys[p.i]}" cx="${p.x}" cy="${p.y}" r="${p.radius}" fill="${c}" stroke="none"/>`);
       }
       graphic+='</g>';
     }
+    // Keep every true origin visible when wave systems cross each other.
+    graphic+=origins.join('');
     graphic+=periodLabels(layout,model,periodMax);
     if(!nodes.length)graphic+=`<text class="pv-compass-note" x="${cx}" y="${cy}" text-anchor="middle" dominant-baseline="central">${known===3?'Calm':'—'}</text>`;
     else if(known<3)graphic+=`<text class="pv-compass-note" x="${w-3*u}" y="${10*u}" text-anchor="end">${known}/3</text>`;
     if(!detail)graphic+=`<path d="M${w-13*u} ${h-5*u}h8v-8m-8 8 8-8" fill="none" stroke="#607e91" stroke-width="${1.3*u}" opacity=".65"/>`;
     const summary=componentSummary(row);
     if(!detail)node.setAttribute('aria-label',`${timeOf(row.t)} wave components. ${summary}. Tap to enlarge.`);
-    node.innerHTML=`<svg viewBox="0 0 ${w} ${h}" role="img" data-time="${row.t}" data-period-max="${periodMax}" data-height-encoding="arrow-length" data-coast="${payload.coast??''}" aria-label="${timeOf(row.t)} six-hourly snapshot. ${summary}. Origin points show Period on a fixed 25 second scale. Arrow length indicates Hs; arrows show wave travel. Plus markers show periods above 25 seconds. ${payload.coast===null?'Beach orientation unavailable.':`Beach faces ${payload.coast} degrees.`}">${graphic}</svg>`;
+    node.innerHTML=`<svg viewBox="0 0 ${w} ${h}" role="img" data-time="${row.t}" data-period-max="${periodMax}" data-height-encoding="arrow-width" data-height-reference="${compassHeightReference}" data-coast="${payload.coast??''}" aria-label="${timeOf(row.t)} six-hourly snapshot. ${summary}. Origin points show Period on a fixed 25 second scale. Arrow width indicates Hs; arrows show wave travel. Plus markers show periods above 25 seconds. ${payload.coast===null?'Beach orientation unavailable.':`Beach faces ${payload.coast} degrees.`}">${graphic}</svg>`;
   }
   function drawDetailCompass(){
     if(!compassDialog.open||!detailSelection)return;
@@ -523,7 +531,8 @@ body{background:#edf3f7;font-family:'Segoe UI',Arial,sans-serif}
     }));
     if(!models.length)return;
     const complete=payload.forecast.flatMap(row=>row.components.filter(c=>c.hs!==null&&c.hs>0&&c.period!==null&&c.from!==null));
-    compassMaximumHs=Math.max(0,...complete.map(c=>c.hs));
+    // Match the 1 m preview reference in calm seas; keep larger swells distinct.
+    compassHeightReference=Math.max(1,...complete.map(c=>c.hs));
     models.forEach(model=>renderCompass(model,layoutCompass(model)));
     drawDetailCompass();
   }
