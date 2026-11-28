@@ -111,6 +111,13 @@ body{background:#edf3f7;font-family:'Segoe UI',Arial,sans-serif}
 #sunset-daily-phone .pv-desktop .pv-label{font-size:13px}
 @media(prefers-reduced-motion:reduce){#sunset-daily-phone .pv-pages{scroll-behavior:auto}}
 
+
+#sunset-daily-phone .pv-cell.pv-compass{padding:0;min-width:0;min-height:0}
+#sunset-daily-phone .pv-compass svg{display:block;width:100%;height:100%;overflow:hidden}
+#sunset-daily-phone .pv-component-height{font-family:'Segoe UI',Arial,sans-serif;font-weight:600;fill:var(--pv-ink);font-variant-numeric:tabular-nums}
+#sunset-daily-phone .pv-period-label{font:calc(9.5 * var(--u)) 'Segoe UI',Arial,sans-serif;fill:var(--pv-muted);paint-order:stroke fill;stroke:var(--pv-paper);stroke-width:calc(2.5 * var(--u));stroke-linejoin:round}
+#sunset-daily-phone .pv-compass-note{font:calc(10 * var(--u)) 'Segoe UI',Arial,sans-serif;fill:var(--pv-muted)}
+
 </style>
 <div id="sunset-daily-phone">
   <article class="pv-app" aria-label="Portrait phone forecast, one day per swipe">
@@ -119,12 +126,12 @@ body{background:#edf3f7;font-family:'Segoe UI',Arial,sans-serif}
     <div class="pv-date pv-current-date" hidden><div class="pv-date-line"><strong class="pv-date-title"></strong><small class="pv-resolution"></small></div><div class="pv-solar"><span class="pv-sunrise">Sunrise <b>–</b></span><span class="pv-dusk" aria-label="End of civil twilight">Dusk <b>–</b></span></div></div>
     <div class="pv-forecast" hidden role="region" aria-label="Forecast table">
       <aside class="pv-labels" aria-label="Forecast row labels">
-        <div class="pv-label pv-label-time">Local time</div><div class="pv-label">Conditions</div><div class="pv-label">Spectrum</div><div class="pv-label">Beach Hs<small>m</small></div><div class="pv-label">Offshore<small>m</small></div><div class="pv-label">Period<small>s</small></div><div class="pv-label">Swell from</div><div class="pv-label pv-label-wind">Wind · kn</div><div class="pv-label">Wind from</div><div class="pv-label">Weather<small>Air / Sea<br>°C</small></div><div class="pv-label pv-tide-label">Tide · m<span class="pv-tide-tick" data-value="2">+2</span><span class="pv-tide-tick" data-value="0">0</span><span class="pv-tide-tick" data-value="-2">−2</span></div>
+        <div class="pv-label pv-label-time">Local time</div><div class="pv-label">Conditions</div><div class="pv-label">Swells<small>6-hourly</small></div><div class="pv-label">Beach Hs<small>m</small></div><div class="pv-label">Offshore<small>m</small></div><div class="pv-label">Period<small>s</small></div><div class="pv-label">Swell from</div><div class="pv-label pv-label-wind">Wind · kn</div><div class="pv-label">Wind from</div><div class="pv-label">Weather<small>Air / Sea<br>°C</small></div><div class="pv-label pv-tide-label">Tide · m<span class="pv-tide-tick" data-value="2">+2</span><span class="pv-tide-tick" data-value="0">0</span><span class="pv-tide-tick" data-value="-2">−2</span></div>
       </aside>
       <div class="pv-pages" aria-label="Daily forecast values. Swipe sideways to advance."></div>
     </div>
     <footer class="pv-footer"><div class="pv-footer-top"><span>Swipe to the next day</span><span class="pv-page-status" aria-live="polite"></span></div></footer>
-    <details class="pv-options"><summary>Forecast options</summary><div class="pv-option-controls"><div role="group" aria-label="Time zone"><button type="button" data-timezone="local" aria-pressed="true">Local</button><button type="button" data-timezone="utc" aria-pressed="false">UTC</button></div><div role="group" aria-label="Wind units"><button type="button" data-wind-unit="kt" aria-pressed="true">knots</button><button type="button" data-wind-unit="ms" aria-pressed="false">m/s</button></div><button type="button" class="pv-add-tide">Add tide file</button></div><p class="pv-cycle"></p><p>Sunrise uses the standard solar horizon; dusk is the end of civil twilight. Shading follows these solar transitions, independently of forecast steps. Spectra show offshore Hs per original integrated period band on a shared scale. The smooth curves are visual guides through those band heights; missing bands remain gaps. Green spectra mean at least one original band above 12 s exceeds 0.5 m Hs, including bands beyond the visible range. Wave and tide shading share midnight-to-midnight day boundaries. The view ends at 22 s. Beach Hs is an estimate. Water temperature is a surface-skin proxy. Tides are model-relative, exclude storm surge and use a fixed −2 to +2 m axis.</p></details>
+    <details class="pv-options"><summary>Forecast options</summary><div class="pv-option-controls"><div role="group" aria-label="Time zone"><button type="button" data-timezone="local" aria-pressed="true">Local</button><button type="button" data-timezone="utc" aria-pressed="false">UTC</button></div><div role="group" aria-label="Wind units"><button type="button" data-wind-unit="kt" aria-pressed="true">knots</button><button type="button" data-wind-unit="ms" aria-pressed="false">m/s</button></div><button type="button" class="pv-add-tide">Add tide file</button></div><p class="pv-cycle"></p><p>Sunrise uses the standard solar horizon; dusk is the end of civil twilight. Shading follows these solar transitions, independently of forecast steps. Compasses show the primary swell (teal), wind sea (coral) and secondary swell (dashed). Circle diameter is proportional to offshore Hs on a shared scale; radial position shows mean period and bearing shows the direction FROM. Arrows show wave travel. The shore line uses the forecast beach orientation. Each compass samples the first available forecast record in a six-hour interval; other rows retain every forecast time. Missing components remain unavailable. Component values require a compatible ECMWF source; the public feed may not include these fields. Wave and tide shading share midnight-to-midnight day boundaries. Beach Hs is an estimate. Water temperature is a surface-skin proxy. Tides are model-relative, exclude storm surge and use a fixed −2 to +2 m axis.</p></details>
   </article>
 </div>
 <script>
@@ -313,11 +320,12 @@ body{background:#edf3f7;font-family:'Segoe UI',Arial,sans-serif}
       const t=Date.parse(r.time_utc);if(!Number.isFinite(t))throw new Error(`Invalid forecast time in row ${i+1}.`);
       let swell=val(r.wave_direction_from_deg??r.wave_direction_to_deg);
       if(legacy&&swell!==null)swell=(swell+180)%360;
-      return {t,beach:legacy?null:nonnegative(r.breaking_hs_m),hs:nonnegative(r.hs_m),period:nonnegative(r.tp_s),wind:nonnegative(r.wind_speed_ms)===null?null:Number(r.wind_speed_ms)*1.94384449,swell,from:val(r.wind_direction_from_deg),air:val(r.air_temperature_c),water:val(r.water_temperature_c??r.sea_surface_skin_temperature_c),cloud:val(r.cloud_cover_pct),rain:nonnegative(r.rain_rate_mm_h),quality:String(r.wind_quality??r.surf_quality??'Unknown'),bands:bandKeys.map(k=>nonnegative(r.spectral_band_hs_m?.[k]))};
+      return {t,beach:legacy?null:nonnegative(r.breaking_hs_m),hs:nonnegative(r.hs_m),period:nonnegative(r.tp_s),wind:nonnegative(r.wind_speed_ms)===null?null:Number(r.wind_speed_ms)*1.94384449,swell,from:val(r.wind_direction_from_deg),air:val(r.air_temperature_c),water:val(r.water_temperature_c??r.sea_surface_skin_temperature_c),cloud:val(r.cloud_cover_pct),rain:nonnegative(r.rain_rate_mm_h),quality:String(r.wind_quality??r.surf_quality??'Unknown'),bands:bandKeys.map(k=>nonnegative(r.spectral_band_hs_m?.[k])),components:normalizeComponents(r)};
     }).sort((a,b)=>a.t-b.t);
     if(!rows.some(r=>r.hs!==null||r.wind!==null))throw new Error('The file contains no wave or wind values.');
     const p=input.requested_point||{},lat=val(p.latitude),lon=val(p.longitude),tide=tideOverride||normalizeTide(input.tide);
-    return {lat:lat!==null&&Math.abs(lat)<=90?lat:null,lon:lon!==null&&Math.abs(lon)<=180?lon:null,forecast:rows,tide:tide?tide.series.map(p=>[p.time,p.level]):[],events:tide?tide.extrema.map(e=>[e.time,e.type,e.level]):[]};
+    const coast=val(input.surf_model?.coast_facing_from_deg);
+    return {coast:coast===null?null:((coast%360)+360)%360,lat:lat!==null&&Math.abs(lat)<=90?lat:null,lon:lon!==null&&Math.abs(lon)<=180?lon:null,forecast:rows,tide:tide?tide.series.map(p=>[p.time,p.level]):[],events:tide?tide.extrema.map(e=>[e.time,e.type,e.level]):[]};
   }
   function acceptForecast(input){
     const candidate=normalizeForecast(input);
@@ -344,7 +352,7 @@ body{background:#edf3f7;font-family:'Segoe UI',Arial,sans-serif}
       page.innerHTML='<div class="pv-table">'
         +row(r=>`<span aria-label="${timeOf(r.t)}">${timeOf(r.t).slice(0,2)}</span>`,'pv-time')
         +day.rows.map((r,i)=>cell(`<span aria-label="${escape(r.quality)}">${escape(r.beach!==null&&r.beach<.25?'Flat':shortQuality[r.quality]||'–')}</span>`,`pv-quality ${['Glassy','Offshore breeze'].includes(r.quality)?'good':['With texture','Choppy'].includes(r.quality)?'fair':'rough'}`,i)).join('')
-        +day.rows.map((r,i)=>cell('','pv-spectrum',i)).join('')
+        +compassCells(day)
         +heatRow('beach','hs')+heatRow('hs','hs')+heatRow('period','period')
         +row(r=>arrow(r.swell,'Swell'),'pv-direction wave')+heatRow('wind','wind')+row(r=>arrow(r.from,'Wind'),'pv-direction wind')
         +row(r=>{const [icon,label]=wx(r);return `<span class="pv-weather-icon" role="img" aria-label="${label}">${icon}</span><span class="pv-temperature">${shown(r.air)}${r.air===null?'':'°'}</span><span class="pv-temperature water">${shown(r.water)}${r.water===null?'':'°'}</span>`},'pv-weather')
@@ -370,37 +378,166 @@ body{background:#edf3f7;font-family:'Segoe UI',Arial,sans-serif}
   // All continuous time graphics share the same calendar-day bounds.
   function dayRange(day){return {start:wallTime(day.key),end:wallTime(day.key,24)};}
 
-  function drawSpectra(page,day){
-    const maximum=Math.max(.4,Math.ceil(Math.max(0,...payload.forecast.flatMap(r=>r.bands.filter(v=>v!==null)))*10)/10);
-    page.querySelectorAll('.pv-spectrum').forEach((node,i)=>{
-      const r=day.rows[i];
-      // Integrated 12–14 s and longer bands, including those beyond the
-      // visible 22 s edge. Compare original values, before display rounding.
-      const longPeriod=r.bands.slice(1).some(value=>value!==null&&value>.5);
-      node.classList.toggle('pv-long-period',longPeriod);
-      const w=Math.max(20*uiUnit,node.clientWidth-2*uiUnit),height=Math.max(48*uiUnit,node.clientHeight-6*uiUnit),baseline=height-15*uiUnit,top=5*uiUnit;
-      const x=t=>2*uiUnit+(t-10)/12*(w-4*uiUnit),y=v=>baseline-v/maximum*(baseline-top);
-      const bands=[{lo:10,hi:12,mid:11},{lo:12,hi:14,mid:13},{lo:14,hi:17,mid:15.5},{lo:17,hi:21,mid:19},{lo:21,hi:25,mid:23}].map((b,j)=>({...b,value:r.bands[j]}));
-      const ticks=`<text class="pv-spectrum-tick" x="${2*uiUnit}" y="${height-2*uiUnit}">10</text><text class="pv-spectrum-tick" text-anchor="end" x="${w-2*uiUnit}" y="${height-2*uiUnit}">22</text>`;
-      if(bands.every(b=>b.value===null)){node.innerHTML='<span class="pv-unavailable" aria-label="Spectrum unavailable">—</span>';return;}
-      const runs=[];let run=[];const close=()=>{if(run.length)runs.push(run);run=[];};
-      bands.forEach(b=>{if(b.value===null)close();else run.push(b);});close();
-      const curves=runs.map(run=>{
-        const first=run[0],last=run.at(-1);
-        let path=`M${x(first.lo)} ${y(first.value)} L${x(first.mid)} ${y(first.value)}`;
-        // Horizontal tangents at bin centres keep the guide smooth without
-        // overshooting either reported band height or bridging missing bins.
-        for(let j=1;j<run.length;j++){
-          const a=run[j-1],b=run[j],mid=(x(a.mid)+x(b.mid))/2;
-          path+=` C${mid} ${y(a.value)},${mid} ${y(b.value)},${x(b.mid)} ${y(b.value)}`;
-        }
-        path+=` L${x(last.hi)} ${y(last.value)}`;
-        return `<path class="pv-spectrum-fill" d="${path} L${x(last.hi)} ${baseline} L${x(first.lo)} ${baseline}Z"/><path class="pv-spectrum-line" d="${path}"/>`;
-      }).join('');
-      const gaps=bands.filter(b=>b.value===null).map(b=>`<rect class="pv-spectrum-gap" x="${x(b.lo)}" y="${top}" width="${Math.max(1,x(Math.min(22,b.hi))-x(b.lo))}" height="${baseline-top}"/>`).join('');
-      const clip=`pv-spectrum-clip-${day.key}-${i}`;
-      node.innerHTML=`<svg viewBox="0 0 ${w} ${height}" data-scale-max="${maximum}" role="img" aria-label="Smooth visual guide through offshore period-band Hs, metres: ${bands.map(b=>b.value===null?'unavailable':b.value).join(', ')}. Display range 10 to 22 seconds; final segment belongs to the full 21–25 second band.${longPeriod?' Green: a period band above 12 seconds exceeds 0.5 metres Hs.':''}"><defs><clipPath id="${clip}"><rect x="0" y="0" width="${w}" height="${baseline+1}"/></clipPath></defs><line class="pv-spectrum-grid" x1="0" x2="${w}" y1="${baseline}" y2="${baseline}"/><g clip-path="url(#${clip})">${curves}${gaps}</g>${ticks}</svg>`;
+  const componentKeys=['primary_swell','wind_sea','secondary_swell'];
+  const componentNames=['Primary swell','Wind sea','Secondary swell'];
+  const componentColours=['#008f9b','#e67859','#8092bb'];
+  function normalizeComponents(row){
+    return componentKeys.map(key=>{
+      const raw=row.wave_components?.[key]||{},hs=nonnegative(raw.hs_m),period=nonnegative(raw.mean_period_s),direction=val(raw.direction_from_deg);
+      return {hs,period:period!==null&&period>0?period:null,from:direction===null?null:((direction%360)+360)%360};
     });
+  }
+  function compassCells(day){
+    let html='';
+    for(let i=0;i<day.rows.length;){
+      // A real six-hour snapshot, not an average or an interpolated partition.
+      let end=i+1;while(end<day.rows.length&&day.rows[end].t-day.rows[i].t<6*3600000)end++;
+      html+=`<div class="pv-cell pv-compass" data-source-index="${i}" style="grid-column:span ${end-i}"></div>`;i=end;
+    }
+    return html;
+  }
+  const compassVector=b=>({x:Math.sin(b*Math.PI/180),y:-Math.cos(b*Math.PI/180)});
+  function compassGeometryFits(nodes,model){
+    const {w,h,u}=model;
+    return nodes.every((p,i)=>{
+      const tip={x:p.x+p.travel.x*(p.radius+10*u),y:p.y+p.travel.y*(p.radius+10*u)};
+      if(![p.x,p.y,p.radius,tip.x,tip.y].every(Number.isFinite)||p.x-p.radius<0||p.x+p.radius>w||p.y-p.radius<0||p.y+p.radius>h||tip.x<0||tip.x>w||tip.y<0||tip.y>h)return false;
+      return nodes.every((q,j)=>i===j||(Math.hypot(p.x-q.x,p.y-q.y)>=p.radius+q.radius+u&&Math.hypot(tip.x-q.x,tip.y-q.y)>=q.radius+2*u));
+    });
+  }
+  function layoutCompass(model,scale,periodMax,seed=null){
+    const {w,h,u,row}=model,cx=w/2,cy=h/2,ring=Math.max(1,Math.min(w/2-2*u,h/2-2*u));
+    const nodes=row.components.flatMap((c,i)=>{
+      if(c.hs===null||c.hs<=0||c.period===null||c.from===null)return [];
+      const direction=compassVector(c.from),travel=compassVector(c.from+180),radius=c.hs*scale/2;
+      const x=cx+direction.x*ring*c.period/periodMax,y=cy+direction.y*ring*c.period/periodMax;
+      return [{...c,i,x:seed?seed[i][0]*w:x,y:seed?seed[i][1]*h:y,ax:x,ay:y,radius,travel}];
+    });
+    const constrain=p=>{
+      const a=p.radius+12*u;
+      const lx=Math.max(p.radius+2*u,-p.travel.x*a+2*u),rx=Math.min(w-p.radius-2*u,w-p.travel.x*a-2*u);
+      const ly=Math.max(p.radius+2*u,-p.travel.y*a+2*u),ry=Math.min(h-p.radius-2*u,h-p.travel.y*a-2*u);
+      if(lx>rx||ly>ry){model.impossible=true;return;}
+      p.x=Math.max(lx,Math.min(rx,p.x));p.y=Math.max(ly,Math.min(ry,p.y));
+    };
+    model.impossible=false;nodes.forEach(constrain);
+    for(let k=0;k<160&&!model.impossible;k++){
+      let moved=false;
+      for(let a=0;a<nodes.length;a++)for(let b=a+1;b<nodes.length;b++){
+        const p=nodes[a],q=nodes[b];let dx=q.x-p.x,dy=q.y-p.y,d=Math.hypot(dx,dy),minimum=p.radius+q.radius+2.5*u;
+        if(d<minimum){if(d<.001){dx=.4;dy=1;d=Math.hypot(dx,dy);}const shift=(minimum-d)/2+.08*u;p.x-=dx/d*shift;p.y-=dy/d*shift;q.x+=dx/d*shift;q.y+=dy/d*shift;moved=true;}
+      }
+      for(const p of nodes)for(const q of nodes){
+        if(p===q)continue;
+        const tip={x:p.x+p.travel.x*(p.radius+10*u),y:p.y+p.travel.y*(p.radius+10*u)};
+        let dx=q.x-tip.x,dy=q.y-tip.y,d=Math.hypot(dx,dy),minimum=q.radius+3.5*u;
+        if(d<minimum){if(d<.001){dx=.2;dy=-1;d=Math.hypot(dx,dy);}const shift=minimum-d+.08*u;q.x+=dx/d*shift*.8;q.y+=dy/d*shift*.8;p.x-=dx/d*shift*.2;p.y-=dy/d*shift*.2;moved=true;}
+      }
+      nodes.forEach(constrain);if(!moved)break;
+    }
+    let fits=!model.impossible;
+    for(let a=0;a<nodes.length;a++){
+      const p=nodes[a],tip={x:p.x+p.travel.x*(p.radius+10*u),y:p.y+p.travel.y*(p.radius+10*u)};
+      if(p.x-p.radius<0||p.x+p.radius>w||p.y-p.radius<0||p.y+p.radius>h||tip.x<0||tip.x>w||tip.y<0||tip.y>h)fits=false;
+      for(let b=a+1;b<nodes.length;b++){const q=nodes[b];if(Math.hypot(p.x-q.x,p.y-q.y)<p.radius+q.radius+u)fits=false;}
+      for(const q of nodes)if(p!==q&&Math.hypot(tip.x-q.x,tip.y-q.y)<q.radius+2*u)fits=false;
+    }
+    return {cx,cy,ring,nodes,fits};
+  }
+  function fitCompass(model,scale,periodMax){
+    const initial=layoutCompass(model,scale,periodMax);
+    if(initial.fits)return initial;
+    for(const seed of [
+      [[.27,.36],[.73,.2],[.57,.77]],
+      [[.3,.28],[.72,.35],[.48,.8]],
+      [[.73,.36],[.27,.2],[.43,.77]],
+      [[.3,.72],[.72,.65],[.48,.2]],
+      [[.26,.25],[.74,.25],[.5,.74]]
+    ]){const candidate=layoutCompass(model,scale,periodMax,seed);if(candidate.fits)return candidate;}
+    return initial;
+  }
+  function periodLabels(layout,model,periodMax){
+    const {cx,cy,ring,nodes}=layout,{w,h,u}=model,used=[];
+    return [periodMax/2,periodMax].map(period=>{
+      const label=`${period}s`,font=9.5*u,bw=label.length*font*.56+2*u,bh=font+2*u;
+      let best=null;
+      for(const [rank,angle] of [135,115,150,90,60,30,180,210,240,270,300,330,0].entries()){
+        const v=compassVector(angle),ax=cx+v.x*ring*period/periodMax,ay=cy+v.y*ring*period/periodMax;
+        const x=Math.max(bw/2+u,Math.min(w-bw/2-u,ax)),y=Math.max(bh/2+u,Math.min(h-bh/2-u,ay));
+        let score=rank*.02+Math.hypot(x-ax,y-ay)*.05;
+        for(const p of nodes){const dx=Math.max(0,Math.abs(p.x-x)-bw/2),dy=Math.max(0,Math.abs(p.y-y)-bh/2);score+=Math.max(0,p.radius+u-Math.hypot(dx,dy))*10;}
+        for(const p of used)if(Math.abs(p.x-x)<(p.bw+bw)/2+u&&Math.abs(p.y-y)<(p.bh+bh)/2+u)score+=100;
+        if(!best||score<best.score)best={x,y,bw,bh,score};
+      }
+      used.push(best);
+      return `<text class="pv-period-label" x="${best.x}" y="${best.y}" text-anchor="middle" dominant-baseline="central">${label}</text>`;
+    }).join('');
+  }
+  function renderCompass(model,layout,periodMax,scale){
+    const {node,day,index,row,w,h,u}=model,{cx,cy,ring,nodes}=layout;
+    if(!compassGeometryFits(nodes,model)){
+      const details=row.components.map((c,i)=>`${componentNames[i]}: Hs ${c.hs??'unavailable'} metres, mean period ${c.period??'unavailable'} seconds, FROM ${c.from??'unavailable'} degrees`).join('; ');
+      node.innerHTML=`<span class="pv-unavailable" role="img" aria-label="Compass too small to plot these components. ${details}">⋯</span>`;
+      return;
+    }
+    const known=row.components.filter(c=>c.hs!==null&&(c.hs===0||(c.period!==null&&c.from!==null))).length;
+    const clip=`pv-shore-${day.key}-${index}`;
+    let graphic=`<defs><clipPath id="${clip}"><circle cx="${cx}" cy="${cy}" r="${ring}"/></clipPath></defs><circle cx="${cx}" cy="${cy}" r="${ring}" fill="#e8f4f6"/>`;
+    if(payload.coast!==null){
+      const outward=compassVector(payload.coast),t={x:-outward.y,y:outward.x},reach=Math.max(w,h)*3;
+      const point=(a,b)=>`${cx+t.x*a-outward.x*b},${cy+t.y*a-outward.y*b}`;
+      graphic+=`<polygon points="${point(-reach,0)} ${point(reach,0)} ${point(reach,reach)} ${point(-reach,reach)}" fill="#f2edde" clip-path="url(#${clip})"/><line x1="${cx-t.x*ring}" y1="${cy-t.y*ring}" x2="${cx+t.x*ring}" y2="${cy+t.y*ring}" stroke="#b2ada2" stroke-width="${1.3*u}"/>`;
+    }
+    for(const fraction of [.25,.5,.75,1])graphic+=`<circle class="pv-period-ring" data-period="${periodMax*fraction}" cx="${cx}" cy="${cy}" r="${ring*fraction}" fill="none" stroke="#b7cdd3" stroke-width="${.65*u}"/>`;
+    graphic+=periodLabels(layout,model,periodMax);
+    for(const p of nodes)if(Math.hypot(p.x-p.ax,p.y-p.ay)>2*u)graphic+=`<line x1="${p.ax}" y1="${p.ay}" x2="${p.x}" y2="${p.y}" stroke="#a1b5bf" stroke-width="${.7*u}"/><circle cx="${p.ax}" cy="${p.ay}" r="${1.3*u}" fill="${componentColours[p.i]}"/>`;
+    for(const p of nodes){
+      const c=componentColours[p.i],v=p.travel,px=-v.y,py=v.x,start=p.radius+2*u,end=p.radius+10*u,tip={x:p.x+v.x*end,y:p.y+v.y*end};
+      graphic+=`<g class="pv-component" data-component="${componentKeys[p.i]}" data-hs="${p.hs}" data-radius="${p.radius}" data-x="${p.x}" data-y="${p.y}" data-from="${p.from}" data-period="${p.period}" data-anchor-x="${p.ax}" data-anchor-y="${p.ay}"><line class="pv-component-arrow" x1="${p.x+v.x*start}" y1="${p.y+v.y*start}" x2="${tip.x}" y2="${tip.y}" stroke="${c}" stroke-width="${1.8*u}"/><path d="M${tip.x-v.x*4.5*u+px*2.6*u} ${tip.y-v.y*4.5*u+py*2.6*u} L${tip.x} ${tip.y} L${tip.x-v.x*4.5*u-px*2.6*u} ${tip.y-v.y*4.5*u-py*2.6*u}Z" fill="${c}"/><circle class="pv-component-circle" cx="${p.x}" cy="${p.y}" r="${p.radius}" fill="${p.i===0?'#def1f2':p.i===1?'#fce9df':'#eef1f8'}" stroke="${c}" stroke-width="${(p.i===2?.9:1.5)*u}"${p.i===2?` stroke-dasharray="${3*u} ${2*u}"`:''}/>`;
+      let label=p.hs.toFixed(1),size=11*u;
+      if(p.radius<8*u)label=label.replace(/^0/,'');
+      size=Math.min(size,p.radius*1.8/(label.length*.56));
+      if(size>=7*u)graphic+=`<text class="pv-component-height" x="${p.x}" y="${p.y}" text-anchor="middle" dominant-baseline="central" style="font-size:${size}px">${label}</text>`;
+      graphic+='</g>';
+    }
+    if(!nodes.length)graphic+=`<text class="pv-compass-note" x="${cx}" y="${cy}" text-anchor="middle" dominant-baseline="central">${known===3?'Calm':'—'}</text>`;
+    else if(known<3)graphic+=`<text class="pv-compass-note" x="${w-3*u}" y="${10*u}" text-anchor="end">${known}/3</text>`;
+    const summary=row.components.map((c,i)=>`${componentNames[i]}: ${c.hs===0?'calm':c.hs===null||c.period===null||c.from===null?'unavailable':`Hs ${c.hs.toFixed(2)} metres, mean period ${c.period.toFixed(1)} seconds, from ${c.from.toFixed(0)} degrees`}`).join('; ');
+    node.innerHTML=`<svg viewBox="0 0 ${w} ${h}" role="img" data-time="${row.t}" data-period-max="${periodMax}" data-height-scale="${scale}" data-coast="${payload.coast??''}" aria-label="${timeOf(row.t)} six-hourly snapshot. ${summary}. Circle diameter is proportional to Hs on a shared scale; arrows show wave travel. ${payload.coast===null?'Beach orientation unavailable.':`Beach faces ${payload.coast} degrees.`}">${graphic}</svg>`;
+  }
+  function drawCompasses(){
+    const models=[];
+    pager.querySelectorAll('.pv-day').forEach((page,i)=>page.querySelectorAll('.pv-compass').forEach((node,index)=>{
+      if(node.clientWidth&&node.clientHeight)models.push({node,day:days[i],index,row:days[i].rows[Number(node.dataset.sourceIndex)],w:node.clientWidth,h:node.clientHeight,u:uiUnit});
+    }));
+    if(!models.length)return;
+    const complete=payload.forecast.flatMap(row=>row.components.filter(c=>c.hs!==null&&c.hs>0&&c.period!==null&&c.from!==null));
+    const maximum=Math.max(0,...complete.map(c=>c.hs)),periodMax=Math.max(20,Math.ceil(Math.max(0,...complete.map(c=>c.period))/5)*5);
+    const available=Math.min(...models.map(m=>Math.min(m.w,m.h)));
+    let scale=maximum?Math.min(55*uiUnit,Math.max(1,available-4*uiUnit)*.55/maximum):55*uiUnit,layouts;
+    // Preserve a common metres-to-diameter scale across every forecast panel.
+    // Retry smaller at the common scale when large or coincident systems collide.
+    for(let attempt=0;attempt<20;attempt++){
+      layouts=models.map(model=>fitCompass(model,scale,periodMax));
+      if(layouts.every(layout=>layout.fits))break;
+      if(attempt<19)scale*=.86;
+    }
+    if(!layouts.every(layout=>layout.fits)){
+      // Deterministic separated positions for a pathological crowded panel.
+      // Keep the common diameter scale and the true polar anchors/leader lines.
+      scale=Math.min(scale,14*uiUnit/maximum);
+      layouts=models.map(model=>{
+        const layout=fitCompass(model,scale,periodMax),positions=[[.26,.25],[.74,.25],[.5,.74]];
+        layout.nodes.forEach((p,i)=>{
+          const reach=p.radius+12*model.u;
+          const lx=Math.max(p.radius+2*model.u,-p.travel.x*reach+2*model.u),rx=Math.min(model.w-p.radius-2*model.u,model.w-p.travel.x*reach-2*model.u);
+          const ly=Math.max(p.radius+2*model.u,-p.travel.y*reach+2*model.u),ry=Math.min(model.h-p.radius-2*model.u,model.h-p.travel.y*reach-2*model.u);
+          p.x=Math.max(lx,Math.min(rx,model.w*positions[i][0]));p.y=Math.max(ly,Math.min(ry,model.h*positions[i][1]));
+        });
+        return layout;
+      });
+    }
+    models.forEach((model,i)=>renderCompass(model,layouts[i],periodMax,scale));
   }
 
 
@@ -428,7 +565,7 @@ body{background:#edf3f7;font-family:'Segoe UI',Arial,sans-serif}
     const {start,end}=dayRange(day);
     node.innerHTML=`<svg width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" data-start="${start}" data-end="${end}">${solarShading(start,end,w,h,'wave-'+day.key)}</svg>`;
   }
-  function draw(){if(!payload||!days.length)return;pager.querySelectorAll('.pv-day').forEach((page,i)=>{drawSpectra(page,days[i]);drawTide(page,days[i]);drawWaveLighting(page,days[i]);});}
+  function draw(){if(!payload||!days.length)return;drawCompasses();pager.querySelectorAll('.pv-day').forEach((page,i)=>{drawTide(page,days[i]);drawWaveLighting(page,days[i]);});}
 
 
   function update(){
